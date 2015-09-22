@@ -1,0 +1,494 @@
+
+##__________________________________________________________________||
+class AllEvents(object):
+    def __call__(self, event): return True
+
+##__________________________________________________________________||
+class EventSelectionAll(object):
+    """select events that meet all conditions
+
+    """
+
+    def __init__(self, name = None):
+        if name is not None: self.name = name
+        self.selections = [ ]
+
+    def add(self, selection):
+        self.selections.append(selection)
+
+    def begin(self, event):
+        for s in self.selections:
+            if hasattr(s, 'begin'): s.begin(event)
+
+    def __call__(self, event):
+        for s in self.selections:
+            if not s(event): return False
+        return True
+
+    def end(self):
+        for s in self.selections:
+            if hasattr(s, 'end'): s.end()
+
+##__________________________________________________________________||
+class EventSelectionAny(object):
+    """select events that meet any of the conditions
+
+    """
+
+    def __init__(self, name = None):
+        if name is not None: self.name = name
+        self.selections = [ ]
+
+    def add(self, selection):
+        self.selections.append(selection)
+
+    def begin(self, event):
+        for s in self.selections:
+            if hasattr(s, 'begin'): s.begin(event)
+
+    def __call__(self, event):
+        for s in self.selections:
+            if s(event): return True
+        return False
+
+    def end(self):
+        for s in self.selections:
+            if hasattr(s, 'end'): s.end()
+
+##__________________________________________________________________||
+class LambdaStr(object):
+    """select events to which a lambda returns True.
+
+    A lambda should be given as a string to __init__ and will be
+    evaluated in begin(). This is because a lambda is not picklable.
+
+    In the multiprocessing mode, __init__() is called in the main
+    process. Then, the instance will be pickled and sent to
+    subprocesses. begin() will be called in the subprocesses.
+
+    """
+    def __init__(self, lambda_str, name = None):
+        if name is not None: self.name = name
+        self.lambda_str = lambda_str
+
+    def begin(self, event):
+        self.func = eval('lambda ' + self.lambda_str)
+
+    def __call__(self, event):
+        try:
+            return self.func(event)
+        except:
+            print self.lambda_str
+            raise
+
+    def end(self):
+        self.func = None
+
+##__________________________________________________________________||
+class VarMin(object):
+    """select events with the value of a specified variable greater than or
+    equal to a specified minimum value
+
+    """
+
+    def __init__(self, varName, minValue, closed = True, name = None):
+        if name is not None: self.name = name
+        self.varName = varName
+        self.minValue = minValue
+        self.closed = closed
+
+    def __call__(self, event):
+        val = getattr(event, self.varName)[0]
+        if self.minValue < val: return True
+        if self.closed:
+            if self.minValue == val: return True
+        return False
+
+##__________________________________________________________________||
+class VarMax(object):
+    """select events with the value of a specified variable less than or
+    equal to a specified maximum value
+
+    """
+
+    def __init__(self, varName, maxValue, closed = False, name = None):
+        if name is not None: self.name = name
+        self.varName = varName
+        self.maxValue = maxValue
+        self.closed = closed
+
+    def __call__(self, event):
+        val = getattr(event, self.varName)[0]
+        if val < self.maxValue: return True
+        if self.closed:
+            if val == self.maxValue: return True
+        return False
+
+##__________________________________________________________________||
+class VarValue(object):
+    """select events with the value of a specified variable equal to a
+    specified value
+
+    """
+
+    def __init__(self, varName, value, name = None):
+        if name is not None: self.name = name
+        self.varName = varName
+        self.value = value
+
+    def __call__(self, event):
+        return getattr(event, self.varName)[0] == self.value
+
+##__________________________________________________________________||
+class VarIn(object):
+    """select events with the value of a specified variable an element of
+    a specified list
+
+    """
+
+    def __init__(self, varName, valueList, name = None):
+        if name is not None: self.name = name
+        self.varName = varName
+        self.valueList = valueList
+
+    def __call__(self, event):
+        return getattr(event, self.varName)[0] in self.valueList
+
+##__________________________________________________________________||
+class PD_HLT(object):
+    def __init__(self):
+        self.itsdict = {
+            'MET': (  # "HLT_PFMET90_PFMHT90_IDTight"
+                "HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight",
+                "HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight",
+                ),
+            'HTMHT': (
+                "HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57",
+                "HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63",
+                "HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55",
+                "HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58",
+                "HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53",
+                "HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54",
+                "HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52",
+                "HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53",
+                "HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51",
+                "HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52",
+                ),
+            'JetHT': ('HLT_PFHT800', ),
+            'SingleMuon': (
+                'HLT_IsoMu17_eta2p1',
+                'HLT_IsoMu20',
+                'HLT_IsoMu24_eta2p1'
+                ),
+            'SingleElectron': (
+                "HLT_Ele22_WPLoose_Gsf",
+                "HLT_Ele23_WPLoose_Gsf",
+                "HLT_Ele27_eta2p1_WPLoose_Gsf",
+                ),
+            'SinglePhoton': (
+                "HLT_Photon120",
+                "HLT_Photon125",
+                "HLT_Photon175",
+                )
+        }
+
+    def __call__(self, event):
+        if not event.PrimaryDataset[0] in self.itsdict: return True
+        hltpaths = self.itsdict[event.PrimaryDataset[0]]
+        if all([getattr(event, p)[0] == 0 for p in hltpaths]): return False
+        return True
+
+##__________________________________________________________________||
+class AlphaTCut(object):
+    def __call__(self, event):
+        if 200 <= event.ht40[0] < 250 and 0.65 <= event.alphaT[0]: return True
+        elif 250 <= event.ht40[0] < 300 and 0.60 <= event.alphaT[0]: return True
+        elif 300 <= event.ht40[0] < 350 and 0.55 <= event.alphaT[0]: return True
+        elif 350 <= event.ht40[0] < 400 and 0.53 <= event.alphaT[0]: return True
+        elif 400 <= event.ht40[0] < 800 and 0.52 <= event.alphaT[0]: return True
+        return False
+
+##__________________________________________________________________||
+class HT_HLTAlphaT(object):
+    def __call__(self, event):
+        if 200 <= event.ht40[0] < 250:
+            if event.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]: return True
+            if event.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]: return True
+        if 250 <= event.ht40[0] < 300:
+            if event.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]: return True
+            if event.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]: return True
+        if 300 <= event.ht40[0] < 350:
+            if event.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]: return True
+            if event.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]: return True
+        if 350 <= event.ht40[0] < 400:
+            if event.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]: return True
+            if event.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]: return True
+        if 400 <= event.ht40[0] < 800:
+            if event.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]: return True
+            if event.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]: return True
+        return False
+
+##__________________________________________________________________||
+class HT_SingleMuon(object):
+    def __call__(self, event):
+        if event.HLT_IsoMu17_eta2p1[0]: return True
+        if event.HLT_IsoMu20[0]: return True
+        if event.HLT_IsoMu24_eta2p1[0]: return True
+        return False
+
+##__________________________________________________________________||
+def event_selection_str(eventSelection):
+    out = event_selection_io(eventSelection)
+    return out.getvalue()
+
+##__________________________________________________________________||
+def event_selection_io(eventSelection, out = None, shown = [ ]):
+
+    if out is None:
+        import StringIO
+        out = StringIO.StringIO()
+
+    import inspect
+
+    def print_name(es):
+        ret = '<'
+        if hasattr(es, 'name'):
+            ret += str(es.name)
+        ret += (':')
+        if inspect.isfunction(es):
+            ret += es.__name__
+        else:
+            ret += es.__class__.__name__
+        ret += '>'
+        return ret
+        
+    out.write('##__________________________________________________________________||\n')
+    out.write('# ' + print_name(eventSelection) + '\n')
+    if inspect.isfunction(eventSelection):
+        if eventSelection not in shown:
+            out.write(inspect.getsource(eventSelection) + '\n')
+            shown.append(eventSelection)
+        return out
+
+    if hasattr(eventSelection, '__dict__') and eventSelection.__dict__:
+        out.write('# __dict__ = ')
+        out.write(str(eventSelection.__dict__) + '\n')
+
+    if eventSelection.__class__ not in shown:
+        out.write('\n')
+        out.write(inspect.getsource(eventSelection.__class__))
+        shown.append(eventSelection.__class__)
+
+    if isinstance(eventSelection, EventSelectionAll):
+        out.write('\n')
+        out.write('# ' + print_name(eventSelection) + ' = ')
+        out.write(' AND '.join([print_name(e) for e in eventSelection.selections]))
+        out.write('\n\n')
+        for e in eventSelection.selections:
+            event_selection_io(e, out)
+            out.write('\n')
+
+    if isinstance(eventSelection, EventSelectionAny):
+        out.write('\n')
+        out.write('# ' + print_name(eventSelection) + ' = ')
+        out.write(' OR '.join([print_name(e) for e in eventSelection.selections]))
+        out.write('\n\n')
+        for e in eventSelection.selections:
+            event_selection_io(e, out)
+            out.write('\n')
+
+    return out
+
+##__________________________________________________________________||
+def event_selection(datamc, hlt, pd, met_filters, metnohf = False):
+    """
+    Args:
+
+    datamc: "data" or "mc"
+
+    hlt: True or False
+
+    pd: True or False
+
+    met_filters: True or False
+
+    metnohf: True or False
+
+    """
+
+    eventSelection = EventSelectionAll(name = 'All')
+
+    if datamc == 'data' and hlt and pd:
+        eventSelection.add(PD_HLT())
+
+    if met_filters:
+        eventSelection.add(LambdaStr("ev : ev.Flag_goodVertices[0] == 1", name = 'goodVertex'))
+        eventSelection.add(LambdaStr("ev : ev.Flag_CSCTightHaloFilter[0] ==1", name = 'CSCTightHaloFilter'))
+        if datamc == 'data':
+            eventSelection.add(LambdaStr("ev : ev.hbheFilterNew[0] == 1", name = 'hbheFilterNew'))
+        else:
+            eventSelection.add(LambdaStr("ev : ev.Flag_HBHENoiseFilter[0] == 1", name = 'HBHENoiseFilter'))
+
+    ##______________________________________________________________||
+    # Baseline
+    eventSelection.add(LambdaStr("ev : ev.nJet40failedId[0] == 0", name = 'JetIDVeto'))
+    eventSelection.add(LambdaStr("ev : ev.nJet100[0] >= 1", name = 'nJetGTOne'))
+    eventSelection.add(LambdaStr("ev : ev.ht40[0] >= 200", name = 'HTGT200'))
+    eventSelection.add(LambdaStr("ev : ev.nJet40Fwd[0] == 0", name = 'FwJetVeto'))
+
+    cutflowFinals = EventSelectionAny(name = 'cutflowFinals')
+    eventSelection.add(cutflowFinals)
+
+    SignalFinal = EventSelectionAll(name = 'SignalFinal')
+    SingleMuFinal = EventSelectionAll(name = 'SingleMuFinal')
+    DoubleMuFinal = EventSelectionAll(name = 'DoubleMuFinal')
+    SingleEleFinal = EventSelectionAll(name = 'SingleEleFinal')
+    DoubleEleFinal = EventSelectionAll(name = 'DoubleEleFinal')
+    SinglePhotonFinal = EventSelectionAll(name = 'SinglePhotonFinal')
+    cutflowFinals.add(SignalFinal)
+    cutflowFinals.add(SingleMuFinal)
+    cutflowFinals.add(DoubleMuFinal)
+    cutflowFinals.add(SingleEleFinal)
+    cutflowFinals.add(DoubleEleFinal)
+    cutflowFinals.add(SinglePhotonFinal)
+
+    ##______________________________________________________________||
+    ## Signal
+    SignalFinal.add(LambdaStr("ev : ev.cutflow[0] == 'Signal'", name = 'cutflowSignal'))
+    if datamc == 'data' and pd:
+        SignalFinal.add(LambdaStr("ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')", name = 'PDMetHtmhtJetht'))
+    SignalFinal.add(LambdaStr("ev : ev.nIsoTracksVeto[0] <= 0", name = 'isoTrackVeto'))
+    if metnohf:
+        SignalFinal.add(LambdaStr("ev : ev.MhtOverMetNoHF[0] < 1.25", name = 'MhtOverMetNoHF'))
+    else:
+        SignalFinal.add(LambdaStr("ev : ev.MhtOverMet[0] < 1.25", name = 'MhtOverMetNoHF'))
+
+    SignalBintypes = EventSelectionAny(name = 'SignalBintypes')
+    SignalFinal.add(SignalBintypes)
+
+    SignalMonojet = EventSelectionAll(name = 'SignalMonojet')
+    SignalAsymjet = EventSelectionAll(name = 'SignalAsymjet')
+    SignalSymjet = EventSelectionAll(name = 'SignalSymjet')
+    SignalHighht = EventSelectionAll(name = 'SignalHighht')
+
+    SignalBintypes.add(SignalMonojet)
+    SignalBintypes.add(SignalAsymjet)
+    SignalBintypes.add(SignalSymjet)
+    SignalBintypes.add(SignalHighht)
+
+    ## Signal - monojet
+    SignalMonojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
+    if datamc == 'data' and pd:
+        SignalMonojet.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'MET'", name = 'PD_MET'))
+
+    ## Signal - asymjet
+    SignalAsymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
+    if datamc == 'data' and pd:
+        SignalAsymjet.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'HTMHT'", name = 'PD_HTMHT'))
+    if datamc == 'data' and hlt:
+        SignalAsymjet.add(HT_HLTAlphaT())
+    SignalAsymjet.add(AlphaTCut())
+    SignalAsymjet.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
+
+    ## Signal - symjet
+    SignalSymjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
+    if datamc == 'data' and pd:
+        SignalSymjet.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'HTMHT'", name = 'PD_HTMHT'))
+    if datamc == 'data' and hlt:
+        SignalSymjet.add(HT_HLTAlphaT())
+    SignalSymjet.add(AlphaTCut())
+    SignalSymjet.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
+
+    ## Signal - highht
+    SignalHighht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
+    if datamc == 'data' and pd:
+        SignalHighht.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'JetHT'", name = 'PD_JetHT'))
+    SignalHighht.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
+    SignalHighht.add(LambdaStr("ev : 130 <= ev.mht40_pt[0]", name = 'MHTGT130'))
+
+    ##______________________________________________________________||
+    ## SingleMu
+    SingleMuFinal.add(LambdaStr("ev : ev.cutflow[0] == 'SingleMu'", name = 'cutflowSingleMu'))
+    if hlt:
+        SingleMuFinal.add(HT_SingleMuon())
+    if datamc == 'data' and pd:
+        SingleMuFinal.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleMuon'", name = 'PDSingleMuon'))
+    SingleMuFinal.add(LambdaStr("ev : ev.nIsoTracksNoMuVeto[0] <= 0", name = 'isoTrackNoMuVeto'))
+    if metnohf:
+        SingleMuFinal.add(LambdaStr("ev : 30 <= ev.mtwNoHF[0] < 125", name = 'mtwNoHF'))
+    else:
+        SingleMuFinal.add(LambdaStr("ev : 30 <= ev.mtw[0] < 125", name = 'mtwNoHF'))
+    SingleMuFinal.add(LambdaStr("ev : ev.minDelRJetMu[0] >= 0.5", name = 'minDelRJetMu'))
+
+    
+    ##______________________________________________________________||
+    ## DoubleMu
+    DoubleMuFinal.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleMu'", name = 'cutflowDoubleMu'))
+    if hlt:
+        DoubleMuFinal.add(HT_SingleMuon())
+    if datamc == 'data' and pd:
+        DoubleMuFinal.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleMuon'", name = 'PDSingleMuon'))
+    DoubleMuFinal.add(LambdaStr("ev : ev.nIsoTracksNoMuVeto[0] <= 0", name = 'isoTrackNoMuVeto'))
+    DoubleMuFinal.add(LambdaStr("ev : 66.2 <= ev.mll[0] < 116.2", name = 'mll'))
+    DoubleMuFinal.add(LambdaStr("ev : ev.minDelRJetMu[0] >= 0.5", name = 'minDelRJetMu'))
+
+    ##______________________________________________________________||
+    # SingleEle
+    SingleEleFinal.add(LambdaStr("ev : ev.cutflow[0] == 'SingleEle'", name = 'cutflowSingleEle'))
+    if datamc == 'data' and pd:
+        SingleEleFinal.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleElectron'", name = 'PDSingleElectron'))
+    SingleEleFinal.add(LambdaStr("ev : ev.nIsoTracksNoEleVeto[0] <= 0", name = 'isoTrackNoEleVeto'))
+    if metnohf:
+        SingleEleFinal.add(LambdaStr("ev : 30 <= ev.mtwNoHF[0] < 125", name = 'mtwNoHF'))
+    else:
+        SingleEleFinal.add(LambdaStr("ev : 30 <= ev.mtw[0] < 125", name = 'mtwNoHF'))
+    SingleEleFinal.add(LambdaStr("ev : ev.minDelRJetEle[0] >= 0.5", name = 'minDelRJetEle'))
+
+    ##______________________________________________________________||
+    # DoubleEle
+    DoubleEleFinal.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleEle'", name = 'cutflowDoubleEle'))
+    if datamc == 'data' and pd:
+        DoubleEleFinal.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleElectron'", name = 'PDSingleElectron'))
+    DoubleEleFinal.add(LambdaStr("ev : ev.nIsoTracksNoEleVeto[0] <= 0", name = 'isoTrackNoEleVeto'))
+    DoubleEleFinal.add(LambdaStr("ev : 66.2 <= ev.mll[0] < 116.2", name = 'mll'))
+    DoubleEleFinal.add(LambdaStr("ev : ev.minDelRJetEle[0] >= 0.5", name = 'minDelRJetEle'))
+
+    ##______________________________________________________________||
+    # SinglePhoton
+    SinglePhotonFinal.add(LambdaStr("ev : ev.cutflow[0] == 'SinglePhoton'", name = 'cutflowSinglePhoton'))
+    if datamc == 'data' and pd:
+        SinglePhotonFinal.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SinglePhoton'", name = 'PDSinglePhoton'))
+    SinglePhotonFinal.add(LambdaStr("ev : ev.nIsoTracksVeto[0] <= 0", name = 'isoTrackVeto'))
+    SinglePhotonFinal.add(LambdaStr("ev : ev.minDelRJetPhoton[0] >= 1.0", name = 'minDelRJetPhoton'))
+
+    SinglePhotonBintypes = EventSelectionAny(name = 'SinglePhotonBintypes')
+    SinglePhotonFinal.add(SinglePhotonBintypes)
+
+    SinglePhotonMonojet = EventSelectionAll(name = 'SinglePhotonMonojet')
+    SinglePhotonAsymjet = EventSelectionAll(name = 'SinglePhotonAsymjet')
+    SinglePhotonSymjet = EventSelectionAll(name = 'SinglePhotonSymjet')
+    SinglePhotonHighht = EventSelectionAll(name = 'SinglePhotonHighht')
+
+    SinglePhotonBintypes.add(SinglePhotonMonojet)
+    SinglePhotonBintypes.add(SinglePhotonAsymjet)
+    SinglePhotonBintypes.add(SinglePhotonSymjet)
+    SinglePhotonBintypes.add(SinglePhotonHighht)
+
+    ## SinglePhoton - monojet
+    SinglePhotonMonojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
+
+    ## SinglePhoton - asymjet
+    SinglePhotonAsymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
+    SinglePhotonAsymjet.add(AlphaTCut())
+
+    ## SinglePhoton - symjet
+    SinglePhotonSymjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
+    SinglePhotonSymjet.add(AlphaTCut())
+
+    ## SinglePhoton - highht
+    SinglePhotonHighht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
+    SinglePhotonHighht.add(LambdaStr("ev : 130 <= ev.mht40_pt[0]", name = 'MHTGT130'))
+
+    return eventSelection
+
+##__________________________________________________________________||
