@@ -409,6 +409,7 @@ def event_selection(datamc, hlt, pd, met_filters, metnohf = False):
     ##______________________________________________________________||
     ## SingleMu
     SingleMuFinal.add(LambdaStr("ev : ev.cutflow[0] == 'SingleMu'", name = 'cutflowSingleMu'))
+    SingleMuFinal.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
     if hlt:
         SingleMuFinal.add(HT_SingleMuon())
     if datamc == 'data' and pd:
@@ -435,6 +436,8 @@ def event_selection(datamc, hlt, pd, met_filters, metnohf = False):
     ##______________________________________________________________||
     # SingleEle
     SingleEleFinal.add(LambdaStr("ev : ev.cutflow[0] == 'SingleEle'", name = 'cutflowSingleEle'))
+    SingleEleFinal.add(LambdaStr("ev : -1.479 < ev.ele_eta[0] < 1.479", name = 'eleBarrel'))
+    SingleEleFinal.add(LambdaStr("ev : ev.ele_relIso03[0] < 0.069537", name = 'eleRelIso03'))
     if datamc == 'data' and pd:
         SingleEleFinal.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleElectron'", name = 'PDSingleElectron'))
     SingleEleFinal.add(LambdaStr("ev : ev.nIsoTracksNoEleVeto[0] <= 0", name = 'isoTrackNoEleVeto'))
