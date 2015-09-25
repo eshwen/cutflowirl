@@ -389,10 +389,10 @@ def event_selection(datamc, level,
     SignalLooseSymjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
 
     ## Signal loose - highht
-    SignalHighht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
+    SignalLooseHighht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
     if datamc == 'data' and pd:
-        SignalHighht.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'JetHT'", name = 'PD_JetHT'))
-    SignalHighht.add(LambdaStr("ev : 130 <= ev.mht40_pt[0]", name = 'MHTGT130'))
+        SignalLooseHighht.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'JetHT'", name = 'PD_JetHT'))
+    SignalLooseHighht.add(LambdaStr("ev : 130 <= ev.mht40_pt[0]", name = 'MHTGT130'))
 
     ##______________________________________________________________||
     ## SingleMu loose
@@ -425,7 +425,7 @@ def event_selection(datamc, level,
         SinglePhotonLoose.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SinglePhoton'", name = 'PDSinglePhoton'))
 
     SinglePhotonLooseBintypes = EventSelectionAny(name = 'SinglePhotonLooseBintypes')
-    SinglePhotonLoose.add(SinglePhotonBintypes)
+    SinglePhotonLoose.add(SinglePhotonLooseBintypes)
 
     SinglePhotonLooseMonojet = EventSelectionAll(name = 'SinglePhotonLooseMonojet')
     SinglePhotonLooseAsymjet = EventSelectionAll(name = 'SinglePhotonLooseAsymjet')
@@ -445,12 +445,12 @@ def event_selection(datamc, level,
     SinglePhotonLooseAsymjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
 
     ## SinglePhoton loose- symjet
-    SinglePhotonSymjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
+    SinglePhotonLooseSymjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
     SinglePhotonLooseSymjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
 
     ## SinglePhoton loose- highht
-    SinglePhotonHighht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
-    SignalPhotonHighht.add(LambdaStr("ev : 130 <= ev.mht40_pt[0]", name = 'MHTGT130'))
+    SinglePhotonLooseHighht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
+    SinglePhotonLooseHighht.add(LambdaStr("ev : 130 <= ev.mht40_pt[0]", name = 'MHTGT130'))
 
     if level == 'loose': return eventSelection
 
