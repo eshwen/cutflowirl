@@ -466,6 +466,13 @@ def event_selection(datamc, level,
     ##______________________________________________________________||
     eventSelection.add(LambdaStr("ev : ev.nJet40Fwd[0] == 0", name = 'FwJetVeto'))
     eventSelection.add(LambdaStr("ev : ev.nJet40failedId[0] == 0", name = 'JetIDVeto'))
+    eventSelection.add(LambdaStr("ev : ev.ht40[0] >= 200", name = 'HTGT200'))
+
+    ##______________________________________________________________||
+    if metnohf:
+        eventSelection.add(LambdaStr("ev : ev.MhtOverMetNoXNoHF[0] < 1.25", name = 'MhtOverMetNoXNoHF'))
+    else:
+        eventSelection.add(LambdaStr("ev : ev.MhtOverMetNoX] < 1.25", name = 'MhtOverMetNoX'))
 
     ##______________________________________________________________||
     cutflowsFinal = EventSelectionAny(name = 'cutflowsFinal')
@@ -488,10 +495,6 @@ def event_selection(datamc, level,
     ## Signal final
     SignalFinal.add(LambdaStr("ev : ev.cutflow[0] == 'Signal'", name = 'cutflowSignal'))
     SignalFinal.add(LambdaStr("ev : ev.nIsoTracksVeto[0] <= 0", name = 'isoTrackVeto'))
-    if metnohf:
-        SignalFinal.add(LambdaStr("ev : ev.MhtOverMetNoHF[0] < 1.25", name = 'MhtOverMetNoHF'))
-    else:
-        SignalFinal.add(LambdaStr("ev : ev.MhtOverMet[0] < 1.25", name = 'MhtOverMetNoHF'))
 
     SignalBintypes = EventSelectionAny(name = 'SignalBintypes')
     SignalFinal.add(SignalBintypes)
@@ -606,7 +609,6 @@ def event_selection(datamc, level,
 
     ## SinglePhoton final - highht
     SinglePhotonFinalHighht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
-    SinglePhotonFinalHighht.add(LambdaStr("ev : 130 <= ev.mht40_pt[0]", name = 'MHTGT130'))
 
     'final'
     return eventSelection
