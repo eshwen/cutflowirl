@@ -328,6 +328,7 @@ def event_selection(datamc, level,
 
     ##______________________________________________________________||
     # Baseline
+    eventSelection.add(LambdaStr("ev : ev.nVert[0] >= 1", name = 'nVertGTOne'))
     eventSelection.add(LambdaStr("ev : ev.nJet100[0] >= 1", name = 'nJetGTOne'))
     eventSelection.add(LambdaStr("ev : ev.ht40[0] >= 150", name = 'HTGT150'))
 
