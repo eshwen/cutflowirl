@@ -299,7 +299,7 @@ def event_selection_io(eventSelection, out = None, shown = [ ]):
 
     return out
 
-def SignalLooseSelection():
+def SignalLooseSelection(datamc,pd,hlt):
 
     SignalLoose = EventSelectionAll(name = 'SignalLoose')
 
@@ -348,7 +348,7 @@ def SignalLooseSelection():
 
     return SignalLoose
 
-def SignalFinalSelection():
+def SignalFinalSelection(datamc,pd,hlt):
 
     SignalFinal = EventSelectionAll(name = 'SignalFinal')
 
@@ -393,7 +393,7 @@ def SignalFinalSelection():
 
     return SignalFinal
  
-def SingleMuLooseSelection():
+def SingleMuLooseSelection(datamc,pd,hlt):
 
     SingleMuLoose = EventSelectionAll(name = 'SingleMuLoose')
 
@@ -405,7 +405,7 @@ def SingleMuLooseSelection():
 
     return SingleMuLoose
 
-def SingleMuFinalSelection():
+def SingleMuFinalSelection(datamc,pd,hlt):
 
     SingleMuFinal = EventSelectionAll(name = 'SingleMuFinal')
 
@@ -425,7 +425,7 @@ def SingleMuFinalSelection():
     return SingleMuFinal
 
 
-def DoubleMuLooseSelection():
+def DoubleMuLooseSelection(datamc,pd,hlt):
 
     DoubleMuLoose = EventSelectionAll(name = 'DoubleMuLoose')
 
@@ -437,7 +437,7 @@ def DoubleMuLooseSelection():
 
     return DoubleMuLoose
 
-def DoubleMuFinalSelection():
+def DoubleMuFinalSelection(datamc,pd,hlt):
 
     DoubleMuFinal = EventSelectionAll(name = 'DoubleMuFinal')
 
@@ -454,7 +454,7 @@ def DoubleMuFinalSelection():
 
     return DoubleMuFinal
 
-def SingleEleLooseSelection():
+def SingleEleLooseSelection(datamc,pd,hlt):
 
     SingleEleLoose = EventSelectionAll(name = 'SingleEleLoose')
 
@@ -466,7 +466,7 @@ def SingleEleLooseSelection():
 
     return SingleEleLoose
 
-def SingleEleFinalSelection():
+def SingleEleFinalSelection(datamc,pd,hlt):
 
     SingleEleFinal = EventSelectionAll(name = 'SingleEleFinal')
 
@@ -484,7 +484,7 @@ def SingleEleFinalSelection():
 
     return SingleEleFinal 
 
-def DoubleEleLooseSelection():
+def DoubleEleLooseSelection(datamc,pd,hlt):
 
     DoubleEleLoose = EventSelectionAll(name = 'DoubleEleLoose')
 
@@ -496,7 +496,7 @@ def DoubleEleLooseSelection():
 
     return DoubleEleLoose
 
-def DoubleEleFinalSelection():
+def DoubleEleFinalSelection(datamc,pd,hlt):
 
     DoubleEleFinal = EventSelectionAll(name = 'DoubleEleFinal')
 
@@ -513,7 +513,7 @@ def DoubleEleFinalSelection():
 
     return DoubleEleFinal
 
-def SinglePhotonLooseSelection():
+def SinglePhotonLooseSelection(datamc,pd,hlt):
 
     SinglePhotonLoose = EventSelectionAll(name = 'SinglePhotonLoose')
 
@@ -553,7 +553,7 @@ def SinglePhotonLooseSelection():
 
     return SinglePhotonLoose
 
-def SinglePhotonFinalSelection():
+def SinglePhotonFinalSelection(datamc,pd,hlt):
 
     SinglePhotonFinal = EventSelectionAll(name = 'SinglePhotonFinal')
 
@@ -633,12 +633,12 @@ def event_selection(datamc, level,
     cutflowsLoose = EventSelectionAny(name = 'cutflowsLoose')
     eventSelection.add(cutflowsLoose)
 
-    SignalLoose = SignalLooseSelection()
-    SingleMuLoose = SingleMuLooseSelection()
-    DoubleMuLoose = DoubleMuLooseSelection()
-    SingleEleLoose = SingleEleLooseSelection()
-    DoubleEleLoose = DoubleEleLooseSelection()
-    SinglePhotonLoose = SinglePhotonLooseSelection()
+    SignalLoose = SignalLooseSelection(datamc,pd,hlt)
+    SingleMuLoose = SingleMuLooseSelection(datamc,pd,hlt)
+    DoubleMuLoose = DoubleMuLooseSelection(datamc,pd,hlt)
+    SingleEleLoose = SingleEleLooseSelection(datamc,pd,hlt)
+    DoubleEleLoose = DoubleEleLooseSelection(datamc,pd,hlt)
+    SinglePhotonLoose = SinglePhotonLooseSelection(datamc,pd,hlt)
     cutflowsLoose.add(SignalLoose)
     cutflowsLoose.add(SingleMuLoose)
     cutflowsLoose.add(DoubleMuLoose)
@@ -672,12 +672,12 @@ def event_selection(datamc, level,
     cutflowsFinal = EventSelectionAny(name = 'cutflowsFinal')
     eventSelection.add(cutflowsFinal)
 
-    SignalFinal = SignalFinalSelection()
-    SingleMuFinal = SingleMuFinalSelection()
-    DoubleMuFinal = DoubleMuFinalSelection()
-    SingleEleFinal = SingleEleFinalSelection()
-    DoubleEleFinal = DoubleEleFinalSelection()
-    SinglePhotonFinal = SinglePhotonFinalSelection()
+    SignalFinal = SignalFinalSelection(datamc,pd,hlt)
+    SingleMuFinal = SingleMuFinalSelection(datamc,pd,hlt)
+    DoubleMuFinal = DoubleMuFinalSelection(datamc,pd,hlt)
+    SingleEleFinal = SingleEleFinalSelection(datamc,pd,hlt)
+    DoubleEleFinal = DoubleEleFinalSelection(datamc,pd,hlt)
+    SinglePhotonFinal = SinglePhotonFinalSelection(datamc,pd,hlt)
     cutflowsFinal.add(SignalFinal)
     cutflowsFinal.add(SingleMuFinal)
     cutflowsFinal.add(DoubleMuFinal)
