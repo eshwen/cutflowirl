@@ -472,7 +472,7 @@ def event_selection(datamc, level,
     if metnohf:
         eventSelection.add(LambdaStr("ev : ev.MhtOverMetNoXNoHF[0] < 1.25", name = 'MhtOverMetNoXNoHF'))
     else:
-        eventSelection.add(LambdaStr("ev : ev.MhtOverMetNoX] < 1.25", name = 'MhtOverMetNoX'))
+        eventSelection.add(LambdaStr("ev : ev.MhtOverMetNoX[0] < 1.25", name = 'MhtOverMetNoX'))
 
     ##______________________________________________________________||
     cutflowsFinal = EventSelectionAny(name = 'cutflowsFinal')
