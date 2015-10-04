@@ -458,6 +458,7 @@ def event_selection(datamc, level,
     if met_filters:
         eventSelection.add(LambdaStr("ev : ev.Flag_goodVertices[0] == 1", name = 'goodVertex'))
         eventSelection.add(LambdaStr("ev : ev.Flag_CSCTightHaloFilter[0] ==1", name = 'CSCTightHaloFilter'))
+        eventSelection.add(LambdaStr("ev : ev.Flag_eeBadScFilter[0] ==1", name = 'CSCTightHaloFilter'))
         if datamc == 'data':
             eventSelection.add(LambdaStr("ev : ev.hbheFilterNew[0] == 1", name = 'hbheFilterNew'))
         else:
