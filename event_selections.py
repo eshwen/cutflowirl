@@ -229,7 +229,7 @@ class HT_HLTAlphaT(object):
         return False
 
 ##__________________________________________________________________||
-class HT_SingleMuon(object):
+class HLT_SingleMuon(object):
     def __call__(self, event):
         if event.HLT_IsoMu17_eta2p1[0]: return True
         if event.HLT_IsoMu20[0]: return True
@@ -414,12 +414,12 @@ def SingleMuFinalSelection(datamc,pd,hlt,metnohf):
     SingleMuFinal.add(LambdaStr("ev : ev.cutflow[0] == 'SingleMu'", name = 'cutflowSingleMu'))
     SingleMuFinal.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
     if hlt:
-        SingleMuFinal.add(HT_SingleMuon())
+        SingleMuFinal.add(HLT_SingleMuon())
     SingleMuFinal.add(LambdaStr("ev : ev.nIsoTracksNoMuVeto[0] <= 0", name = 'isoTrackNoMuVeto'))
     if metnohf:
         SingleMuFinal.add(LambdaStr("ev : 30 <= ev.mtwNoHF[0] < 125", name = 'mtwNoHF'))
     else:
-        SingleMuFinal.add(LambdaStr("ev : 30 <= ev.mtw[0] < 125", name = 'mtwNoHF'))
+        SingleMuFinal.add(LambdaStr("ev : 30 <= ev.mtw[0] < 125", name = 'mtw'))
     SingleMuFinal.add(LambdaStr("ev : ev.minDelRJetMu[0] >= 0.5", name = 'minDelRJetMu'))
 
     return SingleMuFinal
@@ -447,7 +447,7 @@ def DoubleMuFinalSelection(datamc,pd,hlt):
     DoubleMuFinal.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
     DoubleMuFinal.add(LambdaStr("ev : ev.muon_relIso03[1] < 0.12", name = 'relIso03LT0p12'))
     if hlt:
-        DoubleMuFinal.add(HT_SingleMuon())
+        DoubleMuFinal.add(HLT_SingleMuon())
     DoubleMuFinal.add(LambdaStr("ev : ev.nIsoTracksNoMuVeto[0] <= 0", name = 'isoTrackNoMuVeto'))
     DoubleMuFinal.add(LambdaStr("ev : 66.2 <= ev.mll[0] < 116.2", name = 'mll'))
     DoubleMuFinal.add(LambdaStr("ev : ev.minDelRJetMu[0] >= 0.5", name = 'minDelRJetMu'))
@@ -479,7 +479,7 @@ def SingleEleFinalSelection(datamc,pd,hlt,metnohf):
     if metnohf:
         SingleEleFinal.add(LambdaStr("ev : 30 <= ev.mtwNoHF[0] < 125", name = 'mtwNoHF'))
     else:
-        SingleEleFinal.add(LambdaStr("ev : 30 <= ev.mtw[0] < 125", name = 'mtwNoHF'))
+        SingleEleFinal.add(LambdaStr("ev : 30 <= ev.mtw[0] < 125", name = 'mtw'))
     SingleEleFinal.add(LambdaStr("ev : ev.minDelRJetEle[0] >= 0.5", name = 'minDelRJetEle'))
 
     return SingleEleFinal 
