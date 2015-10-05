@@ -47,11 +47,14 @@ class Binning(object):
 
         self._valid = valid
 
+        self._zip = zip(self.bins, self.lows, self.ups)
+
     def __call__(self, val):
         if not self._valid(val): return None
         if val < self.lows[0]: return self.underflow_bin
         if self.ups[-1] <= val: return self.overflow_bin
-        return [b for b, l, u in zip(self.bins, self.lows, self.ups) if l <= val < u][0]
+        for b, l, u in self._zip:
+            if l <= val < u: return b
 
     def next(self, bin):
         if self.lowedge:
