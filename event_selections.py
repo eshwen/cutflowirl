@@ -621,18 +621,12 @@ def event_selection(datamc, level,
     cutflowsLoose = EventSelectionAny(name = 'cutflowsLoose')
     eventSelection.add(cutflowsLoose)
 
-    SignalLoose = SignalLooseSelection(datamc, pd, hlt)
-    SingleMuLoose = SingleMuLooseSelection(datamc, pd, hlt)
-    DoubleMuLoose = DoubleMuLooseSelection(datamc, pd, hlt)
-    SingleEleLoose = SingleEleLooseSelection(datamc, pd, hlt)
-    DoubleEleLoose = DoubleEleLooseSelection(datamc, pd, hlt)
-    SinglePhotonLoose = SinglePhotonLooseSelection(datamc, pd, hlt)
-    cutflowsLoose.add(SignalLoose)
-    cutflowsLoose.add(SingleMuLoose)
-    cutflowsLoose.add(DoubleMuLoose)
-    cutflowsLoose.add(SingleEleLoose)
-    cutflowsLoose.add(DoubleEleLoose)
-    cutflowsLoose.add(SinglePhotonLoose)
+    cutflowsLoose.add(SignalLooseSelection(datamc, pd, hlt))
+    cutflowsLoose.add(SingleMuLooseSelection(datamc, pd, hlt))
+    cutflowsLoose.add(DoubleMuLooseSelection(datamc, pd, hlt))
+    cutflowsLoose.add(SingleEleLooseSelection(datamc, pd, hlt))
+    cutflowsLoose.add(DoubleEleLooseSelection(datamc, pd, hlt))
+    cutflowsLoose.add(SinglePhotonLooseSelection(datamc, pd, hlt))
 
     if level == 'loose': return eventSelection
 
@@ -660,18 +654,12 @@ def event_selection(datamc, level,
     cutflowsFinal = EventSelectionAny(name = 'cutflowsFinal')
     eventSelection.add(cutflowsFinal)
 
-    SignalFinal = SignalFinalSelection(datamc, pd, hlt)
-    SingleMuFinal = SingleMuFinalSelection(datamc, pd, hlt, metnohf)
-    DoubleMuFinal = DoubleMuFinalSelection(datamc, pd, hlt)
-    SingleEleFinal = SingleEleFinalSelection(datamc, pd, hlt, metnohf)
-    DoubleEleFinal = DoubleEleFinalSelection(datamc, pd, hlt)
-    SinglePhotonFinal = SinglePhotonFinalSelection(datamc, pd, hlt)
-    cutflowsFinal.add(SignalFinal)
-    cutflowsFinal.add(SingleMuFinal)
-    cutflowsFinal.add(DoubleMuFinal)
-    cutflowsFinal.add(SingleEleFinal)
-    cutflowsFinal.add(DoubleEleFinal)
-    cutflowsFinal.add(SinglePhotonFinal)
+    cutflowsFinal.add(SignalFinalSelection(datamc, pd, hlt))
+    cutflowsFinal.add(SingleMuFinalSelection(datamc, pd, hlt, metnohf))
+    cutflowsFinal.add(DoubleMuFinalSelection(datamc, pd, hlt))
+    cutflowsFinal.add(SingleEleFinalSelection(datamc, pd, hlt, metnohf))
+    cutflowsFinal.add(DoubleEleFinalSelection(datamc, pd, hlt))
+    cutflowsFinal.add(SinglePhotonFinalSelection(datamc, pd, hlt))
 
     'final'
     return eventSelection
