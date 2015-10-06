@@ -436,9 +436,10 @@ es_arg002='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -551,9 +552,10 @@ es_arg003='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -920,9 +922,10 @@ es_arg006='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -1045,9 +1048,10 @@ es_arg007='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -1392,9 +1396,10 @@ es_arg010='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -1511,9 +1516,10 @@ es_arg011='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -1895,9 +1901,10 @@ es_arg014='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -2025,9 +2032,10 @@ es_arg015='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -2368,9 +2376,10 @@ es_arg102='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -2483,9 +2492,10 @@ es_arg103='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -2822,9 +2832,10 @@ es_arg106='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -2937,9 +2948,10 @@ es_arg107='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -3280,9 +3292,10 @@ es_arg110='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -3397,9 +3410,10 @@ es_arg111='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -3742,9 +3756,10 @@ es_arg114='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
@@ -3859,9 +3874,10 @@ es_arg115='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
-  <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
-  <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-  <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <MetFilters:EventSelectionAll>
+    <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
+    <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
   <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
   <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200

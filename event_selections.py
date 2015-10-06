@@ -311,6 +311,20 @@ def BaselineSelection():
     return ret
 
 ##__________________________________________________________________||
+def MetFilters(datamc):
+
+    ret = EventSelectionAll(name = 'MetFilters')
+
+    ret.add(LambdaStr("ev : ev.Flag_goodVertices[0] == 1", name = 'goodVertex'))
+    ret.add(LambdaStr("ev : ev.Flag_CSCTightHaloFilter[0] ==1", name = 'CSCTightHaloFilter'))
+    if datamc == 'data':
+        ret.add(LambdaStr("ev : ev.hbheFilterNew[0] == 1", name = 'hbheFilterNew'))
+    else:
+        ret.add(LambdaStr("ev : ev.Flag_HBHENoiseFilter[0] == 1", name = 'HBHENoiseFilter'))
+
+    return ret
+
+##__________________________________________________________________||
 def SignalLooseSelection(datamc, pd, hlt):
 
     ret = EventSelectionAll(name = 'SignalLoose')
@@ -641,12 +655,7 @@ def event_selection(datamc, level,
 
     ##______________________________________________________________||
     if met_filters:
-        eventSelection.add(LambdaStr("ev : ev.Flag_goodVertices[0] == 1", name = 'goodVertex'))
-        eventSelection.add(LambdaStr("ev : ev.Flag_CSCTightHaloFilter[0] ==1", name = 'CSCTightHaloFilter'))
-        if datamc == 'data':
-            eventSelection.add(LambdaStr("ev : ev.hbheFilterNew[0] == 1", name = 'hbheFilterNew'))
-        else:
-            eventSelection.add(LambdaStr("ev : ev.Flag_HBHENoiseFilter[0] == 1", name = 'HBHENoiseFilter'))
+        eventSelection.add(MetFilters(datamc = datamc))
 
     ##______________________________________________________________||
     eventSelection.add(LambdaStr("ev : ev.nJet40Fwd[0] == 0", name = 'FwJetVeto'))
