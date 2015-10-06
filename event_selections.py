@@ -299,11 +299,11 @@ def event_selection_io(eventSelection, out = None, shown = [ ]):
 
     return out
 
+##__________________________________________________________________||
 def SignalLooseSelection(datamc,pd,hlt):
 
     SignalLoose = EventSelectionAll(name = 'SignalLoose')
 
-    ##______________________________________________________________||
     ## Signal loose
     SignalLoose.add(LambdaStr("ev : ev.cutflow[0] == 'Signal'", name = 'cutflowSignal'))
     if datamc == 'data' and pd:
@@ -348,11 +348,11 @@ def SignalLooseSelection(datamc,pd,hlt):
 
     return SignalLoose
 
+##__________________________________________________________________||
 def SignalFinalSelection(datamc,pd,hlt):
 
     SignalFinal = EventSelectionAll(name = 'SignalFinal')
 
-    ##______________________________________________________________||
     ## Signal final
     SignalFinal.add(LambdaStr("ev : ev.cutflow[0] == 'Signal'", name = 'cutflowSignal'))
     SignalFinal.add(LambdaStr("ev : ev.nIsoTracksVeto[0] <= 0", name = 'isoTrackVeto'))
@@ -393,11 +393,11 @@ def SignalFinalSelection(datamc,pd,hlt):
 
     return SignalFinal
  
+##__________________________________________________________________||
 def SingleMuLooseSelection(datamc,pd,hlt):
 
     SingleMuLoose = EventSelectionAll(name = 'SingleMuLoose')
 
-    ##______________________________________________________________||
     ## SingleMu loose
     SingleMuLoose.add(LambdaStr("ev : ev.cutflow[0] == 'SingleMu'", name = 'cutflowSingleMu'))
     if datamc == 'data' and pd:
@@ -405,11 +405,11 @@ def SingleMuLooseSelection(datamc,pd,hlt):
 
     return SingleMuLoose
 
+##__________________________________________________________________||
 def SingleMuFinalSelection(datamc,pd,hlt,metnohf):
 
     SingleMuFinal = EventSelectionAll(name = 'SingleMuFinal')
 
-    ##______________________________________________________________||
     ## SingleMu final
     SingleMuFinal.add(LambdaStr("ev : ev.cutflow[0] == 'SingleMu'", name = 'cutflowSingleMu'))
     SingleMuFinal.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
@@ -425,11 +425,11 @@ def SingleMuFinalSelection(datamc,pd,hlt,metnohf):
     return SingleMuFinal
 
 
+##__________________________________________________________________||
 def DoubleMuLooseSelection(datamc,pd,hlt):
 
     DoubleMuLoose = EventSelectionAll(name = 'DoubleMuLoose')
 
-    ##______________________________________________________________||
     ## DoubleMu loose
     DoubleMuLoose.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleMu'", name = 'cutflowDoubleMu'))
     if datamc == 'data' and pd:
@@ -437,11 +437,11 @@ def DoubleMuLooseSelection(datamc,pd,hlt):
 
     return DoubleMuLoose
 
+##__________________________________________________________________||
 def DoubleMuFinalSelection(datamc,pd,hlt):
 
     DoubleMuFinal = EventSelectionAll(name = 'DoubleMuFinal')
 
-    ##______________________________________________________________||
     ## DoubleMu final
     DoubleMuFinal.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleMu'", name = 'cutflowDoubleMu'))
     DoubleMuFinal.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
@@ -454,11 +454,11 @@ def DoubleMuFinalSelection(datamc,pd,hlt):
 
     return DoubleMuFinal
 
+##__________________________________________________________________||
 def SingleEleLooseSelection(datamc,pd,hlt):
 
     SingleEleLoose = EventSelectionAll(name = 'SingleEleLoose')
 
-    ##______________________________________________________________||
     # SingleEle loose
     SingleEleLoose.add(LambdaStr("ev : ev.cutflow[0] == 'SingleEle'", name = 'cutflowSingleEle'))
     if datamc == 'data' and pd:
@@ -466,11 +466,11 @@ def SingleEleLooseSelection(datamc,pd,hlt):
 
     return SingleEleLoose
 
+##__________________________________________________________________||
 def SingleEleFinalSelection(datamc,pd,hlt,metnohf):
 
     SingleEleFinal = EventSelectionAll(name = 'SingleEleFinal')
 
-    ##______________________________________________________________||
     # SingleEle final
     SingleEleFinal.add(LambdaStr("ev : ev.cutflow[0] == 'SingleEle'", name = 'cutflowSingleEle'))
     SingleEleFinal.add(LambdaStr("ev : -1.479 < ev.ele_eta[0] < 1.479", name = 'eleBarrel'))
@@ -484,11 +484,11 @@ def SingleEleFinalSelection(datamc,pd,hlt,metnohf):
 
     return SingleEleFinal 
 
+##__________________________________________________________________||
 def DoubleEleLooseSelection(datamc,pd,hlt):
 
     DoubleEleLoose = EventSelectionAll(name = 'DoubleEleLoose')
 
-    ##______________________________________________________________||
     # DoubleEle loose
     DoubleEleLoose.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleEle'", name = 'cutflowDoubleEle'))
     if datamc == 'data' and pd:
@@ -496,11 +496,11 @@ def DoubleEleLooseSelection(datamc,pd,hlt):
 
     return DoubleEleLoose
 
+##__________________________________________________________________||
 def DoubleEleFinalSelection(datamc,pd,hlt):
 
     DoubleEleFinal = EventSelectionAll(name = 'DoubleEleFinal')
 
-    ##______________________________________________________________||
     # DoubleEle final
     DoubleEleFinal.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleEle'", name = 'cutflowDoubleEle'))
     DoubleEleFinal.add(LambdaStr("ev : -1.479 < ev.ele_eta[0] < 1.479", name = 'eleBarrel'))
@@ -513,11 +513,11 @@ def DoubleEleFinalSelection(datamc,pd,hlt):
 
     return DoubleEleFinal
 
+##__________________________________________________________________||
 def SinglePhotonLooseSelection(datamc,pd,hlt):
 
     SinglePhotonLoose = EventSelectionAll(name = 'SinglePhotonLoose')
 
-    ##______________________________________________________________||
     # SinglePhoton loose
     SinglePhotonLoose.add(LambdaStr("ev : ev.cutflow[0] == 'SinglePhoton'", name = 'cutflowSinglePhoton'))
     if datamc == 'data' and pd:
@@ -553,11 +553,11 @@ def SinglePhotonLooseSelection(datamc,pd,hlt):
 
     return SinglePhotonLoose
 
+##__________________________________________________________________||
 def SinglePhotonFinalSelection(datamc,pd,hlt):
 
     SinglePhotonFinal = EventSelectionAll(name = 'SinglePhotonFinal')
 
-    ##______________________________________________________________||
     # SinglePhoton final
     SinglePhotonFinal.add(LambdaStr("ev : ev.cutflow[0] == 'SinglePhoton'", name = 'cutflowSinglePhoton'))
     SinglePhotonFinal.add(LambdaStr("ev : ev.nIsoTracksVeto[0] <= 0", name = 'isoTrackVeto'))
