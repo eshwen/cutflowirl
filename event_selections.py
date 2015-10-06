@@ -300,297 +300,285 @@ def event_selection_io(eventSelection, out = None, shown = [ ]):
     return out
 
 ##__________________________________________________________________||
-def SignalLooseSelection(datamc,pd,hlt):
+def SignalLooseSelection(datamc, pd, hlt):
 
-    SignalLoose = EventSelectionAll(name = 'SignalLoose')
+    ret = EventSelectionAll(name = 'SignalLoose')
 
-    ## Signal loose
-    SignalLoose.add(LambdaStr("ev : ev.cutflow[0] == 'Signal'", name = 'cutflowSignal'))
+    ret.add(LambdaStr("ev : ev.cutflow[0] == 'Signal'", name = 'cutflowSignal'))
     if datamc == 'data' and pd:
-        SignalLoose.add(LambdaStr("ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')", name = 'PDMetHtmhtJetht'))
-    SignalLoose.add(LambdaStr("ev : ev.ht40[0] >= 200", name = 'HTGT200'))
+        ret.add(LambdaStr("ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')", name = 'PDMetHtmhtJetht'))
+    ret.add(LambdaStr("ev : ev.ht40[0] >= 200", name = 'HTGT200'))
 
-    SignalLooseBintypes = EventSelectionAny(name = 'SignalLooseBintypes')
-    SignalLoose.add(SignalLooseBintypes)
+    bintypes = EventSelectionAny(name = 'SignalLooseBintypes')
+    ret.add(bintypes)
 
-    SignalLooseMonojet = EventSelectionAll(name = 'SignalLooseMonojet')
-    SignalLooseAsymjet = EventSelectionAll(name = 'SignalLooseAsymjet')
-    SignalLooseSymjet = EventSelectionAll(name = 'SignalLooseSymjet')
-    SignalLooseHighht = EventSelectionAll(name = 'SignalLooseHighht')
+    monojet = EventSelectionAll(name = 'SignalLooseMonojet')
+    asymjet = EventSelectionAll(name = 'SignalLooseAsymjet')
+    symjet = EventSelectionAll(name = 'SignalLooseSymjet')
+    highht = EventSelectionAll(name = 'SignalLooseHighht')
 
-    SignalLooseBintypes.add(SignalLooseMonojet)
-    SignalLooseBintypes.add(SignalLooseAsymjet)
-    SignalLooseBintypes.add(SignalLooseSymjet)
-    SignalLooseBintypes.add(SignalLooseHighht)
+    bintypes.add(monojet)
+    bintypes.add(asymjet)
+    bintypes.add(symjet)
+    bintypes.add(highht)
 
-    ## Signal loose - monojet
-    SignalLooseMonojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
+    ## monojet
+    monojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
     if datamc == 'data' and pd:
-        SignalLooseMonojet.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'MET'", name = 'PD_MET'))
+        monojet.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'MET'", name = 'PD_MET'))
 
-    ## Signal loose - asymjet
-    SignalLooseAsymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
+    ## asymjet
+    asymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
     if datamc == 'data' and pd:
-        SignalLooseAsymjet.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'HTMHT'", name = 'PD_HTMHT'))
-    SignalLooseAsymjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
+        asymjet.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'HTMHT'", name = 'PD_HTMHT'))
+    asymjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
 
-    ## Signal loose - symjet
-    SignalLooseSymjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
+    ## symjet
+    symjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
     if datamc == 'data' and pd:
-        SignalLooseSymjet.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'HTMHT'", name = 'PD_HTMHT'))
-    SignalLooseSymjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
+        symjet.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'HTMHT'", name = 'PD_HTMHT'))
+    symjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
 
-    ## Signal loose - highht
-    SignalLooseHighht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
+    ## highht
+    highht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
     if datamc == 'data' and pd:
-        SignalLooseHighht.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'JetHT'", name = 'PD_JetHT'))
-    SignalLooseHighht.add(LambdaStr("ev : 130 <= ev.mht40_pt[0]", name = 'MHTGT130'))
+        highht.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'JetHT'", name = 'PD_JetHT'))
+    highht.add(LambdaStr("ev : 130 <= ev.mht40_pt[0]", name = 'MHTGT130'))
 
-    return SignalLoose
+    return ret
 
 ##__________________________________________________________________||
-def SignalFinalSelection(datamc,pd,hlt):
+def SignalFinalSelection(datamc, pd, hlt):
 
-    SignalFinal = EventSelectionAll(name = 'SignalFinal')
+    ret = EventSelectionAll(name = 'SignalFinal')
 
-    ## Signal final
-    SignalFinal.add(LambdaStr("ev : ev.cutflow[0] == 'Signal'", name = 'cutflowSignal'))
-    SignalFinal.add(LambdaStr("ev : ev.nIsoTracksVeto[0] <= 0", name = 'isoTrackVeto'))
+    ret.add(LambdaStr("ev : ev.cutflow[0] == 'Signal'", name = 'cutflowSignal'))
+    ret.add(LambdaStr("ev : ev.nIsoTracksVeto[0] <= 0", name = 'isoTrackVeto'))
 
-    SignalBintypes = EventSelectionAny(name = 'SignalBintypes')
-    SignalFinal.add(SignalBintypes)
+    bintypes = EventSelectionAny(name = 'SignalBintypes')
+    ret.add(bintypes)
 
-    SignalFinalMonojet = EventSelectionAll(name = 'SignalFinalMonojet')
-    SignalFinalAsymjet = EventSelectionAll(name = 'SignalFinalAsymjet')
-    SignalFinalSymjet = EventSelectionAll(name = 'SignalFinalSymjet')
-    SignalFinalHighht = EventSelectionAll(name = 'SignalFinalHighht')
+    monojet = EventSelectionAll(name = 'SignalFinalMonojet')
+    asymjet = EventSelectionAll(name = 'SignalFinalAsymjet')
+    symjet = EventSelectionAll(name = 'SignalFinalSymjet')
+    highht = EventSelectionAll(name = 'SignalFinalHighht')
 
-    SignalBintypes.add(SignalFinalMonojet)
-    SignalBintypes.add(SignalFinalAsymjet)
-    SignalBintypes.add(SignalFinalSymjet)
-    SignalBintypes.add(SignalFinalHighht)
+    bintypes.add(monojet)
+    bintypes.add(asymjet)
+    bintypes.add(symjet)
+    bintypes.add(highht)
 
-    ## Signal final - monojet
-    SignalFinalMonojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
+    ## monojet
+    monojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
 
-    ## Signal final - asymjet
-    SignalFinalAsymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
+    ## asymjet
+    asymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
     if datamc == 'data' and hlt:
-        SignalFinalAsymjet.add(HT_HLTAlphaT())
-    SignalFinalAsymjet.add(AlphaTCut())
-    SignalFinalAsymjet.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
+        asymjet.add(HT_HLTAlphaT())
+    asymjet.add(AlphaTCut())
+    asymjet.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
 
-    ## Signal final - symjet
-    SignalFinalSymjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
+    ## symjet
+    symjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
     if datamc == 'data' and hlt:
-        SignalFinalSymjet.add(HT_HLTAlphaT())
-    SignalFinalSymjet.add(AlphaTCut())
-    SignalFinalSymjet.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
+        symjet.add(HT_HLTAlphaT())
+    symjet.add(AlphaTCut())
+    symjet.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
 
-    ## Signal final - highht
-    SignalFinalHighht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
-    SignalFinalHighht.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
+    ## highht
+    highht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
+    highht.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
 
-    return SignalFinal
+    return ret
  
 ##__________________________________________________________________||
-def SingleMuLooseSelection(datamc,pd,hlt):
+def SingleMuLooseSelection(datamc, pd, hlt):
 
-    SingleMuLoose = EventSelectionAll(name = 'SingleMuLoose')
+    ret = EventSelectionAll(name = 'SingleMuLoose')
 
-    ## SingleMu loose
-    SingleMuLoose.add(LambdaStr("ev : ev.cutflow[0] == 'SingleMu'", name = 'cutflowSingleMu'))
+    ret.add(LambdaStr("ev : ev.cutflow[0] == 'SingleMu'", name = 'cutflowSingleMu'))
     if datamc == 'data' and pd:
-        SingleMuLoose.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleMuon'", name = 'PDSingleMuon'))
+        ret.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleMuon'", name = 'PDSingleMuon'))
 
-    return SingleMuLoose
+    return ret
 
 ##__________________________________________________________________||
-def SingleMuFinalSelection(datamc,pd,hlt,metnohf):
+def SingleMuFinalSelection(datamc, pd, hlt, metnohf):
 
-    SingleMuFinal = EventSelectionAll(name = 'SingleMuFinal')
+    ret = EventSelectionAll(name = 'SingleMuFinal')
 
-    ## SingleMu final
-    SingleMuFinal.add(LambdaStr("ev : ev.cutflow[0] == 'SingleMu'", name = 'cutflowSingleMu'))
-    SingleMuFinal.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
+    ret.add(LambdaStr("ev : ev.cutflow[0] == 'SingleMu'", name = 'cutflowSingleMu'))
+    ret.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
     if hlt:
-        SingleMuFinal.add(HLT_SingleMuon())
-    SingleMuFinal.add(LambdaStr("ev : ev.nIsoTracksNoMuVeto[0] <= 0", name = 'isoTrackNoMuVeto'))
+        ret.add(HLT_SingleMuon())
+    ret.add(LambdaStr("ev : ev.nIsoTracksNoMuVeto[0] <= 0", name = 'isoTrackNoMuVeto'))
     if metnohf:
-        SingleMuFinal.add(LambdaStr("ev : 30 <= ev.mtwNoHF[0] < 125", name = 'mtwNoHF'))
+        ret.add(LambdaStr("ev : 30 <= ev.mtwNoHF[0] < 125", name = 'mtwNoHF'))
     else:
-        SingleMuFinal.add(LambdaStr("ev : 30 <= ev.mtw[0] < 125", name = 'mtw'))
-    SingleMuFinal.add(LambdaStr("ev : ev.minDelRJetMu[0] >= 0.5", name = 'minDelRJetMu'))
+        ret.add(LambdaStr("ev : 30 <= ev.mtw[0] < 125", name = 'mtw'))
+    ret.add(LambdaStr("ev : ev.minDelRJetMu[0] >= 0.5", name = 'minDelRJetMu'))
 
-    return SingleMuFinal
+    return ret
 
 
 ##__________________________________________________________________||
-def DoubleMuLooseSelection(datamc,pd,hlt):
+def DoubleMuLooseSelection(datamc, pd, hlt):
 
-    DoubleMuLoose = EventSelectionAll(name = 'DoubleMuLoose')
+    ret = EventSelectionAll(name = 'DoubleMuLoose')
 
-    ## DoubleMu loose
-    DoubleMuLoose.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleMu'", name = 'cutflowDoubleMu'))
+    ret.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleMu'", name = 'cutflowDoubleMu'))
     if datamc == 'data' and pd:
-        DoubleMuLoose.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleMuon'", name = 'PDSingleMuon'))
+        ret.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleMuon'", name = 'PDSingleMuon'))
 
-    return DoubleMuLoose
+    return ret
 
 ##__________________________________________________________________||
-def DoubleMuFinalSelection(datamc,pd,hlt):
+def DoubleMuFinalSelection(datamc, pd, hlt):
 
-    DoubleMuFinal = EventSelectionAll(name = 'DoubleMuFinal')
+    ret = EventSelectionAll(name = 'DoubleMuFinal')
 
-    ## DoubleMu final
-    DoubleMuFinal.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleMu'", name = 'cutflowDoubleMu'))
-    DoubleMuFinal.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
-    DoubleMuFinal.add(LambdaStr("ev : ev.muon_relIso03[1] < 0.12", name = 'relIso03LT0p12'))
+    ret.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleMu'", name = 'cutflowDoubleMu'))
+    ret.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
+    ret.add(LambdaStr("ev : ev.muon_relIso03[1] < 0.12", name = 'relIso03LT0p12'))
     if hlt:
-        DoubleMuFinal.add(HLT_SingleMuon())
-    DoubleMuFinal.add(LambdaStr("ev : ev.nIsoTracksNoMuVeto[0] <= 0", name = 'isoTrackNoMuVeto'))
-    DoubleMuFinal.add(LambdaStr("ev : 66.2 <= ev.mll[0] < 116.2", name = 'mll'))
-    DoubleMuFinal.add(LambdaStr("ev : ev.minDelRJetMu[0] >= 0.5", name = 'minDelRJetMu'))
+        ret.add(HLT_SingleMuon())
+    ret.add(LambdaStr("ev : ev.nIsoTracksNoMuVeto[0] <= 0", name = 'isoTrackNoMuVeto'))
+    ret.add(LambdaStr("ev : 66.2 <= ev.mll[0] < 116.2", name = 'mll'))
+    ret.add(LambdaStr("ev : ev.minDelRJetMu[0] >= 0.5", name = 'minDelRJetMu'))
 
-    return DoubleMuFinal
+    return ret
 
 ##__________________________________________________________________||
-def SingleEleLooseSelection(datamc,pd,hlt):
+def SingleEleLooseSelection(datamc, pd, hlt):
 
-    SingleEleLoose = EventSelectionAll(name = 'SingleEleLoose')
+    ret = EventSelectionAll(name = 'SingleEleLoose')
 
-    # SingleEle loose
-    SingleEleLoose.add(LambdaStr("ev : ev.cutflow[0] == 'SingleEle'", name = 'cutflowSingleEle'))
+    ret.add(LambdaStr("ev : ev.cutflow[0] == 'SingleEle'", name = 'cutflowSingleEle'))
     if datamc == 'data' and pd:
-        SingleEleLoose.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleElectron'", name = 'PDSingleElectron'))
+        ret.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleElectron'", name = 'PDSingleElectron'))
 
-    return SingleEleLoose
+    return ret
 
 ##__________________________________________________________________||
-def SingleEleFinalSelection(datamc,pd,hlt,metnohf):
+def SingleEleFinalSelection(datamc, pd, hlt, metnohf):
 
-    SingleEleFinal = EventSelectionAll(name = 'SingleEleFinal')
+    ret = EventSelectionAll(name = 'SingleEleFinal')
 
-    # SingleEle final
-    SingleEleFinal.add(LambdaStr("ev : ev.cutflow[0] == 'SingleEle'", name = 'cutflowSingleEle'))
-    SingleEleFinal.add(LambdaStr("ev : -1.479 < ev.ele_eta[0] < 1.479", name = 'eleBarrel'))
-    SingleEleFinal.add(LambdaStr("ev : ev.ele_relIso03[0] < 0.0354", name = 'eleRelIso03'))
-    SingleEleFinal.add(LambdaStr("ev : ev.nIsoTracksNoEleVeto[0] <= 0", name = 'isoTrackNoEleVeto'))
+    ret.add(LambdaStr("ev : ev.cutflow[0] == 'SingleEle'", name = 'cutflowSingleEle'))
+    ret.add(LambdaStr("ev : -1.479 < ev.ele_eta[0] < 1.479", name = 'eleBarrel'))
+    ret.add(LambdaStr("ev : ev.ele_relIso03[0] < 0.0354", name = 'eleRelIso03'))
+    ret.add(LambdaStr("ev : ev.nIsoTracksNoEleVeto[0] <= 0", name = 'isoTrackNoEleVeto'))
     if metnohf:
-        SingleEleFinal.add(LambdaStr("ev : 30 <= ev.mtwNoHF[0] < 125", name = 'mtwNoHF'))
+        ret.add(LambdaStr("ev : 30 <= ev.mtwNoHF[0] < 125", name = 'mtwNoHF'))
     else:
-        SingleEleFinal.add(LambdaStr("ev : 30 <= ev.mtw[0] < 125", name = 'mtw'))
-    SingleEleFinal.add(LambdaStr("ev : ev.minDelRJetEle[0] >= 0.5", name = 'minDelRJetEle'))
+        ret.add(LambdaStr("ev : 30 <= ev.mtw[0] < 125", name = 'mtw'))
+    ret.add(LambdaStr("ev : ev.minDelRJetEle[0] >= 0.5", name = 'minDelRJetEle'))
 
-    return SingleEleFinal 
+    return ret 
 
 ##__________________________________________________________________||
-def DoubleEleLooseSelection(datamc,pd,hlt):
+def DoubleEleLooseSelection(datamc, pd, hlt):
 
-    DoubleEleLoose = EventSelectionAll(name = 'DoubleEleLoose')
+    ret = EventSelectionAll(name = 'DoubleEleLoose')
 
-    # DoubleEle loose
-    DoubleEleLoose.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleEle'", name = 'cutflowDoubleEle'))
+    ret.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleEle'", name = 'cutflowDoubleEle'))
     if datamc == 'data' and pd:
-        DoubleEleLoose.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleElectron'", name = 'PDSingleElectron'))
+        ret.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleElectron'", name = 'PDSingleElectron'))
 
-    return DoubleEleLoose
-
-##__________________________________________________________________||
-def DoubleEleFinalSelection(datamc,pd,hlt):
-
-    DoubleEleFinal = EventSelectionAll(name = 'DoubleEleFinal')
-
-    # DoubleEle final
-    DoubleEleFinal.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleEle'", name = 'cutflowDoubleEle'))
-    DoubleEleFinal.add(LambdaStr("ev : -1.479 < ev.ele_eta[0] < 1.479", name = 'eleBarrel'))
-    DoubleEleFinal.add(LambdaStr("ev : -1.479 < ev.ele_eta[1] < 1.479", name = 'eleBarrel'))
-    DoubleEleFinal.add(LambdaStr("ev : ev.ele_relIso03[0] < 0.0354", name = 'eleRelIso03'))
-    DoubleEleFinal.add(LambdaStr("ev : ev.ele_relIso03[1] < 0.0354", name = 'eleRelIso03'))
-    DoubleEleFinal.add(LambdaStr("ev : ev.nIsoTracksNoEleVeto[0] <= 0", name = 'isoTrackNoEleVeto'))
-    DoubleEleFinal.add(LambdaStr("ev : 66.2 <= ev.mll[0] < 116.2", name = 'mll'))
-    DoubleEleFinal.add(LambdaStr("ev : ev.minDelRJetEle[0] >= 0.5", name = 'minDelRJetEle'))
-
-    return DoubleEleFinal
+    return ret
 
 ##__________________________________________________________________||
-def SinglePhotonLooseSelection(datamc,pd,hlt):
+def DoubleEleFinalSelection(datamc, pd, hlt):
 
-    SinglePhotonLoose = EventSelectionAll(name = 'SinglePhotonLoose')
+    ret = EventSelectionAll(name = 'DoubleEleFinal')
 
-    # SinglePhoton loose
-    SinglePhotonLoose.add(LambdaStr("ev : ev.cutflow[0] == 'SinglePhoton'", name = 'cutflowSinglePhoton'))
+    ret.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleEle'", name = 'cutflowDoubleEle'))
+    ret.add(LambdaStr("ev : -1.479 < ev.ele_eta[0] < 1.479", name = 'eleBarrel'))
+    ret.add(LambdaStr("ev : -1.479 < ev.ele_eta[1] < 1.479", name = 'eleBarrel'))
+    ret.add(LambdaStr("ev : ev.ele_relIso03[0] < 0.0354", name = 'eleRelIso03'))
+    ret.add(LambdaStr("ev : ev.ele_relIso03[1] < 0.0354", name = 'eleRelIso03'))
+    ret.add(LambdaStr("ev : ev.nIsoTracksNoEleVeto[0] <= 0", name = 'isoTrackNoEleVeto'))
+    ret.add(LambdaStr("ev : 66.2 <= ev.mll[0] < 116.2", name = 'mll'))
+    ret.add(LambdaStr("ev : ev.minDelRJetEle[0] >= 0.5", name = 'minDelRJetEle'))
+
+    return ret
+
+##__________________________________________________________________||
+def SinglePhotonLooseSelection(datamc, pd, hlt):
+
+    ret = EventSelectionAll(name = 'SinglePhotonLoose')
+
+    ret.add(LambdaStr("ev : ev.cutflow[0] == 'SinglePhoton'", name = 'cutflowSinglePhoton'))
     if datamc == 'data' and pd:
-        SinglePhotonLoose.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SinglePhoton'", name = 'PDSinglePhoton'))
+        ret.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SinglePhoton'", name = 'PDSinglePhoton'))
 
-    SinglePhotonLooseBintypes = EventSelectionAny(name = 'SinglePhotonLooseBintypes')
-    SinglePhotonLoose.add(SinglePhotonLooseBintypes)
+    bintypes = EventSelectionAny(name = 'SinglePhotonLooseBintypes')
+    ret.add(bintypes)
 
-    SinglePhotonLooseMonojet = EventSelectionAll(name = 'SinglePhotonLooseMonojet')
-    SinglePhotonLooseAsymjet = EventSelectionAll(name = 'SinglePhotonLooseAsymjet')
-    SinglePhotonLooseSymjet = EventSelectionAll(name = 'SinglePhotonLooseSymjet')
-    SinglePhotonLooseHighht = EventSelectionAll(name = 'SinglePhotonLooseHighht')
+    monojet = EventSelectionAll(name = 'SinglePhotonLooseMonojet')
+    asymjet = EventSelectionAll(name = 'SinglePhotonLooseAsymjet')
+    symjet = EventSelectionAll(name = 'SinglePhotonLooseSymjet')
+    highht = EventSelectionAll(name = 'SinglePhotonLooseHighht')
 
-    SinglePhotonLooseBintypes.add(SinglePhotonLooseMonojet)
-    SinglePhotonLooseBintypes.add(SinglePhotonLooseAsymjet)
-    SinglePhotonLooseBintypes.add(SinglePhotonLooseSymjet)
-    SinglePhotonLooseBintypes.add(SinglePhotonLooseHighht)
+    bintypes.add(monojet)
+    bintypes.add(asymjet)
+    bintypes.add(symjet)
+    bintypes.add(highht)
 
-    ## SinglePhoton loose - monojet
-    SinglePhotonLooseMonojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
+    ## monojet
+    monojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
 
-    ## SinglePhoton loose - asymjet
-    SinglePhotonLooseAsymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
-    SinglePhotonLooseAsymjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
+    ## asymjet
+    asymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
+    asymjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
 
-    ## SinglePhoton loose- symjet
-    SinglePhotonLooseSymjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
-    SinglePhotonLooseSymjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
+    ## symjet
+    symjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
+    symjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
 
-    ## SinglePhoton loose- highht
-    SinglePhotonLooseHighht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
-    SinglePhotonLooseHighht.add(LambdaStr("ev : 130 <= ev.mht40_pt[0]", name = 'MHTGT130'))
+    ## highht
+    highht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
+    highht.add(LambdaStr("ev : 130 <= ev.mht40_pt[0]", name = 'MHTGT130'))
 
-    return SinglePhotonLoose
+    return ret
 
 ##__________________________________________________________________||
-def SinglePhotonFinalSelection(datamc,pd,hlt):
+def SinglePhotonFinalSelection(datamc, pd, hlt):
 
-    SinglePhotonFinal = EventSelectionAll(name = 'SinglePhotonFinal')
+    ret = EventSelectionAll(name = 'SinglePhotonFinal')
 
-    # SinglePhoton final
-    SinglePhotonFinal.add(LambdaStr("ev : ev.cutflow[0] == 'SinglePhoton'", name = 'cutflowSinglePhoton'))
-    SinglePhotonFinal.add(LambdaStr("ev : ev.nIsoTracksVeto[0] <= 0", name = 'isoTrackVeto'))
-    SinglePhotonFinal.add(LambdaStr("ev : ev.minDelRJetPhoton[0] >= 1.0", name = 'minDelRJetPhoton'))
+    ret.add(LambdaStr("ev : ev.cutflow[0] == 'SinglePhoton'", name = 'cutflowSinglePhoton'))
+    ret.add(LambdaStr("ev : ev.nIsoTracksVeto[0] <= 0", name = 'isoTrackVeto'))
+    ret.add(LambdaStr("ev : ev.minDelRJetPhoton[0] >= 1.0", name = 'minDelRJetPhoton'))
 
-    SinglePhotonFinalBintypes = EventSelectionAny(name = 'SinglePhotonFinalBintypes')
-    SinglePhotonFinal.add(SinglePhotonFinalBintypes)
+    bintypes = EventSelectionAny(name = 'SinglePhotonFinalBintypes')
+    ret.add(bintypes)
 
-    SinglePhotonFinalMonojet = EventSelectionAll(name = 'SinglePhotonFinalMonojet')
-    SinglePhotonFinalAsymjet = EventSelectionAll(name = 'SinglePhotonFinalAsymjet')
-    SinglePhotonFinalSymjet = EventSelectionAll(name = 'SinglePhotonFinalSymjet')
-    SinglePhotonFinalHighht = EventSelectionAll(name = 'SinglePhotonFinalHighht')
+    monojet = EventSelectionAll(name = 'SinglePhotonFinalMonojet')
+    asymjet = EventSelectionAll(name = 'SinglePhotonFinalAsymjet')
+    symjet = EventSelectionAll(name = 'SinglePhotonFinalSymjet')
+    highht = EventSelectionAll(name = 'SinglePhotonFinalHighht')
 
-    SinglePhotonFinalBintypes.add(SinglePhotonFinalMonojet)
-    SinglePhotonFinalBintypes.add(SinglePhotonFinalAsymjet)
-    SinglePhotonFinalBintypes.add(SinglePhotonFinalSymjet)
-    SinglePhotonFinalBintypes.add(SinglePhotonFinalHighht)
+    bintypes.add(monojet)
+    bintypes.add(asymjet)
+    bintypes.add(symjet)
+    bintypes.add(highht)
 
-    ## SinglePhoton final - monojet
-    SinglePhotonFinalMonojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
+    ## monojet
+    monojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
 
-    ## SinglePhoton final - asymjet
-    SinglePhotonFinalAsymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
-    SinglePhotonFinalAsymjet.add(AlphaTCut())
+    ## asymjet
+    asymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
+    asymjet.add(AlphaTCut())
 
-    ## SinglePhoton - symjet
-    SinglePhotonFinalSymjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
-    SinglePhotonFinalSymjet.add(AlphaTCut())
+    ## symjet
+    symjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
+    symjet.add(AlphaTCut())
 
-    ## SinglePhoton final - highht
-    SinglePhotonFinalHighht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
+    ## highht
+    highht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
 
-    return SinglePhotonFinal
+    return ret
 
 
 ##__________________________________________________________________||
@@ -633,12 +621,12 @@ def event_selection(datamc, level,
     cutflowsLoose = EventSelectionAny(name = 'cutflowsLoose')
     eventSelection.add(cutflowsLoose)
 
-    SignalLoose = SignalLooseSelection(datamc,pd,hlt)
-    SingleMuLoose = SingleMuLooseSelection(datamc,pd,hlt)
-    DoubleMuLoose = DoubleMuLooseSelection(datamc,pd,hlt)
-    SingleEleLoose = SingleEleLooseSelection(datamc,pd,hlt)
-    DoubleEleLoose = DoubleEleLooseSelection(datamc,pd,hlt)
-    SinglePhotonLoose = SinglePhotonLooseSelection(datamc,pd,hlt)
+    SignalLoose = SignalLooseSelection(datamc, pd, hlt)
+    SingleMuLoose = SingleMuLooseSelection(datamc, pd, hlt)
+    DoubleMuLoose = DoubleMuLooseSelection(datamc, pd, hlt)
+    SingleEleLoose = SingleEleLooseSelection(datamc, pd, hlt)
+    DoubleEleLoose = DoubleEleLooseSelection(datamc, pd, hlt)
+    SinglePhotonLoose = SinglePhotonLooseSelection(datamc, pd, hlt)
     cutflowsLoose.add(SignalLoose)
     cutflowsLoose.add(SingleMuLoose)
     cutflowsLoose.add(DoubleMuLoose)
@@ -672,12 +660,12 @@ def event_selection(datamc, level,
     cutflowsFinal = EventSelectionAny(name = 'cutflowsFinal')
     eventSelection.add(cutflowsFinal)
 
-    SignalFinal = SignalFinalSelection(datamc,pd,hlt)
-    SingleMuFinal = SingleMuFinalSelection(datamc,pd,hlt,metnohf)
-    DoubleMuFinal = DoubleMuFinalSelection(datamc,pd,hlt)
-    SingleEleFinal = SingleEleFinalSelection(datamc,pd,hlt,metnohf)
-    DoubleEleFinal = DoubleEleFinalSelection(datamc,pd,hlt)
-    SinglePhotonFinal = SinglePhotonFinalSelection(datamc,pd,hlt)
+    SignalFinal = SignalFinalSelection(datamc, pd, hlt)
+    SingleMuFinal = SingleMuFinalSelection(datamc, pd, hlt, metnohf)
+    DoubleMuFinal = DoubleMuFinalSelection(datamc, pd, hlt)
+    SingleEleFinal = SingleEleFinalSelection(datamc, pd, hlt, metnohf)
+    DoubleEleFinal = DoubleEleFinalSelection(datamc, pd, hlt)
+    SinglePhotonFinal = SinglePhotonFinalSelection(datamc, pd, hlt)
     cutflowsFinal.add(SignalFinal)
     cutflowsFinal.add(SingleMuFinal)
     cutflowsFinal.add(DoubleMuFinal)
