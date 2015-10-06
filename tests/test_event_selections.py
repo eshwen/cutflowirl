@@ -170,9 +170,10 @@ arg115 = dict(datamc = 'mc', level = 'final', hlt = True,  pd = True,  met_filte
 
 ##__________________________________________________________________||
 es_arg000='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -281,9 +282,10 @@ es_arg000='''<All:EventSelectionAll>
 
 
 es_arg001='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -392,9 +394,10 @@ es_arg001='''<All:EventSelectionAll>
 
 
 es_arg002='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -506,9 +509,10 @@ es_arg002='''<All:EventSelectionAll>
 
 
 es_arg003='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -620,9 +624,10 @@ es_arg003='''<All:EventSelectionAll>
 
 
 es_arg004='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -741,9 +746,10 @@ es_arg004='''<All:EventSelectionAll>
 
 
 es_arg005='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -862,9 +868,10 @@ es_arg005='''<All:EventSelectionAll>
 
 
 es_arg006='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -986,9 +993,10 @@ es_arg006='''<All:EventSelectionAll>
 
 
 es_arg007='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -1110,9 +1118,10 @@ es_arg007='''<All:EventSelectionAll>
 
 
 es_arg008='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -1225,9 +1234,10 @@ es_arg008='''<All:EventSelectionAll>
 
 
 es_arg009='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -1340,9 +1350,10 @@ es_arg009='''<All:EventSelectionAll>
 
 
 es_arg010='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -1458,9 +1469,10 @@ es_arg010='''<All:EventSelectionAll>
 
 
 es_arg011='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -1577,9 +1589,10 @@ es_arg011='''<All:EventSelectionAll>
 
 es_arg012='''<All:EventSelectionAll>
   <:PD_HLT>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -1703,9 +1716,10 @@ es_arg012='''<All:EventSelectionAll>
 
 es_arg013='''<All:EventSelectionAll>
   <:PD_HLT>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -1829,9 +1843,10 @@ es_arg013='''<All:EventSelectionAll>
 
 es_arg014='''<All:EventSelectionAll>
   <:PD_HLT>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -1958,9 +1973,10 @@ es_arg014='''<All:EventSelectionAll>
 
 es_arg015='''<All:EventSelectionAll>
   <:PD_HLT>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -2086,9 +2102,10 @@ es_arg015='''<All:EventSelectionAll>
 
 
 es_arg100='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -2197,9 +2214,10 @@ es_arg100='''<All:EventSelectionAll>
 
 
 es_arg101='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -2308,9 +2326,10 @@ es_arg101='''<All:EventSelectionAll>
 
 
 es_arg102='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -2422,9 +2441,10 @@ es_arg102='''<All:EventSelectionAll>
 
 
 es_arg103='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -2536,9 +2556,10 @@ es_arg103='''<All:EventSelectionAll>
 
 
 es_arg104='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -2647,9 +2668,10 @@ es_arg104='''<All:EventSelectionAll>
 
 
 es_arg105='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -2758,9 +2780,10 @@ es_arg105='''<All:EventSelectionAll>
 
 
 es_arg106='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -2872,9 +2895,10 @@ es_arg106='''<All:EventSelectionAll>
 
 
 es_arg107='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -2986,9 +3010,10 @@ es_arg107='''<All:EventSelectionAll>
 
 
 es_arg108='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -3099,9 +3124,10 @@ es_arg108='''<All:EventSelectionAll>
 
 
 es_arg109='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -3212,9 +3238,10 @@ es_arg109='''<All:EventSelectionAll>
 
 
 es_arg110='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -3328,9 +3355,10 @@ es_arg110='''<All:EventSelectionAll>
 
 
 es_arg111='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -3444,9 +3472,10 @@ es_arg111='''<All:EventSelectionAll>
 
 
 es_arg112='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -3557,9 +3586,10 @@ es_arg112='''<All:EventSelectionAll>
 
 
 es_arg113='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -3670,9 +3700,10 @@ es_arg113='''<All:EventSelectionAll>
 
 
 es_arg114='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -3786,9 +3817,10 @@ es_arg114='''<All:EventSelectionAll>
 
 
 es_arg115='''<All:EventSelectionAll>
-  <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
-  <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
-  <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
@@ -3899,5 +3931,4 @@ es_arg115='''<All:EventSelectionAll>
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
-
 ##__________________________________________________________________||

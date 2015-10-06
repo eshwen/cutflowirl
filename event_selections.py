@@ -300,6 +300,17 @@ def event_selection_io(eventSelection, out = None, shown = [ ]):
     return out
 
 ##__________________________________________________________________||
+def BaselineSelection():
+
+    ret = EventSelectionAll(name = 'Baseline')
+
+    ret.add(LambdaStr("ev : ev.nVert[0] >= 1", name = 'nVertGTOne'))
+    ret.add(LambdaStr("ev : ev.nJet100[0] >= 1", name = 'nJetGTOne'))
+    ret.add(LambdaStr("ev : ev.ht40[0] >= 150", name = 'HTGT150'))
+
+    return ret
+
+##__________________________________________________________________||
 def SignalLooseSelection(datamc, pd, hlt):
 
     ret = EventSelectionAll(name = 'SignalLoose')
@@ -610,9 +621,7 @@ def event_selection(datamc, level,
 
     ##______________________________________________________________||
     # Baseline
-    eventSelection.add(LambdaStr("ev : ev.nVert[0] >= 1", name = 'nVertGTOne'))
-    eventSelection.add(LambdaStr("ev : ev.nJet100[0] >= 1", name = 'nJetGTOne'))
-    eventSelection.add(LambdaStr("ev : ev.ht40[0] >= 150", name = 'HTGT150'))
+    eventSelection.add(BaselineSelection())
 
     if level == 'baseline': return eventSelection
 
