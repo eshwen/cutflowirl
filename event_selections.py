@@ -325,6 +325,22 @@ def MetFilters(datamc):
     return ret
 
 ##__________________________________________________________________||
+def CommonFinalSelection(metnohf):
+
+    ret = EventSelectionAll(name = 'CommonFinal')
+
+    ret.add(LambdaStr("ev : ev.nJet40Fwd[0] == 0", name = 'FwJetVeto'))
+    ret.add(LambdaStr("ev : ev.nJet40failedId[0] == 0", name = 'JetIDVeto'))
+    ret.add(LambdaStr("ev : ev.ht40[0] >= 200", name = 'HTGT200'))
+
+    if metnohf:
+        ret.add(LambdaStr("ev : ev.MhtOverMetNoXNoHF[0] < 1.25", name = 'MhtOverMetNoXNoHF'))
+    else:
+        ret.add(LambdaStr("ev : ev.MhtOverMetNoX[0] < 1.25", name = 'MhtOverMetNoX'))
+
+    return ret
+
+##__________________________________________________________________||
 def SignalLooseSelection(datamc, pd, hlt):
 
     ret = EventSelectionAll(name = 'SignalLoose')
@@ -658,15 +674,7 @@ def event_selection(datamc, level,
         eventSelection.add(MetFilters(datamc = datamc))
 
     ##______________________________________________________________||
-    eventSelection.add(LambdaStr("ev : ev.nJet40Fwd[0] == 0", name = 'FwJetVeto'))
-    eventSelection.add(LambdaStr("ev : ev.nJet40failedId[0] == 0", name = 'JetIDVeto'))
-    eventSelection.add(LambdaStr("ev : ev.ht40[0] >= 200", name = 'HTGT200'))
-
-    ##______________________________________________________________||
-    if metnohf:
-        eventSelection.add(LambdaStr("ev : ev.MhtOverMetNoXNoHF[0] < 1.25", name = 'MhtOverMetNoXNoHF'))
-    else:
-        eventSelection.add(LambdaStr("ev : ev.MhtOverMetNoX[0] < 1.25", name = 'MhtOverMetNoX'))
+    eventSelection.add(CommonFinalSelection(metnohf = metnohf))
 
     ##______________________________________________________________||
     cutflowsFinal = EventSelectionAny(name = 'cutflowsFinal')
