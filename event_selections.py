@@ -278,12 +278,12 @@ def HT_HLTAlphaT(AllClass = EventSelectionAll, AnyClass = EventSelectionAny):
     return ret
 
 ##__________________________________________________________________||
-class HLT_SingleMuon(object):
-    def __call__(self, event):
-        if event.HLT_IsoMu17_eta2p1[0]: return True
-        if event.HLT_IsoMu20[0]: return True
-        if event.HLT_IsoMu24_eta2p1[0]: return True
-        return False
+def HLT_SingleMuon(AllClass = EventSelectionAll, AnyClass = EventSelectionAny):
+    ret = AnyClass(name = 'HLT_SingleMuon')
+    ret.add(LambdaStr("ev : ev.HLT_IsoMu17_eta2p1[0]", name = 'HLT_IsoMu17_eta2p1'))
+    ret.add(LambdaStr("ev : ev.HLT_IsoMu20[0]", name = 'HLT_IsoMu20'))
+    ret.add(LambdaStr("ev : ev.HLT_IsoMu24_eta2p1[0]", name = 'HLT_IsoMu24_eta2p1'))
+    return ret
 
 ##__________________________________________________________________||
 def event_selection_str(eventSelection):

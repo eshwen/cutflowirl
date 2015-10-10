@@ -1760,7 +1760,10 @@ es_arg008='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1768,7 +1771,10 @@ es_arg008='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1987,7 +1993,10 @@ es_arg009='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1995,7 +2004,10 @@ es_arg009='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -2218,7 +2230,10 @@ es_arg010='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -2226,7 +2241,10 @@ es_arg010='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -2449,7 +2467,10 @@ es_arg011='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -2457,7 +2478,10 @@ es_arg011='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -2687,7 +2711,10 @@ es_arg012='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -2695,7 +2722,10 @@ es_arg012='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -2925,7 +2955,10 @@ es_arg013='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -2933,7 +2966,10 @@ es_arg013='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3167,7 +3203,10 @@ es_arg014='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3175,7 +3214,10 @@ es_arg014='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3409,7 +3451,10 @@ es_arg015='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3417,7 +3462,10 @@ es_arg015='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -4984,7 +5032,10 @@ es_arg108='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -4992,7 +5043,10 @@ es_arg108='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -5159,7 +5213,10 @@ es_arg109='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -5167,7 +5224,10 @@ es_arg109='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -5338,7 +5398,10 @@ es_arg110='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -5346,7 +5409,10 @@ es_arg110='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -5517,7 +5583,10 @@ es_arg111='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -5525,7 +5594,10 @@ es_arg111='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -5692,7 +5764,10 @@ es_arg112='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -5700,7 +5775,10 @@ es_arg112='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -5867,7 +5945,10 @@ es_arg113='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -5875,7 +5956,10 @@ es_arg113='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -6046,7 +6130,10 @@ es_arg114='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -6054,7 +6141,10 @@ es_arg114='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -6225,7 +6315,10 @@ es_arg115='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -6233,7 +6326,10 @@ es_arg115='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
