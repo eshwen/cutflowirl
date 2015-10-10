@@ -199,14 +199,36 @@ class PD_HLT(object):
         return True
 
 ##__________________________________________________________________||
-class AlphaTCut(object):
-    def __call__(self, event):
-        if 200 <= event.ht40[0] < 250 and 0.65 <= event.alphaT[0]: return True
-        elif 250 <= event.ht40[0] < 300 and 0.60 <= event.alphaT[0]: return True
-        elif 300 <= event.ht40[0] < 350 and 0.55 <= event.alphaT[0]: return True
-        elif 350 <= event.ht40[0] < 400 and 0.53 <= event.alphaT[0]: return True
-        elif 400 <= event.ht40[0] < 800 and 0.52 <= event.alphaT[0]: return True
-        return False
+def AlphaTCut(AllClass = EventSelectionAll, AnyClass = EventSelectionAny):
+
+    ret = AnyClass(name = 'AlphaTCut')
+
+    ht200to250 = AllClass(name = 'HT200to250')
+    ht200to250.add(LambdaStr("ev : 200 <= ev.ht40[0] < 250", name = 'HTin200to250'))
+    ht200to250.add(LambdaStr("ev : 0.65 <= ev.alphaT[0]", name = 'alphaTGT0p65'))
+    ret.add(ht200to250)
+
+    ht250to300 = AllClass(name = 'HT250to300')
+    ht250to300.add(LambdaStr("ev : 250 <= ev.ht40[0] < 300", name = 'HTin250to300'))
+    ht250to300.add(LambdaStr("ev : 0.60 <= ev.alphaT[0]", name = 'alphaTGT0p60'))
+    ret.add(ht250to300)
+
+    ht300to350 = AllClass(name = 'HT300to350')
+    ht300to350.add(LambdaStr("ev : 300 <= ev.ht40[0] < 350", name = 'HTin300to350'))
+    ht300to350.add(LambdaStr("ev : 0.55 <= ev.alphaT[0]", name = 'alphaTGT0p55'))
+    ret.add(ht300to350)
+
+    ht350to400 = AllClass(name = 'HT350to400')
+    ht350to400.add(LambdaStr("ev : 350 <= ev.ht40[0] < 400", name = 'HTin350to400'))
+    ht350to400.add(LambdaStr("ev : 0.53 <= ev.alphaT[0]", name = 'alphaTGT0p53'))
+    ret.add(ht350to400)
+
+    ht400to800 = AllClass(name = 'HT400to800')
+    ht400to800.add(LambdaStr("ev : 400 <= ev.ht40[0] < 800", name = 'HTin400to800'))
+    ht400to800.add(LambdaStr("ev : 0.52 <= ev.alphaT[0]", name = 'alphaTGT0p52'))
+    ret.add(ht400to800)
+
+    return ret
 
 ##__________________________________________________________________||
 class HT_HLTAlphaT(object):
