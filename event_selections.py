@@ -243,7 +243,7 @@ def event_selection_str(eventSelection):
     return out.getvalue()
 
 ##__________________________________________________________________||
-def event_selection_io(eventSelection, out = None, shown = [ ]):
+def event_selection_io(eventSelection, out = None, prep = ''):
 
     if out is None:
         import StringIO
@@ -262,41 +262,32 @@ def event_selection_io(eventSelection, out = None, shown = [ ]):
             ret += es.__class__.__name__
         ret += '>'
         return ret
-        
-    out.write('##__________________________________________________________________||\n')
-    out.write('# ' + print_name(eventSelection) + '\n')
-    if inspect.isfunction(eventSelection):
-        if eventSelection not in shown:
-            out.write(inspect.getsource(eventSelection) + '\n')
-            shown.append(eventSelection)
+
+    out.write(prep)
+
+    if isinstance(eventSelection, LambdaStr):
+        out.write(print_name(eventSelection))
+        out.write(' ')
+        out.write(eventSelection.lambda_str)
+        out.write('\n')
         return out
 
-    if hasattr(eventSelection, '__dict__') and eventSelection.__dict__:
-        out.write('# __dict__ = ')
-        out.write(str(eventSelection.__dict__) + '\n')
-
-    if eventSelection.__class__ not in shown:
-        out.write('\n')
-        out.write(inspect.getsource(eventSelection.__class__))
-        shown.append(eventSelection.__class__)
-
     if isinstance(eventSelection, EventSelectionAll):
+        out.write(print_name(eventSelection))
         out.write('\n')
-        out.write('# ' + print_name(eventSelection) + ' = ')
-        out.write(' AND '.join([print_name(e) for e in eventSelection.selections]))
-        out.write('\n\n')
         for e in eventSelection.selections:
-            event_selection_io(e, out)
-            out.write('\n')
+            event_selection_io(e, out, prep + '  ')
+        return out
 
     if isinstance(eventSelection, EventSelectionAny):
+        out.write(print_name(eventSelection))
         out.write('\n')
-        out.write('# ' + print_name(eventSelection) + ' = ')
-        out.write(' OR '.join([print_name(e) for e in eventSelection.selections]))
-        out.write('\n\n')
         for e in eventSelection.selections:
-            event_selection_io(e, out)
-            out.write('\n')
+            event_selection_io(e, out, prep + '  ')
+        return out
+
+    out.write(print_name(eventSelection))
+    out.write('\n')
 
     return out
 
