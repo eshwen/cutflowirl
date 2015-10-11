@@ -226,11 +226,41 @@ es_arg000='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -273,10 +303,40 @@ es_arg000='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -339,11 +399,41 @@ es_arg001='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -386,10 +476,40 @@ es_arg001='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -456,11 +576,41 @@ es_arg002='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -503,10 +653,40 @@ es_arg002='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -573,11 +753,41 @@ es_arg003='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -620,10 +830,40 @@ es_arg003='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -696,11 +936,41 @@ es_arg004='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -743,10 +1013,40 @@ es_arg004='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -819,11 +1119,41 @@ es_arg005='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -866,10 +1196,40 @@ es_arg005='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -946,11 +1306,41 @@ es_arg006='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -993,10 +1383,40 @@ es_arg006='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -1073,11 +1493,41 @@ es_arg007='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -1120,10 +1570,40 @@ es_arg007='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -1186,13 +1666,93 @@ es_arg008='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -1200,7 +1760,10 @@ es_arg008='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1208,7 +1771,10 @@ es_arg008='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1237,10 +1803,40 @@ es_arg008='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -1303,13 +1899,93 @@ es_arg009='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -1317,7 +1993,10 @@ es_arg009='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1325,7 +2004,10 @@ es_arg009='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1354,10 +2036,40 @@ es_arg009='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -1424,13 +2136,93 @@ es_arg010='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -1438,7 +2230,10 @@ es_arg010='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1446,7 +2241,10 @@ es_arg010='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1475,10 +2273,40 @@ es_arg010='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -1545,13 +2373,93 @@ es_arg011='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -1559,7 +2467,10 @@ es_arg011='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1567,7 +2478,10 @@ es_arg011='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1596,17 +2510,87 @@ es_arg011='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
 
 
 es_arg012='''<All:EventSelectionAll>
-  <:PD_HLT>
+  <PD_HLT:EventSelectionAny>
+    <MET:EventSelectionAll>
+      <PDMET:LambdaStr> ev : ev.PrimaryDataset[0] == 'MET'
+      <MET_HLT:EventSelectionAny>
+        <HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight[0]
+        <HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight[0]
+    <HTMHT:EventSelectionAll>
+      <PDHTMHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'HTMHT'
+      <HTMHT_HLT:EventSelectionAny>
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+    <JetHT:EventSelectionAll>
+      <PDJetHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'JetHT'
+      <JetHT_HLT:EventSelectionAny>
+        <HLT_PFHT800:LambdaStr> ev : ev.HLT_PFHT800[0]
+    <SingleMuon:EventSelectionAll>
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+      <SingleMuon_HLT:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
+    <SingleElectron:EventSelectionAll>
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+      <SingleElectron_HLT:EventSelectionAny>
+        <HLT_Ele22_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele22_WPLoose_Gsf[0]
+        <HLT_Ele23_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele23_WPLoose_Gsf[0]
+        <HLT_Ele27_eta2p1_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele27_eta2p1_WPLoose_Gsf[0]
+    <SinglePhoton:EventSelectionAll>
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
+      <SinglePhoton_HLT:EventSelectionAny>
+        <HLT_Photon120:LambdaStr> ev : ev.HLT_Photon120[0]
+        <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
+        <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
     <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
@@ -1673,13 +2657,93 @@ es_arg012='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -1687,7 +2751,10 @@ es_arg012='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1695,7 +2762,10 @@ es_arg012='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1724,17 +2794,87 @@ es_arg012='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
 
 
 es_arg013='''<All:EventSelectionAll>
-  <:PD_HLT>
+  <PD_HLT:EventSelectionAny>
+    <MET:EventSelectionAll>
+      <PDMET:LambdaStr> ev : ev.PrimaryDataset[0] == 'MET'
+      <MET_HLT:EventSelectionAny>
+        <HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight[0]
+        <HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight[0]
+    <HTMHT:EventSelectionAll>
+      <PDHTMHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'HTMHT'
+      <HTMHT_HLT:EventSelectionAny>
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+    <JetHT:EventSelectionAll>
+      <PDJetHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'JetHT'
+      <JetHT_HLT:EventSelectionAny>
+        <HLT_PFHT800:LambdaStr> ev : ev.HLT_PFHT800[0]
+    <SingleMuon:EventSelectionAll>
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+      <SingleMuon_HLT:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
+    <SingleElectron:EventSelectionAll>
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+      <SingleElectron_HLT:EventSelectionAny>
+        <HLT_Ele22_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele22_WPLoose_Gsf[0]
+        <HLT_Ele23_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele23_WPLoose_Gsf[0]
+        <HLT_Ele27_eta2p1_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele27_eta2p1_WPLoose_Gsf[0]
+    <SinglePhoton:EventSelectionAll>
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
+      <SinglePhoton_HLT:EventSelectionAny>
+        <HLT_Photon120:LambdaStr> ev : ev.HLT_Photon120[0]
+        <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
+        <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
     <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
@@ -1801,13 +2941,93 @@ es_arg013='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -1815,7 +3035,10 @@ es_arg013='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1823,7 +3046,10 @@ es_arg013='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1852,17 +3078,87 @@ es_arg013='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
 
 
 es_arg014='''<All:EventSelectionAll>
-  <:PD_HLT>
+  <PD_HLT:EventSelectionAny>
+    <MET:EventSelectionAll>
+      <PDMET:LambdaStr> ev : ev.PrimaryDataset[0] == 'MET'
+      <MET_HLT:EventSelectionAny>
+        <HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight[0]
+        <HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight[0]
+    <HTMHT:EventSelectionAll>
+      <PDHTMHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'HTMHT'
+      <HTMHT_HLT:EventSelectionAny>
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+    <JetHT:EventSelectionAll>
+      <PDJetHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'JetHT'
+      <JetHT_HLT:EventSelectionAny>
+        <HLT_PFHT800:LambdaStr> ev : ev.HLT_PFHT800[0]
+    <SingleMuon:EventSelectionAll>
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+      <SingleMuon_HLT:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
+    <SingleElectron:EventSelectionAll>
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+      <SingleElectron_HLT:EventSelectionAny>
+        <HLT_Ele22_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele22_WPLoose_Gsf[0]
+        <HLT_Ele23_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele23_WPLoose_Gsf[0]
+        <HLT_Ele27_eta2p1_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele27_eta2p1_WPLoose_Gsf[0]
+    <SinglePhoton:EventSelectionAll>
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
+      <SinglePhoton_HLT:EventSelectionAny>
+        <HLT_Photon120:LambdaStr> ev : ev.HLT_Photon120[0]
+        <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
+        <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
     <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
@@ -1933,13 +3229,93 @@ es_arg014='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -1947,7 +3323,10 @@ es_arg014='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1955,7 +3334,10 @@ es_arg014='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -1984,17 +3366,87 @@ es_arg014='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
 
 
 es_arg015='''<All:EventSelectionAll>
-  <:PD_HLT>
+  <PD_HLT:EventSelectionAny>
+    <MET:EventSelectionAll>
+      <PDMET:LambdaStr> ev : ev.PrimaryDataset[0] == 'MET'
+      <MET_HLT:EventSelectionAny>
+        <HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight[0]
+        <HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight[0]
+    <HTMHT:EventSelectionAll>
+      <PDHTMHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'HTMHT'
+      <HTMHT_HLT:EventSelectionAny>
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+    <JetHT:EventSelectionAll>
+      <PDJetHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'JetHT'
+      <JetHT_HLT:EventSelectionAny>
+        <HLT_PFHT800:LambdaStr> ev : ev.HLT_PFHT800[0]
+    <SingleMuon:EventSelectionAll>
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+      <SingleMuon_HLT:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
+    <SingleElectron:EventSelectionAll>
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+      <SingleElectron_HLT:EventSelectionAny>
+        <HLT_Ele22_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele22_WPLoose_Gsf[0]
+        <HLT_Ele23_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele23_WPLoose_Gsf[0]
+        <HLT_Ele27_eta2p1_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele27_eta2p1_WPLoose_Gsf[0]
+    <SinglePhoton:EventSelectionAll>
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
+      <SinglePhoton_HLT:EventSelectionAny>
+        <HLT_Photon120:LambdaStr> ev : ev.HLT_Photon120[0]
+        <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
+        <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
     <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
@@ -2065,13 +3517,93 @@ es_arg015='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:HT_HLTAlphaT>
-          <:AlphaTCut>
+          <HT_HLTAlphaT:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <HLTAlphaTHT200:EventSelectionAny>
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+                <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <HLTAlphaTHT250:EventSelectionAny>
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+                <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <HLTAlphaTHT300:EventSelectionAny>
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+                <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <HLTAlphaTHT350:EventSelectionAny>
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+                <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <HLTAlphaTHT400:EventSelectionAny>
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+                <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -2079,7 +3611,10 @@ es_arg015='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -2087,7 +3622,10 @@ es_arg015='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -2116,10 +3654,40 @@ es_arg015='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -2182,11 +3750,41 @@ es_arg100='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -2229,10 +3827,40 @@ es_arg100='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -2295,11 +3923,41 @@ es_arg101='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -2342,10 +4000,40 @@ es_arg101='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -2412,11 +4100,41 @@ es_arg102='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -2459,10 +4177,40 @@ es_arg102='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -2529,11 +4277,41 @@ es_arg103='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -2576,10 +4354,40 @@ es_arg103='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -2642,11 +4450,41 @@ es_arg104='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -2689,10 +4527,40 @@ es_arg104='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -2755,11 +4623,41 @@ es_arg105='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -2802,10 +4700,40 @@ es_arg105='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -2872,11 +4800,41 @@ es_arg106='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -2919,10 +4877,40 @@ es_arg106='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -2989,11 +4977,41 @@ es_arg107='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -3036,10 +5054,40 @@ es_arg107='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -3102,11 +5150,41 @@ es_arg108='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -3114,7 +5192,10 @@ es_arg108='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3122,7 +5203,10 @@ es_arg108='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3151,10 +5235,40 @@ es_arg108='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -3217,11 +5331,41 @@ es_arg109='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -3229,7 +5373,10 @@ es_arg109='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3237,7 +5384,10 @@ es_arg109='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3266,10 +5416,40 @@ es_arg109='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -3336,11 +5516,41 @@ es_arg110='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -3348,7 +5558,10 @@ es_arg110='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3356,7 +5569,10 @@ es_arg110='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3385,10 +5601,40 @@ es_arg110='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -3455,11 +5701,41 @@ es_arg111='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -3467,7 +5743,10 @@ es_arg111='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3475,7 +5754,10 @@ es_arg111='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3504,10 +5786,40 @@ es_arg111='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -3570,11 +5882,41 @@ es_arg112='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -3582,7 +5924,10 @@ es_arg112='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3590,7 +5935,10 @@ es_arg112='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3619,10 +5967,40 @@ es_arg112='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -3685,11 +6063,41 @@ es_arg113='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -3697,7 +6105,10 @@ es_arg113='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3705,7 +6116,10 @@ es_arg113='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3734,10 +6148,40 @@ es_arg113='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -3804,11 +6248,41 @@ es_arg114='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -3816,7 +6290,10 @@ es_arg114='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3824,7 +6301,10 @@ es_arg114='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3853,10 +6333,40 @@ es_arg114='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
@@ -3923,11 +6433,41 @@ es_arg115='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SignalFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
           <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
         <SignalFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
@@ -3935,7 +6475,10 @@ es_arg115='''<All:EventSelectionAll>
     <SingleMuFinal:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflow[0] == 'SingleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mtwNoHF:LambdaStr> ev : 30 <= ev.mtwNoHF[0] < 125
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3943,7 +6486,10 @@ es_arg115='''<All:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflow[0] == 'DoubleMu'
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[0] < 0.12
       <relIso03LT0p12:LambdaStr> ev : ev.muon_relIso03[1] < 0.12
-      <:HLT_SingleMuon>
+      <HLT_SingleMuon:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
       <isoTrackNoMuVeto:LambdaStr> ev : ev.nIsoTracksNoMuVeto[0] <= 0
       <mll:LambdaStr> ev : 66.2 <= ev.mll[0] < 116.2
       <minDelRJetMu:LambdaStr> ev : ev.minDelRJetMu[0] >= 0.5
@@ -3972,10 +6518,40 @@ es_arg115='''<All:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
         <SinglePhotonFinalAsymjet:EventSelectionAll>
           <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalSymjet:EventSelectionAll>
           <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
-          <:AlphaTCut>
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
 '''
