@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import ast
+import json
 
 import Binning
 Binning = Binning.Binning
@@ -46,6 +47,26 @@ class PrivatePuWeightFromNVert(ScribblerBase):
     def event(self, event):
         event.PrivatePuWeightFromNVert = self.vals
         self.vals[:] = [self.weightDict[self.binning(getattr(event, self.varName)[0])]]
+
+##__________________________________________________________________||
+class inCertifiedLumiSections(ScribblerBase):
+    def __init__(self, json_path):
+        self.certifiedLumiSections = [ ]
+        j = json.load(open(json_path))
+        for run in sorted(j.keys()):
+            for lumi_range in j[run]:
+                lumis = range(lumi_range[0], lumi_range[1] + 1)
+                self.certifiedLumiSections.extend([(int(run), ls) for ls in lumis])
+        # e.g., self.certifiedLumiSections = [(256941, 137), (256941, 138), (256941, 139)]
+        self.certifiedLumiSections = set(self.certifiedLumiSections)
+
+    def begin(self, event):
+        self.vals = [ ]
+        event.inCertifiedLumiSections = self.vals
+
+    def event(self, event):
+        event.inCertifiedLumiSections = self.vals
+        self.vals[:] = [(event.run[0], event.lumi[0]) in self.certifiedLumiSections]
 
 ##__________________________________________________________________||
 class cutflow(ScribblerBase):
@@ -297,13 +318,15 @@ class MhtOverMetNoXNoHF(ScribblerBase):
         self.vals[:] = [event.mht40_pt[0]/event.metNoXNoHF_pt[0]]
 
 ##__________________________________________________________________||
-def scribbler_configs(datamc, pd, metnohf = False):
+def scribbler_configs(datamc, pd, json = None, metnohf = False):
     """
     Args:
 
     datamc: "data" or "mc"
 
     pd: True or False
+
+    json: path to json file for certified data
 
     metnohf: True or False
 
@@ -312,6 +335,9 @@ def scribbler_configs(datamc, pd, metnohf = False):
     ret = [ ]
     if datamc == 'data' and pd:
         ret.append(PrimaryDataset())
+
+    if datamc == 'data' and json is not None:
+        ret.append(inCertifiedLumiSections(json))
 
     ret.append(cutflow())
     ret.append(metNoX())
