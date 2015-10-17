@@ -561,7 +561,9 @@ es_arg002='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+    <HBHENoiseIsoFilter:LambdaStr> ev : ev.Flag_HBHENoiseIsoFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
@@ -738,7 +740,9 @@ es_arg003='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+    <HBHENoiseIsoFilter:LambdaStr> ev : ev.Flag_HBHENoiseIsoFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
@@ -1291,7 +1295,9 @@ es_arg006='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+    <HBHENoiseIsoFilter:LambdaStr> ev : ev.Flag_HBHENoiseIsoFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
@@ -1478,7 +1484,9 @@ es_arg007='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+    <HBHENoiseIsoFilter:LambdaStr> ev : ev.Flag_HBHENoiseIsoFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
@@ -2121,7 +2129,9 @@ es_arg010='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+    <HBHENoiseIsoFilter:LambdaStr> ev : ev.Flag_HBHENoiseIsoFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
@@ -2358,7 +2368,9 @@ es_arg011='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+    <HBHENoiseIsoFilter:LambdaStr> ev : ev.Flag_HBHENoiseIsoFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
@@ -3214,7 +3226,9 @@ es_arg014='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+    <HBHENoiseIsoFilter:LambdaStr> ev : ev.Flag_HBHENoiseIsoFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
@@ -3502,7 +3516,9 @@ es_arg015='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
-    <hbheFilterNew:LambdaStr> ev : ev.hbheFilterNew[0] == 1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
+    <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+    <HBHENoiseIsoFilter:LambdaStr> ev : ev.Flag_HBHENoiseIsoFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
@@ -4085,6 +4101,7 @@ es_arg102='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
@@ -4262,6 +4279,7 @@ es_arg103='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
@@ -4785,6 +4803,7 @@ es_arg106='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
@@ -4962,6 +4981,7 @@ es_arg107='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
@@ -5501,6 +5521,7 @@ es_arg110='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
@@ -5686,6 +5707,7 @@ es_arg111='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
@@ -6233,6 +6255,7 @@ es_arg114='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
@@ -6418,6 +6441,7 @@ es_arg115='''<All:EventSelectionAll>
   <MetFilters:EventSelectionAll>
     <goodVertex:LambdaStr> ev : ev.Flag_goodVertices[0] == 1
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
+    <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
