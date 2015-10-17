@@ -310,6 +310,7 @@ def MetFilters(datamc,
 
     ret.add(LambdaStr("ev : ev.Flag_goodVertices[0] == 1", name = 'goodVertex'))
     ret.add(LambdaStr("ev : ev.Flag_CSCTightHaloFilter[0] ==1", name = 'CSCTightHaloFilter'))
+    ret.add(LambdaStr("ev : ev.Flag_eeBadScFilter[0] ==1", name = 'eeBadScFilter'))
     if datamc == 'data':
         ret.add(LambdaStr("ev : ev.hbheFilterNew[0] == 1", name = 'hbheFilterNew'))
     else:
