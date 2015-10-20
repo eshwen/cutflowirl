@@ -91,6 +91,11 @@ class Test_event_selection(unittest.TestCase):
         self.do_arg(arg113, es_arg113)
         self.do_arg(arg114, es_arg114)
         self.do_arg(arg115, es_arg115)
+        self.do_arg(arg200, es_arg200)
+        self.do_arg(arg201, es_arg201)
+        self.do_arg(arg202, es_arg202)
+        self.do_arg(arg203, es_arg203)
+        self.do_arg(arg204, es_arg204)
 
     def do_arg(self, arg, es_arg):
         es = event_selection(**arg)
@@ -129,44 +134,54 @@ class Test_event_selection(unittest.TestCase):
         self.print_ev_for(arg113, 'arg113')
         self.print_ev_for(arg114, 'arg114')
         self.print_ev_for(arg115, 'arg115')
+        self.print_ev_for(arg200, 'arg200')
+        self.print_ev_for(arg201, 'arg201')
+        self.print_ev_for(arg202, 'arg202')
+        self.print_ev_for(arg203, 'arg203')
+        self.print_ev_for(arg204, 'arg204')
 
     def print_ev_for(self, arg, argName):
         print '\n'
         print 'es_' + argName + "='''" + test_event_selection_str(event_selection(**arg)) + "'''"
 
 ##__________________________________________________________________||
-arg000 = dict(datamc = 'data', level = 'final', hlt = False, pd = False, met_filters = False, metnohf = False )
-arg001 = dict(datamc = 'data', level = 'final', hlt = False, pd = False, met_filters = False, metnohf = True  )
-arg002 = dict(datamc = 'data', level = 'final', hlt = False, pd = False, met_filters = True,  metnohf = False )
-arg003 = dict(datamc = 'data', level = 'final', hlt = False, pd = False, met_filters = True,  metnohf = True  )
-arg004 = dict(datamc = 'data', level = 'final', hlt = False, pd = True,  met_filters = False, metnohf = False )
-arg005 = dict(datamc = 'data', level = 'final', hlt = False, pd = True,  met_filters = False, metnohf = True  )
-arg006 = dict(datamc = 'data', level = 'final', hlt = False, pd = True,  met_filters = True,  metnohf = False )
-arg007 = dict(datamc = 'data', level = 'final', hlt = False, pd = True,  met_filters = True,  metnohf = True  )
-arg008 = dict(datamc = 'data', level = 'final', hlt = True,  pd = False, met_filters = False, metnohf = False )
-arg009 = dict(datamc = 'data', level = 'final', hlt = True,  pd = False, met_filters = False, metnohf = True  )
-arg010 = dict(datamc = 'data', level = 'final', hlt = True,  pd = False, met_filters = True,  metnohf = False )
-arg011 = dict(datamc = 'data', level = 'final', hlt = True,  pd = False, met_filters = True,  metnohf = True  )
-arg012 = dict(datamc = 'data', level = 'final', hlt = True,  pd = True,  met_filters = False, metnohf = False )
-arg013 = dict(datamc = 'data', level = 'final', hlt = True,  pd = True,  met_filters = False, metnohf = True  )
-arg014 = dict(datamc = 'data', level = 'final', hlt = True,  pd = True,  met_filters = True,  metnohf = False )
-arg015 = dict(datamc = 'data', level = 'final', hlt = True,  pd = True,  met_filters = True,  metnohf = True  )
-arg100 = dict(datamc = 'mc', level = 'final', hlt = False, pd = False, met_filters = False, metnohf = False )
-arg101 = dict(datamc = 'mc', level = 'final', hlt = False, pd = False, met_filters = False, metnohf = True  )
-arg102 = dict(datamc = 'mc', level = 'final', hlt = False, pd = False, met_filters = True,  metnohf = False )
-arg103 = dict(datamc = 'mc', level = 'final', hlt = False, pd = False, met_filters = True,  metnohf = True  )
-arg104 = dict(datamc = 'mc', level = 'final', hlt = False, pd = True,  met_filters = False, metnohf = False )
-arg105 = dict(datamc = 'mc', level = 'final', hlt = False, pd = True,  met_filters = False, metnohf = True  )
-arg106 = dict(datamc = 'mc', level = 'final', hlt = False, pd = True,  met_filters = True,  metnohf = False )
-arg107 = dict(datamc = 'mc', level = 'final', hlt = False, pd = True,  met_filters = True,  metnohf = True  )
-arg108 = dict(datamc = 'mc', level = 'final', hlt = True,  pd = False, met_filters = False, metnohf = False )
-arg109 = dict(datamc = 'mc', level = 'final', hlt = True,  pd = False, met_filters = False, metnohf = True  )
-arg110 = dict(datamc = 'mc', level = 'final', hlt = True,  pd = False, met_filters = True,  metnohf = False )
-arg111 = dict(datamc = 'mc', level = 'final', hlt = True,  pd = False, met_filters = True,  metnohf = True  )
-arg112 = dict(datamc = 'mc', level = 'final', hlt = True,  pd = True,  met_filters = False, metnohf = False )
-arg113 = dict(datamc = 'mc', level = 'final', hlt = True,  pd = True,  met_filters = False, metnohf = True  )
-arg114 = dict(datamc = 'mc', level = 'final', hlt = True,  pd = True,  met_filters = True,  metnohf = False )
-arg115 = dict(datamc = 'mc', level = 'final', hlt = True,  pd = True,  met_filters = True,  metnohf = True  )
+arg000 = dict(datamc = 'data', hlt = False, pd = False, met_filters = False, metnohf = False )
+arg001 = dict(datamc = 'data', hlt = False, pd = False, met_filters = False, metnohf = True  )
+arg002 = dict(datamc = 'data', hlt = False, pd = False, met_filters = True,  metnohf = False )
+arg003 = dict(datamc = 'data', hlt = False, pd = False, met_filters = True,  metnohf = True  )
+arg004 = dict(datamc = 'data', hlt = False, pd = True,  met_filters = False, metnohf = False )
+arg005 = dict(datamc = 'data', hlt = False, pd = True,  met_filters = False, metnohf = True  )
+arg006 = dict(datamc = 'data', hlt = False, pd = True,  met_filters = True,  metnohf = False )
+arg007 = dict(datamc = 'data', hlt = False, pd = True,  met_filters = True,  metnohf = True  )
+arg008 = dict(datamc = 'data', hlt = True,  pd = False, met_filters = False, metnohf = False )
+arg009 = dict(datamc = 'data', hlt = True,  pd = False, met_filters = False, metnohf = True  )
+arg010 = dict(datamc = 'data', hlt = True,  pd = False, met_filters = True,  metnohf = False )
+arg011 = dict(datamc = 'data', hlt = True,  pd = False, met_filters = True,  metnohf = True  )
+arg012 = dict(datamc = 'data', hlt = True,  pd = True,  met_filters = False, metnohf = False )
+arg013 = dict(datamc = 'data', hlt = True,  pd = True,  met_filters = False, metnohf = True  )
+arg014 = dict(datamc = 'data', hlt = True,  pd = True,  met_filters = True,  metnohf = False )
+arg015 = dict(datamc = 'data', hlt = True,  pd = True,  met_filters = True,  metnohf = True  )
+arg100 = dict(datamc = 'mc', hlt = False, pd = False, met_filters = False, metnohf = False )
+arg101 = dict(datamc = 'mc', hlt = False, pd = False, met_filters = False, metnohf = True  )
+arg102 = dict(datamc = 'mc', hlt = False, pd = False, met_filters = True,  metnohf = False )
+arg103 = dict(datamc = 'mc', hlt = False, pd = False, met_filters = True,  metnohf = True  )
+arg104 = dict(datamc = 'mc', hlt = False, pd = True,  met_filters = False, metnohf = False )
+arg105 = dict(datamc = 'mc', hlt = False, pd = True,  met_filters = False, metnohf = True  )
+arg106 = dict(datamc = 'mc', hlt = False, pd = True,  met_filters = True,  metnohf = False )
+arg107 = dict(datamc = 'mc', hlt = False, pd = True,  met_filters = True,  metnohf = True  )
+arg108 = dict(datamc = 'mc', hlt = True,  pd = False, met_filters = False, metnohf = False )
+arg109 = dict(datamc = 'mc', hlt = True,  pd = False, met_filters = False, metnohf = True  )
+arg110 = dict(datamc = 'mc', hlt = True,  pd = False, met_filters = True,  metnohf = False )
+arg111 = dict(datamc = 'mc', hlt = True,  pd = False, met_filters = True,  metnohf = True  )
+arg112 = dict(datamc = 'mc', hlt = True,  pd = True,  met_filters = False, metnohf = False )
+arg113 = dict(datamc = 'mc', hlt = True,  pd = True,  met_filters = False, metnohf = True  )
+arg114 = dict(datamc = 'mc', hlt = True,  pd = True,  met_filters = True,  metnohf = False )
+arg115 = dict(datamc = 'mc', hlt = True,  pd = True,  met_filters = True,  metnohf = True  )
+arg200 = dict(datamc = 'data', levels = ('baseline', 'loose'), cutflows = ('Signal', 'SingleEle'), hlt = False, pd = False, met_filters = False, metnohf = False )
+arg201 = dict(datamc = 'data', levels = ('baseline', 'loose', 'final'), cutflows = ('Signal', 'SingleEle'), hlt = False, pd = False, met_filters = False, metnohf = False )
+arg202 = dict(datamc = 'data', levels = ('baseline', 'loose'), cutflows = ( ), hlt = False, pd = False, met_filters = False, metnohf = False )
+arg203 = dict(datamc = 'data', levels = ('baseline', 'loose', 'final'), cutflows = ( ), hlt = False, pd = False, met_filters = False, metnohf = False )
+arg204 = dict(datamc = 'data', levels = ('final'), cutflows = ('Signal', 'SingleEle'), hlt = False, pd = False, met_filters = False, metnohf = False )
 
 ##__________________________________________________________________||
 es_arg000='''<All:EventSelectionAll>
@@ -6578,6 +6593,205 @@ es_arg115='''<All:EventSelectionAll>
               <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
         <SinglePhotonFinalHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
+'''
+
+
+es_arg200='''<All:EventSelectionAll>
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <cutflowsLoose:EventSelectionAny>
+    <SignalLoose:EventSelectionAll>
+      <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
+      <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+      <SignalLooseBintypes:EventSelectionAny>
+        <SignalLooseMonojet:EventSelectionAll>
+          <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
+        <SignalLooseAsymjet:EventSelectionAll>
+          <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
+          <alphaTLT0p5:LambdaStr> ev : 0.5 <= ev.alphaT[0]
+        <SignalLooseSymjet:EventSelectionAll>
+          <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
+          <alphaTLT0p5:LambdaStr> ev : 0.5 <= ev.alphaT[0]
+        <SignalLooseHighht:EventSelectionAll>
+          <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
+          <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
+    <SingleEleLoose:EventSelectionAll>
+      <cutflowSingleEle:LambdaStr> ev : ev.cutflow[0] == 'SingleEle'
+'''
+
+
+es_arg201='''<All:EventSelectionAll>
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <cutflowsLoose:EventSelectionAny>
+    <SignalLoose:EventSelectionAll>
+      <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
+      <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+      <SignalLooseBintypes:EventSelectionAny>
+        <SignalLooseMonojet:EventSelectionAll>
+          <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
+        <SignalLooseAsymjet:EventSelectionAll>
+          <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
+          <alphaTLT0p5:LambdaStr> ev : 0.5 <= ev.alphaT[0]
+        <SignalLooseSymjet:EventSelectionAll>
+          <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
+          <alphaTLT0p5:LambdaStr> ev : 0.5 <= ev.alphaT[0]
+        <SignalLooseHighht:EventSelectionAll>
+          <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
+          <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
+    <SingleEleLoose:EventSelectionAll>
+      <cutflowSingleEle:LambdaStr> ev : ev.cutflow[0] == 'SingleEle'
+  <CommonFinal:EventSelectionAll>
+    <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
+    <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
+    <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
+  <cutflowsFinal:EventSelectionAny>
+    <SignalFinal:EventSelectionAll>
+      <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
+      <isoTrackVeto:LambdaStr> ev : ev.nIsoTracksVeto[0] <= 0
+      <SignalBintypes:EventSelectionAny>
+        <SignalFinalMonojet:EventSelectionAll>
+          <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
+        <SignalFinalAsymjet:EventSelectionAll>
+          <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
+          <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
+        <SignalFinalSymjet:EventSelectionAll>
+          <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
+          <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
+        <SignalFinalHighht:EventSelectionAll>
+          <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
+          <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
+    <SingleEleFinal:EventSelectionAll>
+      <cutflowSingleEle:LambdaStr> ev : ev.cutflow[0] == 'SingleEle'
+      <eleBarrel:LambdaStr> ev : -1.479 < ev.ele_eta[0] < 1.479
+      <eleRelIso03:LambdaStr> ev : ev.ele_relIso03[0] < 0.0354
+      <isoTrackNoEleVeto:LambdaStr> ev : ev.nIsoTracksNoEleVeto[0] <= 0
+      <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
+      <minDelRJetEle:LambdaStr> ev : ev.minDelRJetEle[0] >= 0.5
+'''
+
+
+es_arg202='''<All:EventSelectionAll>
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <cutflowsLoose:EventSelectionAny>
+'''
+
+
+es_arg203='''<All:EventSelectionAll>
+  <Baseline:EventSelectionAll>
+    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
+    <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
+    <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <cutflowsLoose:EventSelectionAny>
+  <CommonFinal:EventSelectionAll>
+    <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
+    <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
+    <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
+  <cutflowsFinal:EventSelectionAny>
+'''
+
+es_arg204='''<All:EventSelectionAll>
+  <CommonFinal:EventSelectionAll>
+    <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
+    <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
+    <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
+  <cutflowsFinal:EventSelectionAny>
+    <SignalFinal:EventSelectionAll>
+      <cutflowSignal:LambdaStr> ev : ev.cutflow[0] == 'Signal'
+      <isoTrackVeto:LambdaStr> ev : ev.nIsoTracksVeto[0] <= 0
+      <SignalBintypes:EventSelectionAny>
+        <SignalFinalMonojet:EventSelectionAll>
+          <bintype_monojet:LambdaStr> ev : ev.bintype[0] == 'monojet'
+        <SignalFinalAsymjet:EventSelectionAll>
+          <bintype_asymjet:LambdaStr> ev : ev.bintype[0] == 'asymjet'
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
+          <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
+        <SignalFinalSymjet:EventSelectionAll>
+          <bintype_symjet:LambdaStr> ev : ev.bintype[0] == 'symjet'
+          <AlphaTCut:EventSelectionAny>
+            <HT200to250:EventSelectionAll>
+              <HTin200to250:LambdaStr> ev : 200 <= ev.ht40[0] < 250
+              <alphaTGT0p65:LambdaStr> ev : 0.65 <= ev.alphaT[0]
+            <HT250to300:EventSelectionAll>
+              <HTin250to300:LambdaStr> ev : 250 <= ev.ht40[0] < 300
+              <alphaTGT0p60:LambdaStr> ev : 0.60 <= ev.alphaT[0]
+            <HT300to350:EventSelectionAll>
+              <HTin300to350:LambdaStr> ev : 300 <= ev.ht40[0] < 350
+              <alphaTGT0p55:LambdaStr> ev : 0.55 <= ev.alphaT[0]
+            <HT350to400:EventSelectionAll>
+              <HTin350to400:LambdaStr> ev : 350 <= ev.ht40[0] < 400
+              <alphaTGT0p53:LambdaStr> ev : 0.53 <= ev.alphaT[0]
+            <HT400to800:EventSelectionAll>
+              <HTin400to800:LambdaStr> ev : 400 <= ev.ht40[0] < 800
+              <alphaTGT0p52:LambdaStr> ev : 0.52 <= ev.alphaT[0]
+          <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
+        <SignalFinalHighht:EventSelectionAll>
+          <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
+          <biasedDPhiGT0p5:LambdaStr> ev : 0.5 <= ev.biasedDPhi[0]
+    <SingleEleFinal:EventSelectionAll>
+      <cutflowSingleEle:LambdaStr> ev : ev.cutflow[0] == 'SingleEle'
+      <eleBarrel:LambdaStr> ev : -1.479 < ev.ele_eta[0] < 1.479
+      <eleRelIso03:LambdaStr> ev : ev.ele_relIso03[0] < 0.0354
+      <isoTrackNoEleVeto:LambdaStr> ev : ev.nIsoTracksNoEleVeto[0] <= 0
+      <mtw:LambdaStr> ev : 30 <= ev.mtw[0] < 125
+      <minDelRJetEle:LambdaStr> ev : ev.minDelRJetEle[0] >= 0.5
 '''
 
 ##__________________________________________________________________||
