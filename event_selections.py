@@ -659,10 +659,10 @@ def event_selection(datamc, levels = ("baseline", "loose", "final"),
     ##______________________________________________________________||
     if "baseline" in levels:
         if datamc == 'data' and hlt and pd:
-            eventSelection.add(PD_HLT())
+            eventSelection.add(PD_HLT(AllClass = AllClass, AnyClass = AnyClass))
 
         ##__________________________________________________________||
-        eventSelection.add(BaselineSelection())
+        eventSelection.add(BaselineSelection(AllClass = AllClass, AnyClass = AnyClass))
 
     ##______________________________________________________________||
     if "loose" in levels:
@@ -671,33 +671,33 @@ def event_selection(datamc, levels = ("baseline", "loose", "final"),
         cutflowsLoose = AnyClass(name = 'cutflowsLoose')
         eventSelection.add(cutflowsLoose)
 
-        if 'Signal'       in cutflows: cutflowsLoose.add(SignalLooseSelection(datamc = datamc, pd = pd, hlt = hlt))
-        if 'SingleMu'     in cutflows: cutflowsLoose.add(SingleMuLooseSelection(datamc = datamc, pd = pd, hlt = hlt))
-        if 'DoubleMu'     in cutflows: cutflowsLoose.add(DoubleMuLooseSelection(datamc = datamc, pd = pd, hlt = hlt))
-        if 'SingleEle'    in cutflows: cutflowsLoose.add(SingleEleLooseSelection(datamc = datamc, pd = pd, hlt = hlt))
-        if 'DoubleEle'    in cutflows: cutflowsLoose.add(DoubleEleLooseSelection(datamc = datamc, pd = pd, hlt = hlt))
-        if 'SinglePhoton' in cutflows: cutflowsLoose.add(SinglePhotonLooseSelection(datamc = datamc, pd = pd, hlt = hlt))
+        if 'Signal'       in cutflows: cutflowsLoose.add(SignalLooseSelection(datamc = datamc, pd = pd, hlt = hlt, AllClass = AllClass, AnyClass = AnyClass))
+        if 'SingleMu'     in cutflows: cutflowsLoose.add(SingleMuLooseSelection(datamc = datamc, pd = pd, hlt = hlt, AllClass = AllClass, AnyClass = AnyClass))
+        if 'DoubleMu'     in cutflows: cutflowsLoose.add(DoubleMuLooseSelection(datamc = datamc, pd = pd, hlt = hlt, AllClass = AllClass, AnyClass = AnyClass))
+        if 'SingleEle'    in cutflows: cutflowsLoose.add(SingleEleLooseSelection(datamc = datamc, pd = pd, hlt = hlt, AllClass = AllClass, AnyClass = AnyClass))
+        if 'DoubleEle'    in cutflows: cutflowsLoose.add(DoubleEleLooseSelection(datamc = datamc, pd = pd, hlt = hlt, AllClass = AllClass, AnyClass = AnyClass))
+        if 'SinglePhoton' in cutflows: cutflowsLoose.add(SinglePhotonLooseSelection(datamc = datamc, pd = pd, hlt = hlt, AllClass = AllClass, AnyClass = AnyClass))
 
     ##______________________________________________________________||
     if "final" in levels:
 
         ##__________________________________________________________||
         if met_filters:
-            eventSelection.add(MetFilters(datamc = datamc))
+            eventSelection.add(MetFilters(datamc = datamc, AllClass = AllClass, AnyClass = AnyClass))
 
         ##__________________________________________________________||
-        eventSelection.add(CommonFinalSelection(metnohf = metnohf))
+        eventSelection.add(CommonFinalSelection(metnohf = metnohf, AllClass = AllClass, AnyClass = AnyClass))
 
         ##__________________________________________________________||
         cutflowsFinal = AnyClass(name = 'cutflowsFinal')
         eventSelection.add(cutflowsFinal)
 
-        if 'Signal'       in cutflows: cutflowsFinal.add(SignalFinalSelection(datamc = datamc, pd = pd, hlt = hlt))
-        if 'SingleMu'     in cutflows: cutflowsFinal.add(SingleMuFinalSelection(datamc = datamc, pd = pd, hlt = hlt, metnohf = metnohf))
-        if 'DoubleMu'     in cutflows: cutflowsFinal.add(DoubleMuFinalSelection(datamc = datamc, pd = pd, hlt = hlt))
-        if 'SingleEle'    in cutflows: cutflowsFinal.add(SingleEleFinalSelection(datamc = datamc, pd = pd, hlt = hlt, metnohf = metnohf))
-        if 'DoubleEle'    in cutflows: cutflowsFinal.add(DoubleEleFinalSelection(datamc = datamc, pd = pd, hlt = hlt))
-        if 'SinglePhoton' in cutflows: cutflowsFinal.add(SinglePhotonFinalSelection(datamc = datamc, pd = pd, hlt = hlt))
+        if 'Signal'       in cutflows: cutflowsFinal.add(SignalFinalSelection(datamc = datamc, pd = pd, hlt = hlt, AllClass = AllClass, AnyClass = AnyClass))
+        if 'SingleMu'     in cutflows: cutflowsFinal.add(SingleMuFinalSelection(datamc = datamc, pd = pd, hlt = hlt, metnohf = metnohf, AllClass = AllClass, AnyClass = AnyClass))
+        if 'DoubleMu'     in cutflows: cutflowsFinal.add(DoubleMuFinalSelection(datamc = datamc, pd = pd, hlt = hlt, AllClass = AllClass, AnyClass = AnyClass))
+        if 'SingleEle'    in cutflows: cutflowsFinal.add(SingleEleFinalSelection(datamc = datamc, pd = pd, hlt = hlt, metnohf = metnohf, AllClass = AllClass, AnyClass = AnyClass))
+        if 'DoubleEle'    in cutflows: cutflowsFinal.add(DoubleEleFinalSelection(datamc = datamc, pd = pd, hlt = hlt, AllClass = AllClass, AnyClass = AnyClass))
+        if 'SinglePhoton' in cutflows: cutflowsFinal.add(SinglePhotonFinalSelection(datamc = datamc, pd = pd, hlt = hlt, AllClass = AllClass, AnyClass = AnyClass))
 
     return eventSelection
 
