@@ -135,6 +135,20 @@ class PrimaryDataset(ScribblerBase):
         event.PrimaryDataset = self.vals
 
 ##__________________________________________________________________||
+class GenProcess(ScribblerBase):
+    def begin(self, event):
+        self.vals = [ ]
+        event.GenProcess = self.vals
+
+        # assume the first string before '_' is the name of the generated process
+        # e.g., 'QCD' if "QCD_HT1500to2000_25ns"
+        pd = event.componentName[0].split('_')[0]
+        self.vals[:] = [pd]
+
+    def event(self, event):
+        event.GenProcess = self.vals
+
+##__________________________________________________________________||
 class njetnbjetbin(ScribblerBase):
     def __init__(self):
         self.nbjet40binning = Binning(boundaries = (0, 1, 2, 3))
@@ -318,13 +332,15 @@ class MhtOverMetNoXNoHF(ScribblerBase):
         self.vals[:] = [event.mht40_pt[0]/event.metNoXNoHF_pt[0]]
 
 ##__________________________________________________________________||
-def scribbler_configs(datamc, pd, json = None, metnohf = False):
+def scribbler_configs(datamc, pd, gen_process, json = None, metnohf = False):
     """
     Args:
 
     datamc: "data" or "mc"
 
     pd: True or False
+
+    gen_process: True or False
 
     json: path to json file for certified data
 
@@ -335,6 +351,9 @@ def scribbler_configs(datamc, pd, json = None, metnohf = False):
     ret = [ ]
     if datamc == 'data' and pd:
         ret.append(PrimaryDataset())
+
+    if datamc == 'mc' and gen_process:
+        ret.append(GenProcess())
 
     if datamc == 'data' and json is not None:
         ret.append(inCertifiedLumiSections(json))
