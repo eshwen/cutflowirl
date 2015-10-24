@@ -318,6 +318,35 @@ def MetFilters(datamc,
     return ret
 
 ##__________________________________________________________________||
+def UniquePromptPhotonPhaseSpaceInQCDandGJets(AllClass = EventSelectionAll, AnyClass = EventSelectionAny):
+
+    ret = AllClass(name = 'UniquePromptPhotonPhaseSpaceInQCDandGJets')
+
+    processes = AnyClass(name = 'GenProcesses')
+    ret.add(processes)
+
+    qcd = AllClass(name = 'GenProcessQCD')
+    gjets = AllClass(name = 'GenProcessGJets')
+    other = AllClass(name = 'GenProcessesNoQCDorGJets')
+
+    processes.add(qcd)
+    processes.add(gjets)
+    processes.add(other)
+
+    ## QCD
+    qcd.add(LambdaStr("ev : ev.GenProcess[0] == 'QCD'", name = 'process_QCD'))
+    qcd.add(LambdaStr("ev : ev.nPromptDirectGenPhotons[0] == 0", name = 'nPromptDirectGenPhotonsEQ0'))
+
+    ## GJets
+    gjets.add(LambdaStr("ev : ev.GenProcess[0] == 'GJets'", name = 'process_GJets'))
+    gjets.add(LambdaStr("ev : ev.nPromptDirectGenPhotons[0] >= 1", name = 'nPromptDirectGenPhotonsGE1'))
+
+    ## Other
+    other.add(LambdaStr("ev : ev.GenProcess[0] not in ('QCD', 'GJets')", name = 'process_not_QCD_or_GJets'))
+
+    return ret
+
+##__________________________________________________________________||
 def CommonFinalSelection(metnohf,
                          AllClass = EventSelectionAll, AnyClass = EventSelectionAny):
 
@@ -684,6 +713,9 @@ def event_selection(datamc, levels = ("baseline", "loose", "final"),
         ##__________________________________________________________||
         if met_filters:
             eventSelection.add(MetFilters(datamc = datamc, AllClass = AllClass, AnyClass = AnyClass))
+
+        if datamc == 'mc':
+            eventSelection.add(UniquePromptPhotonPhaseSpaceInQCDandGJets(AllClass = AllClass, AnyClass = AnyClass))
 
         ##__________________________________________________________||
         eventSelection.add(CommonFinalSelection(metnohf = metnohf, AllClass = AllClass, AnyClass = AnyClass))
