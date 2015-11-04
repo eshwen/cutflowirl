@@ -231,6 +231,8 @@ es_arg000='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -404,6 +406,8 @@ es_arg001='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -583,6 +587,8 @@ es_arg002='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -762,6 +768,8 @@ es_arg003='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -945,6 +953,8 @@ es_arg004='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -1128,6 +1138,8 @@ es_arg005='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -1317,6 +1329,8 @@ es_arg006='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -1506,6 +1520,8 @@ es_arg007='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -1679,6 +1695,8 @@ es_arg008='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -1912,6 +1930,8 @@ es_arg009='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -2151,6 +2171,8 @@ es_arg010='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -2390,6 +2412,8 @@ es_arg011='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -2674,6 +2698,8 @@ es_arg012='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -2958,6 +2984,8 @@ es_arg013='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -3248,6 +3276,8 @@ es_arg014='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -3538,6 +3568,8 @@ es_arg015='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -3767,10 +3799,22 @@ es_arg100='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -3940,10 +3984,22 @@ es_arg101='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -4118,10 +4174,22 @@ es_arg102='''<All:EventSelectionAll>
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
     <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -4296,10 +4364,22 @@ es_arg103='''<All:EventSelectionAll>
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
     <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -4469,10 +4549,22 @@ es_arg104='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -4642,10 +4734,22 @@ es_arg105='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -4820,10 +4924,22 @@ es_arg106='''<All:EventSelectionAll>
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
     <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -4998,10 +5114,22 @@ es_arg107='''<All:EventSelectionAll>
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
     <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -5171,10 +5299,22 @@ es_arg108='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -5352,10 +5492,22 @@ es_arg109='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -5538,10 +5690,22 @@ es_arg110='''<All:EventSelectionAll>
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
     <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -5724,10 +5888,22 @@ es_arg111='''<All:EventSelectionAll>
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
     <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -5905,10 +6081,22 @@ es_arg112='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -6086,10 +6274,22 @@ es_arg113='''<All:EventSelectionAll>
         <SinglePhotonLooseHighht:EventSelectionAll>
           <bintype_highht:LambdaStr> ev : ev.bintype[0] == 'highht'
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -6272,10 +6472,22 @@ es_arg114='''<All:EventSelectionAll>
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
     <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -6458,10 +6670,22 @@ es_arg115='''<All:EventSelectionAll>
     <CSCTightHaloFilter:LambdaStr> ev : ev.Flag_CSCTightHaloFilter[0] ==1
     <eeBadScFilter:LambdaStr> ev : ev.Flag_eeBadScFilter[0] ==1
     <HBHENoiseFilter:LambdaStr> ev : ev.Flag_HBHENoiseFilter[0] == 1
+  <UniquePromptPhotonPhaseSpaceInQCDandGJets:EventSelectionAll>
+    <GenProcesses:EventSelectionAny>
+      <GenProcessQCD:EventSelectionAll>
+        <process_QCD:LambdaStr> ev : ev.GenProcess[0] == 'QCD'
+        <nPromptDirectGenPhotonsEQ0:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] == 0
+      <GenProcessGJets:EventSelectionAll>
+        <process_GJets:LambdaStr> ev : ev.GenProcess[0] == 'GJets'
+        <nPromptDirectGenPhotonsGE1:LambdaStr> ev : ev.nPromptDirectGenPhotons[0] >= 1
+      <GenProcessesNoQCDorGJets:EventSelectionAll>
+        <process_not_QCD_or_GJets:LambdaStr> ev : ev.GenProcess[0] not in ('QCD', 'GJets')
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoXNoHF:LambdaStr> ev : ev.MhtOverMetNoXNoHF[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -6649,6 +6873,8 @@ es_arg201='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
@@ -6727,15 +6953,20 @@ es_arg203='''<All:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
 '''
+
 
 es_arg204='''<All:EventSelectionAll>
   <CommonFinal:EventSelectionAll>
     <FwJetVeto:LambdaStr> ev : ev.nJet40Fwd[0] == 0
     <JetIDVeto:LambdaStr> ev : ev.nJet40failedId[0] == 0
     <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
+    <LeadJetEtaLT2p5:LambdaStr> ev : -2.5 < ev.jet_eta[0] < 2.5
+    <LeadJetChHEFGT0p1:LambdaStr> ev : ev.jet_chHEF[0] >= 0.1
     <MhtOverMetNoX:LambdaStr> ev : ev.MhtOverMetNoX[0] < 1.25
   <cutflowsFinal:EventSelectionAny>
     <SignalFinal:EventSelectionAll>
