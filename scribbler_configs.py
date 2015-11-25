@@ -203,23 +203,11 @@ class htbin(ScribblerBase):
         self.vals[:] = [self.htbinning(event.ht40[0])]
 
 ##__________________________________________________________________||
-class bintype(ScribblerBase):
+class Determin_bintype(object):
     def __init__(self):
         self.njet40binning = Binning(boundaries = (1, 2))
         self.njet100binning = Binning(boundaries = (1, 2))
         self.htbinning = Binning(boundaries = (200, 800))
-
-    def begin(self, event):
-        self.addr_bintype = [ ]
-        self.addr_bintypeId = [ ]
-        event.bintype = self.addr_bintype
-        event.bintypeId = self.addr_bintypeId
-
-        # (nJet40, nJet100, ht40)
-        self.itsdict = {
-            (1, 1, 200) : 'monojet', (2, 1, 200) : 'asymjet', (2, 2, 200) : 'symjet',
-            (1, 1, 800) : 'monojet', (2, 1, 800) : 'highht',  (2, 2, 800) : 'highht',
-        }
 
         # (nJet40, nJet100, ht40)
         self.tuple_bintypeId_dict = {
@@ -236,20 +224,31 @@ class bintype(ScribblerBase):
             -1 : 'other'
             }
 
-    def event(self, event):
-        event.bintype = self.addr_bintype
-        event.bintypeId = self.addr_bintypeId
-        key = (
-            self.njet40binning(event.nJet40[0]),
-            self.njet100binning(event.nJet100[0]),
-            self.htbinning(event.ht40[0])
-        )
+    def __call__(self, nJet40, nJet100, ht40):
+        key = (self.njet40binning(nJet40), self.njet100binning(nJet100), self.htbinning(ht40))
         if key in self.tuple_bintypeId_dict:
             bintypeId = self.tuple_bintypeId_dict[key]
         else:
             bintypeId = -1
+        bintype = self.bintype_name_dict[bintypeId]
+        return bintype, bintypeId
+
+determin_bintype = Determin_bintype()
+
+##__________________________________________________________________||
+class bintype(ScribblerBase):
+    def begin(self, event):
+        self.addr_bintype = [ ]
+        self.addr_bintypeId = [ ]
+        event.bintype = self.addr_bintype
+        event.bintypeId = self.addr_bintypeId
+
+    def event(self, event):
+        event.bintype = self.addr_bintype
+        event.bintypeId = self.addr_bintypeId
+        bintype, bintypeId = determin_bintype(event.nJet40[0], event.nJet100[0], event.ht40[0])
+        self.addr_bintype[:] = [bintype]
         self.addr_bintypeId[:] = [bintypeId]
-        self.addr_bintype[:] = [self.bintype_name_dict[bintypeId]]
 
 ##__________________________________________________________________||
 class metNoX(ScribblerBase):
