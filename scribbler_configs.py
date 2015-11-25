@@ -251,6 +251,36 @@ class bintype(ScribblerBase):
         self.addr_bintypeId[:] = [bintypeId]
 
 ##__________________________________________________________________||
+class bintypeJECUp(ScribblerBase):
+    def begin(self, event):
+        self.addr_bintype = [ ]
+        self.addr_bintypeId = [ ]
+        event.bintypeJECUp = self.addr_bintype
+        event.bintypeIdJECUp = self.addr_bintypeId
+
+    def event(self, event):
+        event.bintypeJECUp = self.addr_bintype
+        event.bintypeIdJECUp = self.addr_bintypeId
+        bintype, bintypeId = determin_bintype(event.nJet40JECUp[0], event.nJet100JECUp[0], event.ht40JECUp[0])
+        self.addr_bintype[:] = [bintype]
+        self.addr_bintypeId[:] = [bintypeId]
+
+##__________________________________________________________________||
+class bintypeJECDown(ScribblerBase):
+    def begin(self, event):
+        self.addr_bintype = [ ]
+        self.addr_bintypeId = [ ]
+        event.bintypeJECDown = self.addr_bintype
+        event.bintypeIdJECDown = self.addr_bintypeId
+
+    def event(self, event):
+        event.bintypeJECDown = self.addr_bintype
+        event.bintypeIdJECDown = self.addr_bintypeId
+        bintype, bintypeId = determin_bintype(event.nJet40JECDown[0], event.nJet100JECDown[0], event.ht40JECDown[0])
+        self.addr_bintype[:] = [bintype]
+        self.addr_bintypeId[:] = [bintypeId]
+
+##__________________________________________________________________||
 class metNoX(ScribblerBase):
     def begin(self, event):
         self.val_pt = [ ]
@@ -383,6 +413,8 @@ def scribbler_configs(datamc, pd, gen_process, json = None, metnohf = False):
     ret.append(njetnbjetbin())
     ret.append(htbin())
     ret.append(bintype())
+    ret.append(bintypeJECUp())
+    ret.append(bintypeJECDown())
     ret.append(MhtOverMet())
     ret.append(MhtOverMetNoX())
 
