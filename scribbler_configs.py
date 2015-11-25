@@ -210,8 +210,10 @@ class bintype(ScribblerBase):
         self.htbinning = Binning(boundaries = (200, 800))
 
     def begin(self, event):
-        self.vals = [ ]
-        event.bintype = self.vals
+        self.addr_bintype = [ ]
+        self.addr_bintypeId = [ ]
+        event.bintype = self.addr_bintype
+        event.bintypeId = self.addr_bintypeId
 
         # (nJet40, nJet100, ht40)
         self.itsdict = {
@@ -219,17 +221,35 @@ class bintype(ScribblerBase):
             (1, 1, 800) : 'monojet', (2, 1, 800) : 'highht',  (2, 2, 800) : 'highht',
         }
 
+        # (nJet40, nJet100, ht40)
+        self.tuple_bintypeId_dict = {
+            (1, 1, 200) : 1, # 'monojet',
+            (2, 1, 200) : 2, # 'asymjet',
+            (2, 2, 200) : 3, # 'symjet',
+            (1, 1, 800) : 1, # 'monojet',
+            (2, 1, 800) : 4, # 'highht',
+            (2, 2, 800) : 4, # 'highht',
+        }
+
+        self.bintype_name_dict = {
+            1 : 'monojet', 2 : 'asymjet', 3 : 'symjet', 4 : 'highht',
+            -1 : 'other'
+            }
+
     def event(self, event):
-        event.bintype = self.vals
+        event.bintype = self.addr_bintype
+        event.bintypeId = self.addr_bintypeId
         key = (
             self.njet40binning(event.nJet40[0]),
             self.njet100binning(event.nJet100[0]),
             self.htbinning(event.ht40[0])
         )
-        if key not in self.itsdict:
-            self.vals[:] = ['other']
-            return
-        self.vals[:] = [self.itsdict[key]]
+        if key in self.tuple_bintypeId_dict:
+            bintypeId = self.tuple_bintypeId_dict[key]
+        else:
+            bintypeId = -1
+        self.addr_bintypeId[:] = [bintypeId]
+        self.addr_bintype[:] = [self.bintype_name_dict[bintypeId]]
 
 ##__________________________________________________________________||
 class metNoX(ScribblerBase):
