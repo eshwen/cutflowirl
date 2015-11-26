@@ -412,18 +412,18 @@ def SignalLooseSelection(datamc, pd, hlt,
     bintypes.add(highht)
 
     ## monojet
-    monojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
+    monojet.add(LambdaStr("ev : ev.bintypeId[0] == 1 # 'monojet'", name = 'bintype_monojet'))
 
     ## asymjet
-    asymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
+    asymjet.add(LambdaStr("ev : ev.bintypeId[0] == 2 # 'asymjet'", name = 'bintype_asymjet'))
     asymjet.add(AlphaTCutLoose())
 
     ## symjet
-    symjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
+    symjet.add(LambdaStr("ev : ev.bintypeId[0] == 3 # 'symjet'", name = 'bintype_symjet'))
     symjet.add(AlphaTCutLoose())
 
     ## highht
-    highht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
+    highht.add(LambdaStr("ev : ev.bintypeId[0] == 4 # 'highht'", name = 'bintype_highht'))
     highht.add(LambdaStr("ev : 130 <= ev.mht40_pt[0]", name = 'MHTGT130'))
 
     return ret
@@ -451,24 +451,24 @@ def SignalFinalSelection(datamc, pd, hlt,
     bintypes.add(highht)
 
     ## monojet
-    monojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
+    monojet.add(LambdaStr("ev : ev.bintypeId[0] == 1 # 'monojet'", name = 'bintype_monojet'))
 
     ## asymjet
-    asymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
+    asymjet.add(LambdaStr("ev : ev.bintypeId[0] == 2 # 'asymjet'", name = 'bintype_asymjet'))
     if datamc == 'data' and hlt:
         asymjet.add(HT_HLTAlphaT())
     asymjet.add(AlphaTCut())
     asymjet.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
 
     ## symjet
-    symjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
+    symjet.add(LambdaStr("ev : ev.bintypeId[0] == 3 # 'symjet'", name = 'bintype_symjet'))
     if datamc == 'data' and hlt:
         symjet.add(HT_HLTAlphaT())
     symjet.add(AlphaTCut())
     symjet.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
 
     ## highht
-    highht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
+    highht.add(LambdaStr("ev : ev.bintypeId[0] == 4 # 'highht'", name = 'bintype_highht'))
     highht.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
 
     return ret
@@ -617,18 +617,18 @@ def SinglePhotonLooseSelection(datamc, pd, hlt,
     bintypes.add(highht)
 
     ## monojet
-    monojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
+    monojet.add(LambdaStr("ev : ev.bintypeId[0] == 1 # 'monojet'", name = 'bintype_monojet'))
 
     ## asymjet
-    asymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
+    asymjet.add(LambdaStr("ev : ev.bintypeId[0] == 2 # 'asymjet'", name = 'bintype_asymjet'))
     asymjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
 
     ## symjet
-    symjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
+    symjet.add(LambdaStr("ev : ev.bintypeId[0] == 3 # 'symjet'", name = 'bintype_symjet'))
     symjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
 
     ## highht
-    highht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
+    highht.add(LambdaStr("ev : ev.bintypeId[0] == 4 # 'highht'", name = 'bintype_highht'))
     highht.add(LambdaStr("ev : 130 <= ev.mht40_pt[0]", name = 'MHTGT130'))
 
     return ret
@@ -657,18 +657,18 @@ def SinglePhotonFinalSelection(datamc, pd, hlt,
     bintypes.add(highht)
 
     ## monojet
-    monojet.add(LambdaStr("ev : ev.bintype[0] == 'monojet'", name = 'bintype_monojet'))
+    monojet.add(LambdaStr("ev : ev.bintypeId[0] == 1 # 'monojet'", name = 'bintype_monojet'))
 
     ## asymjet
-    asymjet.add(LambdaStr("ev : ev.bintype[0] == 'asymjet'", name = 'bintype_asymjet'))
+    asymjet.add(LambdaStr("ev : ev.bintypeId[0] == 2 # 'asymjet'", name = 'bintype_asymjet'))
     asymjet.add(AlphaTCut())
 
     ## symjet
-    symjet.add(LambdaStr("ev : ev.bintype[0] == 'symjet'", name = 'bintype_symjet'))
+    symjet.add(LambdaStr("ev : ev.bintypeId[0] == 3 # 'symjet'", name = 'bintype_symjet'))
     symjet.add(AlphaTCut())
 
     ## highht
-    highht.add(LambdaStr("ev : ev.bintype[0] == 'highht'", name = 'bintype_highht'))
+    highht.add(LambdaStr("ev : ev.bintypeId[0] == 4 # 'highht'", name = 'bintype_highht'))
 
     return ret
 
