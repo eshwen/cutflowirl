@@ -393,7 +393,7 @@ def SignalLooseSelection(datamc, pd, hlt,
 
     ret = AllClass(name = 'SignalLoose')
 
-    ret.add(LambdaStr("ev : ev.cutflow[0] == 'Signal'", name = 'cutflowSignal'))
+    ret.add(LambdaStr("ev : ev.cutflowId[0] == 1 # 'Signal'", name = 'cutflowSignal'))
     if datamc == 'data' and pd:
         ret.add(LambdaStr("ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')", name = 'PDMetHtmhtJetht'))
     ret.add(LambdaStr("ev : ev.ht40[0] >= 200", name = 'HTGT200'))
@@ -434,7 +434,7 @@ def SignalFinalSelection(datamc, pd, hlt,
 
     ret = AllClass(name = 'SignalFinal')
 
-    ret.add(LambdaStr("ev : ev.cutflow[0] == 'Signal'", name = 'cutflowSignal'))
+    ret.add(LambdaStr("ev : ev.cutflowId[0] == 1 # 'Signal'", name = 'cutflowSignal'))
     ret.add(LambdaStr("ev : ev.nIsoTracksVeto[0] <= 0", name = 'isoTrackVeto'))
 
     bintypes = AnyClass(name = 'SignalBintypes')
@@ -479,7 +479,7 @@ def SingleMuLooseSelection(datamc, pd, hlt,
 
     ret = AllClass(name = 'SingleMuLoose')
 
-    ret.add(LambdaStr("ev : ev.cutflow[0] == 'SingleMu'", name = 'cutflowSingleMu'))
+    ret.add(LambdaStr("ev : ev.cutflowId[0] == 2 # 'SingleMu'", name = 'cutflowSingleMu'))
     if datamc == 'data' and pd:
         ret.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleMuon'", name = 'PDSingleMuon'))
 
@@ -491,7 +491,7 @@ def SingleMuFinalSelection(datamc, pd, hlt, metnohf,
 
     ret = AllClass(name = 'SingleMuFinal')
 
-    ret.add(LambdaStr("ev : ev.cutflow[0] == 'SingleMu'", name = 'cutflowSingleMu'))
+    ret.add(LambdaStr("ev : ev.cutflowId[0] == 2 # 'SingleMu'", name = 'cutflowSingleMu'))
     ret.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
     if hlt:
         ret.add(HLT_SingleMuon())
@@ -511,7 +511,7 @@ def DoubleMuLooseSelection(datamc, pd, hlt,
 
     ret = AllClass(name = 'DoubleMuLoose')
 
-    ret.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleMu'", name = 'cutflowDoubleMu'))
+    ret.add(LambdaStr("ev : ev.cutflowId[0] == 3 # 'DoubleMu'", name = 'cutflowDoubleMu'))
     if datamc == 'data' and pd:
         ret.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleMuon'", name = 'PDSingleMuon'))
 
@@ -523,7 +523,7 @@ def DoubleMuFinalSelection(datamc, pd, hlt,
 
     ret = AllClass(name = 'DoubleMuFinal')
 
-    ret.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleMu'", name = 'cutflowDoubleMu'))
+    ret.add(LambdaStr("ev : ev.cutflowId[0] == 3 # 'DoubleMu'", name = 'cutflowDoubleMu'))
     ret.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
     ret.add(LambdaStr("ev : ev.muon_relIso03[1] < 0.12", name = 'relIso03LT0p12'))
     if hlt:
@@ -540,7 +540,7 @@ def SingleEleLooseSelection(datamc, pd, hlt,
 
     ret = AllClass(name = 'SingleEleLoose')
 
-    ret.add(LambdaStr("ev : ev.cutflow[0] == 'SingleEle'", name = 'cutflowSingleEle'))
+    ret.add(LambdaStr("ev : ev.cutflowId[0] == 4 # 'SingleEle'", name = 'cutflowSingleEle'))
     if datamc == 'data' and pd:
         ret.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleElectron'", name = 'PDSingleElectron'))
 
@@ -552,7 +552,7 @@ def SingleEleFinalSelection(datamc, pd, hlt, metnohf,
 
     ret = AllClass(name = 'SingleEleFinal')
 
-    ret.add(LambdaStr("ev : ev.cutflow[0] == 'SingleEle'", name = 'cutflowSingleEle'))
+    ret.add(LambdaStr("ev : ev.cutflowId[0] == 4 # 'SingleEle'", name = 'cutflowSingleEle'))
     ret.add(LambdaStr("ev : -1.479 < ev.ele_eta[0] < 1.479", name = 'eleBarrel'))
     ret.add(LambdaStr("ev : ev.ele_relIso03[0] < 0.0354", name = 'eleRelIso03'))
     ret.add(LambdaStr("ev : ev.nIsoTracksNoEleVeto[0] <= 0", name = 'isoTrackNoEleVeto'))
@@ -570,7 +570,7 @@ def DoubleEleLooseSelection(datamc, pd, hlt,
 
     ret = AllClass(name = 'DoubleEleLoose')
 
-    ret.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleEle'", name = 'cutflowDoubleEle'))
+    ret.add(LambdaStr("ev : ev.cutflowId[0] == 5 # 'DoubleEle'", name = 'cutflowDoubleEle'))
     if datamc == 'data' and pd:
         ret.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SingleElectron'", name = 'PDSingleElectron'))
 
@@ -582,7 +582,7 @@ def DoubleEleFinalSelection(datamc, pd, hlt,
 
     ret = AllClass(name = 'DoubleEleFinal')
 
-    ret.add(LambdaStr("ev : ev.cutflow[0] == 'DoubleEle'", name = 'cutflowDoubleEle'))
+    ret.add(LambdaStr("ev : ev.cutflowId[0] == 5 # 'DoubleEle'", name = 'cutflowDoubleEle'))
     ret.add(LambdaStr("ev : -1.479 < ev.ele_eta[0] < 1.479", name = 'eleBarrel'))
     ret.add(LambdaStr("ev : -1.479 < ev.ele_eta[1] < 1.479", name = 'eleBarrel'))
     ret.add(LambdaStr("ev : ev.ele_relIso03[0] < 0.0354", name = 'eleRelIso03'))
@@ -599,7 +599,7 @@ def SinglePhotonLooseSelection(datamc, pd, hlt,
 
     ret = AllClass(name = 'SinglePhotonLoose')
 
-    ret.add(LambdaStr("ev : ev.cutflow[0] == 'SinglePhoton'", name = 'cutflowSinglePhoton'))
+    ret.add(LambdaStr("ev : ev.cutflowId[0] == 6 # 'SinglePhoton'", name = 'cutflowSinglePhoton'))
     if datamc == 'data' and pd:
         ret.add(LambdaStr("ev : ev.PrimaryDataset[0] == 'SinglePhoton'", name = 'PDSinglePhoton'))
 
@@ -639,7 +639,7 @@ def SinglePhotonFinalSelection(datamc, pd, hlt,
 
     ret = AllClass(name = 'SinglePhotonFinal')
 
-    ret.add(LambdaStr("ev : ev.cutflow[0] == 'SinglePhoton'", name = 'cutflowSinglePhoton'))
+    ret.add(LambdaStr("ev : ev.cutflowId[0] == 6 # 'SinglePhoton'", name = 'cutflowSinglePhoton'))
     ret.add(LambdaStr("ev : ev.nIsoTracksVeto[0] <= 0", name = 'isoTrackVeto'))
     ret.add(LambdaStr("ev : ev.minDelRJetPhoton[0] >= 1.0", name = 'minDelRJetPhoton'))
 
