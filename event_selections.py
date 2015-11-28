@@ -674,9 +674,9 @@ def SinglePhotonFinalSelection(datamc, pd, hlt,
 
 
 ##__________________________________________________________________||
-def event_selection(datamc, levels = ("baseline", "loose", "final"),
+def event_selection(datamc, levels = ("baseline", "loose", "met_filters", "final"),
                     cutflows = ('Signal', 'SingleMu', 'DoubleMu', 'SingleEle', 'DoubleEle', 'SinglePhoton'),
-                    hlt = False, pd = False, met_filters = False, metnohf = False,
+                    hlt = False, pd = False, metnohf = False,
                     AllClass = EventSelectionAll, AnyClass = EventSelectionAny):
     """
     Args:
@@ -684,7 +684,11 @@ def event_selection(datamc, levels = ("baseline", "loose", "final"),
     datamc: "data" or "mc"
 
     levels: a list or tuple of the names of selection levels to include.
-            possible levels: "baseline", "loose", "final"
+            possible levels:
+                "baseline"
+                "loose"
+                "met_filters"
+                "final"
 
     cutflows: a list or tuple of the names of cutflows
               e.g., ('Signal', 'SingleMu', 'DoubleMu', 'SingleEle', 'DoubleEle', 'SinglePhoton')
@@ -692,8 +696,6 @@ def event_selection(datamc, levels = ("baseline", "loose", "final"),
     hlt: True or False
 
     pd: True or False
-
-    met_filters: True or False
 
     metnohf: True or False
 
@@ -724,11 +726,11 @@ def event_selection(datamc, levels = ("baseline", "loose", "final"),
         if 'SinglePhoton' in cutflows: cutflowsLoose.add(SinglePhotonLooseSelection(datamc = datamc, pd = pd, hlt = hlt, AllClass = AllClass, AnyClass = AnyClass))
 
     ##______________________________________________________________||
-    if "final" in levels:
+    if "met_filters" in levels:
+        eventSelection.add(MetFilters(datamc = datamc, AllClass = AllClass, AnyClass = AnyClass))
 
-        ##__________________________________________________________||
-        if met_filters:
-            eventSelection.add(MetFilters(datamc = datamc, AllClass = AllClass, AnyClass = AnyClass))
+    ##______________________________________________________________||
+    if "final" in levels:
 
         if datamc == 'mc':
             eventSelection.add(UniquePromptPhotonPhaseSpaceInQCDandGJets(AllClass = AllClass, AnyClass = AnyClass))
