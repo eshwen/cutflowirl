@@ -672,21 +672,34 @@ def SinglePhotonFinalSelection(AllClass = EventSelectionAll, AnyClass = EventSel
 
 
 ##__________________________________________________________________||
-def event_selection(datamc, levels = ("baseline", "loose", "met_filters", "final"),
-                    cutflows = ('Signal', 'SingleMu', 'DoubleMu', 'SingleEle', 'DoubleEle', 'SinglePhoton'),
+def event_selection(datamc,
+                    levels = (
+                        'baseline',
+                        'loose',
+                        'met_filters',
+                        'final'
+                    ),
+                    cutflows = (
+                        'Signal',
+                        'SingleMu',
+                        'DoubleMu',
+                        'SingleEle',
+                        'DoubleEle',
+                        'SinglePhoton'
+                    ),
                     hlt = False, pd = False, metnohf = False,
                     AllClass = EventSelectionAll, AnyClass = EventSelectionAny):
     """
     Args:
 
-    datamc: "data" or "mc"
+    datamc: 'data' or 'mc'
 
     levels: a list or tuple of the names of selection levels to include.
             possible levels:
-                "baseline"
-                "loose"
-                "met_filters"
-                "final"
+                'baseline'
+                'loose'
+                'met_filters'
+                'final'
 
     cutflows: a list or tuple of the names of cutflows
               e.g., ('Signal', 'SingleMu', 'DoubleMu', 'SingleEle', 'DoubleEle', 'SinglePhoton')
