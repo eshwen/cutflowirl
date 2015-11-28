@@ -181,6 +181,25 @@ es_arg000='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <cutflows_PD:EventSelectionAny>
+    <SignalPD:EventSelectionAll>
+      <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
+      <PDMetHtmhtJetht:LambdaStr> ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')
+    <SingleMuPD:EventSelectionAll>
+      <cutflowSingleMu:LambdaStr> ev : ev.cutflowId[0] == 2 # 'SingleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <DoubleMuPD:EventSelectionAll>
+      <cutflowDoubleMu:LambdaStr> ev : ev.cutflowId[0] == 3 # 'DoubleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <SingleElePD:EventSelectionAll>
+      <cutflowSingleEle:LambdaStr> ev : ev.cutflowId[0] == 4 # 'SingleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <DoubleElePD:EventSelectionAll>
+      <cutflowDoubleEle:LambdaStr> ev : ev.cutflowId[0] == 5 # 'DoubleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <SinglePhotonPD:EventSelectionAll>
+      <cutflowSinglePhoton:LambdaStr> ev : ev.cutflowId[0] == 6 # 'SinglePhoton'
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
@@ -420,6 +439,25 @@ es_arg001='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <cutflows_PD:EventSelectionAny>
+    <SignalPD:EventSelectionAll>
+      <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
+      <PDMetHtmhtJetht:LambdaStr> ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')
+    <SingleMuPD:EventSelectionAll>
+      <cutflowSingleMu:LambdaStr> ev : ev.cutflowId[0] == 2 # 'SingleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <DoubleMuPD:EventSelectionAll>
+      <cutflowDoubleMu:LambdaStr> ev : ev.cutflowId[0] == 3 # 'DoubleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <SingleElePD:EventSelectionAll>
+      <cutflowSingleEle:LambdaStr> ev : ev.cutflowId[0] == 4 # 'SingleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <DoubleElePD:EventSelectionAll>
+      <cutflowDoubleEle:LambdaStr> ev : ev.cutflowId[0] == 5 # 'DoubleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <SinglePhotonPD:EventSelectionAll>
+      <cutflowSinglePhoton:LambdaStr> ev : ev.cutflowId[0] == 6 # 'SinglePhoton'
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
@@ -659,10 +697,28 @@ es_arg002='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <cutflows_PD:EventSelectionAny>
+    <SignalPD:EventSelectionAll>
+      <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
+      <PDMetHtmhtJetht:LambdaStr> ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')
+    <SingleMuPD:EventSelectionAll>
+      <cutflowSingleMu:LambdaStr> ev : ev.cutflowId[0] == 2 # 'SingleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <DoubleMuPD:EventSelectionAll>
+      <cutflowDoubleMu:LambdaStr> ev : ev.cutflowId[0] == 3 # 'DoubleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <SingleElePD:EventSelectionAll>
+      <cutflowSingleEle:LambdaStr> ev : ev.cutflowId[0] == 4 # 'SingleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <DoubleElePD:EventSelectionAll>
+      <cutflowDoubleEle:LambdaStr> ev : ev.cutflowId[0] == 5 # 'DoubleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <SinglePhotonPD:EventSelectionAll>
+      <cutflowSinglePhoton:LambdaStr> ev : ev.cutflowId[0] == 6 # 'SinglePhoton'
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
-      <PDMetHtmhtJetht:LambdaStr> ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')
       <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
       <SignalLooseBintypes:EventSelectionAny>
         <SignalLooseMonojet:EventSelectionAll>
@@ -696,19 +752,14 @@ es_arg002='''<All:EventSelectionAll>
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
     <SingleMuLoose:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflowId[0] == 2 # 'SingleMu'
-      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
     <DoubleMuLoose:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflowId[0] == 3 # 'DoubleMu'
-      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
     <SingleEleLoose:EventSelectionAll>
       <cutflowSingleEle:LambdaStr> ev : ev.cutflowId[0] == 4 # 'SingleEle'
-      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
     <DoubleEleLoose:EventSelectionAll>
       <cutflowDoubleEle:LambdaStr> ev : ev.cutflowId[0] == 5 # 'DoubleEle'
-      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
     <SinglePhotonLoose:EventSelectionAll>
       <cutflowSinglePhoton:LambdaStr> ev : ev.cutflowId[0] == 6 # 'SinglePhoton'
-      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
       <SinglePhotonLooseBintypes:EventSelectionAny>
         <SinglePhotonLooseMonojet:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintypeId[0] == 1 # 'monojet'
@@ -904,10 +955,28 @@ es_arg003='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <cutflows_PD:EventSelectionAny>
+    <SignalPD:EventSelectionAll>
+      <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
+      <PDMetHtmhtJetht:LambdaStr> ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')
+    <SingleMuPD:EventSelectionAll>
+      <cutflowSingleMu:LambdaStr> ev : ev.cutflowId[0] == 2 # 'SingleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <DoubleMuPD:EventSelectionAll>
+      <cutflowDoubleMu:LambdaStr> ev : ev.cutflowId[0] == 3 # 'DoubleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <SingleElePD:EventSelectionAll>
+      <cutflowSingleEle:LambdaStr> ev : ev.cutflowId[0] == 4 # 'SingleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <DoubleElePD:EventSelectionAll>
+      <cutflowDoubleEle:LambdaStr> ev : ev.cutflowId[0] == 5 # 'DoubleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <SinglePhotonPD:EventSelectionAll>
+      <cutflowSinglePhoton:LambdaStr> ev : ev.cutflowId[0] == 6 # 'SinglePhoton'
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
-      <PDMetHtmhtJetht:LambdaStr> ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')
       <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
       <SignalLooseBintypes:EventSelectionAny>
         <SignalLooseMonojet:EventSelectionAll>
@@ -941,19 +1010,14 @@ es_arg003='''<All:EventSelectionAll>
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
     <SingleMuLoose:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflowId[0] == 2 # 'SingleMu'
-      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
     <DoubleMuLoose:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflowId[0] == 3 # 'DoubleMu'
-      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
     <SingleEleLoose:EventSelectionAll>
       <cutflowSingleEle:LambdaStr> ev : ev.cutflowId[0] == 4 # 'SingleEle'
-      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
     <DoubleEleLoose:EventSelectionAll>
       <cutflowDoubleEle:LambdaStr> ev : ev.cutflowId[0] == 5 # 'DoubleEle'
-      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
     <SinglePhotonLoose:EventSelectionAll>
       <cutflowSinglePhoton:LambdaStr> ev : ev.cutflowId[0] == 6 # 'SinglePhoton'
-      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
       <SinglePhotonLooseBintypes:EventSelectionAny>
         <SinglePhotonLooseMonojet:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintypeId[0] == 1 # 'monojet'
@@ -1149,6 +1213,25 @@ es_arg004='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <cutflows_PD:EventSelectionAny>
+    <SignalPD:EventSelectionAll>
+      <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
+      <PDMetHtmhtJetht:LambdaStr> ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')
+    <SingleMuPD:EventSelectionAll>
+      <cutflowSingleMu:LambdaStr> ev : ev.cutflowId[0] == 2 # 'SingleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <DoubleMuPD:EventSelectionAll>
+      <cutflowDoubleMu:LambdaStr> ev : ev.cutflowId[0] == 3 # 'DoubleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <SingleElePD:EventSelectionAll>
+      <cutflowSingleEle:LambdaStr> ev : ev.cutflowId[0] == 4 # 'SingleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <DoubleElePD:EventSelectionAll>
+      <cutflowDoubleEle:LambdaStr> ev : ev.cutflowId[0] == 5 # 'DoubleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <SinglePhotonPD:EventSelectionAll>
+      <cutflowSinglePhoton:LambdaStr> ev : ev.cutflowId[0] == 6 # 'SinglePhoton'
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
@@ -1448,6 +1531,25 @@ es_arg005='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <cutflows_PD:EventSelectionAny>
+    <SignalPD:EventSelectionAll>
+      <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
+      <PDMetHtmhtJetht:LambdaStr> ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')
+    <SingleMuPD:EventSelectionAll>
+      <cutflowSingleMu:LambdaStr> ev : ev.cutflowId[0] == 2 # 'SingleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <DoubleMuPD:EventSelectionAll>
+      <cutflowDoubleMu:LambdaStr> ev : ev.cutflowId[0] == 3 # 'DoubleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <SingleElePD:EventSelectionAll>
+      <cutflowSingleEle:LambdaStr> ev : ev.cutflowId[0] == 4 # 'SingleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <DoubleElePD:EventSelectionAll>
+      <cutflowDoubleEle:LambdaStr> ev : ev.cutflowId[0] == 5 # 'DoubleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <SinglePhotonPD:EventSelectionAll>
+      <cutflowSinglePhoton:LambdaStr> ev : ev.cutflowId[0] == 6 # 'SinglePhoton'
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
@@ -1747,10 +1849,28 @@ es_arg006='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <cutflows_PD:EventSelectionAny>
+    <SignalPD:EventSelectionAll>
+      <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
+      <PDMetHtmhtJetht:LambdaStr> ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')
+    <SingleMuPD:EventSelectionAll>
+      <cutflowSingleMu:LambdaStr> ev : ev.cutflowId[0] == 2 # 'SingleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <DoubleMuPD:EventSelectionAll>
+      <cutflowDoubleMu:LambdaStr> ev : ev.cutflowId[0] == 3 # 'DoubleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <SingleElePD:EventSelectionAll>
+      <cutflowSingleEle:LambdaStr> ev : ev.cutflowId[0] == 4 # 'SingleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <DoubleElePD:EventSelectionAll>
+      <cutflowDoubleEle:LambdaStr> ev : ev.cutflowId[0] == 5 # 'DoubleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <SinglePhotonPD:EventSelectionAll>
+      <cutflowSinglePhoton:LambdaStr> ev : ev.cutflowId[0] == 6 # 'SinglePhoton'
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
-      <PDMetHtmhtJetht:LambdaStr> ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')
       <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
       <SignalLooseBintypes:EventSelectionAny>
         <SignalLooseMonojet:EventSelectionAll>
@@ -1784,19 +1904,14 @@ es_arg006='''<All:EventSelectionAll>
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
     <SingleMuLoose:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflowId[0] == 2 # 'SingleMu'
-      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
     <DoubleMuLoose:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflowId[0] == 3 # 'DoubleMu'
-      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
     <SingleEleLoose:EventSelectionAll>
       <cutflowSingleEle:LambdaStr> ev : ev.cutflowId[0] == 4 # 'SingleEle'
-      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
     <DoubleEleLoose:EventSelectionAll>
       <cutflowDoubleEle:LambdaStr> ev : ev.cutflowId[0] == 5 # 'DoubleEle'
-      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
     <SinglePhotonLoose:EventSelectionAll>
       <cutflowSinglePhoton:LambdaStr> ev : ev.cutflowId[0] == 6 # 'SinglePhoton'
-      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
       <SinglePhotonLooseBintypes:EventSelectionAny>
         <SinglePhotonLooseMonojet:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintypeId[0] == 1 # 'monojet'
@@ -2052,10 +2167,28 @@ es_arg007='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
+  <cutflows_PD:EventSelectionAny>
+    <SignalPD:EventSelectionAll>
+      <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
+      <PDMetHtmhtJetht:LambdaStr> ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')
+    <SingleMuPD:EventSelectionAll>
+      <cutflowSingleMu:LambdaStr> ev : ev.cutflowId[0] == 2 # 'SingleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <DoubleMuPD:EventSelectionAll>
+      <cutflowDoubleMu:LambdaStr> ev : ev.cutflowId[0] == 3 # 'DoubleMu'
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+    <SingleElePD:EventSelectionAll>
+      <cutflowSingleEle:LambdaStr> ev : ev.cutflowId[0] == 4 # 'SingleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <DoubleElePD:EventSelectionAll>
+      <cutflowDoubleEle:LambdaStr> ev : ev.cutflowId[0] == 5 # 'DoubleEle'
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+    <SinglePhotonPD:EventSelectionAll>
+      <cutflowSinglePhoton:LambdaStr> ev : ev.cutflowId[0] == 6 # 'SinglePhoton'
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
   <cutflowsLoose:EventSelectionAny>
     <SignalLoose:EventSelectionAll>
       <cutflowSignal:LambdaStr> ev : ev.cutflowId[0] == 1 # 'Signal'
-      <PDMetHtmhtJetht:LambdaStr> ev : ev.PrimaryDataset[0] in ('MET', 'HTMHT', 'JetHT')
       <HTGT200:LambdaStr> ev : ev.ht40[0] >= 200
       <SignalLooseBintypes:EventSelectionAny>
         <SignalLooseMonojet:EventSelectionAll>
@@ -2089,19 +2222,14 @@ es_arg007='''<All:EventSelectionAll>
           <MHTGT130:LambdaStr> ev : 130 <= ev.mht40_pt[0]
     <SingleMuLoose:EventSelectionAll>
       <cutflowSingleMu:LambdaStr> ev : ev.cutflowId[0] == 2 # 'SingleMu'
-      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
     <DoubleMuLoose:EventSelectionAll>
       <cutflowDoubleMu:LambdaStr> ev : ev.cutflowId[0] == 3 # 'DoubleMu'
-      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
     <SingleEleLoose:EventSelectionAll>
       <cutflowSingleEle:LambdaStr> ev : ev.cutflowId[0] == 4 # 'SingleEle'
-      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
     <DoubleEleLoose:EventSelectionAll>
       <cutflowDoubleEle:LambdaStr> ev : ev.cutflowId[0] == 5 # 'DoubleEle'
-      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
     <SinglePhotonLoose:EventSelectionAll>
       <cutflowSinglePhoton:LambdaStr> ev : ev.cutflowId[0] == 6 # 'SinglePhoton'
-      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
       <SinglePhotonLooseBintypes:EventSelectionAny>
         <SinglePhotonLooseMonojet:EventSelectionAll>
           <bintype_monojet:LambdaStr> ev : ev.bintypeId[0] == 1 # 'monojet'
