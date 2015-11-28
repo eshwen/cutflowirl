@@ -318,7 +318,6 @@ def BaselineSelection(AllClass = EventSelectionAll, AnyClass = EventSelectionAny
 
     ret = AllClass(name = 'Baseline')
 
-    ret.add(LambdaStr("ev : ev.nVert[0] >= 1", name = 'nVertGTOne'))
     ret.add(LambdaStr("ev : ev.nJet100[0] >= 1", name = 'nJetGTOne'))
     ret.add(LambdaStr("ev : ev.ht40[0] >= 150", name = 'HTGT150'))
 

@@ -179,7 +179,6 @@ es_arg000='''<All:EventSelectionAll>
         <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
         <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -419,7 +418,6 @@ es_arg001='''<All:EventSelectionAll>
         <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
         <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -659,7 +657,6 @@ es_arg002='''<All:EventSelectionAll>
         <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
         <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -905,7 +902,6 @@ es_arg003='''<All:EventSelectionAll>
         <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
         <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -1151,7 +1147,6 @@ es_arg004='''<All:EventSelectionAll>
         <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
         <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -1451,7 +1446,6 @@ es_arg005='''<All:EventSelectionAll>
         <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
         <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -1751,7 +1745,6 @@ es_arg006='''<All:EventSelectionAll>
         <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
         <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -2057,7 +2050,6 @@ es_arg007='''<All:EventSelectionAll>
         <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
         <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -2322,7 +2314,6 @@ es_arg007='''<All:EventSelectionAll>
 
 es_arg100='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -2530,7 +2521,6 @@ es_arg100='''<All:EventSelectionAll>
 
 es_arg101='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -2738,7 +2728,6 @@ es_arg101='''<All:EventSelectionAll>
 
 es_arg102='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -2946,7 +2935,6 @@ es_arg102='''<All:EventSelectionAll>
 
 es_arg103='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -3154,7 +3142,6 @@ es_arg103='''<All:EventSelectionAll>
 
 es_arg104='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -3370,7 +3357,6 @@ es_arg104='''<All:EventSelectionAll>
 
 es_arg105='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -3586,7 +3572,6 @@ es_arg105='''<All:EventSelectionAll>
 
 es_arg106='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -3802,7 +3787,6 @@ es_arg106='''<All:EventSelectionAll>
 
 es_arg107='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -4018,7 +4002,6 @@ es_arg107='''<All:EventSelectionAll>
 
 es_arg200='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -4062,7 +4045,6 @@ es_arg200='''<All:EventSelectionAll>
 
 es_arg201='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -4168,7 +4150,6 @@ es_arg201='''<All:EventSelectionAll>
 
 es_arg202='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
@@ -4177,7 +4158,6 @@ es_arg202='''<All:EventSelectionAll>
 
 es_arg203='''<All:EventSelectionAll>
   <Baseline:EventSelectionAll>
-    <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
     <HTGT150:LambdaStr> ev : ev.ht40[0] >= 150
   <cutflowsLoose:EventSelectionAny>
