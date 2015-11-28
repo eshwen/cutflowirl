@@ -432,8 +432,7 @@ def SignalLooseSelection(AllClass = EventSelectionAll, AnyClass = EventSelection
     return ret
 
 ##__________________________________________________________________||
-def SignalFinalSelection(datamc, hlt,
-                         AllClass = EventSelectionAll, AnyClass = EventSelectionAny):
+def SignalFinalSelection(AllClass = EventSelectionAll, AnyClass = EventSelectionAny):
 
     ret = AllClass(name = 'SignalFinal')
 
@@ -458,15 +457,11 @@ def SignalFinalSelection(datamc, hlt,
 
     ## asymjet
     asymjet.add(LambdaStr("ev : ev.bintypeId[0] == 2 # 'asymjet'", name = 'bintype_asymjet'))
-    if datamc == 'data' and hlt:
-        asymjet.add(HT_HLTAlphaT())
     asymjet.add(AlphaTCut())
     asymjet.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
 
     ## symjet
     symjet.add(LambdaStr("ev : ev.bintypeId[0] == 3 # 'symjet'", name = 'bintype_symjet'))
-    if datamc == 'data' and hlt:
-        symjet.add(HT_HLTAlphaT())
     symjet.add(AlphaTCut())
     symjet.add(LambdaStr("ev : 0.5 <= ev.biasedDPhi[0]", name = 'biasedDPhiGT0p5'))
 
@@ -792,7 +787,7 @@ def event_selection(datamc,
         cutflowsFinal = AnyClass(name = 'cutflowsFinal')
         eventSelection.add(cutflowsFinal)
 
-        if 'Signal'       in cutflows: cutflowsFinal.add(SignalFinalSelection(datamc = datamc, hlt = hlt, AllClass = AllClass, AnyClass = AnyClass))
+        if 'Signal'       in cutflows: cutflowsFinal.add(SignalFinalSelection(AllClass = AllClass, AnyClass = AnyClass))
         if 'SingleMu'     in cutflows: cutflowsFinal.add(SingleMuFinalSelection(hlt = hlt, metnohf = metnohf, AllClass = AllClass, AnyClass = AnyClass))
         if 'DoubleMu'     in cutflows: cutflowsFinal.add(DoubleMuFinalSelection(hlt = hlt, AllClass = AllClass, AnyClass = AnyClass))
         if 'SingleEle'    in cutflows: cutflowsFinal.add(SingleEleFinalSelection(metnohf = metnohf, AllClass = AllClass, AnyClass = AnyClass))
