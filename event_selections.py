@@ -677,6 +677,7 @@ def event_selection(datamc,
                         'baseline',
                         'loose',
                         'met_filters',
+                        'unique_promptPhoton_phaseSpace_in_QCD_and_GJets',
                         'final'
                     ),
                     cutflows = (
@@ -699,6 +700,7 @@ def event_selection(datamc,
                 'baseline'
                 'loose'
                 'met_filters'
+                'unique_promptPhoton_phaseSpace_in_QCD_and_GJets'
                 'final'
 
     cutflows: a list or tuple of the names of cutflows
@@ -741,10 +743,12 @@ def event_selection(datamc,
         eventSelection.add(MetFilters(datamc = datamc, AllClass = AllClass, AnyClass = AnyClass))
 
     ##______________________________________________________________||
-    if "final" in levels:
-
+    if 'unique_promptPhoton_phaseSpace_in_QCD_and_GJets' in levels:
         if datamc == 'mc':
             eventSelection.add(UniquePromptPhotonPhaseSpaceInQCDandGJets(AllClass = AllClass, AnyClass = AnyClass))
+
+    ##______________________________________________________________||
+    if "final" in levels:
 
         ##__________________________________________________________||
         eventSelection.add(CommonFinalSelection(metnohf = metnohf, AllClass = AllClass, AnyClass = AnyClass))
