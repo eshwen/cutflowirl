@@ -674,7 +674,7 @@ def SinglePhotonFinalSelection(AllClass = EventSelectionAll, AnyClass = EventSel
 def event_selection(datamc,
                     levels = (
                         'PD_HLT',
-                        'baseline',
+                        'baseline_kinematics',
                         'loose',
                         'met_filters',
                         'unique_promptPhoton_phaseSpace_in_QCD_and_GJets',
@@ -698,7 +698,7 @@ def event_selection(datamc,
     levels: a list or tuple of the names of selection levels to include.
             possible levels:
                 'PD_HLT',
-                'baseline'
+                'baseline_kinematics'
                 'loose'
                 'met_filters'
                 'unique_promptPhoton_phaseSpace_in_QCD_and_GJets'
@@ -723,7 +723,7 @@ def event_selection(datamc,
             eventSelection.add(PD_HLT(AllClass = AllClass, AnyClass = AnyClass))
 
     ##______________________________________________________________||
-    if "baseline" in levels:
+    if 'baseline_kinematics' in levels:
         eventSelection.add(BaselineSelection(AllClass = AllClass, AnyClass = AnyClass))
 
     ##______________________________________________________________||
