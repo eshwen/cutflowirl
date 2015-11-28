@@ -675,7 +675,7 @@ def event_selection(datamc,
                     levels = (
                         'PD_HLT',
                         'baseline_kinematics',
-                        'loose',
+                        'cutflows_loose',
                         'met_filters',
                         'unique_promptPhoton_phaseSpace_in_QCD_and_GJets',
                         'final'
@@ -699,7 +699,7 @@ def event_selection(datamc,
             possible levels:
                 'PD_HLT',
                 'baseline_kinematics'
-                'loose'
+                'cutflows_loose'
                 'met_filters'
                 'unique_promptPhoton_phaseSpace_in_QCD_and_GJets'
                 'final'
@@ -727,7 +727,7 @@ def event_selection(datamc,
         eventSelection.add(BaselineSelection(AllClass = AllClass, AnyClass = AnyClass))
 
     ##______________________________________________________________||
-    if "loose" in levels:
+    if 'cutflows_loose' in levels:
 
         ##__________________________________________________________||
         cutflowsLoose = AnyClass(name = 'cutflowsLoose')
