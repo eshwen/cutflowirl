@@ -674,6 +674,7 @@ def SinglePhotonFinalSelection(AllClass = EventSelectionAll, AnyClass = EventSel
 ##__________________________________________________________________||
 def event_selection(datamc,
                     levels = (
+                        'PD_HLT',
                         'baseline',
                         'loose',
                         'met_filters',
@@ -697,6 +698,7 @@ def event_selection(datamc,
 
     levels: a list or tuple of the names of selection levels to include.
             possible levels:
+                'PD_HLT',
                 'baseline'
                 'loose'
                 'met_filters'
@@ -717,11 +719,12 @@ def event_selection(datamc,
     eventSelection = AllClass(name = 'All')
 
     ##______________________________________________________________||
-    if "baseline" in levels:
-        if datamc == 'data' and hlt and pd:
+    if 'PD_HLT' in levels:
+        if datamc == 'data':
             eventSelection.add(PD_HLT(AllClass = AllClass, AnyClass = AnyClass))
 
-        ##__________________________________________________________||
+    ##______________________________________________________________||
+    if "baseline" in levels:
         eventSelection.add(BaselineSelection(AllClass = AllClass, AnyClass = AnyClass))
 
     ##______________________________________________________________||

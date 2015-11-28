@@ -137,6 +137,47 @@ arg204 = dict(datamc = 'data', levels = ('final'), cutflows = ('Signal', 'Single
 
 ##__________________________________________________________________||
 es_arg000='''<All:EventSelectionAll>
+  <PD_HLT:EventSelectionAny>
+    <MET:EventSelectionAll>
+      <PDMET:LambdaStr> ev : ev.PrimaryDataset[0] == 'MET'
+      <MET_HLT:EventSelectionAny>
+        <HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight[0]
+        <HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight[0]
+    <HTMHT:EventSelectionAll>
+      <PDHTMHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'HTMHT'
+      <HTMHT_HLT:EventSelectionAny>
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+    <JetHT:EventSelectionAll>
+      <PDJetHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'JetHT'
+      <JetHT_HLT:EventSelectionAny>
+        <HLT_PFHT800:LambdaStr> ev : ev.HLT_PFHT800[0]
+    <SingleMuon:EventSelectionAll>
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+      <SingleMuon_HLT:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
+    <SingleElectron:EventSelectionAll>
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+      <SingleElectron_HLT:EventSelectionAny>
+        <HLT_Ele22_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele22_WPLoose_Gsf[0]
+        <HLT_Ele23_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele23_WPLoose_Gsf[0]
+        <HLT_Ele27_eta2p1_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele27_eta2p1_WPLoose_Gsf[0]
+    <SinglePhoton:EventSelectionAll>
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
+      <SinglePhoton_HLT:EventSelectionAny>
+        <HLT_Photon120:LambdaStr> ev : ev.HLT_Photon120[0]
+        <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
+        <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
     <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
@@ -336,6 +377,47 @@ es_arg000='''<All:EventSelectionAll>
 
 
 es_arg001='''<All:EventSelectionAll>
+  <PD_HLT:EventSelectionAny>
+    <MET:EventSelectionAll>
+      <PDMET:LambdaStr> ev : ev.PrimaryDataset[0] == 'MET'
+      <MET_HLT:EventSelectionAny>
+        <HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight[0]
+        <HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight[0]
+    <HTMHT:EventSelectionAll>
+      <PDHTMHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'HTMHT'
+      <HTMHT_HLT:EventSelectionAny>
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+    <JetHT:EventSelectionAll>
+      <PDJetHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'JetHT'
+      <JetHT_HLT:EventSelectionAny>
+        <HLT_PFHT800:LambdaStr> ev : ev.HLT_PFHT800[0]
+    <SingleMuon:EventSelectionAll>
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+      <SingleMuon_HLT:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
+    <SingleElectron:EventSelectionAll>
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+      <SingleElectron_HLT:EventSelectionAny>
+        <HLT_Ele22_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele22_WPLoose_Gsf[0]
+        <HLT_Ele23_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele23_WPLoose_Gsf[0]
+        <HLT_Ele27_eta2p1_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele27_eta2p1_WPLoose_Gsf[0]
+    <SinglePhoton:EventSelectionAll>
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
+      <SinglePhoton_HLT:EventSelectionAny>
+        <HLT_Photon120:LambdaStr> ev : ev.HLT_Photon120[0]
+        <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
+        <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
     <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
@@ -535,6 +617,47 @@ es_arg001='''<All:EventSelectionAll>
 
 
 es_arg002='''<All:EventSelectionAll>
+  <PD_HLT:EventSelectionAny>
+    <MET:EventSelectionAll>
+      <PDMET:LambdaStr> ev : ev.PrimaryDataset[0] == 'MET'
+      <MET_HLT:EventSelectionAny>
+        <HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight[0]
+        <HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight[0]
+    <HTMHT:EventSelectionAll>
+      <PDHTMHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'HTMHT'
+      <HTMHT_HLT:EventSelectionAny>
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+    <JetHT:EventSelectionAll>
+      <PDJetHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'JetHT'
+      <JetHT_HLT:EventSelectionAny>
+        <HLT_PFHT800:LambdaStr> ev : ev.HLT_PFHT800[0]
+    <SingleMuon:EventSelectionAll>
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+      <SingleMuon_HLT:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
+    <SingleElectron:EventSelectionAll>
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+      <SingleElectron_HLT:EventSelectionAny>
+        <HLT_Ele22_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele22_WPLoose_Gsf[0]
+        <HLT_Ele23_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele23_WPLoose_Gsf[0]
+        <HLT_Ele27_eta2p1_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele27_eta2p1_WPLoose_Gsf[0]
+    <SinglePhoton:EventSelectionAll>
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
+      <SinglePhoton_HLT:EventSelectionAny>
+        <HLT_Photon120:LambdaStr> ev : ev.HLT_Photon120[0]
+        <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
+        <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
     <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
@@ -740,6 +863,47 @@ es_arg002='''<All:EventSelectionAll>
 
 
 es_arg003='''<All:EventSelectionAll>
+  <PD_HLT:EventSelectionAny>
+    <MET:EventSelectionAll>
+      <PDMET:LambdaStr> ev : ev.PrimaryDataset[0] == 'MET'
+      <MET_HLT:EventSelectionAny>
+        <HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight[0]
+        <HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight[0]
+    <HTMHT:EventSelectionAll>
+      <PDHTMHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'HTMHT'
+      <HTMHT_HLT:EventSelectionAny>
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+    <JetHT:EventSelectionAll>
+      <PDJetHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'JetHT'
+      <JetHT_HLT:EventSelectionAny>
+        <HLT_PFHT800:LambdaStr> ev : ev.HLT_PFHT800[0]
+    <SingleMuon:EventSelectionAll>
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+      <SingleMuon_HLT:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
+    <SingleElectron:EventSelectionAll>
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+      <SingleElectron_HLT:EventSelectionAny>
+        <HLT_Ele22_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele22_WPLoose_Gsf[0]
+        <HLT_Ele23_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele23_WPLoose_Gsf[0]
+        <HLT_Ele27_eta2p1_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele27_eta2p1_WPLoose_Gsf[0]
+    <SinglePhoton:EventSelectionAll>
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
+      <SinglePhoton_HLT:EventSelectionAny>
+        <HLT_Photon120:LambdaStr> ev : ev.HLT_Photon120[0]
+        <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
+        <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
     <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
@@ -945,6 +1109,47 @@ es_arg003='''<All:EventSelectionAll>
 
 
 es_arg004='''<All:EventSelectionAll>
+  <PD_HLT:EventSelectionAny>
+    <MET:EventSelectionAll>
+      <PDMET:LambdaStr> ev : ev.PrimaryDataset[0] == 'MET'
+      <MET_HLT:EventSelectionAny>
+        <HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight[0]
+        <HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight[0]
+    <HTMHT:EventSelectionAll>
+      <PDHTMHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'HTMHT'
+      <HTMHT_HLT:EventSelectionAny>
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+    <JetHT:EventSelectionAll>
+      <PDJetHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'JetHT'
+      <JetHT_HLT:EventSelectionAny>
+        <HLT_PFHT800:LambdaStr> ev : ev.HLT_PFHT800[0]
+    <SingleMuon:EventSelectionAll>
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+      <SingleMuon_HLT:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
+    <SingleElectron:EventSelectionAll>
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+      <SingleElectron_HLT:EventSelectionAny>
+        <HLT_Ele22_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele22_WPLoose_Gsf[0]
+        <HLT_Ele23_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele23_WPLoose_Gsf[0]
+        <HLT_Ele27_eta2p1_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele27_eta2p1_WPLoose_Gsf[0]
+    <SinglePhoton:EventSelectionAll>
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
+      <SinglePhoton_HLT:EventSelectionAny>
+        <HLT_Photon120:LambdaStr> ev : ev.HLT_Photon120[0]
+        <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
+        <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
     <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
@@ -1204,6 +1409,47 @@ es_arg004='''<All:EventSelectionAll>
 
 
 es_arg005='''<All:EventSelectionAll>
+  <PD_HLT:EventSelectionAny>
+    <MET:EventSelectionAll>
+      <PDMET:LambdaStr> ev : ev.PrimaryDataset[0] == 'MET'
+      <MET_HLT:EventSelectionAny>
+        <HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight[0]
+        <HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight:LambdaStr> ev : ev.HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight[0]
+    <HTMHT:EventSelectionAll>
+      <PDHTMHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'HTMHT'
+      <HTMHT_HLT:EventSelectionAny>
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57[0]
+        <HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63:LambdaStr> ev : ev.HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55[0]
+        <HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58:LambdaStr> ev : ev.HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54:LambdaStr> ev : ev.HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52[0]
+        <HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53:LambdaStr> ev : ev.HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51[0]
+        <HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52:LambdaStr> ev : ev.HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52[0]
+    <JetHT:EventSelectionAll>
+      <PDJetHT:LambdaStr> ev : ev.PrimaryDataset[0] == 'JetHT'
+      <JetHT_HLT:EventSelectionAny>
+        <HLT_PFHT800:LambdaStr> ev : ev.HLT_PFHT800[0]
+    <SingleMuon:EventSelectionAll>
+      <PDSingleMuon:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleMuon'
+      <SingleMuon_HLT:EventSelectionAny>
+        <HLT_IsoMu17_eta2p1:LambdaStr> ev : ev.HLT_IsoMu17_eta2p1[0]
+        <HLT_IsoMu20:LambdaStr> ev : ev.HLT_IsoMu20[0]
+        <HLT_IsoMu24_eta2p1:LambdaStr> ev : ev.HLT_IsoMu24_eta2p1[0]
+    <SingleElectron:EventSelectionAll>
+      <PDSingleElectron:LambdaStr> ev : ev.PrimaryDataset[0] == 'SingleElectron'
+      <SingleElectron_HLT:EventSelectionAny>
+        <HLT_Ele22_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele22_WPLoose_Gsf[0]
+        <HLT_Ele23_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele23_WPLoose_Gsf[0]
+        <HLT_Ele27_eta2p1_WPLoose_Gsf:LambdaStr> ev : ev.HLT_Ele27_eta2p1_WPLoose_Gsf[0]
+    <SinglePhoton:EventSelectionAll>
+      <PDSinglePhoton:LambdaStr> ev : ev.PrimaryDataset[0] == 'SinglePhoton'
+      <SinglePhoton_HLT:EventSelectionAny>
+        <HLT_Photon120:LambdaStr> ev : ev.HLT_Photon120[0]
+        <HLT_Photon125:LambdaStr> ev : ev.HLT_Photon125[0]
+        <HLT_Photon175:LambdaStr> ev : ev.HLT_Photon175[0]
   <Baseline:EventSelectionAll>
     <nVertGTOne:LambdaStr> ev : ev.nVert[0] >= 1
     <nJetGTOne:LambdaStr> ev : ev.nJet100[0] >= 1
