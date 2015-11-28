@@ -700,7 +700,7 @@ def event_selection(datamc,
                         'DoubleEle',
                         'SinglePhoton'
                     ),
-                    hlt = False, pd = False, metnohf = False,
+                    hlt = False, metnohf = False,
                     AllClass = EventSelectionAll, AnyClass = EventSelectionAny):
     """
     Args:
@@ -721,8 +721,6 @@ def event_selection(datamc,
               e.g., ('Signal', 'SingleMu', 'DoubleMu', 'SingleEle', 'DoubleEle', 'SinglePhoton')
 
     hlt: True or False
-
-    pd: True or False
 
     metnohf: True or False
 
