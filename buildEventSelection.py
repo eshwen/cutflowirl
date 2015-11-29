@@ -2,6 +2,9 @@ from .EventSelectionModules.EventSelectionAll import EventSelectionAll
 from .EventSelectionModules.EventSelectionAny import EventSelectionAny
 
 import imp
+import os, sys
+
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 
 ##__________________________________________________________________||
 def buildEventSelection(levels, AllClass = EventSelectionAll, AnyClass = EventSelectionAny, **kargs):
