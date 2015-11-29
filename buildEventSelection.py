@@ -1,5 +1,5 @@
-from EventSelectionAll import EventSelectionAll
-from EventSelectionAny import EventSelectionAny
+from .EventSelectionModules.EventSelectionAll import EventSelectionAll
+from .EventSelectionModules.EventSelectionAny import EventSelectionAny
 
 import imp
 
