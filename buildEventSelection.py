@@ -19,14 +19,15 @@ def buildEventSelection(levels, AllClass = EventSelectionAll, AnyClass = EventSe
     ##______________________________________________________________||
     for level in levels:
         if isinstance(level, basestring):
-            level_name, level_kargs = level, { }
+            level_name, level_kargs_0 = level, { }
         else:
-            level_name, level_kargs = level
+            level_name, level_kargs_0 = level
 
         # e.g., level_name = 'baseline_kinematics'
-        #       level_args = {'arg1': 1, 'arg2': 2}
+        #       level_kargs_0 = {'arg1': 1, 'arg2': 2}
 
-        level_kargs.update(kargs)
+        level_kargs = kargs.copy()
+        level_kargs.update(level_kargs_0)
         # e.g., level_args = {'arg1': 1, 'arg2': 2, 'datamc': 'data'}
 
         module_name = "{}.{}".format(top_module_name, level_name)
