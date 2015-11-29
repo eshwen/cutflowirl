@@ -209,7 +209,7 @@ def event_selection_io(eventSelection, out = None, prep = ''):
 
     out.write(prep)
 
-    if isinstance(eventSelection, LambdaStr):
+    if hasattr(eventSelection, 'lambda_str'):
         out.write(print_name(eventSelection))
         out.write(' ')
         out.write(eventSelection.lambda_str)
