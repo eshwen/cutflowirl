@@ -107,6 +107,7 @@ class Test_buildEventSelection_examples(unittest.TestCase):
                         ('SingleEle', dict(levels = ('Id', 'PD'))),
                         ('DoubleEle', dict(levels = ('Id', 'PD'))),
                         ('SinglePhoton', dict(levels = ('Id', 'PD', 'loose_JECvariation'))),
+                        ('BaselineMu', dict(levels = ('Id', 'PD'))),
                     ))),
                 )
         )
