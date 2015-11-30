@@ -4,7 +4,9 @@ from .EventSelectionModules.EventSelectionAny import EventSelectionAny
 import imp
 import os, sys
 
-sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+##__________________________________________________________________||
+thisDir = os.path.dirname(os.path.realpath(__file__))
+if not thisDir in sys.path: sys.path.append(thisDir)
 
 ##__________________________________________________________________||
 def buildEventSelection(levels, AllClass = EventSelectionAll, AnyClass = EventSelectionAny, **kargs):
