@@ -35,7 +35,7 @@ class PrivatePuWeightFromNVert(ScribblerBase):
         self.varName = columns[0]
         # e.g. 'nVert'
 
-        self.weightDict = dict([[ast.literal_eval(e) for e in l.split()] for l in file])
+        self.weightDict = dict([[ast.literal_eval(e) for e in l.split()[0:2]] for l in file])
         # e.g.,  {1: 18.59651, 2: 5.441605, 3: 3.31272, 4: 2.687147, 5: 2.396046, 6: 2.246987}
 
         self.binning = Binning(boundaries = sorted(self.weightDict.keys()))
