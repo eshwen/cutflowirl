@@ -1,4 +1,4 @@
-from ..scribbler_configs import WeightFromTbl
+from ...Scribblers.WeightFromTbl import WeightFromTbl
 import unittest
 
 import cStringIO
