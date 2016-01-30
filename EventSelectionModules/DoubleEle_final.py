@@ -5,7 +5,6 @@ def DoubleEle_final(AllClass, AnyClass, datamc, **kargs):
 
     ret = AllClass(name = 'DoubleEle_final')
 
-    ret.add(LambdaStr("ev : ev.cutflowId[0] == 5 # 'DoubleEle'", name = 'cutflowDoubleEle'))
     ret.add(LambdaStr("ev : -1.479 < ev.ele_eta[0] < 1.479", name = 'eleBarrel'))
     ret.add(LambdaStr("ev : -1.479 < ev.ele_eta[1] < 1.479", name = 'eleBarrel'))
     ret.add(LambdaStr("ev : ev.ele_relIso03[0] < 0.0354", name = 'eleRelIso03'))

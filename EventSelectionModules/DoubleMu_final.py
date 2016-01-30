@@ -6,7 +6,6 @@ def DoubleMu_final(AllClass, AnyClass, hlt, **kargs):
 
     ret = AllClass(name = 'DoubleMu_final')
 
-    ret.add(LambdaStr("ev : ev.cutflowId[0] == 3 # 'DoubleMu'", name = 'cutflowDoubleMu'))
     ret.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
     ret.add(LambdaStr("ev : ev.muon_relIso03[1] < 0.12", name = 'relIso03LT0p12'))
     if hlt:

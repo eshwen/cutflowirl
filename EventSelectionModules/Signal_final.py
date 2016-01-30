@@ -6,7 +6,6 @@ def Signal_final(AllClass, AnyClass, **kargs):
 
     ret = AllClass(name = 'Signal_final')
 
-    ret.add(LambdaStr("ev : ev.cutflowId[0] == 1 # 'Signal'", name = 'cutflowSignal'))
     ret.add(LambdaStr("ev : ev.nIsoTracksVeto[0] <= 0", name = 'isoTrackVeto'))
 
     bintypes = AnyClass(name = 'SignalBintypes')

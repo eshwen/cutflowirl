@@ -6,7 +6,6 @@ def SinglePhoton_final(AllClass, AnyClass, datamc, **kargs):
 
     ret = AllClass(name = 'SinglePhoton_final')
 
-    ret.add(LambdaStr("ev : ev.cutflowId[0] == 6 # 'SinglePhoton'", name = 'cutflowSinglePhoton'))
     ret.add(LambdaStr("ev : ev.nIsoTracksVeto[0] <= 0", name = 'isoTrackVeto'))
     ret.add(LambdaStr("ev : ev.minDelRJetPhoton[0] >= 1.0", name = 'minDelRJetPhoton'))
 
