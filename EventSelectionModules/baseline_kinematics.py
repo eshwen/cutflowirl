@@ -1,9 +1,9 @@
 from .LambdaStr import LambdaStr
 
 ##__________________________________________________________________||
-def CommonFinal(AllClass, AnyClass, metnohf, **kargs):
+def baseline_kinematics(AllClass, AnyClass, metnohf, **kargs):
 
-    ret = AllClass(name = 'CommonFinal')
+    ret = AllClass(name = 'baseline_kinematics')
 
     ret.add(LambdaStr("ev : ev.nJet40Fwd[0] == 0", name = 'FwJetVeto'))
     ret.add(LambdaStr("ev : ev.nJet40failedId[0] == 0", name = 'JetIDVeto'))
