@@ -98,7 +98,7 @@ class Test_buildEventSelection_examples(unittest.TestCase):
             datamc = 'mc',
             levels = (
                 'PD_HLT',
-                'baseline_kinematics_JECvariation',
+                'baseline_kinematics_loose_JECvariation',
                 ('cutflows', dict(
                     cutflows = (
                         ('Signal', dict(levels = ('Id', 'PD', 'loose_JECvariation'))),
