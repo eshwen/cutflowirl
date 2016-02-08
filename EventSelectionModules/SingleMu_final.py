@@ -6,7 +6,8 @@ def SingleMu_final(AllClass, AnyClass, hlt, metnohf, **kargs):
 
     ret = AllClass(name = 'SingleMu_final')
 
-    ret.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
+    ret.add(LambdaStr("ev : ev.nMuonsIsolated[0] == 1", name = 'nMuonsIsolated'))
+
     if hlt:
         ret.add(SingleMu_HLT(AllClass, AnyClass))
     ret.add(LambdaStr("ev : ev.nIsoTracksNoMuVeto[0] <= 0", name = 'isoTrackNoMuVeto'))

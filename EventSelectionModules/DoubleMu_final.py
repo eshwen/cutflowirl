@@ -6,8 +6,8 @@ def DoubleMu_final(AllClass, AnyClass, hlt, **kargs):
 
     ret = AllClass(name = 'DoubleMu_final')
 
-    ret.add(LambdaStr("ev : ev.muon_relIso03[0] < 0.12", name = 'relIso03LT0p12'))
-    ret.add(LambdaStr("ev : ev.muon_relIso03[1] < 0.12", name = 'relIso03LT0p12'))
+    ret.add(LambdaStr("ev : ev.nMuonsIsolated[0] == 2", name = 'nMuonsIsolated'))
+
     if hlt:
         ret.add(SingleMu_HLT(AllClass, AnyClass))
     ret.add(LambdaStr("ev : ev.nIsoTracksNoMuVeto[0] <= 0", name = 'isoTrackNoMuVeto'))
