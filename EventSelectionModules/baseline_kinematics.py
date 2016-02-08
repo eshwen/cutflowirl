@@ -1,7 +1,7 @@
 from .LambdaStr import LambdaStr
 
 ##__________________________________________________________________||
-def baseline_kinematics(AllClass, AnyClass, metnohf, **kargs):
+def baseline_kinematics(AllClass, AnyClass, metnohf = False, **kargs):
     ret = AllClass(name = 'baseline_kinematics')
     ret.add(LambdaStr("ev : ev.nJet100[0] >= 1", name = 'nJetGTOne'))
     ret.add(LambdaStr("ev : ev.ht40[0] >= 200", name = 'HTGT200'))
