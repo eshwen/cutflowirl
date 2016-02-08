@@ -8,7 +8,8 @@ import unittest
 ##__________________________________________________________________||
 class Test_AlternativeSequences(unittest.TestCase):
 
-    def test_call(self):
+    def setUp(self):
+
         kargs = dict(
             name = 'cutflows',
             datamc = 'mc',
@@ -26,15 +27,20 @@ class Test_AlternativeSequences(unittest.TestCase):
                 dict(levels = ('test_cutflow3_level1', )),
             ))
 
-        es = AlternativeSequences(EventSelectionAll, EventSelectionAny, **kargs)
-        self.assertIsInstance(es, EventSelectionAny)
-        self.assertEqual('cutflows', es.name)
+        self.obj = AlternativeSequences(EventSelectionAll, EventSelectionAny, **kargs)
 
-        self.assertEqual(3, len(es.selections))
+    def test_obj_basics(self):
 
-        cutflow1, cutflow2, cutflow3 = es.selections
+        self.assertIsInstance(self.obj, EventSelectionAny)
+        self.assertEqual('cutflows', self.obj.name)
 
-        # cutflow1
+        self.assertEqual(3, len(self.obj.selections))
+
+
+    def test_cutflow1_general(self):
+
+        cutflow1 = self.obj.selections[0]
+
         self.assertIsInstance(cutflow1, EventSelectionAll)
 
         self.assertEqual('test_cutflow1', cutflow1.name)
@@ -53,7 +59,10 @@ class Test_AlternativeSequences(unittest.TestCase):
             cutflow1_level2.kargs
         )
 
-        # cutflow2
+    def test_cutflow2_no_args(self):
+
+        cutflow2 = self.obj.selections[1]
+
         self.assertIsInstance(cutflow2, EventSelectionAll)
 
         self.assertEqual('test_cutflow2', cutflow2.name)
@@ -78,7 +87,10 @@ class Test_AlternativeSequences(unittest.TestCase):
             cutflow2_level3.kargs
         )
 
-        # cutflow3
+    def test_cutflow3_no_name(self):
+
+        cutflow3 = self.obj.selections[2]
+
         self.assertIsInstance(cutflow3, EventSelectionAll)
 
         self.assertFalse(hasattr(cutflow3, 'name'))
