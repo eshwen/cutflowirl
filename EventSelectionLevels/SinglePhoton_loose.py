@@ -1,5 +1,5 @@
 from .Modules.LambdaStr import LambdaStr
-from .htbin_alphaT_loose import htbin_alphaT_loose
+from .htbin_alphaT_veryLoose import htbin_alphaT_veryLoose
 
 ##__________________________________________________________________||
 def SinglePhoton_loose(AllClass, AnyClass, datamc, **kargs):
@@ -24,11 +24,11 @@ def SinglePhoton_loose(AllClass, AnyClass, datamc, **kargs):
 
     ## asymjet
     asymjet.add(LambdaStr("ev : ev.bintypeId[0] == 2 # 'asymjet'", name = 'bintype_asymjet'))
-    asymjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
+    asymjet.add(htbin_alphaT_veryLoose(AllClass, AnyClass))
 
     ## symjet
     symjet.add(LambdaStr("ev : ev.bintypeId[0] == 3 # 'symjet'", name = 'bintype_symjet'))
-    symjet.add(LambdaStr("ev : 0.5 <= ev.alphaT[0]", name = 'alphaTLT0p5'))
+    symjet.add(htbin_alphaT_veryLoose(AllClass, AnyClass))
 
     ## highht
     highht.add(LambdaStr("ev : ev.bintypeId[0] == 4 # 'highht'", name = 'bintype_highht'))
