@@ -23,6 +23,10 @@ def AlphaTCutLoose_JECvariation(AllClass, AnyClass):
     htbin.add(LambdaStr("ev : 0.50 <= max(ev.alphaT[0], ev.alphaTJECUp[0], ev.alphaTJECDown[0])", name = ''))
     ret.add(htbin)
 
+    htbin = AllClass(name = 'HT800toInf')
+    htbin.add(LambdaStr("ev : 800 <= ev.ht40JECUp[0]", name = ''))
+    ret.add(htbin)
+
     return ret
 
 ##__________________________________________________________________||
