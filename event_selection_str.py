@@ -1,6 +1,6 @@
-from .EventSelectionModules.EventSelectionAll import EventSelectionAll
-from .EventSelectionModules.EventSelectionAny import EventSelectionAny
-from .EventSelectionModules.LambdaStr import LambdaStr
+from .EventSelectionLevels.Modules.EventSelectionAll import EventSelectionAll
+from .EventSelectionLevels.Modules.EventSelectionAny import EventSelectionAny
+from .EventSelectionLevels.Modules.LambdaStr import LambdaStr
 
 ##__________________________________________________________________||
 def event_selection_str(eventSelection):

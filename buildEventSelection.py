@@ -1,5 +1,5 @@
-from .EventSelectionModules.EventSelectionAll import EventSelectionAll
-from .EventSelectionModules.EventSelectionAny import EventSelectionAny
+from .EventSelectionLevels.Modules.EventSelectionAll import EventSelectionAll
+from .EventSelectionLevels.Modules.EventSelectionAny import EventSelectionAny
 
 import imp
 import os, sys
@@ -17,7 +17,7 @@ def buildEventSelection(levels, AllClass = EventSelectionAll, AnyClass = EventSe
     eventSelection = AllClass(name = 'All')
 
     ##______________________________________________________________||
-    top_module_name = 'EventSelectionModules'
+    top_module_name = 'EventSelectionLevels'
     f, filename, description = imp.find_module(top_module_name)
     top_module = imp.load_module(top_module_name, f, filename, description)
 
@@ -36,7 +36,7 @@ def buildEventSelection(levels, AllClass = EventSelectionAll, AnyClass = EventSe
         # e.g., level_args = {'arg1': 1, 'arg2': 2, 'datamc': 'data'}
 
         module_name = "{}.{}".format(top_module_name, level_name)
-        # e.g., 'EventSelectionModules.baseline_kinematics'
+        # e.g., 'EventSelectionLevels.baseline_kinematics'
 
         f, filename, description = imp.find_module(level_name, top_module.__path__)
 
