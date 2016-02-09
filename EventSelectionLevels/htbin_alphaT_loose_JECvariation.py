@@ -1,9 +1,9 @@
 from .Modules.LambdaStr import LambdaStr
 
 ##__________________________________________________________________||
-def AlphaTCutLoose_JECvariation(AllClass, AnyClass):
+def htbin_alphaT_loose_JECvariation(AllClass, AnyClass):
 
-    ret = AnyClass(name = 'AlphaTCutLoose_JECvariation')
+    ret = AnyClass(name = 'htbin_alphaT_loose_JECvariation')
 
     htbin = AllClass(name = 'HT200to250')
     htbin.add(LambdaStr("ev : 200 <= ev.ht40JECUp[0]", name = ''))

@@ -1,5 +1,5 @@
 from .Modules.LambdaStr import LambdaStr
-from .AlphaTCutLoose import AlphaTCutLoose
+from .htbin_alphaT_loose_JECvariation import htbin_alphaT_loose_JECvariation
 
 ##__________________________________________________________________||
 def SinglePhoton_loose_JECvariation(AllClass, AnyClass, datamc, **kargs):
@@ -24,11 +24,11 @@ def SinglePhoton_loose_JECvariation(AllClass, AnyClass, datamc, **kargs):
 
     ## asymjet
     asymjet.add(LambdaStr("ev : 2 in (ev.bintypeId[0], ev.bintypeIdJECUp[0], ev.bintypeIdJECDown[0]) # 'asymjet'", name = 'bintype_asymjet'))
-    asymjet.add(LambdaStr("ev : 0.5 <= max(ev.alphaT[0], ev.alphaTJECUp[0], ev.alphaTJECDown[0])", name = 'alphaTLT0p5'))
+    asymjet.add(htbin_alphaT_loose_JECvariation(AllClass, AnyClass))
 
     ## symjet
     symjet.add(LambdaStr("ev : 3 in (ev.bintypeId[0], ev.bintypeIdJECUp[0], ev.bintypeIdJECDown[0]) # 'symjet'", name = 'bintype_symjet'))
-    symjet.add(LambdaStr("ev : 0.5 <= max(ev.alphaT[0], ev.alphaTJECUp[0], ev.alphaTJECDown[0])", name = 'alphaTLT0p5'))
+    symjet.add(htbin_alphaT_loose_JECvariation(AllClass, AnyClass))
 
     ## highht
     highht.add(LambdaStr("ev : 4 in (ev.bintypeId[0], ev.bintypeIdJECUp[0], ev.bintypeIdJECDown[0]) # 'highht'", name = 'bintype_highht'))
