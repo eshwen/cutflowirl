@@ -1,5 +1,5 @@
 from .Modules.LambdaStr import LambdaStr
-from .AlphaTCutLoose import AlphaTCutLoose
+from .htbin_alphaT_loose import htbin_alphaT_loose
 
 ##__________________________________________________________________||
 def SinglePhoton_loose(AllClass, AnyClass, datamc, **kargs):

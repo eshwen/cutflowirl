@@ -1,5 +1,5 @@
 from .Modules.LambdaStr import LambdaStr
-from .AlphaTCutLoose import AlphaTCutLoose
+from .htbin_alphaT_loose import htbin_alphaT_loose
 
 ##__________________________________________________________________||
 def Signal_loose(AllClass, AnyClass, datamc, **kargs):
@@ -26,11 +26,11 @@ def Signal_loose(AllClass, AnyClass, datamc, **kargs):
 
     ## asymjet
     asymjet.add(LambdaStr("ev : ev.bintypeId[0] == 2 # 'asymjet'", name = 'bintype_asymjet'))
-    asymjet.add(AlphaTCutLoose(AllClass, AnyClass))
+    asymjet.add(htbin_alphaT_loose(AllClass, AnyClass))
 
     ## symjet
     symjet.add(LambdaStr("ev : ev.bintypeId[0] == 3 # 'symjet'", name = 'bintype_symjet'))
-    symjet.add(AlphaTCutLoose(AllClass, AnyClass))
+    symjet.add(htbin_alphaT_loose(AllClass, AnyClass))
 
     ## highht
     highht.add(LambdaStr("ev : ev.bintypeId[0] == 4 # 'highht'", name = 'bintype_highht'))
