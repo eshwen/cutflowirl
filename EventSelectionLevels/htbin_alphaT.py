@@ -1,9 +1,9 @@
 from .Modules.LambdaStr import LambdaStr
 
 ##__________________________________________________________________||
-def AlphaTCut(AllClass, AnyClass):
+def htbin_alphaT(AllClass, AnyClass):
 
-    ret = AnyClass(name = 'AlphaTCut')
+    ret = AnyClass(name = 'htbin_alphaT')
 
     htbin = AllClass(name = 'HT200to250')
     htbin.add(LambdaStr("ev : ev.htbin[0] == 200", name = 'HTin200to250'))

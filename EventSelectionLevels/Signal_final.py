@@ -1,5 +1,5 @@
 from .Modules.LambdaStr import LambdaStr
-from .AlphaTCut import AlphaTCut
+from .htbin_alphaT import htbin_alphaT
 
 ##__________________________________________________________________||
 def Signal_final(AllClass, AnyClass, **kargs):
@@ -26,11 +26,11 @@ def Signal_final(AllClass, AnyClass, **kargs):
 
     ## asymjet
     asymjet.add(LambdaStr("ev : ev.bintypeId[0] == 2 # 'asymjet'", name = 'bintype_asymjet'))
-    asymjet.add(AlphaTCut(AllClass, AnyClass))
+    asymjet.add(htbin_alphaT(AllClass, AnyClass))
 
     ## symjet
     symjet.add(LambdaStr("ev : ev.bintypeId[0] == 3 # 'symjet'", name = 'bintype_symjet'))
-    symjet.add(AlphaTCut(AllClass, AnyClass))
+    symjet.add(htbin_alphaT(AllClass, AnyClass))
 
     ## highht
     highht.add(LambdaStr("ev : ev.bintypeId[0] == 4 # 'highht'", name = 'bintype_highht'))
