@@ -25,6 +25,17 @@ class Test_AlternativeSequences(unittest.TestCase):
                 dict(name = 'test_cutflow2',
                      levels = ('test_cutflow2_level1', 'test_cutflow2_level2', 'test_cutflow2_level3')),
                 dict(levels = ('test_cutflow3_level1', )),
+                dict(name = 'test_cutflow4',
+                     levels = (
+                         'test_cutflow1_level1',
+                         ('AlternativeSequences', dict(
+                             sequences = (
+                                 dict(name = 'test_cutflow4_cutflow1', levels = ('test_cutflow2_level1', 'test_cutflow2_level2')), 
+                                 dict(name = 'test_cutflow4_cutflow2', levels = ('test_cutflow3_level1', )), 
+                             )
+                         )),
+                         'test_cutflow1_level2',
+                     )),
             ))
 
         self.obj = AlternativeSequences(EventSelectionAll, EventSelectionAny, **kargs)
@@ -34,7 +45,7 @@ class Test_AlternativeSequences(unittest.TestCase):
         self.assertIsInstance(self.obj, EventSelectionAny)
         self.assertEqual('cutflows', self.obj.name)
 
-        self.assertEqual(3, len(self.obj.selections))
+        self.assertEqual(4, len(self.obj.selections))
 
 
     def test_cutflow1_general(self):
@@ -103,6 +114,35 @@ class Test_AlternativeSequences(unittest.TestCase):
             cutflow3_level1.kargs
         )
 
-        # print event_selection_str(es)
+    def test_cutflow4_nested(self):
+
+        cutflow4 = self.obj.selections[3]
+
+        self.assertIsInstance(cutflow4, EventSelectionAll)
+
+        self.assertEqual('test_cutflow4', cutflow4.name)
+        self.assertEqual(3, len(cutflow4.selections))
+
+        cutflow4_level1, cutflow4_level2, cutflow4_level3 = cutflow4.selections
+        self.assertEqual('test_cutflow1_level1', cutflow4_level1.name)
+        self.assertEqual(
+            {'datamc': 'mc', 'metnohf': False, 'arg1': 10},
+            cutflow4_level1.kargs
+        )
+
+        self.assertEqual('AlternativeSequences', cutflow4_level2.name)
+        self.assertIsInstance(cutflow4_level2, EventSelectionAny)
+        self.assertEqual(2, len(cutflow4_level2.selections))
+        self.assertEqual('test_cutflow2_level1', cutflow4_level2.selections[0].selections[0].name)
+        self.assertEqual('test_cutflow2_level2', cutflow4_level2.selections[0].selections[1].name)
+        self.assertEqual('test_cutflow3_level1', cutflow4_level2.selections[1].selections[0].name)
+
+        self.assertEqual('test_cutflow1_level2', cutflow4_level3.name)
+        self.assertEqual(
+            {'datamc': 'mc', 'metnohf': False, 'arg1': 10},
+            cutflow4_level3.kargs
+        )
+
+        ## print event_selection_str(self.obj)
 
 ##__________________________________________________________________||
