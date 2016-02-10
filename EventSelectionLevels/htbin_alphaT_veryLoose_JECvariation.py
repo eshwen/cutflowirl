@@ -1,7 +1,7 @@
 from .Modules.LambdaStr import LambdaStr
 
 ##__________________________________________________________________||
-def htbin_alphaT_veryLoose_JECvariation(AllClass, AnyClass):
+def htbin_alphaT_veryLoose_JECvariation(AllClass, AnyClass, **kargs):
 
     ret = AnyClass(name = 'htbin_alphaT_veryLoose_JECvariation')
 
