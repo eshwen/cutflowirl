@@ -1,37 +1,18 @@
 from .Modules.LambdaStr import LambdaStr
-from .htbin_alphaT_veryLoose import htbin_alphaT_veryLoose
+from .AlternativeSequences import AlternativeSequences
 
 ##__________________________________________________________________||
 def bintype_htbin_alphaT_veryLoose(AllClass, AnyClass, **kargs):
+    kargs = kargs.copy()
+    kargs.update(dict(
+        name = 'bintype_htbin_alphaT_veryLoose',
+        sequences = (
+            dict(name = 'monojet', levels =('bintype_monojet', )),
+            dict(name = 'asymjet', levels =('bintype_asymjet', 'htbin_alphaT_veryLoose')),
+            dict(name = 'symjet', levels =('bintype_symjet', 'htbin_alphaT_veryLoose')),
+            dict(name = 'highht', levels =('bintype_highht', )),
+        )))
 
-    ret = AllClass(name = 'bintype_htbin_alphaT_veryLoose')
-    bintypes = AnyClass(name = 'bintypes')
-    ret.add(bintypes)
-
-    monojet = AllClass(name = 'monojet')
-    asymjet = AllClass(name = 'asymjet')
-    symjet = AllClass(name = 'symjet')
-    highht = AllClass(name = 'highht')
-
-    bintypes.add(monojet)
-    bintypes.add(asymjet)
-    bintypes.add(symjet)
-    bintypes.add(highht)
-
-    ## monojet
-    monojet.add(LambdaStr("ev : ev.bintypeId[0] == 1 # 'monojet'", name = 'bintype_monojet'))
-
-    ## asymjet
-    asymjet.add(LambdaStr("ev : ev.bintypeId[0] == 2 # 'asymjet'", name = 'bintype_asymjet'))
-    asymjet.add(htbin_alphaT_veryLoose(AllClass, AnyClass))
-
-    ## symjet
-    symjet.add(LambdaStr("ev : ev.bintypeId[0] == 3 # 'symjet'", name = 'bintype_symjet'))
-    symjet.add(htbin_alphaT_veryLoose(AllClass, AnyClass))
-
-    ## highht
-    highht.add(LambdaStr("ev : ev.bintypeId[0] == 4 # 'highht'", name = 'bintype_highht'))
-
-    return ret
+    return AlternativeSequences(AllClass, AnyClass, **kargs)
 
 ##__________________________________________________________________||
