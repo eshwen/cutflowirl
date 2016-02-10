@@ -1,4 +1,3 @@
-from .Modules.LambdaStr import LambdaStr
 from .AlternativeSequences import AlternativeSequences
 
 ##__________________________________________________________________||
