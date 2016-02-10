@@ -3,7 +3,8 @@ from .AlternativeSequences import AlternativeSequences
 
 ##__________________________________________________________________||
 def bintype_biasedDPhi(AllClass, AnyClass, **kargs):
-    return AlternativeSequences(AllClass, AnyClass, **dict(
+    kargs = kargs.copy()
+    kargs.update(dict(
         name = 'bintype_biasedDPhi',
         sequences = (
             dict(name = 'monojet', levels =('bintype_monojet', 'biasedDPhi20')),
@@ -11,4 +12,6 @@ def bintype_biasedDPhi(AllClass, AnyClass, **kargs):
             dict(name = 'symjet', levels =('bintype_symjet', 'biasedDPhi')),
             dict(name = 'highht', levels =('bintype_highht', 'biasedDPhi')),
         )))
+
+    return AlternativeSequences(AllClass, AnyClass, **kargs)
 ##__________________________________________________________________||
