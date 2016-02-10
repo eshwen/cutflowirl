@@ -1,44 +1,14 @@
 from .Modules.LambdaStr import LambdaStr
-from .bintype_monojet import bintype_monojet
-from .bintype_asymjet import bintype_asymjet
-from .bintype_symjet import bintype_symjet
-from .bintype_highht import bintype_highht
-from .biasedDPhi import biasedDPhi
-from .biasedDPhi20 import biasedDPhi20
+from .AlternativeSequences import AlternativeSequences
 
 ##__________________________________________________________________||
 def bintype_biasedDPhi(AllClass, AnyClass, **kargs):
-
-    ret = AllClass(name = 'bintype_biasedDPhi')
-    bintypes = AnyClass(name = 'bintypes')
-    ret.add(bintypes)
-
-    monojet = AllClass(name = 'monojet')
-    asymjet = AllClass(name = 'asymjet')
-    symjet = AllClass(name = 'symjet')
-    highht = AllClass(name = 'highht')
-
-    bintypes.add(monojet)
-    bintypes.add(asymjet)
-    bintypes.add(symjet)
-    bintypes.add(highht)
-
-    ## monojet
-    monojet.add(bintype_monojet(AllClass, AnyClass, **kargs))
-    monojet.add(biasedDPhi20(AllClass, AnyClass, **kargs))
-
-    ## asymjet
-    asymjet.add(bintype_asymjet(AllClass, AnyClass, **kargs))
-    asymjet.add(biasedDPhi(AllClass, AnyClass, **kargs))
-
-    ## symjet
-    symjet.add(bintype_symjet(AllClass, AnyClass, **kargs))
-    symjet.add(biasedDPhi(AllClass, AnyClass, **kargs))
-
-    ## highht
-    highht.add(bintype_highht(AllClass, AnyClass, **kargs))
-    highht.add(biasedDPhi(AllClass, AnyClass, **kargs))
-
-    return ret
-
+    return AlternativeSequences(AllClass, AnyClass, **dict(
+        name = 'bintype_biasedDPhi',
+        sequences = (
+            dict(name = 'monojet', levels =('bintype_monojet', 'biasedDPhi20')),
+            dict(name = 'asymjet', levels =('bintype_asymjet', 'biasedDPhi')),
+            dict(name = 'symjet', levels =('bintype_symjet', 'biasedDPhi')),
+            dict(name = 'highht', levels =('bintype_highht', 'biasedDPhi')),
+        )))
 ##__________________________________________________________________||
