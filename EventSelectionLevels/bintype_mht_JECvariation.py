@@ -1,35 +1,17 @@
-from .Modules.LambdaStr import LambdaStr
+from .AlternativeSequences import AlternativeSequences
 
 ##__________________________________________________________________||
 def bintype_mht_JECvariation(AllClass, AnyClass, **kargs):
+    kargs = kargs.copy()
+    kargs.update(dict(
+        name = 'bintype_htbin_alphaT_veryLoose_JECvariation',
+        sequences = (
+            dict(name = 'monojet', levels =('bintype_monojet_JECvariation', )),
+            dict(name = 'asymjet', levels =('bintype_asymjet_JECvariation', )),
+            dict(name = 'symjet', levels =('bintype_symjet_JECvariation', )),
+            dict(name = 'highht', levels =('bintype_highht_JECvariation', 'mht_JECvariation')),
+        )))
 
-    ret = AllClass(name = 'bintype_mht_JECvariation')
-    bintypes = AnyClass(name = 'bintypes')
-    ret.add(bintypes)
-
-    monojet = AllClass(name = 'monojet')
-    asymjet = AllClass(name = 'asymjet')
-    symjet = AllClass(name = 'symjet')
-    highht = AllClass(name = 'highht')
-
-    bintypes.add(monojet)
-    bintypes.add(asymjet)
-    bintypes.add(symjet)
-    bintypes.add(highht)
-
-    ## monojet
-    monojet.add(LambdaStr("ev : 1 in (ev.bintypeId[0], ev.bintypeIdJECUp[0], ev.bintypeIdJECDown[0]) # 'monojet'", name = 'bintype_monojet'))
-
-    ## asymjet
-    asymjet.add(LambdaStr("ev : 2 in (ev.bintypeId[0], ev.bintypeIdJECUp[0], ev.bintypeIdJECDown[0]) # 'asymjet'", name = 'bintype_asymjet'))
-
-    ## symjet
-    symjet.add(LambdaStr("ev : 3 in (ev.bintypeId[0], ev.bintypeIdJECUp[0], ev.bintypeIdJECDown[0]) # 'symjet'", name = 'bintype_symjet'))
-
-    ## highht
-    highht.add(LambdaStr("ev : 4 in (ev.bintypeId[0], ev.bintypeIdJECUp[0], ev.bintypeIdJECDown[0]) # 'highht'", name = 'bintype_highht'))
-    highht.add(LambdaStr("ev : 130 <= max(ev.mht40_pt[0], ev.mht40JECUp_pt[0], ev.mht40JECDown_pt[0])", name = 'MHTGT130'))
-
-    return ret
+    return AlternativeSequences(AllClass, AnyClass, **kargs)
 
 ##__________________________________________________________________||
