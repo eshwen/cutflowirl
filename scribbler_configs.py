@@ -20,6 +20,7 @@ from Scribblers.MhtOverMetNoX import MhtOverMetNoX
 from Scribblers.MhtOverMetNoXNoHF import MhtOverMetNoXNoHF
 from Scribblers.nMuonsIsolated import nMuonsIsolated
 from Scribblers.nElectronsIsolated import nElectronsIsolated
+from Scribblers.nElectronsBarrel import nElectronsBarrel
 
 ##__________________________________________________________________||
 def scribbler_configs(datamc, pd, gen_process, json = None, metnohf = False):
@@ -61,6 +62,7 @@ def scribbler_configs(datamc, pd, gen_process, json = None, metnohf = False):
 
     ret.append(nMuonsIsolated())
     ret.append(nElectronsIsolated())
+    ret.append(nElectronsBarrel())
 
     if metnohf:
         ret.append(metNoXNoHF())
