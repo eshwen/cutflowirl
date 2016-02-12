@@ -9,12 +9,12 @@ thisDir = os.path.dirname(os.path.realpath(__file__))
 if not thisDir in sys.path: sys.path.append(thisDir)
 
 ##__________________________________________________________________||
-def buildEventSelection(levels, AllClass = EventSelectionAll, AnyClass = EventSelectionAny, **kargs):
+def buildEventSelection(levels, name = 'All', AllClass = EventSelectionAll, AnyClass = EventSelectionAny, **kargs):
     """
     """
 
     ##______________________________________________________________||
-    eventSelection = AllClass(name = 'All')
+    eventSelection = AllClass(name = name)
 
     ##______________________________________________________________||
     top_module_name = 'EventSelectionLevels'
