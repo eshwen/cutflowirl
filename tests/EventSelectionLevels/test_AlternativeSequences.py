@@ -17,7 +17,9 @@ class Test_AlternativeSequences(unittest.TestCase):
             arg1 = 10,
             sequences = (
                 dict(name = 'test_cutflow1',
-                     kargs = dict(arg1 = 31, arg2 = 52, arg3 = 102),
+                     arg1 = 31,
+                     arg2 = 52,
+                     arg3 = 102,
                      levels = (
                          ('test_cutflow1_level1', dict(arg1 = 1, arg2 = 2)),
                          'test_cutflow1_level2'

@@ -8,18 +8,18 @@ def AlternativeSequences(AllClass, AnyClass, sequences, name = 'AlternativeSeque
     ##______________________________________________________________||
     for sequence in sequences:
 
-        sequence_args_0 = sequence['kargs'] if 'kargs' in sequence else { }
-        sequence_args = kargs.copy()
-        sequence_args.update(sequence_args_0)
+        sequence = sequence.copy()
 
-        sequence_name = sequence['name'] if 'name' in sequence else None
-
+        sequence_name = sequence.pop('name', None)
         selection = AllClass(name = sequence_name)
         ret.add(selection)
 
-        if not 'levels' in sequence: continue
+        levels = sequence.pop('levels', None)
+        if levels is None: continue
 
-        levels = sequence['levels']
+        sequence_args = kargs.copy()
+        sequence_args.update(sequence)
+
         for level in levels:
             if isinstance(level, basestring):
                 level_name, level_kargs_0 = level, { }
