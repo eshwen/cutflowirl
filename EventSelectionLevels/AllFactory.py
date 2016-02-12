@@ -2,7 +2,7 @@
 import imp
 
 ##__________________________________________________________________||
-def AllFactory(levels, AllClass, AnyClass, name = 'All', **kargs):
+def AllFactory(AllClass, AnyClass, levels, name = 'All', **kargs):
     ret = AllClass(name = name)
 
     for level in levels:
