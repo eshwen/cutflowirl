@@ -1,8 +1,8 @@
+from .Modules.TestTrue import TestTrue
 
 ##__________________________________________________________________||
 def test_level2(AllClass, AnyClass, **kargs):
-    ret = AnyClass(name = 'test_level2')
-    # print 'test_level2', kargs
+    ret = TestTrue(name = 'test_level2', **kargs)
     return ret
 
 ##__________________________________________________________________||
