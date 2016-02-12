@@ -28,8 +28,7 @@ class Test_AlternativeSequences(unittest.TestCase):
                 ('AllFactory',
                 dict(name = 'test_cutflow2',
                      levels = ('test_cutflow2_level1', 'test_cutflow2_level2', 'test_cutflow2_level3'))),
-                ('AllFactory',
-                dict(levels = ('test_cutflow3_level1', ))),
+                'test_cutflow3_level1',
                 ('AllFactory',
                 dict(name = 'test_cutflow4',
                      levels = (
@@ -108,16 +107,10 @@ class Test_AlternativeSequences(unittest.TestCase):
 
         cutflow3 = self.obj.selections[2]
 
-        self.assertIsInstance(cutflow3, EventSelectionAll)
-
-        self.assertFalse(hasattr(cutflow3, 'name'))
-        self.assertEqual(1, len(cutflow3.selections))
-
-        cutflow3_level1 = cutflow3.selections[0]
-        self.assertEqual('test_cutflow3_level1', cutflow3_level1.name)
+        self.assertEqual('test_cutflow3_level1', cutflow3.name)
         self.assertEqual(
             {'datamc': 'mc', 'metnohf': False, 'arg1': 10},
-            cutflow3_level1.kargs
+            cutflow3.kargs
         )
 
     def test_cutflow4_nested(self):
