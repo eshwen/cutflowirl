@@ -1,4 +1,4 @@
-from ...EventSelectionLevels.AlternativeSequences import AlternativeSequences
+from ...EventSelectionLevels.AnyFactory import AnyFactory
 from ...EventSelectionLevels.Modules.EventSelectionAll import EventSelectionAll
 from ...EventSelectionLevels.Modules.EventSelectionAny import EventSelectionAny
 from ...EventSelectionLevels.Modules.LambdaStr import LambdaStr
@@ -6,7 +6,7 @@ from ...event_selection_str import event_selection_str
 import unittest
 
 ##__________________________________________________________________||
-class Test_AlternativeSequences(unittest.TestCase):
+class Test_AnyFactory(unittest.TestCase):
 
     def setUp(self):
 
@@ -33,7 +33,7 @@ class Test_AlternativeSequences(unittest.TestCase):
                 dict(name = 'test_cutflow4',
                      levels = (
                          'test_cutflow1_level1',
-                         ('AlternativeSequences', dict(
+                         ('AnyFactory', dict(
                              levels = (
                                  ('AllFactory', dict(name = 'test_cutflow4_cutflow1', levels = ('test_cutflow2_level1', 'test_cutflow2_level2'))),
                                  ('AllFactory', dict(name = 'test_cutflow4_cutflow2', levels = ('test_cutflow3_level1', ))),
@@ -43,7 +43,7 @@ class Test_AlternativeSequences(unittest.TestCase):
                      ))),
             ))
 
-        self.obj = AlternativeSequences(EventSelectionAll, EventSelectionAny, **kargs)
+        self.obj = AnyFactory(EventSelectionAll, EventSelectionAny, **kargs)
 
     def test_obj_basics(self):
 

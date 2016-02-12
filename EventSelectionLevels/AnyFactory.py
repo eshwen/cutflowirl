@@ -2,7 +2,7 @@
 import imp
 
 ##__________________________________________________________________||
-def AlternativeSequences(AllClass, AnyClass, levels, name = None, **kargs):
+def AnyFactory(AllClass, AnyClass, levels, name = None, **kargs):
 
     ret = AnyClass(name = name)
 

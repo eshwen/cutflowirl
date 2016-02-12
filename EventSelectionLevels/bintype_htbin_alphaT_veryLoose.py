@@ -1,5 +1,5 @@
 from .Modules.LambdaStr import LambdaStr
-from .AlternativeSequences import AlternativeSequences
+from .AnyFactory import AnyFactory
 
 ##__________________________________________________________________||
 def bintype_htbin_alphaT_veryLoose(AllClass, AnyClass, **kargs):
@@ -13,6 +13,6 @@ def bintype_htbin_alphaT_veryLoose(AllClass, AnyClass, **kargs):
             dict(name = 'highht', levels =('bintype_highht', )),
         )))
 
-    return AlternativeSequences(AllClass, AnyClass, **kargs)
+    return AnyFactory(AllClass, AnyClass, **kargs)
 
 ##__________________________________________________________________||
