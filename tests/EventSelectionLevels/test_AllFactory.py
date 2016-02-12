@@ -21,7 +21,7 @@ class Test_AllFactory(unittest.TestCase):
 
     def test_obj(self):
         self.assertIsInstance(self.obj, EventSelectionAll)
-        self.assertEqual('All', self.obj.name)
+        self.assertFalse(hasattr(self.obj, 'name'))
         self.assertEqual(2, len(self.obj.selections))
 
     def test_level1(self):

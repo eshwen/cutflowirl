@@ -16,28 +16,32 @@ class Test_AlternativeSequences(unittest.TestCase):
             metnohf = False,
             arg1 = 10,
             levels = (
-                dict(name = 'test_cutflow1',
-                     arg1 = 31,
-                     arg2 = 52,
-                     arg3 = 102,
-                     levels = (
-                         ('test_cutflow1_level1', dict(arg1 = 1, arg2 = 2)),
-                         'test_cutflow1_level2'
-                     )),
+                ('AllFactory',
+                 dict(name = 'test_cutflow1',
+                      arg1 = 31,
+                      arg2 = 52,
+                      arg3 = 102,
+                      levels = (
+                          ('test_cutflow1_level1', dict(arg1 = 1, arg2 = 2)),
+                          'test_cutflow1_level2'
+                      ))),
+                ('AllFactory',
                 dict(name = 'test_cutflow2',
-                     levels = ('test_cutflow2_level1', 'test_cutflow2_level2', 'test_cutflow2_level3')),
-                dict(levels = ('test_cutflow3_level1', )),
+                     levels = ('test_cutflow2_level1', 'test_cutflow2_level2', 'test_cutflow2_level3'))),
+                ('AllFactory',
+                dict(levels = ('test_cutflow3_level1', ))),
+                ('AllFactory',
                 dict(name = 'test_cutflow4',
                      levels = (
                          'test_cutflow1_level1',
                          ('AlternativeSequences', dict(
                              levels = (
-                                 dict(name = 'test_cutflow4_cutflow1', levels = ('test_cutflow2_level1', 'test_cutflow2_level2')), 
-                                 dict(name = 'test_cutflow4_cutflow2', levels = ('test_cutflow3_level1', )), 
+                                 ('AllFactory', dict(name = 'test_cutflow4_cutflow1', levels = ('test_cutflow2_level1', 'test_cutflow2_level2'))),
+                                 ('AllFactory', dict(name = 'test_cutflow4_cutflow2', levels = ('test_cutflow3_level1', ))),
                              )
                          )),
                          'test_cutflow1_level2',
-                     )),
+                     ))),
             ))
 
         self.obj = AlternativeSequences(EventSelectionAll, EventSelectionAny, **kargs)
@@ -132,7 +136,7 @@ class Test_AlternativeSequences(unittest.TestCase):
             cutflow4_level1.kargs
         )
 
-        self.assertEqual('AlternativeSequences', cutflow4_level2.name)
+        self.assertFalse(hasattr(cutflow4_level2, 'name'))
         self.assertIsInstance(cutflow4_level2, EventSelectionAny)
         self.assertEqual(2, len(cutflow4_level2.selections))
         self.assertEqual('test_cutflow2_level1', cutflow4_level2.selections[0].selections[0].name)
