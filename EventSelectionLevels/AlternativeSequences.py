@@ -1,12 +1,12 @@
 import imp
 
 ##__________________________________________________________________||
-def AlternativeSequences(AllClass, AnyClass, sequences, name = 'AlternativeSequences', **kargs):
+def AlternativeSequences(AllClass, AnyClass, levels, name = 'AlternativeSequences', **kargs):
 
     ret = AnyClass(name = name)
 
     ##______________________________________________________________||
-    for sequence in sequences:
+    for sequence in levels:
 
         sequence = sequence.copy()
 
@@ -14,13 +14,13 @@ def AlternativeSequences(AllClass, AnyClass, sequences, name = 'AlternativeSeque
         selection = AllClass(name = sequence_name)
         ret.add(selection)
 
-        levels = sequence.pop('levels', None)
-        if levels is None: continue
+        subLevels = sequence.pop('levels', None)
+        if subLevels is None: continue
 
         sequence_args = kargs.copy()
         sequence_args.update(sequence)
 
-        for level in levels:
+        for level in subLevels:
             if isinstance(level, basestring):
                 level_name, level_kargs_0 = level, { }
             else:

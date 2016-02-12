@@ -15,7 +15,7 @@ class Test_AlternativeSequences(unittest.TestCase):
             datamc = 'mc',
             metnohf = False,
             arg1 = 10,
-            sequences = (
+            levels = (
                 dict(name = 'test_cutflow1',
                      arg1 = 31,
                      arg2 = 52,
@@ -31,7 +31,7 @@ class Test_AlternativeSequences(unittest.TestCase):
                      levels = (
                          'test_cutflow1_level1',
                          ('AlternativeSequences', dict(
-                             sequences = (
+                             levels = (
                                  dict(name = 'test_cutflow4_cutflow1', levels = ('test_cutflow2_level1', 'test_cutflow2_level2')), 
                                  dict(name = 'test_cutflow4_cutflow2', levels = ('test_cutflow3_level1', )), 
                              )
