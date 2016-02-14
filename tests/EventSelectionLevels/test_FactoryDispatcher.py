@@ -8,25 +8,6 @@ import copy
 ##__________________________________________________________________||
 class Test_FactoryDispatcher(unittest.TestCase):
 
-#    def setUp(self):
-#        kargs = dict(
-#            arg1 = 10,
-#            arg2 = 10,
-#            All = (),
-#            AllClass = EventSelectionAll,
-#            AnyClass = EventSelectionAny,
-#            )
-#
-#        self.obj = FactoryDispatcher(**kargs)
-#
-#    def test_arguments_All_or_Any(self):
-#        obj = FactoryDispatcher(All = ())
-#        obj = FactoryDispatcher(Any = ())
-#
-#        self.assertRaises(ValueError, FactoryDispatcher)
-#        self.assertRaises(ValueError, FactoryDispatcher, All = (), Any = ())
-
-
     def test_string(self):
         kargs = dict(arg1 = 10, arg2 = 20)
         level = 'test_level1'
