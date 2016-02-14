@@ -2,6 +2,7 @@
 from .EventSelectionLevels.Modules.EventSelectionAll import EventSelectionAll
 from .EventSelectionLevels.Modules.EventSelectionAny import EventSelectionAny
 from .EventSelectionLevels.Modules.EventSelectionNot import EventSelectionNot
+from .EventSelectionLevels.Modules.LambdaStr import LambdaStr
 from .EventSelectionLevels.AllFactory import AllFactory
 from .EventSelectionLevels.FactoryDispatcher import FactoryDispatcher
 
@@ -21,6 +22,7 @@ def buildEventSelection(**kargs):
         AllClass = EventSelectionAll,
         AnyClass = EventSelectionAny,
         NotClass = EventSelectionNot,
+        LambdaStrClass = LambdaStr,
         **kargs)
 
 ##__________________________________________________________________||
