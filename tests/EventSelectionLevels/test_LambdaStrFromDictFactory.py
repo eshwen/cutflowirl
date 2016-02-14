@@ -1,0 +1,36 @@
+from ...EventSelectionLevels.LambdaStrFromDictFactory import LambdaStrFromDictFactory
+from ...EventSelectionLevels.Modules.LambdaStr import LambdaStr
+import unittest
+
+##__________________________________________________________________||
+class Test_LambdaStrFromDictFactory(unittest.TestCase):
+
+    def setUp(self):
+        self.lambdaStrDict = {
+            'JSON': "ev : ev.inCertifiedLumiSections[0]",
+            'nMuonsIsolated': 'ev : ev.nMuonsIsolated[0] == {n}'
+        }
+
+
+    def test_obj(self):
+        obj = LambdaStrFromDictFactory(key = 'JSON',
+                                       LambdaStrClass = LambdaStr,
+                                       lambdaStrDict = self.lambdaStrDict
+                                       )
+
+        self.assertIsInstance(obj, LambdaStr)
+        self.assertEqual('ev : ev.inCertifiedLumiSections[0]', obj.lambda_str)
+        self.assertEqual('JSON', obj.name)
+
+    def test_obj_format(self):
+        obj = LambdaStrFromDictFactory(key = 'nMuonsIsolated',
+                                       n = 1,
+                                       LambdaStrClass = LambdaStr,
+                                       lambdaStrDict = self.lambdaStrDict
+                                       )
+
+        self.assertIsInstance(obj, LambdaStr)
+        self.assertEqual('ev : ev.nMuonsIsolated[0] == 1', obj.lambda_str)
+        self.assertEqual('nMuonsIsolated', obj.name)
+
+##__________________________________________________________________||
