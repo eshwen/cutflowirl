@@ -25,7 +25,7 @@ class Test_FactoryDispatcher(unittest.TestCase):
         self.assertEqual('JSON', obj.name)
         self.assertEqual('ev : ev.inCertifiedLumiSections[0]', obj.lambda_str)
 
-    def test_string_with_option(self):
+    def test_tuple(self):
         kargs = dict(arg1 = 10, arg2 = 20,
                      lambdaStrDict = self.lambdaStrDict,
                      LambdaStrClass = LambdaStr)
@@ -34,15 +34,6 @@ class Test_FactoryDispatcher(unittest.TestCase):
         self.assertIsInstance(obj, LambdaStr)
         self.assertEqual('nMuonsIsolated', obj.name)
         self.assertEqual('ev : ev.nMuonsIsolated[0] == 1', obj.lambda_str)
-
-    def test_tuple(self):
-        kargs = dict(arg1 = 10, arg2 = 20)
-        level = ('test_level1', dict(arg2 = 2, arg3 = 3))
-        level_org = copy.deepcopy(level)
-        obj = FactoryDispatcher(level = level, **kargs)
-        self.assertEqual(level_org, level)
-        self.assertEqual('test_level1', obj.name)
-        self.assertEqual({'arg1': 10, 'arg2': 2,'arg3': 3}, obj.kargs)
 
     def test_dict_factory(self):
         kargs = dict(arg1 = 10, arg2 = 20)
@@ -86,7 +77,7 @@ class Test_FactoryDispatcher(unittest.TestCase):
             AllClass = EventSelectionAll,
             AnyClass = EventSelectionAny
         )
-        level = dict(All = ('test_level1', 'test_level2'), name = 'test_all', arg2 = 2, arg3 = 3)
+        level = dict(All = (dict(factory = 'test_level1'), dict(factory = 'test_level2')), name = 'test_all', arg2 = 2, arg3 = 3)
         level_org = copy.deepcopy(level)
         obj = FactoryDispatcher(level = level, **kargs)
         self.assertEqual(level_org, level)
@@ -104,7 +95,7 @@ class Test_FactoryDispatcher(unittest.TestCase):
             AllClass = EventSelectionAll,
             AnyClass = EventSelectionAny,
         )
-        level = dict(Any = ('test_level1', 'test_level2'), name = 'test_any', arg2 = 2, arg3 = 3)
+        level = dict(Any = (dict(factory = 'test_level1'), dict(factory = 'test_level2')), name = 'test_any', arg2 = 2, arg3 = 3)
         level_org = copy.deepcopy(level)
         obj = FactoryDispatcher(level = level, **kargs)
         self.assertEqual(level_org, level)
@@ -123,7 +114,7 @@ class Test_FactoryDispatcher(unittest.TestCase):
              AnyClass = EventSelectionAny,
              NotClass = EventSelectionNot,
          )
-         level = dict(Not = 'test_level1', name = 'not_test_level1', arg2 = 2, arg3 = 3)
+         level = dict(Not = dict(factory = 'test_level1'), name = 'not_test_level1', arg2 = 2, arg3 = 3)
          level_org = copy.deepcopy(level)
          obj = FactoryDispatcher(level = level, **kargs)
          self.assertEqual(level_org, level)

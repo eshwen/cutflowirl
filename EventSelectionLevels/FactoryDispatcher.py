@@ -4,28 +4,14 @@
 def FactoryDispatcher(level, **kargs):
 
     if isinstance(level, basestring):
-        if 'lambdaStrDict' in kargs and level in kargs['lambdaStrDict']:
-            level = dict(factory = 'LambdaStrFromDictFactory', key = level)
-        else:
-            factoryName = level
-            module = find_module(factoryName)
-            factory = getattr(module, factoryName)
-            return factory(**kargs)
+        level = dict(factory = 'LambdaStrFromDictFactory', key = level)
 
     if not isinstance(level, dict):
         # assume tuple or list
         if isinstance(level[0], basestring) and isinstance(level[1], dict):
             key = level[0]
-            if 'lambdaStrDict' in kargs and key in kargs['lambdaStrDict']:
-                level = level[1].copy()
-                level.update(dict(factory = 'LambdaStrFromDictFactory', key = key))
-            else:
-                factoryName = level[0]
-                module = find_module(factoryName)
-                factory = getattr(module, factoryName)
-                kargs_copy = kargs.copy()
-                kargs_copy.update(level[1])
-                return factory(**kargs_copy)
+            level = level[1].copy()
+            level.update(dict(factory = 'LambdaStrFromDictFactory', key = key))
 
     if isinstance(level, dict):
         if 'factory' in level:
