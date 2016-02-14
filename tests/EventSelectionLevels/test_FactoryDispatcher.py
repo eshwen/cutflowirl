@@ -2,18 +2,38 @@ from ...EventSelectionLevels.FactoryDispatcher import FactoryDispatcher
 from ...EventSelectionLevels.Modules.EventSelectionAll import EventSelectionAll
 from ...EventSelectionLevels.Modules.EventSelectionAny import EventSelectionAny
 from ...EventSelectionLevels.Modules.EventSelectionNot import EventSelectionNot
+from ...EventSelectionLevels.Modules.LambdaStr import LambdaStr
 import unittest
 import copy
 
 ##__________________________________________________________________||
 class Test_FactoryDispatcher(unittest.TestCase):
 
+    def setUp(self):
+        self.lambdaStrDict = {
+            'JSON': "ev : ev.inCertifiedLumiSections[0]",
+            'nMuonsIsolated': 'ev : ev.nMuonsIsolated[0] == {n}'
+        }
+
     def test_string(self):
-        kargs = dict(arg1 = 10, arg2 = 20)
-        level = 'test_level1'
+        kargs = dict(arg1 = 10, arg2 = 20,
+                     lambdaStrDict = self.lambdaStrDict,
+                     LambdaStrClass = LambdaStr)
+        level = 'JSON'
         obj = FactoryDispatcher(level = level, **kargs)
-        self.assertEqual('test_level1', obj.name)
-        self.assertEqual({'arg1': 10, 'arg2': 20}, obj.kargs)
+        self.assertIsInstance(obj, LambdaStr)
+        self.assertEqual('JSON', obj.name)
+        self.assertEqual('ev : ev.inCertifiedLumiSections[0]', obj.lambda_str)
+
+    def test_string_with_option(self):
+        kargs = dict(arg1 = 10, arg2 = 20,
+                     lambdaStrDict = self.lambdaStrDict,
+                     LambdaStrClass = LambdaStr)
+        level = ('nMuonsIsolated', dict(n = 1))
+        obj = FactoryDispatcher(level = level, **kargs)
+        self.assertIsInstance(obj, LambdaStr)
+        self.assertEqual('nMuonsIsolated', obj.name)
+        self.assertEqual('ev : ev.nMuonsIsolated[0] == 1', obj.lambda_str)
 
     def test_tuple(self):
         kargs = dict(arg1 = 10, arg2 = 20)
