@@ -1,39 +1,38 @@
-from .Modules.LambdaStr import LambdaStr
+from .FactoryDispatcher import FactoryDispatcher
+import copy
 
 ##__________________________________________________________________||
 def htbin_alphaT(AllClass, AnyClass, **kargs):
 
-    ret = AnyClass(name = 'htbin_alphaT')
+    kargs_copy = copy.deepcopy(kargs)
 
-    htbin = AllClass(name = 'HT200to250')
-    htbin.add(LambdaStr("ev : ev.htbin[0] == 200", name = 'HTin200to250'))
-    htbin.add(LambdaStr("ev : 0.65 <= ev.alphaT[0]", name = 'alphaTGT0p65'))
-    ret.add(htbin)
+    lambdaStrDict = {
+        'htbin_200': "ev : ev.htbin[0] == 200",
+        'htbin_250': "ev : ev.htbin[0] == 250",
+        'htbin_300': "ev : ev.htbin[0] == 300",
+        'htbin_350': "ev : ev.htbin[0] == 350",
+        'htbin_400': "ev : ev.htbin[0] == 400",
+        'htbin_600': "ev : ev.htbin[0] == 600",
+        'htbin_800': "ev : ev.htbin[0] == 800",
+        'alphaT': "ev : {v} <= ev.alphaT[0]",
+    }
 
-    htbin = AllClass(name = 'HT250to300')
-    htbin.add(LambdaStr("ev : ev.htbin[0] == 250", name = 'HTin250to300'))
-    htbin.add(LambdaStr("ev : 0.60 <= ev.alphaT[0]", name = 'alphaTGT0p60'))
-    ret.add(htbin)
+    kargs_copy['lambdaStrDict'].update(lambdaStrDict)
 
-    htbin = AllClass(name = 'HT300to350')
-    htbin.add(LambdaStr("ev : ev.htbin[0] == 300", name = 'HTin300to350'))
-    htbin.add(LambdaStr("ev : 0.55 <= ev.alphaT[0]", name = 'alphaTGT0p55'))
-    ret.add(htbin)
+    level = dict(
+        Any = (dict(All = ('htbin_200', ('alphaT', dict(v = 0.65)))),
+               dict(All = ('htbin_250', ('alphaT', dict(v = 0.60)))),
+               dict(All = ('htbin_300', ('alphaT', dict(v = 0.55)))),
+               dict(All = ('htbin_350', ('alphaT', dict(v = 0.53)))),
+               dict(All = ('htbin_400', ('alphaT', dict(v = 0.52)))),
+               dict(All = ('htbin_600', ('alphaT', dict(v = 0.52)))),
+               dict(All = ('htbin_800', ))
+        )
+    )
 
-    htbin = AllClass(name = 'HT350to400')
-    htbin.add(LambdaStr("ev : ev.htbin[0] == 350", name = 'HTin350to400'))
-    htbin.add(LambdaStr("ev : 0.53 <= ev.alphaT[0]", name = 'alphaTGT0p53'))
-    ret.add(htbin)
+    return FactoryDispatcher(
+        AllClass = AllClass, AnyClass = AnyClass,
+        level = level, **kargs_copy)
 
-    htbin = AllClass(name = 'HT400to800')
-    htbin.add(LambdaStr("ev : ev.htbin[0] in (400, 600)", name = 'HTin400to800'))
-    htbin.add(LambdaStr("ev : 0.52 <= ev.alphaT[0]", name = 'alphaTGT0p52'))
-    ret.add(htbin)
-
-    htbin = AllClass(name = 'HT800toInf')
-    htbin.add(LambdaStr("ev : ev.htbin[0] == 800", name = 'HTGT800'))
-    ret.add(htbin)
-
-    return ret
 
 ##__________________________________________________________________||
