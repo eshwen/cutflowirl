@@ -9,6 +9,8 @@ lambdaStrDict = {
     'mht_JECvar': "ev : 130 <= max(ev.mht40_pt[0], ev.mht40JECUp_pt[0], ev.mht40JECDown_pt[0])",
     'biasedDPhi': "ev : 0.5 <= ev.biasedDPhi[0]",
     'biasedDPhi20': "ev : ev.biasedDPhi20[0] == -1 or 0.5 <= ev.biasedDPhi20[0]",
+    'mtw': "ev : 30 <= ev.mtw[0] < 125",
+    'mtwNoHF': "ev : 30 <= ev.mtwNoHF[0] < 125",
     'mll': "ev : 66.2 <= ev.mll[0] < 116.2",
     'isoTrackVeto': "ev : ev.nIsoTracksVeto[0] <= 0",
     'isoTrackNoMuVeto': "ev : ev.nIsoTracksNoMuVeto[0] <= 0",
