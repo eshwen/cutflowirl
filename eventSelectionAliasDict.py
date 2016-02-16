@@ -1,6 +1,6 @@
 
 ##__________________________________________________________________||
-lambdaStrDict = {
+eventSelectionAliasDict = {
     'JSON': "ev : ev.inCertifiedLumiSections[0]",
     'ht40_loose_JECvar': 'ev : ev.ht40JECUp[0] >= 150',
     'nJet100_JECvar': 'ev : ev.nJet100JECUp[0] >= 1',
