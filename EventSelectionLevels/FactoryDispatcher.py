@@ -59,19 +59,21 @@ def expand_path_cfg(path_cfg, **kargs):
     if isinstance(path_cfg, dict): return path_cfg
 
     if isinstance(path_cfg, basestring):
-        ret = copy.deepcopy(kargs)
         if 'aliasDict' in kargs and path_cfg in kargs['aliasDict']:
-            ret.update(dict(factory = 'LambdaStrFromDictFactory', key = path_cfg))
-            return ret
-        ret.update(dict(factory = 'LambdaStrFactory', lambda_str = path_cfg))
+            kargs_copy = copy.deepcopy(kargs)
+            kargs_copy.update(alias = path_cfg)
+            return expand_path_cfg(kargs['aliasDict'][path_cfg], **kargs_copy)
+        lambda_str = path_cfg.format(**kargs)
+        ret = dict(factory = 'LambdaStrFactory', lambda_str = lambda_str)
+        if 'alias' in kargs: ret['name'] = kargs['alias'] 
+        if 'name' in kargs: ret['name'] = kargs['name'] 
         return ret
 
     # assume tuple or list
     if isinstance(path_cfg[0], basestring) and isinstance(path_cfg[1], dict):
-        key = path_cfg[0]
-        ret = path_cfg[1].copy()
-        ret.update(dict(factory = 'LambdaStrFromDictFactory', key = key))
-        return ret
+        kargs_copy = copy.deepcopy(kargs)
+        kargs_copy.update(path_cfg[1])
+        return expand_path_cfg(path_cfg[0], **kargs_copy)
 
     raise ValueError("cannot recognize the path_cfg")
 

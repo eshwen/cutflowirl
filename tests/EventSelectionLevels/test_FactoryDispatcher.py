@@ -8,6 +8,7 @@ import unittest
 import copy
 
 ##__________________________________________________________________||
+@unittest.skip("skipping")
 class Test_FactoryDispatcher(unittest.TestCase):
 
     def setUp(self):
@@ -129,31 +130,115 @@ class Test_expand_path_cfg(unittest.TestCase):
 
     def setUp(self):
         self.aliasDict = {
-            'bintype_monojet': "ev : ev.bintypeId[0] == 1 # 'monojet'",
+            'alias1': 'ev : ev.var1 >= 10',
+            'alias2': ('ev : ev.var2 >= 20', dict(name = 'name2')),
             'nMuonsIsolated': 'ev : ev.nMuonsIsolated[0] == {n}'
         }
 
-    def test_string_alias(self):
+    def test_string_alias1(self):
+
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
         kargs.update(extra_args)
-        path_cfg = 'bintype_monojet'
-        obj = expand_path_cfg(path_cfg = path_cfg, **kargs)
-        self.assertEqual('LambdaStrFromDictFactory', obj.pop('factory'))
-        self.assertEqual('bintype_monojet', obj.pop('key'))
-        self.assertEqual(self.aliasDict, obj.pop('aliasDict'))
-        self.assertEqual(extra_args, obj)
+
+        path_cfg = 'alias1'
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : ev.var1 >= 10',
+            name = 'alias1'
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_string_alias2(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = 'alias2'
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : ev.var2 >= 20',
+            name = 'name2'
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_tuple_alias1_with_name(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = ('alias1', dict(name = 'name1'))
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : ev.var1 >= 10',
+            name = 'name1'
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_tuple_alias2_with_name(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = ('alias2', dict(name = 'new_name2'))
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : ev.var2 >= 20',
+            name = 'new_name2'
+        )
+
+        self.assertEqual(expected, actual)
 
     def test_string_lambda_str(self):
+
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
         kargs.update(extra_args)
-        path_cfg = 'ev : ev.nJets >= 2'
-        obj = expand_path_cfg(path_cfg = path_cfg, **kargs)
-        self.assertEqual('LambdaStrFactory', obj.pop('factory'))
-        self.assertEqual('ev : ev.nJets >= 2', obj.pop('lambda_str'))
-        self.assertEqual(self.aliasDict, obj.pop('aliasDict'))
-        self.assertEqual(extra_args, obj)
 
+        path_cfg = 'ev : ev.nJets >= 2'
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : ev.nJets >= 2',
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_string_lambda_str_format(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = 'ev : ev.nJets >= {n}'
+
+        actual = expand_path_cfg(path_cfg = path_cfg, n = 2, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : ev.nJets >= 2',
+        )
+
+        self.assertEqual(expected, actual)
 
 ##__________________________________________________________________||
