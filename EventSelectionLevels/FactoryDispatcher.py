@@ -55,13 +55,13 @@ def FactoryDispatcher(path_cfg, **kargs):
     raise ValueError("cannot recognize the path_cfg")
 
 ##__________________________________________________________________||
-def expand_path_cfg(path_cfg, overriding_kargs = dict(), aliasDict = None):
+def expand_path_cfg(path_cfg, aliasDict = None, overriding_kargs = dict()):
 
     if isinstance(path_cfg, basestring):
         if aliasDict is not None and path_cfg in aliasDict:
             new_overriding_kargs = dict(alias = path_cfg)
             new_overriding_kargs.update(overriding_kargs)
-            return expand_path_cfg(aliasDict[path_cfg], new_overriding_kargs, aliasDict)
+            return expand_path_cfg(aliasDict[path_cfg], aliasDict = aliasDict, overriding_kargs = new_overriding_kargs)
 
         ret = dict(factory = 'LambdaStrFactory', lambda_str = path_cfg)
 
