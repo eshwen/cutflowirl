@@ -130,9 +130,10 @@ class Test_expand_path_cfg(unittest.TestCase):
 
     def setUp(self):
         self.aliasDict = {
-            'alias1': 'ev : ev.var1 >= 10',
-            'alias2': ('ev : ev.var2 >= 20', dict(name = 'name2')),
-            'nMuonsIsolated': 'ev : ev.nMuonsIsolated[0] == {n}'
+            'alias1': 'ev : ev.var1[0] >= 10',
+            'alias2': ('ev : ev.var2[0] >= 20', dict(name = 'name2')),
+            'alias3': 'alias1',
+            'alias4': 'ev : ev.var3[0] == {n}'
         }
 
     def test_string_alias1(self):
@@ -147,7 +148,7 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         expected = dict(
             factory = 'LambdaStrFactory',
-            lambda_str = 'ev : ev.var1 >= 10',
+            lambda_str = 'ev : ev.var1[0] >= 10',
             name = 'alias1'
         )
 
@@ -165,8 +166,44 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         expected = dict(
             factory = 'LambdaStrFactory',
-            lambda_str = 'ev : ev.var2 >= 20',
+            lambda_str = 'ev : ev.var2[0] >= 20',
             name = 'name2'
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_string_alias3(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = 'alias3'
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : ev.var1[0] >= 10',
+            name = 'alias3'
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_string_alias4(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = ('alias4', dict(n = 30))
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : ev.var3[0] == 30',
+            name = 'alias4'
         )
 
         self.assertEqual(expected, actual)
@@ -183,7 +220,7 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         expected = dict(
             factory = 'LambdaStrFactory',
-            lambda_str = 'ev : ev.var1 >= 10',
+            lambda_str = 'ev : ev.var1[0] >= 10',
             name = 'name1'
         )
 
@@ -201,7 +238,7 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         expected = dict(
             factory = 'LambdaStrFactory',
-            lambda_str = 'ev : ev.var2 >= 20',
+            lambda_str = 'ev : ev.var2[0] >= 20',
             name = 'new_name2'
         )
 

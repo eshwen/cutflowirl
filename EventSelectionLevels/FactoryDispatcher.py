@@ -54,26 +54,30 @@ def FactoryDispatcher(path_cfg, **kargs):
     raise ValueError("cannot recognize the path_cfg")
 
 ##__________________________________________________________________||
-def expand_path_cfg(path_cfg, **kargs):
+def expand_path_cfg(path_cfg, overriding_kargs = dict(), **kargs):
 
     if isinstance(path_cfg, dict): return path_cfg
 
     if isinstance(path_cfg, basestring):
         if 'aliasDict' in kargs and path_cfg in kargs['aliasDict']:
-            kargs_copy = copy.deepcopy(kargs)
-            kargs_copy.update(alias = path_cfg)
-            return expand_path_cfg(kargs['aliasDict'][path_cfg], **kargs_copy)
-        lambda_str = path_cfg.format(**kargs)
+            new_overriding_kargs = dict(alias = path_cfg)
+            new_overriding_kargs.update(overriding_kargs)
+            return expand_path_cfg(kargs['aliasDict'][path_cfg], new_overriding_kargs, **kargs)
+
+        format_args = kargs.copy()
+        format_args.update(overriding_kargs)
+        lambda_str = path_cfg.format(**format_args)
+
         ret = dict(factory = 'LambdaStrFactory', lambda_str = lambda_str)
-        if 'alias' in kargs: ret['name'] = kargs['alias'] 
-        if 'name' in kargs: ret['name'] = kargs['name'] 
+        if 'alias' in overriding_kargs: ret['name'] = overriding_kargs['alias'] 
+        if 'name' in overriding_kargs: ret['name'] = overriding_kargs['name'] 
         return ret
 
     # assume tuple or list
     if isinstance(path_cfg[0], basestring) and isinstance(path_cfg[1], dict):
-        kargs_copy = copy.deepcopy(kargs)
-        kargs_copy.update(path_cfg[1])
-        return expand_path_cfg(path_cfg[0], **kargs_copy)
+        new_overriding_kargs = path_cfg[1].copy()
+        new_overriding_kargs.update(overriding_kargs)
+        return expand_path_cfg(path_cfg[0], overriding_kargs = new_overriding_kargs, **kargs)
 
     raise ValueError("cannot recognize the path_cfg")
 
