@@ -1,4 +1,5 @@
 from ...EventSelectionLevels.FactoryDispatcher import FactoryDispatcher
+from ...EventSelectionLevels.FactoryDispatcher import expand_path_cfg
 from ...EventSelectionLevels.Modules.EventSelectionAll import EventSelectionAll
 from ...EventSelectionLevels.Modules.EventSelectionAny import EventSelectionAny
 from ...EventSelectionLevels.Modules.EventSelectionNot import EventSelectionNot
@@ -10,14 +11,14 @@ import copy
 class Test_FactoryDispatcher(unittest.TestCase):
 
     def setUp(self):
-        self.lambdaStrDict = {
+        self.aliasDict = {
             'JSON': "ev : ev.inCertifiedLumiSections[0]",
             'nMuonsIsolated': 'ev : ev.nMuonsIsolated[0] == {n}'
         }
 
     def test_string(self):
         kargs = dict(arg1 = 10, arg2 = 20,
-                     lambdaStrDict = self.lambdaStrDict,
+                     aliasDict = self.aliasDict,
                      LambdaStrClass = LambdaStr)
         path_cfg = 'JSON'
         obj = FactoryDispatcher(path_cfg = path_cfg, **kargs)
@@ -27,7 +28,7 @@ class Test_FactoryDispatcher(unittest.TestCase):
 
     def test_tuple(self):
         kargs = dict(arg1 = 10, arg2 = 20,
-                     lambdaStrDict = self.lambdaStrDict,
+                     aliasDict = self.aliasDict,
                      LambdaStrClass = LambdaStr)
         path_cfg = ('nMuonsIsolated', dict(n = 1))
         obj = FactoryDispatcher(path_cfg = path_cfg, **kargs)
@@ -122,5 +123,37 @@ class Test_FactoryDispatcher(unittest.TestCase):
          self.assertEqual('not_test_level1', obj.name)
          self.assertEqual('test_level1', obj.selection.name)
          self.assertEqual({'arg1': 10, 'arg2': 2, 'arg3': 3}, obj.selection.kargs)
+
+##__________________________________________________________________||
+class Test_expand_path_cfg(unittest.TestCase):
+
+    def setUp(self):
+        self.aliasDict = {
+            'bintype_monojet': "ev : ev.bintypeId[0] == 1 # 'monojet'",
+            'nMuonsIsolated': 'ev : ev.nMuonsIsolated[0] == {n}'
+        }
+
+    def test_string_alias(self):
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+        path_cfg = 'bintype_monojet'
+        obj = expand_path_cfg(path_cfg = path_cfg, **kargs)
+        self.assertEqual('LambdaStrFromDictFactory', obj.pop('factory'))
+        self.assertEqual('bintype_monojet', obj.pop('key'))
+        self.assertEqual(self.aliasDict, obj.pop('aliasDict'))
+        self.assertEqual(extra_args, obj)
+
+    def test_string_lambda_str(self):
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+        path_cfg = 'ev : ev.nJets >= 2'
+        obj = expand_path_cfg(path_cfg = path_cfg, **kargs)
+        self.assertEqual('LambdaStrFactory', obj.pop('factory'))
+        self.assertEqual('ev : ev.nJets >= 2', obj.pop('lambda_str'))
+        self.assertEqual(self.aliasDict, obj.pop('aliasDict'))
+        self.assertEqual(extra_args, obj)
+
 
 ##__________________________________________________________________||

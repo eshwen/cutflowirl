@@ -6,7 +6,7 @@ import unittest
 class Test_LambdaStrFromDictFactory(unittest.TestCase):
 
     def setUp(self):
-        self.lambdaStrDict = {
+        self.aliasDict = {
             'JSON': "ev : ev.inCertifiedLumiSections[0]",
             'nMuonsIsolated': 'ev : ev.nMuonsIsolated[0] == {n}'
         }
@@ -15,7 +15,7 @@ class Test_LambdaStrFromDictFactory(unittest.TestCase):
     def test_obj(self):
         obj = LambdaStrFromDictFactory(key = 'JSON',
                                        LambdaStrClass = LambdaStr,
-                                       lambdaStrDict = self.lambdaStrDict
+                                       aliasDict = self.aliasDict
                                        )
 
         self.assertIsInstance(obj, LambdaStr)
@@ -26,7 +26,7 @@ class Test_LambdaStrFromDictFactory(unittest.TestCase):
         obj = LambdaStrFromDictFactory(key = 'nMuonsIsolated',
                                        n = 1,
                                        LambdaStrClass = LambdaStr,
-                                       lambdaStrDict = self.lambdaStrDict
+                                       aliasDict = self.aliasDict
                                        )
 
         self.assertIsInstance(obj, LambdaStr)

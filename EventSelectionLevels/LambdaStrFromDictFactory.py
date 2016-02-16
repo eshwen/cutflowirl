@@ -2,6 +2,6 @@
 
 ##__________________________________________________________________||
 def LambdaStrFromDictFactory(key, **kargs):
-    return kargs['LambdaStrClass'](lambda_str = kargs['lambdaStrDict'][key].format(**kargs), name = key)
+    return kargs['LambdaStrClass'](lambda_str = kargs['aliasDict'][key].format(**kargs), name = key)
 
 ##__________________________________________________________________||

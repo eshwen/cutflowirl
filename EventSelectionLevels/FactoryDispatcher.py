@@ -1,10 +1,11 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
+import copy
 
 ##__________________________________________________________________||
 def FactoryDispatcher(path_cfg, **kargs):
 
     if not isinstance(path_cfg, dict):
-        path_cfg = expand_path_cfg(path_cfg)
+        path_cfg = expand_path_cfg(path_cfg, **kargs)
 
     if isinstance(path_cfg, dict):
         if 'factory' in path_cfg:
@@ -53,12 +54,17 @@ def FactoryDispatcher(path_cfg, **kargs):
     raise ValueError("cannot recognize the path_cfg")
 
 ##__________________________________________________________________||
-def expand_path_cfg(path_cfg):
+def expand_path_cfg(path_cfg, **kargs):
 
     if isinstance(path_cfg, dict): return path_cfg
 
     if isinstance(path_cfg, basestring):
-        return dict(factory = 'LambdaStrFromDictFactory', key = path_cfg)
+        ret = copy.deepcopy(kargs)
+        if 'aliasDict' in kargs and path_cfg in kargs['aliasDict']:
+            ret.update(dict(factory = 'LambdaStrFromDictFactory', key = path_cfg))
+            return ret
+        ret.update(dict(factory = 'LambdaStrFactory', lambda_str = path_cfg))
+        return ret
 
     # assume tuple or list
     if isinstance(path_cfg[0], basestring) and isinstance(path_cfg[1], dict):
