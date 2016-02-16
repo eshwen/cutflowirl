@@ -10,8 +10,7 @@ def FactoryDispatcher(path_cfg, **kargs):
         if 'factory' in path_cfg:
             path_cfg_copy = path_cfg.copy()
             factoryName = path_cfg_copy.pop('factory')
-            module = find_module(factoryName)
-            factory = getattr(module, factoryName)
+            factory = find_factory(factoryName)
             kargs_copy = kargs.copy()
             kargs_copy.update(path_cfg_copy)
             return factory(**kargs_copy)
@@ -71,7 +70,7 @@ def expand_path_cfg(path_cfg):
     raise ValueError("cannot recognize the path_cfg")
 
 ##__________________________________________________________________||
-def find_module(name):
+def find_factory(name):
     import imp
 
     top_module_name = 'EventSelectionLevels'
@@ -85,6 +84,8 @@ def find_module(name):
     f, filename, description = imp.find_module(name, top_module.__path__)
     module = imp.load_module(module_name, f, filename, description)
 
-    return module
+    factory = getattr(module, name)
+
+    return factory
 
 ##__________________________________________________________________||
