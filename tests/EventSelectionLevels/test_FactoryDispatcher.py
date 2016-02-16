@@ -133,10 +133,12 @@ class Test_expand_path_cfg(unittest.TestCase):
             'alias1': 'ev : ev.var1[0] >= 10',
             'alias2': ('ev : ev.var2[0] >= 20', dict(name = 'name2')),
             'alias3': 'alias1',
-            'alias4': 'ev : ev.var3[0] == {n}'
+            'alias4': 'alias3',
+            'alias5': 'ev : ev.var4[0] == {n}',
+            'alias6': ('ev : {low} <= ev.var5[0] < {high}', dict(low = 11, high = 20))
         }
 
-    def test_string_alias1(self):
+    def test_alias1(self):
 
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
@@ -154,61 +156,7 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         self.assertEqual(expected, actual)
 
-    def test_string_alias2(self):
-
-        extra_args = dict(arg1 = 10, arg2 = 20)
-        kargs = dict(aliasDict = self.aliasDict)
-        kargs.update(extra_args)
-
-        path_cfg = 'alias2'
-
-        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
-
-        expected = dict(
-            factory = 'LambdaStrFactory',
-            lambda_str = 'ev : ev.var2[0] >= 20',
-            name = 'name2'
-        )
-
-        self.assertEqual(expected, actual)
-
-    def test_string_alias3(self):
-
-        extra_args = dict(arg1 = 10, arg2 = 20)
-        kargs = dict(aliasDict = self.aliasDict)
-        kargs.update(extra_args)
-
-        path_cfg = 'alias3'
-
-        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
-
-        expected = dict(
-            factory = 'LambdaStrFactory',
-            lambda_str = 'ev : ev.var1[0] >= 10',
-            name = 'alias3'
-        )
-
-        self.assertEqual(expected, actual)
-
-    def test_string_alias4(self):
-
-        extra_args = dict(arg1 = 10, arg2 = 20)
-        kargs = dict(aliasDict = self.aliasDict)
-        kargs.update(extra_args)
-
-        path_cfg = ('alias4', dict(n = 30))
-
-        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
-
-        expected = dict(
-            factory = 'LambdaStrFactory',
-            lambda_str = 'ev : ev.var3[0] == 30',
-            name = 'alias4'
-        )
-
-        self.assertEqual(expected, actual)
-
-    def test_tuple_alias1_with_name(self):
+    def test_alias1_with_name(self):
 
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
@@ -226,7 +174,25 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         self.assertEqual(expected, actual)
 
-    def test_tuple_alias2_with_name(self):
+    def test_alias2(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = 'alias2'
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : ev.var2[0] >= 20',
+            name = 'name2' #  name has priority over alias
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_alias2_with_name(self):
 
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
@@ -239,7 +205,97 @@ class Test_expand_path_cfg(unittest.TestCase):
         expected = dict(
             factory = 'LambdaStrFactory',
             lambda_str = 'ev : ev.var2[0] >= 20',
-            name = 'new_name2'
+            name = 'new_name2' # name can be overridden
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_alias3(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = 'alias3'
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : ev.var1[0] >= 10',
+            name = 'alias3' # the outermost alias has priority
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_alias4(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = 'alias4'
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : ev.var1[0] >= 10',
+            name = 'alias4' # the outermost alias has priority
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_alias5(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = ('alias5', dict(n = 30))
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : ev.var4[0] == 30',
+            name = 'alias5'
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_alias6(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = 'alias6'
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : 11 <= ev.var5[0] < 20',
+            name = 'alias6'
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_alias6_with_option(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = ('alias6', dict(high = 30))
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'LambdaStrFactory',
+            lambda_str = 'ev : 11 <= ev.var5[0] < 30',
+            name = 'alias6'
         )
 
         self.assertEqual(expected, actual)
