@@ -4,55 +4,22 @@ import copy
 ##__________________________________________________________________||
 def FactoryDispatcher(path_cfg, **kargs):
 
+    aliasDict = kargs['aliasDict'] if 'aliasDict' in kargs else None
+    path_cfg = expand_path_cfg(path_cfg, aliasDict = aliasDict)
+
     if not isinstance(path_cfg, dict):
-        aliasDict = kargs['aliasDict'] if 'aliasDict' in kargs else None
-        path_cfg = expand_path_cfg(path_cfg, aliasDict = aliasDict)
-
-    if isinstance(path_cfg, dict):
-        if 'factory' in path_cfg:
-            path_cfg_copy = path_cfg.copy()
-            factoryName = path_cfg_copy.pop('factory')
-            factory = find_factory(factoryName)
-            kargs_copy = kargs.copy()
-            kargs_copy.update(path_cfg_copy)
-            return factory(**kargs_copy)
-
-        if not sum([k in path_cfg for k in ('All', 'Any', 'Not')]) <= 1:
-            raise ValueError("Any pair of 'All', 'Any', 'Not' cannot be simultaneously given unless factory is given!")
-
-        if 'All' in path_cfg:
-            path_cfg_copy = path_cfg.copy()
-            name = path_cfg_copy.pop('name', None)
-            ret = kargs['AllClass'](name = name)
-            path_cfgs = path_cfg_copy.pop('All')
-            kargs_copy = kargs.copy()
-            kargs_copy.update(path_cfg_copy)
-            for path_cfg in path_cfgs:
-                ret.add(FactoryDispatcher(path_cfg, **kargs_copy))
-            return ret
-
-        if 'Any' in path_cfg:
-            path_cfg_copy = path_cfg.copy()
-            name = path_cfg_copy.pop('name', None)
-            ret = kargs['AnyClass'](name = name)
-            path_cfgs = path_cfg_copy.pop('Any')
-            kargs_copy = kargs.copy()
-            kargs_copy.update(path_cfg_copy)
-            for path_cfg in path_cfgs:
-                ret.add(FactoryDispatcher(path_cfg, **kargs_copy))
-            return ret
-
-        if 'Not' in path_cfg:
-            path_cfg_copy = path_cfg.copy()
-            name = path_cfg_copy.pop('name', None)
-            path_cfg = path_cfg_copy.pop('Not')
-            kargs_copy = kargs.copy()
-            kargs_copy.update(path_cfg_copy)
-            return kargs['NotClass'](selection = FactoryDispatcher(path_cfg, **kargs_copy), name = name)
-
         raise ValueError("cannot recognize the path_cfg")
 
-    raise ValueError("cannot recognize the path_cfg")
+    if 'factory' not in path_cfg:
+        raise ValueError("cannot recognize the path_cfg")
+
+    path_cfg_copy = path_cfg.copy()
+    factoryName = path_cfg_copy.pop('factory')
+    factory = find_factory(factoryName)
+    kargs_copy = kargs.copy()
+    kargs_copy.update(path_cfg_copy)
+
+    return factory(**kargs_copy)
 
 ##__________________________________________________________________||
 def expand_path_cfg(path_cfg, aliasDict = None, overriding_kargs = dict()):
