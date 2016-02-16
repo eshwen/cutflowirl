@@ -3,15 +3,8 @@
 ##__________________________________________________________________||
 def FactoryDispatcher(path_cfg, **kargs):
 
-    if isinstance(path_cfg, basestring):
-        path_cfg = dict(factory = 'LambdaStrFromDictFactory', key = path_cfg)
-
     if not isinstance(path_cfg, dict):
-        # assume tuple or list
-        if isinstance(path_cfg[0], basestring) and isinstance(path_cfg[1], dict):
-            key = path_cfg[0]
-            path_cfg = path_cfg[1].copy()
-            path_cfg.update(dict(factory = 'LambdaStrFromDictFactory', key = key))
+        path_cfg = expand_path_cfg(path_cfg)
 
     if isinstance(path_cfg, dict):
         if 'factory' in path_cfg:
@@ -57,6 +50,23 @@ def FactoryDispatcher(path_cfg, **kargs):
             return kargs['NotClass'](selection = FactoryDispatcher(path_cfg, **kargs_copy), name = name)
 
         raise ValueError("cannot recognize the path_cfg")
+
+    raise ValueError("cannot recognize the path_cfg")
+
+##__________________________________________________________________||
+def expand_path_cfg(path_cfg):
+
+    if isinstance(path_cfg, dict): return path_cfg
+
+    if isinstance(path_cfg, basestring):
+        return dict(factory = 'LambdaStrFromDictFactory', key = path_cfg)
+
+    # assume tuple or list
+    if isinstance(path_cfg[0], basestring) and isinstance(path_cfg[1], dict):
+        key = path_cfg[0]
+        ret = path_cfg[1].copy()
+        ret.update(dict(factory = 'LambdaStrFromDictFactory', key = key))
+        return ret
 
     raise ValueError("cannot recognize the path_cfg")
 
