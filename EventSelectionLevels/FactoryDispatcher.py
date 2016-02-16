@@ -5,7 +5,8 @@ import copy
 def FactoryDispatcher(path_cfg, **kargs):
 
     if not isinstance(path_cfg, dict):
-        path_cfg = expand_path_cfg(path_cfg, **kargs)
+        aliasDict = kargs['aliasDict'] if 'aliasDict' in kargs else None
+        path_cfg = expand_path_cfg(path_cfg, aliasDict = aliasDict)
 
     if isinstance(path_cfg, dict):
         if 'factory' in path_cfg:
@@ -54,20 +55,15 @@ def FactoryDispatcher(path_cfg, **kargs):
     raise ValueError("cannot recognize the path_cfg")
 
 ##__________________________________________________________________||
-def expand_path_cfg(path_cfg, overriding_kargs = dict(), **kargs):
+def expand_path_cfg(path_cfg, overriding_kargs = dict(), aliasDict = None):
 
     if isinstance(path_cfg, basestring):
-        if 'aliasDict' in kargs and path_cfg in kargs['aliasDict']:
+        if aliasDict is not None and path_cfg in aliasDict:
             new_overriding_kargs = dict(alias = path_cfg)
             new_overriding_kargs.update(overriding_kargs)
-            return expand_path_cfg(kargs['aliasDict'][path_cfg], new_overriding_kargs, **kargs)
+            return expand_path_cfg(aliasDict[path_cfg], new_overriding_kargs, aliasDict)
 
-        format_args = kargs.copy()
-        format_args.update(overriding_kargs)
-        ## lambda_str = path_cfg.format(**format_args)
-        lambda_str = path_cfg
-
-        ret = dict(factory = 'LambdaStrFactory', lambda_str = lambda_str)
+        ret = dict(factory = 'LambdaStrFactory', lambda_str = path_cfg)
 
         overriding_kargs_copy = overriding_kargs.copy()
         if 'alias' in overriding_kargs: ret['name'] = overriding_kargs_copy.pop('alias')
@@ -81,7 +77,7 @@ def expand_path_cfg(path_cfg, overriding_kargs = dict(), **kargs):
         if isinstance(path_cfg[0], basestring) and isinstance(path_cfg[1], dict):
             new_overriding_kargs = path_cfg[1].copy()
             new_overriding_kargs.update(overriding_kargs)
-            return expand_path_cfg(path_cfg[0], overriding_kargs = new_overriding_kargs, **kargs)
+            return expand_path_cfg(path_cfg[0], overriding_kargs = new_overriding_kargs, aliasDict = aliasDict)
 
         raise ValueError("cannot recognize the path_cfg")
 
