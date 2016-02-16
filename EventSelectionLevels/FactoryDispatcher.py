@@ -56,8 +56,6 @@ def FactoryDispatcher(path_cfg, **kargs):
 ##__________________________________________________________________||
 def expand_path_cfg(path_cfg, overriding_kargs = dict(), **kargs):
 
-    if isinstance(path_cfg, dict): return path_cfg
-
     if isinstance(path_cfg, basestring):
         if 'aliasDict' in kargs and path_cfg in kargs['aliasDict']:
             new_overriding_kargs = dict(alias = path_cfg)
@@ -66,18 +64,50 @@ def expand_path_cfg(path_cfg, overriding_kargs = dict(), **kargs):
 
         format_args = kargs.copy()
         format_args.update(overriding_kargs)
-        lambda_str = path_cfg.format(**format_args)
+        ## lambda_str = path_cfg.format(**format_args)
+        lambda_str = path_cfg
 
         ret = dict(factory = 'LambdaStrFactory', lambda_str = lambda_str)
-        if 'alias' in overriding_kargs: ret['name'] = overriding_kargs['alias'] 
-        if 'name' in overriding_kargs: ret['name'] = overriding_kargs['name'] 
+
+        overriding_kargs_copy = overriding_kargs.copy()
+        if 'alias' in overriding_kargs: ret['name'] = overriding_kargs_copy.pop('alias')
+        if 'name' in overriding_kargs: ret['name'] = overriding_kargs_copy.pop('name')
+        ret.update(overriding_kargs_copy)
+
         return ret
 
-    # assume tuple or list
-    if isinstance(path_cfg[0], basestring) and isinstance(path_cfg[1], dict):
-        new_overriding_kargs = path_cfg[1].copy()
-        new_overriding_kargs.update(overriding_kargs)
-        return expand_path_cfg(path_cfg[0], overriding_kargs = new_overriding_kargs, **kargs)
+    if not isinstance(path_cfg, dict):
+        # assume tuple or list
+        if isinstance(path_cfg[0], basestring) and isinstance(path_cfg[1], dict):
+            new_overriding_kargs = path_cfg[1].copy()
+            new_overriding_kargs.update(overriding_kargs)
+            return expand_path_cfg(path_cfg[0], overriding_kargs = new_overriding_kargs, **kargs)
+
+        raise ValueError("cannot recognize the path_cfg")
+
+    if isinstance(path_cfg, dict):
+        if 'factory' in path_cfg: return path_cfg
+
+        if not sum([k in path_cfg for k in ('All', 'Any', 'Not')]) <= 1:
+            raise ValueError("Any pair of 'All', 'Any', 'Not' cannot be simultaneously given unless factory is given!")
+
+        if 'All' in path_cfg:
+            new_path_cfg = path_cfg.copy()
+            new_path_cfg['factory'] = 'AllFactory'
+            new_path_cfg['path_cfg_list'] = new_path_cfg.pop('All')
+            return new_path_cfg
+
+        if 'Any' in path_cfg:
+            new_path_cfg = path_cfg.copy()
+            new_path_cfg['factory'] = 'AnyFactory'
+            new_path_cfg['path_cfg_list'] = new_path_cfg.pop('Any')
+            return new_path_cfg
+
+        if 'Not' in path_cfg:
+            new_path_cfg = path_cfg.copy()
+            new_path_cfg['factory'] = 'NotFactory'
+            new_path_cfg['path_cfg'] = new_path_cfg.pop('Not')
+            return new_path_cfg
 
     raise ValueError("cannot recognize the path_cfg")
 

@@ -8,6 +8,7 @@ import unittest
 import copy
 
 ##__________________________________________________________________||
+@unittest.skip("skipping")
 class Test_FactoryDispatcher(unittest.TestCase):
 
     def setUp(self):
@@ -137,7 +138,7 @@ class Test_expand_path_cfg(unittest.TestCase):
             'alias6': ('ev : {low} <= ev.var5[0] < {high}', dict(low = 11, high = 20))
         }
 
-    def test_alias1(self):
+    def test_alias1_standard(self):
 
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
@@ -173,7 +174,7 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         self.assertEqual(expected, actual)
 
-    def test_alias2(self):
+    def test_alias2_name_has_priority_over_alias(self):
 
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
@@ -191,7 +192,7 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         self.assertEqual(expected, actual)
 
-    def test_alias2_with_name(self):
+    def test_alias2_name_can_be_overridden(self):
 
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
@@ -209,7 +210,7 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         self.assertEqual(expected, actual)
 
-    def test_alias3(self):
+    def test_alias3_alias_of_alias(self):
 
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
@@ -227,7 +228,7 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         self.assertEqual(expected, actual)
 
-    def test_alias4(self):
+    def test_alias4_alias_of_alias_of_alias(self):
 
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
@@ -245,7 +246,7 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         self.assertEqual(expected, actual)
 
-    def test_alias5(self):
+    def test_alias5_not_formatted(self):
 
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
@@ -257,13 +258,14 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         expected = dict(
             factory = 'LambdaStrFactory',
-            lambda_str = 'ev : ev.var4[0] == 30',
+            lambda_str = 'ev : ev.var4[0] == {n}', # not formatted
+            n = 30,
             name = 'alias5'
         )
 
         self.assertEqual(expected, actual)
 
-    def test_alias6(self):
+    def test_alias6_not_formatted_with_default_values(self):
 
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
@@ -275,13 +277,15 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         expected = dict(
             factory = 'LambdaStrFactory',
-            lambda_str = 'ev : 11 <= ev.var5[0] < 20',
-            name = 'alias6'
+            lambda_str = 'ev : {low} <= ev.var5[0] < {high}',
+            low = 11,
+            high = 20,
+            name = 'alias6',
         )
 
         self.assertEqual(expected, actual)
 
-    def test_alias6_with_option(self):
+    def test_alias6_not_formatted_with_default_values_overridden(self):
 
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
@@ -293,7 +297,9 @@ class Test_expand_path_cfg(unittest.TestCase):
 
         expected = dict(
             factory = 'LambdaStrFactory',
-            lambda_str = 'ev : 11 <= ev.var5[0] < 30',
+            lambda_str = 'ev : {low} <= ev.var5[0] < {high}',
+            low = 11,
+            high = 30,
             name = 'alias6'
         )
 
@@ -305,30 +311,109 @@ class Test_expand_path_cfg(unittest.TestCase):
         kargs = dict(aliasDict = self.aliasDict)
         kargs.update(extra_args)
 
-        path_cfg = 'ev : ev.nJets >= 2'
+        path_cfg = 'ev : ev.nJets[0] >= 2'
 
         actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
 
         expected = dict(
             factory = 'LambdaStrFactory',
-            lambda_str = 'ev : ev.nJets >= 2',
+            lambda_str = 'ev : ev.nJets[0] >= 2',
         )
 
         self.assertEqual(expected, actual)
 
-    def test_string_lambda_str_format(self):
+    def test_string_lambda_str_not_formatted(self):
 
         extra_args = dict(arg1 = 10, arg2 = 20)
         kargs = dict(aliasDict = self.aliasDict)
         kargs.update(extra_args)
 
-        path_cfg = 'ev : ev.nJets >= {n}'
+        path_cfg = 'ev : ev.nJets[0] >= {n}'
 
         actual = expand_path_cfg(path_cfg = path_cfg, n = 2, **kargs)
 
         expected = dict(
             factory = 'LambdaStrFactory',
-            lambda_str = 'ev : ev.nJets >= 2',
+            lambda_str = 'ev : ev.nJets[0] >= {n}',
+            # n = 2 won't be here in this case
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_dict_raise_multiple_All_Any_Not(self):
+        kargs = dict(arg1 = 10, arg2 = 20)
+
+        expand_path_cfg(path_cfg = dict(All = ()), **kargs)
+        expand_path_cfg(path_cfg = dict(Any = ()), **kargs)
+        expand_path_cfg(path_cfg = dict(Not = ()), **kargs)
+
+        path_cfg = dict(All = (), Any = ())
+        self.assertRaises(ValueError, expand_path_cfg, path_cfg = path_cfg, **kargs)
+
+        path_cfg = dict(All = (), Not = ())
+        self.assertRaises(ValueError, expand_path_cfg, path_cfg = path_cfg, **kargs)
+
+        path_cfg = dict(Any = (), Not = ())
+        self.assertRaises(ValueError, expand_path_cfg, path_cfg = path_cfg, **kargs)
+
+    def test_dict_raise_no_All_Any_Not(self):
+        kargs = dict(arg1 = 10, arg2 = 20)
+        path_cfg = dict()
+        self.assertRaises(ValueError, expand_path_cfg, path_cfg = path_cfg, **kargs)
+
+    def test_dict_All(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = dict(All = (dict(factory = 'factory1'), dict(factory = 'factory2')), name = 'test_all', arg2 = 2, arg3 = 3)
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'AllFactory',
+            path_cfg_list = (dict(factory = 'factory1'), dict(factory = 'factory2')),
+            name = 'test_all',
+            arg2 = 2, arg3 = 3
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_dict_Any(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = dict(Any = (dict(factory = 'factory1'), dict(factory = 'factory2')), name = 'test_any', arg2 = 2, arg3 = 3)
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'AnyFactory',
+            path_cfg_list = (dict(factory = 'factory1'), dict(factory = 'factory2')),
+            name = 'test_any',
+            arg2 = 2, arg3 = 3
+        )
+
+        self.assertEqual(expected, actual)
+
+    def test_dict_Not(self):
+
+        extra_args = dict(arg1 = 10, arg2 = 20)
+        kargs = dict(aliasDict = self.aliasDict)
+        kargs.update(extra_args)
+
+        path_cfg = dict(Not = dict(factory = 'factory1'), name = 'test_not', arg2 = 2, arg3 = 3)
+
+        actual = expand_path_cfg(path_cfg = path_cfg, **kargs)
+
+        expected = dict(
+            factory = 'NotFactory',
+            path_cfg = dict(factory = 'factory1'),
+            name = 'test_not',
+            arg2 = 2, arg3 = 3
         )
 
         self.assertEqual(expected, actual)
