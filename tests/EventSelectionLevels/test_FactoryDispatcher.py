@@ -8,7 +8,6 @@ import unittest
 import copy
 
 ##__________________________________________________________________||
-@unittest.skip("skipping")
 class Test_FactoryDispatcher(unittest.TestCase):
 
     def setUp(self):
