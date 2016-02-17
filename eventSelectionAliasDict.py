@@ -80,7 +80,7 @@ eventSelectionAliasDict = {
     'HLT_PFHT800': "ev : ev.HLT_PFHT800[0]",
     'HLT_IsoMu17_eta2p1': "ev : ev.HLT_IsoMu17_eta2p1[0]",
     'HLT_IsoMu20': "ev : ev.HLT_IsoMu20[0]",
-    'HLT_IsoTkMuMu20': "ev : ev.HLT_IsoTkMuMu20[0]",
+    'HLT_IsoTkMu20': "ev : ev.HLT_IsoTkMu20[0]",
     'HLT_IsoMu24_eta2p1': "ev : ev.HLT_IsoMu24_eta2p1[0]",
     'HLT_Ele22_WPLoose_Gsf': "ev : ev.HLT_Ele22_WPLoose_Gsf[0]",
     'HLT_Ele23_WPLoose_Gsf': "ev : ev.HLT_Ele23_WPLoose_Gsf[0]",
