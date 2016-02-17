@@ -1,4 +1,4 @@
-from ...EventSelectionLevels.AllFactory import AllFactory
+from ...EventSelectionFactories.AllFactory import AllFactory
 from ...EventSelectionModules.EventSelectionAll import EventSelectionAll
 from ...EventSelectionModules.EventSelectionAny import EventSelectionAny
 from ...EventSelectionModules.LambdaStr import LambdaStr

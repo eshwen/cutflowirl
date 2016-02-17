@@ -1,4 +1,4 @@
-from ...EventSelectionLevels.LambdaStrFromDictFactory import LambdaStrFromDictFactory
+from ...EventSelectionFactories.LambdaStrFromDictFactory import LambdaStrFromDictFactory
 from ...EventSelectionModules.LambdaStr import LambdaStr
 import unittest
 

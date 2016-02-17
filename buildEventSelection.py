@@ -3,8 +3,8 @@ from .EventSelectionModules.EventSelectionAll import EventSelectionAll
 from .EventSelectionModules.EventSelectionAny import EventSelectionAny
 from .EventSelectionModules.EventSelectionNot import EventSelectionNot
 from .EventSelectionModules.LambdaStr import LambdaStr
-from .EventSelectionLevels.AllFactory import AllFactory
-from .EventSelectionLevels.FactoryDispatcher import FactoryDispatcher
+from .EventSelectionFactories.AllFactory import AllFactory
+from .EventSelectionFactories.FactoryDispatcher import FactoryDispatcher
 
 import os, sys
 

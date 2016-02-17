@@ -1,5 +1,5 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from ...EventSelectionLevels.LambdaStrFactory import LambdaStrFactory
+from ...EventSelectionFactories.LambdaStrFactory import LambdaStrFactory
 import unittest
 
 ##__________________________________________________________________||
