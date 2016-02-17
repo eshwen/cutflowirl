@@ -22,6 +22,7 @@ eventSelectionAliasDict = {
     'isoTrackNoMuVeto': "ev : ev.nIsoTracksNoMuVeto[0] <= 0",
     'isoTrackNoEleVeto': "ev : ev.nIsoTracksNoEleVeto[0] <= 0",
     'nJet40Fwd': "ev : ev.nJet40Fwd[0] == {n}",
+    'nJet40failedId': "ev : ev.nJet40failedId[0] == {n}",
     'nMuonsIsolated': 'ev : ev.nMuonsIsolated[0] == {n}',
     'nElectronsIsolated': 'ev : ev.nElectronsIsolated[0] == {n}',
     'nElectronsBarrel': 'ev : ev.nElectronsBarrel[0] == {n}',
