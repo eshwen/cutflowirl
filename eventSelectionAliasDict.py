@@ -1,6 +1,8 @@
 
 ##__________________________________________________________________||
 eventSelectionAliasDict = {
+    'True': "ev : True",
+    'False': "ev : False",
     'JSON': "ev : ev.inCertifiedLumiSections[0]",
     'ht40': "ev : ev.ht40[0] >= 200",
     'ht40_loose_JECvar': 'ev : ev.ht40JECUp[0] >= 150',
