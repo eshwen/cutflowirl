@@ -1,5 +1,4 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-import copy
 
 ##__________________________________________________________________||
 def FactoryDispatcher(path_cfg, **kargs):
