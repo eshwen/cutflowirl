@@ -1,5 +1,5 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from ....EventSelectionLevels.Modules.EventSelectionNot import EventSelectionNot
+from ...EventSelectionModules.EventSelectionNot import EventSelectionNot
 import unittest
 
 ##__________________________________________________________________||

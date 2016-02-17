@@ -1,7 +1,7 @@
 from ...EventSelectionLevels.AllFactory import AllFactory
-from ...EventSelectionLevels.Modules.EventSelectionAll import EventSelectionAll
-from ...EventSelectionLevels.Modules.EventSelectionAny import EventSelectionAny
-from ...EventSelectionLevels.Modules.LambdaStr import LambdaStr
+from ...EventSelectionModules.EventSelectionAll import EventSelectionAll
+from ...EventSelectionModules.EventSelectionAny import EventSelectionAny
+from ...EventSelectionModules.LambdaStr import LambdaStr
 import unittest
 
 ##__________________________________________________________________||

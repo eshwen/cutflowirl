@@ -1,6 +1,6 @@
 from ...EventSelectionLevels.FactoryDispatcher import FactoryDispatcher
 from ...EventSelectionLevels.FactoryDispatcher import expand_path_cfg
-from ...EventSelectionLevels.Modules.LambdaStr import LambdaStr
+from ...EventSelectionModules.LambdaStr import LambdaStr
 import unittest
 import os, sys
 

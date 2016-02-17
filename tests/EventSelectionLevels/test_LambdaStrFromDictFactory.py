@@ -1,5 +1,5 @@
 from ...EventSelectionLevels.LambdaStrFromDictFactory import LambdaStrFromDictFactory
-from ...EventSelectionLevels.Modules.LambdaStr import LambdaStr
+from ...EventSelectionModules.LambdaStr import LambdaStr
 import unittest
 
 ##__________________________________________________________________||

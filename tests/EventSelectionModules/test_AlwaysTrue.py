@@ -1,5 +1,5 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from ....EventSelectionLevels.Modules.AlwaysTrue import AlwaysTrue
+from ...EventSelectionModules.AlwaysTrue import AlwaysTrue
 import unittest
 
 ##__________________________________________________________________||
