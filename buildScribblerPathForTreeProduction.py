@@ -62,11 +62,6 @@ def buildScribblerPathForTreeProduction(datamc, pd, gen_process, json = None, me
     ret.append(MhtOverMet())
     ret.append(MhtOverMetNoX())
 
-    ret.append(nMuonsIsolated())
-    ret.append(nElectronsIsolated())
-    ret.append(nElectronsBarrel())
-    ret.append(nPhotons200())
-
     if metnohf:
         ret.append(metNoXNoHF())
         ret.append(MhtOverMetNoHF())
