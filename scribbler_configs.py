@@ -75,7 +75,7 @@ def scribbler_configs(datamc, pd, gen_process, json = None, metnohf = False):
     return ret
 
 ##__________________________________________________________________||
-class ScribblerVal(ScribblerBase):
+class Example(ScribblerBase):
     def begin(self, event):
         self.vals = [ ]
         self.val = 0
@@ -96,7 +96,7 @@ if __name__ == '__main__':
     class TestStringMethods(unittest.TestCase):
 
         def test_read_branch_address_with_same_event_object(self):
-            obj = ScribblerVal()
+            obj = Example()
             event = MockEvent()
 
             obj.begin(event)
@@ -109,7 +109,7 @@ if __name__ == '__main__':
             self.assertEqual(2, val[0])
 
         def test_read_event_attribute_with_same_event_object(self):
-            obj = ScribblerVal()
+            obj = Example()
             event = MockEvent()
 
             obj.begin(event)
@@ -121,7 +121,7 @@ if __name__ == '__main__':
             self.assertEqual(2, event.val[0])
 
         def test_read_branch_address_with_different_event_objects(self):
-            obj = ScribblerVal()
+            obj = Example()
             event = MockEvent()
 
             obj.begin(event)
@@ -136,7 +136,7 @@ if __name__ == '__main__':
             self.assertEqual(2, val[0])
 
         def test_read_event_attribute_with_different_event_objects(self):
-            obj = ScribblerVal()
+            obj = Example()
             event = MockEvent()
 
             obj.begin(event)
