@@ -1,5 +1,6 @@
 from .EventSelectionModules.EventSelectionAll import EventSelectionAll
 from .EventSelectionModules.EventSelectionAny import EventSelectionAny
+from .EventSelectionModules.EventSelectionNot import EventSelectionNot
 from .EventSelectionModules.LambdaStr import LambdaStr
 
 ##__________________________________________________________________||
@@ -49,6 +50,12 @@ def event_selection_io(eventSelection, out = None, prep = ''):
         out.write('\n')
         for e in eventSelection.selections:
             event_selection_io(e, out, prep + '  ')
+        return out
+
+    if isinstance(eventSelection, EventSelectionNot):
+        out.write(print_name(eventSelection))
+        out.write('\n')
+        event_selection_io(eventSelection.selection, out, prep + '  ')
         return out
 
     out.write(print_name(eventSelection))
