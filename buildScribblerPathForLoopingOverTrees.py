@@ -25,7 +25,7 @@ from Scribblers.nPhotons200 import nPhotons200
 from Scribblers.inEventList import inEventList
 
 ##__________________________________________________________________||
-def scribbler_configs(datamc, pd, gen_process, json = None, metnohf = False):
+def buildScribblerPathForLoopingOverTrees(datamc, pd, gen_process, json = None, metnohf = False):
     """
     Args:
 
