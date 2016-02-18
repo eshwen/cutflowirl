@@ -6,6 +6,7 @@ eventSelectionAliasDict = {
     'isData': "ev : ev.isData[0] == 1",
     'isMC': "ev : ev.isData[0] == 0",
     'JSON': "ev : ev.inCertifiedLumiSections[0]",
+    'NotInBadEventList': "ev : not ev.inBadEventList[0]",
     'ht40': "ev : ev.ht40[0] >= 200",
     'ht40_loose_JECvar': 'ev : ev.ht40JECUp[0] >= 150',
     'nJet100': "ev : ev.nJet100[0] >= 1",
