@@ -24,32 +24,62 @@ from Scribblers.nElectronsBarrel import nElectronsBarrel
 from Scribblers.nPhotons200 import nPhotons200
 from Scribblers.inEventList import inEventList
 
+import os
+
 ##__________________________________________________________________||
-def buildScribblerPathForLoopingOverTrees(datamc, pd, gen_process, json = None, metnohf = False):
+def buildScribblerPathForLoopingOverTrees(
+        datamc,
+        json = None,
+        tbl_pu_corr_path = None,
+        met_filter_event_lists_dir = None,
+        metnohf = False):
     """
     Args:
 
     datamc: "data" or "mc"
 
-    pd: True or False
-
-    gen_process: True or False
-
     json: path to json file for certified data
+
+    tbl_pu_corr_path: path to table with pileup reweighing factors
+
+    met_filter_event_lists_dir: path to dir with bad event list text files
 
     metnohf: True or False
 
     """
 
     ret = [ ]
-    if datamc == 'data' and pd:
+
+    ret.append(componentName())
+
+
+    if datamc == 'data':
         ret.append(PrimaryDataset())
 
-    if datamc == 'mc' and gen_process:
+    if datamc == 'mc':
         ret.append(GenProcess())
 
     if datamc == 'data' and json is not None:
         ret.append(inCertifiedLumiSections(json))
+
+    if datamc == 'data' and met_filter_event_lists_dir is not None:
+        bad_event_list_files = (
+            'badResolutionTrack_Jan13.txt',
+            'csc2015_Dec01.txt',
+            'ecalscn1043093_Dec01.txt',
+            'muonBadTrack_Jan13.txt',
+        )
+        bad_event_list_paths = [os.path.join(met_filter_event_lists_dir, f) for f in bad_event_list_files]
+        ret.append(inEventList(bad_event_list_paths, 'inBadEventList'))
+
+    if datamc == 'mc' and tbl_pu_corr_path is not None:
+        ret.append(
+            WeightFromTbl(
+                tbl_pu_corr_path,
+                columnVar = 'nTrueInt', columnWeight = 'corr',
+                branchVar = 'nTrueInt', branchWeight = 'puWeightFromTbl'
+            )
+        )
 
     ret.append(cutflow())
     ret.append(metNoX())
