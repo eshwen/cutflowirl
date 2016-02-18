@@ -22,6 +22,7 @@ from Scribblers.nMuonsIsolated import nMuonsIsolated
 from Scribblers.nElectronsIsolated import nElectronsIsolated
 from Scribblers.nElectronsBarrel import nElectronsBarrel
 from Scribblers.nPhotons200 import nPhotons200
+from Scribblers.inEventList import inEventList
 
 ##__________________________________________________________________||
 def scribbler_configs(datamc, pd, gen_process, json = None, metnohf = False):
