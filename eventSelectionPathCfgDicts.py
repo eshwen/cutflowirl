@@ -72,9 +72,9 @@ event_selection_path_cfg_tree_production = dict(All = (
 hlt_singlemuon = dict(Any = (
     'HLT_IsoMu17_eta2p1',
     'HLT_IsoMu20',
-    dict(Any = ('isMC',
-                dict(All = ('isData', 'HLT_IsoTkMu20')),
-    )),
+    # dict(Any = ('isMC',
+    #             dict(All = ('isData', 'HLT_IsoTkMu20')),
+    # )),
     'HLT_IsoMu24_eta2p1',
 ))
 
