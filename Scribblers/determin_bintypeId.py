@@ -2,7 +2,7 @@
 from ..Binning import Binning
 
 ##__________________________________________________________________||
-class Determin_bintype(object):
+class Determin_bintypeId(object):
     def __init__(self):
         self.njet40binning = Binning(boundaries = (1, 2))
         self.njet100binning = Binning(boundaries = (1, 2))
@@ -18,20 +18,20 @@ class Determin_bintype(object):
             (2, 2, 800) : 4, # 'highht',
         }
 
-        self.bintype_name_dict = {
-            1 : 'monojet', 2 : 'asymjet', 3 : 'symjet', 4 : 'highht',
-            -1 : 'other'
-            }
-
     def __call__(self, nJet40, nJet100, ht40):
         key = (self.njet40binning(nJet40), self.njet100binning(nJet100), self.htbinning(ht40))
         if key in self.tuple_bintypeId_dict:
             bintypeId = self.tuple_bintypeId_dict[key]
         else:
             bintypeId = -1
-        bintype = self.bintype_name_dict[bintypeId]
-        return bintype, bintypeId
+        return bintypeId
 
-determin_bintype = Determin_bintype()
+determin_bintypeId = Determin_bintypeId()
+
+##__________________________________________________________________||
+bintype_name_dict = {
+    1 : 'monojet', 2 : 'asymjet', 3 : 'symjet', 4 : 'highht',
+    -1 : 'other'
+}
 
 ##__________________________________________________________________||
