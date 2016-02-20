@@ -1,6 +1,6 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
 from .ScribblerBase import ScribblerBase
-from .Determin_bintype import determin_bintype
+from .determin_bintype import determin_bintype
 
 ##__________________________________________________________________||
 class bintypeJECDown(ScribblerBase):
