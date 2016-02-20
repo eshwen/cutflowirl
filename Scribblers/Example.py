@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class Example(ScribblerBase):
+class Example(object):
     def begin(self, event):
         self.vals = [ ]
         self.val = 0

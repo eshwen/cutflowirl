@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class metNoX(ScribblerBase):
+class metNoX(object):
     def begin(self, event):
         self.val_pt = [ ]
         self.val_phi = [ ]

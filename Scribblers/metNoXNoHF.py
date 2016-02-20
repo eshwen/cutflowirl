@@ -1,8 +1,7 @@
-#!/usr/bin/env python
-from .ScribblerBase import ScribblerBase
+# Tai Sakuma <tai.sakuma@cern.ch>
 
 ##__________________________________________________________________||
-class metNoXNoHF(ScribblerBase):
+class metNoXNoHF(object):
     def begin(self, event):
         self.val_pt = [ ]
         self.val_phi = [ ]

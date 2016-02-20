@@ -1,9 +1,8 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 from .determin_bintypeId import bintype_name_dict
 
 ##__________________________________________________________________||
-class bintypeJECUp(ScribblerBase):
+class bintypeJECUp(object):
     def begin(self, event):
         self.addr_bintype = [ ]
         event.bintypeJECUp = self.addr_bintype

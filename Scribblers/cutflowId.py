@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class cutflowId(ScribblerBase):
+class cutflowId(object):
     def begin(self, event):
         self.addr_cutflowId = [ ]
         event.cutflowId = self.addr_cutflowId

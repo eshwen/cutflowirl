@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class inEventList(ScribblerBase):
+class inEventList(object):
     def __init__(self, event_list_paths, branch_name):
         self.branch_name = branch_name
         self.event_list_paths = event_list_paths

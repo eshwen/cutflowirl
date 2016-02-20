@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class GenProcess(ScribblerBase):
+class GenProcess(object):
     def begin(self, event):
         self.vals = [ ]
         event.GenProcess = self.vals

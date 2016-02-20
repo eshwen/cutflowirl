@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class nElectronsBarrel(ScribblerBase):
+class nElectronsBarrel(object):
     def begin(self, event):
         self.vals = [ ]
         event.nElectronsBarrel = self.vals

@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class cutflow(ScribblerBase):
+class cutflow(object):
     def begin(self, event):
         self.addr_cutflow = [ ]
         event.cutflow = self.addr_cutflow

@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class PrimaryDataset(ScribblerBase):
+class PrimaryDataset(object):
     def begin(self, event):
         self.vals = [ ]
         event.PrimaryDataset = self.vals

@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class nElectronsIsolated(ScribblerBase):
+class nElectronsIsolated(object):
     def begin(self, event):
         self.vals = [ ]
         event.nElectronsIsolated = self.vals

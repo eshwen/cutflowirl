@@ -1,9 +1,8 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 from ..Binning import Binning
 
 ##__________________________________________________________________||
-class njetnbjetbin(ScribblerBase):
+class njetnbjetbin(object):
     def __init__(self):
         self.nbjet40binning = Binning(boundaries = (0, 1, 2, 3))
         self.njet40binning = Binning(boundaries = (1, 2, 3, 4, 5))

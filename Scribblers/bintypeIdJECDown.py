@@ -1,9 +1,8 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 from .determin_bintypeId import determin_bintypeId
 
 ##__________________________________________________________________||
-class bintypeIdJECDown(ScribblerBase):
+class bintypeIdJECDown(object):
     def begin(self, event):
         self.addr_bintypeId = [ ]
         event.bintypeIdJECDown = self.addr_bintypeId

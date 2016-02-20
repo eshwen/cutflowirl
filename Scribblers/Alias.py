@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class Alias(ScribblerBase):
+class Alias(object):
     def __init__(self, src, alias):
         self.src = src
         self.alias = alias
