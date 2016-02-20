@@ -3,6 +3,7 @@ from Scribblers.ScribblerBase import ScribblerBase
 from Scribblers.Alias import Alias
 from Scribblers.PrimaryDataset import PrimaryDataset
 from Scribblers.inCertifiedLumiSections import inCertifiedLumiSections
+from Scribblers.cutflowId import cutflowId
 from Scribblers.cutflow import cutflow
 from Scribblers.metNoX import metNoX
 from Scribblers.WeightFromTbl import WeightFromTbl
@@ -10,6 +11,9 @@ from Scribblers.componentName import componentName
 from Scribblers.GenProcess import GenProcess
 from Scribblers.njetnbjetbin import njetnbjetbin
 from Scribblers.htbin import htbin
+from Scribblers.bintypeId import bintypeId
+from Scribblers.bintypeIdJECUp import bintypeIdJECUp
+from Scribblers.bintypeIdJECDown import bintypeIdJECDown
 from Scribblers.bintype import bintype
 from Scribblers.bintypeJECUp import bintypeJECUp
 from Scribblers.bintypeJECDown import bintypeJECDown
@@ -81,11 +85,15 @@ def buildScribblerPathForLoopingOverTrees(
             )
         )
 
+    # ret.append(cutflowId())
     ret.append(cutflow())
     ret.append(metNoX())
 
     ret.append(njetnbjetbin())
     ret.append(htbin())
+    # ret.append(bintypeId())
+    # ret.append(bintypeIdJECUp())
+    # ret.append(bintypeIdJECDown())
     ret.append(bintype())
     ret.append(bintypeJECUp())
     ret.append(bintypeJECDown())

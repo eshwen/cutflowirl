@@ -13,8 +13,11 @@ class EventSelectionNot(object):
     def begin(self, event):
         if hasattr(self.selection, 'begin'): self.selection.begin(event)
 
-    def __call__(self, event):
+    def event(self, event):
         return not self.selection(event)
+
+    def __call__(self, event):
+        return self.event(event)
 
     def end(self):
         if hasattr(self.selection, 'begin'): self.selection.end()

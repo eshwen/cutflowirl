@@ -9,20 +9,20 @@ class metNoXNoHF(ScribblerBase):
         event.metNoXNoHF_pt = self.val_pt
         event.metNoXNoHF_phi = self.val_phi
         self.itsdict = {
-            'Signal': ('metNoHF_pt', 'metNoHF_phi'),
-            'SingleMu': ('metNoMuNoHF_pt', 'metNoMuNoHF_phi'),
-            'DoubleMu': ('metNoMuNoHF_pt', 'metNoMuNoHF_phi'),
-            'SingleEle': ('metNoEleNoHF_pt', 'metNoEleNoHF_phi'),
-            'DoubleEle': ('metNoEleNoHF_pt', 'metNoEleNoHF_phi'),
-            'SinglePhoton': ('metNoPhotonNoHF_pt', 'metNoPhotonNoHF_phi'),
+            1: ('metNoHF_pt', 'metNoHF_phi'), # 'Signal'
+            2: ('metNoMuNoHF_pt', 'metNoMuNoHF_phi'), # 'SingleMu'
+            3: ('metNoMuNoHF_pt', 'metNoMuNoHF_phi'), # 'DoubleMu'
+            4: ('metNoEleNoHF_pt', 'metNoEleNoHF_phi'), # 'SingleEle'
+            5: ('metNoEleNoHF_pt', 'metNoEleNoHF_phi'), # 'DoubleEle'
+            6: ('metNoPhotonNoHF_pt', 'metNoPhotonNoHF_phi'), # 'SinglePhoton'
         }
 
     def event(self, event):
         event.metNoXNoHF_pt = self.val_pt
         event.metNoXNoHF_phi = self.val_phi
-        cutflow = event.cutflow[0]
-        if not cutflow in self.itsdict: cutflow = 'Signal'
-        self.val_pt[:] = [getattr(event, self.itsdict[cutflow][0])[0]]
-        self.val_phi[:] = [getattr(event, self.itsdict[cutflow][1])[0]]
+        cutflowId = event.cutflowId[0]
+        if not cutflowId in self.itsdict: cutflowId = 1 # 'Signal'
+        self.val_pt[:] = [getattr(event, self.itsdict[cutflowId][0])[0]]
+        self.val_phi[:] = [getattr(event, self.itsdict[cutflowId][1])[0]]
 
 ##__________________________________________________________________||
