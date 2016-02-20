@@ -42,6 +42,9 @@ class Test_EventSelectionNot(unittest.TestCase):
         event = MockEvent(False)
         self.assertTrue(obj(event))
 
+        event = MockEvent(False)
+        self.assertTrue(obj.event(event))
+
         obj.end()
         self.assertTrue(selection.isEndCalled)
 
