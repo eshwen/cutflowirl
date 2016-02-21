@@ -30,7 +30,7 @@ from Scribblers.inEventList import inEventList
 import os
 
 ##__________________________________________________________________||
-def buildScribblerPathForLoopingOverTrees(
+def buildScribblerPathForLoopingOverTrees_preEventSelection(
         datamc,
         json = None,
         tbl_pu_corr_path = None,
@@ -75,27 +75,13 @@ def buildScribblerPathForLoopingOverTrees(
         bad_event_list_paths = [os.path.join(met_filter_event_lists_dir, f) for f in bad_event_list_files]
         ret.append(inEventList(bad_event_list_paths, 'inBadEventList'))
 
-    if datamc == 'mc' and tbl_pu_corr_path is not None:
-        ret.append(
-            WeightFromTbl(
-                tbl_pu_corr_path,
-                columnVar = 'nTrueInt', columnWeight = 'corr',
-                branchVar = 'nTrueInt', branchWeight = 'puWeightFromTbl'
-            )
-        )
-
     # ret.append(cutflowId())
-    ret.append(cutflow())
-    ret.append(metNoX())
-
-    ret.append(njetnbjetbin())
-    ret.append(htbin())
     # ret.append(bintypeId())
     # ret.append(bintypeIdJECUp())
     # ret.append(bintypeIdJECDown())
-    ret.append(bintype())
-    ret.append(bintypeJECUp())
-    ret.append(bintypeJECDown())
+
+    ret.append(htbin())
+    ret.append(metNoX())
     ret.append(MhtOverMet())
     ret.append(MhtOverMetNoX())
 
@@ -108,6 +94,48 @@ def buildScribblerPathForLoopingOverTrees(
         ret.append(metNoXNoHF())
         ret.append(MhtOverMetNoHF())
         ret.append(MhtOverMetNoXNoHF())
+
+    return ret
+
+##__________________________________________________________________||
+def buildScribblerPathForLoopingOverTrees_postEventSelection(
+        datamc,
+        json = None,
+        tbl_pu_corr_path = None,
+        met_filter_event_lists_dir = None,
+        metnohf = False):
+    """
+    Args:
+
+    datamc: "data" or "mc"
+
+    json: path to json file for certified data
+
+    tbl_pu_corr_path: path to table with pileup reweighing factors
+
+    met_filter_event_lists_dir: path to dir with bad event list text files
+
+    metnohf: True or False
+
+    """
+
+    ret = [ ]
+
+    if datamc == 'mc' and tbl_pu_corr_path is not None:
+        ret.append(
+            WeightFromTbl(
+                tbl_pu_corr_path,
+                columnVar = 'nTrueInt', columnWeight = 'corr',
+                branchVar = 'nTrueInt', branchWeight = 'puWeightFromTbl'
+            )
+        )
+
+    ret.append(cutflow())
+
+    ret.append(njetnbjetbin())
+    ret.append(bintype())
+    ret.append(bintypeJECUp())
+    ret.append(bintypeJECDown())
 
     return ret
 
