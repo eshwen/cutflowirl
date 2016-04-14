@@ -34,9 +34,7 @@ class tbDphi(object):
         event.minbDphi = self.minbDphi
         event.minDphi = self.minDphi
 
-        # indices of the jets to be used
-        idxs = [i for i in range(len(event.jet_pt)) if event.jet_pt[i] > 40]
-        if len(idxs) <= 1:
+        if len(event.jet40_pt) <= 1:
             self.minTbDphia50b1[:] = [-1]
             self.minTbDphiKink[:] = [-1]
             self.minTbDphiKink1p4[:] = [-1]
@@ -45,57 +43,35 @@ class tbDphi(object):
             self.minDphi[:] = [-1]
             return
 
+        dphi = np.array(event.jet40_dphi)
+        self.minDphi[:] = [dphi.min().item()]
+
+        f = np.array(event.jet40_ptOverMht)
+        cos_dphi = np.array(event.jet40_cosDphi)
+
+        # indices of the jets to be used
+        idxs = [i for i in range(len(event.jet_pt)) if event.jet_pt[i] > 40]
+
         # read pT and phi for the jets for the indices from the event
         pt = np.array([event.jet_pt[i] for i in idxs])
         phi = np.array([event.jet_phi[i] for i in idxs])
 
-        minTbDphia50b1 = calculate_mintbDphi(pt, phi, self.g)
+        minTbDphia50b1 = calculate_mintbDphi(f, cos_dphi, self.g)
         minTbDphia50b1 = minTbDphia50b1.item() # convert numpy.dtype to python native type
         self.minTbDphia50b1[:] = [minTbDphia50b1]
 
-        self.minTbDphiKink[:] = [calculate_mintbDphi(pt, phi, self.g2).item()]
-        self.minTbDphiKink1p4[:] = [calculate_mintbDphi(pt, phi, self.g3).item()]
+        self.minTbDphiKink[:] = [calculate_mintbDphi(f, cos_dphi, self.g2).item()]
+        self.minTbDphiKink1p4[:] = [calculate_mintbDphi(f, cos_dphi, self.g3).item()]
 
-        self.minbDphi[:] = [calculate_minbDphi_with_f(pt, phi).item()]
-        self.minDphi[:] = [calculate_minDphi(pt, phi).item()]
+        self.minbDphi[:] = [calculate_minbDphi_with_f(f, cos_dphi).item()]
 
-        self.minFtbDphiKink[:] = [calculate_minftbDphi(pt, phi, self.g2).item()]
+        self.minFtbDphiKink[:] = [calculate_minftbDphi(f, cos_dphi, self.g2).item()]
 
 
     def end(self):
         self.g2 = None
         self.g3 = None
 
-##__________________________________________________________________||
-def calculate_minDphi(pt, phi):
-    """
-    Args:
-    pt (numpy.array): a list of jet pT
-    phi (numpy.array): a list of jet phi
-
-    Returns:
-      the minimum Dphi
-    """
-
-    # px and py of the jets
-    px = pt*np.cos(phi)
-    py = pt*np.sin(phi)
-
-    # MHT
-    mhtx = -np.sum(px)
-    mhty = -np.sum(py)
-    mht = np.sqrt(mhtx**2 + mhty**2)
-
-    # the list of cos(Dphi), for each jet
-    cos_dphi = (mhtx*px + mhty*py)/(mht*pt)
-
-    # the list of Dphi, for each jet
-    dphi = np.arccos(cos_dphi)
-
-    # the minimum Dphi
-    dphi_min = dphi.min()
-
-    return dphi_min
 ##__________________________________________________________________||
 def calculate_minbDphi_in_original_way(pt, phi):
     """
@@ -135,29 +111,15 @@ def calculate_minbDphi_in_original_way(pt, phi):
     return bdphi_min
     
 ##__________________________________________________________________||
-def calculate_minbDphi_with_f(pt, phi):
+def calculate_minbDphi_with_f(f, cos_dphi):
     """
     Args:
-    pt (numpy.array): a list of jet pT
-    phi (numpy.array): a list of jet phi
+    f (numpy.array): a list of the ratios, jet_pt/MHT
+    cos_dphi (numpy.array): a list of cosine of Ddphi(jet, MHT)
 
     Returns:
       the minimum biased Dphi
     """
-
-    # px and py of the jets
-    px = pt*np.cos(phi)
-    py = pt*np.sin(phi)
-
-    # MHT
-    mhtx = -np.sum(px)
-    mhty = -np.sum(py)
-    mht = np.sqrt(mhtx**2 + mhty**2)
-
-    # the list of cos(Dphi), for each jet
-    cos_dphi = (mhtx*px + mhty*py)/(mht*pt)
-
-    f = pt/mht
 
     cos_bdphi = (f + cos_dphi)/np.sqrt(1 + f**2 + 2*f*cos_dphi)
     
@@ -182,30 +144,17 @@ class G(object):
         return g
 
 ##__________________________________________________________________||
-def calculate_mintbDphi(pt, phi, g):
+def calculate_mintbDphi(f, cos_dphi, g):
     """
     Args:
-    pt (numpy.array): a list of jet pT
-    phi (numpy.array): a list of jet phi
+    f (numpy.array): a list of the ratios, jet_pt/MHT
+    cos_dphi (numpy.array): a list of cosine of Ddphi(jet, MHT)
     g (function): a function of f (= pt/mht)
     
     Returns:
       the minimum tunable biased Dphi (tbDphi)
     """
 
-    # px and py of the jets
-    px = pt*np.cos(phi)
-    py = pt*np.sin(phi)
-
-    # MHT
-    mhtx = -np.sum(px)
-    mhty = -np.sum(py)
-    mht = np.sqrt(mhtx**2 + mhty**2)
-
-    # the list of cos(Dphi), for each jet
-    cos_dphi = (mhtx*px + mhty*py)/(mht*pt)
-
-    f = pt/mht
     f = g(f)
 
     cos_tbdphi = (f + cos_dphi)/np.sqrt(1 + f**2 + 2*f*cos_dphi)
@@ -219,30 +168,17 @@ def calculate_mintbDphi(pt, phi, g):
     return tbdphi_min
 
 ##__________________________________________________________________||
-def calculate_minftbDphi(pt, phi, G):
+def calculate_minftbDphi(f, cos_dphi, G):
     """
     Args:
-    pt (numpy.array): a list of jet pT
-    phi (numpy.array): a list of jet phi
+    f (numpy.array): a list of the ratios, jet_pt/MHT
+    cos_dphi (numpy.array): a list of cosine of Ddphi(jet, MHT)
     G (function): a function of f (= pt/mht)
     
     Returns:
       the minimum flipped tunable biased Dphi (tbDphi)
     """
 
-    # px and py of the jets
-    px = pt*np.cos(phi)
-    py = pt*np.sin(phi)
-
-    # MHT
-    mhtx = -np.sum(px)
-    mhty = -np.sum(py)
-    mht = np.sqrt(mhtx**2 + mhty**2)
-
-    # the list of cos(Dphi), for each jet
-    cos_dphi = (mhtx*px + mhty*py)/(mht*pt)
-
-    f = pt/mht
     g = G(f)
 
     cos_dphi_f = np.where(f > 1, np.absolute(cos_dphi), cos_dphi)
