@@ -8,13 +8,25 @@ class jet40pTOverMhtCosDPhi(object):
         self.phi = [ ]
         self.ptOverMht = [ ]
         self.cosDphi = [ ]
+        self.sinDphi = [ ]
         self.dphi = [ ]
+        self.cappedDphi = [ ]
+        self.sinDphiOverPtOverMht = [ ]
+        self.mht = [ ]
+        self.sinCappedDphi = [ ]
+        self.sinCappedDphiOverPtOverMht = [ ]
 
         event.jet40_pt = self.pt
         event.jet40_phi = self.phi
         event.jet40_ptOverMht = self.ptOverMht
         event.jet40_cosDphi = self.cosDphi
+        event.jet40_sinDphi = self.sinDphi
         event.jet40_dphi = self.dphi
+        event.jet40_cappedDphi = self.cappedDphi
+        event.jet40_sinDphiOverPtOverMht = self.sinDphiOverPtOverMht
+        event.mht_jet40 = self.mht
+        event.jet40_sinCappedDphi = self.sinCappedDphi
+        event.jet40_sinCappedDphiOverPtOverMht = self.sinCappedDphiOverPtOverMht
 
     def event(self, event):
         event.jet40_ptOverMht = self.ptOverMht
@@ -22,7 +34,13 @@ class jet40pTOverMhtCosDPhi(object):
         event.jet40_phi = self.phi
         event.jet40_ptOverMht = self.ptOverMht
         event.jet40_cosDphi = self.cosDphi
+        event.jet40_sinDphi = self.sinDphi
         event.jet40_dphi = self.dphi
+        event.jet40_cappedDphi = self.cappedDphi
+        event.jet40_sinDphiOverPtOverMht = self.sinDphiOverPtOverMht
+        event.mht_jet40 = self.mht
+        event.jet40_sinCappedDphi = self.sinCappedDphi
+        event.jet40_sinCappedDphiOverPtOverMht = self.sinCappedDphiOverPtOverMht
 
         idxs = [i for i in range(len(event.jet_pt)) if event.jet_pt[i] > 40]
 
@@ -31,7 +49,13 @@ class jet40pTOverMhtCosDPhi(object):
             self.phi[:] = [ ]
             self.ptOverMht[:] = [ ]
             self.cosDphi[:] = [ ]
-            self.dphi = [ ]
+            self.sinDphi[:] = [ ]
+            self.dphi[:] = [ ]
+            self.cappedDphi[:] = [ ]
+            self.sinDphiOverPtOverMht[:] = [ ]
+            self.mht[:] = [ ]
+            self.sinCappedDphi[:] = [ ]
+            self.sinCappedDphiOverPtOverMht[:] = [ ]
             return
 
         self.pt[:] = [event.jet_pt[i] for i in idxs]
@@ -48,6 +72,8 @@ class jet40pTOverMhtCosDPhi(object):
         mhty = -np.sum(py)
         mht = np.sqrt(mhtx**2 + mhty**2)
 
+        self.mht[:] = [mht.item()]
+
         # the list of cos(Dphi), for each jet
         cos_dphi = (mhtx*px + mhty*py)/(mht*pt)
         self.cosDphi[:] = [e.item() for e in cos_dphi]
@@ -55,7 +81,22 @@ class jet40pTOverMhtCosDPhi(object):
         dphi = np.arccos(cos_dphi)
         self.dphi[:] = [e.item() for e in dphi]
 
+        cappedDphi = np.minimum(dphi, np.pi/2.0)
+        self.cappedDphi[:] = [e.item() for e in cappedDphi]
+
+        sin_dphi = np.sin(dphi)
+        self.sinDphi[:] = [e.item() for e in sin_dphi]
+
+        sin_cappedDphi = np.sin(cappedDphi)
+        self.sinCappedDphi[:] = [e.item() for e in sin_cappedDphi]
+
         f = pt/mht
         self.ptOverMht[:] = [e.item() for e in f]
+
+        sin_dphi_over_f = sin_dphi/f
+        self.sinDphiOverPtOverMht[:] = [e.item() for e in sin_dphi_over_f]
+
+        sin_cappedDphi_over_f = sin_cappedDphi/f
+        self.sinCappedDphiOverPtOverMht[:] = [e.item() for e in sin_cappedDphi_over_f]
 
 ##__________________________________________________________________||
