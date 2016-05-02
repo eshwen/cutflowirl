@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class MhtOverMet(ScribblerBase):
+class MhtOverMet(object):
     def begin(self, event):
         self.vals = [ ]
         event.MhtOverMet = self.vals

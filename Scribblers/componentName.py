@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class componentName(ScribblerBase):
+class componentName(object):
     def begin(self, event):
         self.vals = [ ]
         event.componentName = self.vals

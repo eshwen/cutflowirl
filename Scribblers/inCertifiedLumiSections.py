@@ -1,10 +1,8 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
 import json
 
-from .ScribblerBase import ScribblerBase
-
 ##__________________________________________________________________||
-class inCertifiedLumiSections(ScribblerBase):
+class inCertifiedLumiSections(object):
     def __init__(self, json_path):
         self.certifiedLumiSections = [ ]
         j = json.load(open(json_path))

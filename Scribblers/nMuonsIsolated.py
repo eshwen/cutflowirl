@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class nMuonsIsolated(ScribblerBase):
+class nMuonsIsolated(object):
     def begin(self, event):
         self.vals = [ ]
         event.nMuonsIsolated = self.vals

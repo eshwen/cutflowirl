@@ -1,9 +1,8 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 from ..Binning import Binning
 
 ##__________________________________________________________________||
-class htbin(ScribblerBase):
+class htbin(object):
     def __init__(self):
         self.htbinning = Binning(boundaries = (200, 250, 300, 350, 400, 600, 800))
 

@@ -1,3 +1,4 @@
+# Tai Sakuma <tai.sakuma@cern.ch>
 
 ##__________________________________________________________________||
 class LambdaStr(object):
@@ -18,12 +19,17 @@ class LambdaStr(object):
     def begin(self, event):
         self.func = eval('lambda ' + self.lambda_str)
 
-    def __call__(self, event):
+    def event(self, event):
         try:
             return self.func(event)
-        except:
-            print self.lambda_str
-            raise
+        except BaseException as e:
+            raise ValueError('{}: error in executing "{}". raised -- {}: {}'.format(
+                self.__class__.__name__,
+                self.lambda_str, type(e).__name__, e
+            ))
+
+    def __call__(self, event):
+        return self.event(event)
 
     def end(self):
         self.func = None

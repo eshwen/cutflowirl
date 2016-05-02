@@ -31,6 +31,7 @@ class Test_buildEventSelection(unittest.TestCase):
         obj.pop('AnyClass')
         obj.pop('NotClass')
         obj.pop('LambdaStrClass')
+        obj.pop('aliasDict')
         self.assertEqual(kargs, obj)
 
 ##__________________________________________________________________||

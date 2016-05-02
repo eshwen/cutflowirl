@@ -1,12 +1,10 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
 import ast
 from operator import itemgetter
-
-from .ScribblerBase import ScribblerBase
 from ..Binning import Binning
 
 ##__________________________________________________________________||
-class WeightFromTbl(ScribblerBase):
+class WeightFromTbl(object):
     """
     Args:
         path (str or file): the file or path of the input table file

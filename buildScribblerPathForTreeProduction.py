@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-from Scribblers.ScribblerBase import ScribblerBase
 from Scribblers.Alias import Alias
 from Scribblers.PrimaryDataset import PrimaryDataset
 from Scribblers.inCertifiedLumiSections import inCertifiedLumiSections

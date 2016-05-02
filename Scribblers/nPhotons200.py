@@ -1,8 +1,7 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from .ScribblerBase import ScribblerBase
 
 ##__________________________________________________________________||
-class nPhotons200(ScribblerBase):
+class nPhotons200(object):
     def begin(self, event):
         self.vals = [ ]
         event.nPhotons200 = self.vals

@@ -16,10 +16,13 @@ class EventSelectionAll(object):
         for s in self.selections:
             if hasattr(s, 'begin'): s.begin(event)
 
-    def __call__(self, event):
+    def event(self, event):
         for s in self.selections:
             if not s(event): return False
         return True
+
+    def __call__(self, event):
+        return self.event(event)
 
     def end(self):
         for s in self.selections:
