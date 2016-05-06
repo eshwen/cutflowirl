@@ -15,7 +15,14 @@ class jet40pTOverMhtCosDPhi(object):
         self.mht = [ ]
         self.sinCappedDphi = [ ]
         self.sinCappedDphiOverPtOverMht = [ ]
+        self.pulledDphi = [ ]
+        self.cappedPulledDphi = [ ]
+        self.sinCappedPulledDphi = [ ]
+        self.sinCappedPulledDphiOverPtOverMht = [ ]
 
+        self._attach_to_event(event)
+
+    def _attach_to_event(self, event):
         event.jet40_pt = self.pt
         event.jet40_phi = self.phi
         event.jet40_ptOverMht = self.ptOverMht
@@ -27,23 +34,15 @@ class jet40pTOverMhtCosDPhi(object):
         event.mht_jet40 = self.mht
         event.jet40_sinCappedDphi = self.sinCappedDphi
         event.jet40_sinCappedDphiOverPtOverMht = self.sinCappedDphiOverPtOverMht
+        event.jet40_pulledDphi = self.pulledDphi
+        event.jet40_cappedPulledDphi = self.cappedPulledDphi
+        event.jet40_sinCappedPulledDphi = self.sinCappedPulledDphi
+        event.jet40_sinCappedPulledDphiOverPtOverMht = self.sinCappedPulledDphiOverPtOverMht
 
     def event(self, event):
-        event.jet40_ptOverMht = self.ptOverMht
-        event.jet40_pt = self.pt
-        event.jet40_phi = self.phi
-        event.jet40_ptOverMht = self.ptOverMht
-        event.jet40_cosDphi = self.cosDphi
-        event.jet40_sinDphi = self.sinDphi
-        event.jet40_dphi = self.dphi
-        event.jet40_cappedDphi = self.cappedDphi
-        event.jet40_sinDphiOverPtOverMht = self.sinDphiOverPtOverMht
-        event.mht_jet40 = self.mht
-        event.jet40_sinCappedDphi = self.sinCappedDphi
-        event.jet40_sinCappedDphiOverPtOverMht = self.sinCappedDphiOverPtOverMht
+        self._attach_to_event(event)
 
         idxs = [i for i in range(len(event.jet_pt)) if event.jet_pt[i] > 40]
-
         if not idxs:
             self.pt[:] = [ ]
             self.phi[:] = [ ]
@@ -98,5 +97,18 @@ class jet40pTOverMhtCosDPhi(object):
 
         sin_cappedDphi_over_f = sin_cappedDphi/f
         self.sinCappedDphiOverPtOverMht[:] = [e.item() for e in sin_cappedDphi_over_f]
+
+        d = 0.1
+        pulledDphi = np.where(dphi < d, 0, dphi)
+        self.pulledDphi[:] = [e.item() for e in pulledDphi]
+
+        cappedPulledDphi = np.minimum(pulledDphi, np.pi/2.0)
+        self.cappedPulledDphi[:] = [e.item() for e in cappedPulledDphi]
+
+        sin_cappedPulledDphi = np.sin(cappedPulledDphi)
+        self.sinCappedPulledDphi[:] = [e.item() for e in sin_cappedPulledDphi]
+
+        sin_cappedPulledDphi_over_f = sin_cappedPulledDphi/f
+        self.sinCappedPulledDphiOverPtOverMht[:] = [e.item() for e in sin_cappedPulledDphi_over_f]
 
 ##__________________________________________________________________||
