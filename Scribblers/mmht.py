@@ -15,9 +15,6 @@ class mmht(object):
         self.minSinCappedDphi = [ ]
         self.mhtMinSinCappedDphi = [ ]
         self.minSinCappedDphiOverPtOverMht = [ ]
-        self.minSinCappedPulledDphi = [ ]
-        self.mhtMinSinCappedPulledDphi = [ ]
-        self.minSinCappedPulledDphiOverPtOverMht = [ ]
 
         self._attach_to_event(event)
 
@@ -32,9 +29,6 @@ class mmht(object):
         event.minSinCappedDphi = self.minSinCappedDphi
         event.mhtMinSinCappedDphi = self.mhtMinSinCappedDphi
         event.minSinCappedDphiOverPtOverMht = self.minSinCappedDphiOverPtOverMht
-        event.minSinCappedPulledDphi = self.minSinCappedPulledDphi
-        event.mhtMinSinCappedPulledDphi = self.mhtMinSinCappedPulledDphi
-        event.minSinCappedPulledDphiOverPtOverMht = self.minSinCappedPulledDphiOverPtOverMht
 
     def event(self, event):
         self._attach_to_event(event)
@@ -49,9 +43,6 @@ class mmht(object):
             self.minSinCappedDphi[:] = [ ]
             self.mhtMinSinCappedDphi[:] = [ ]
             self.minSinCappedDphiOverPtOverMht[:] = [ ]
-            self.minSinCappedPulledDphi[:] = [ ]
-            self.mhtMinSinCappedPulledDphi[:] = [ ]
-            self.minSinCappedPulledDphiOverPtOverMht[:] = [ ]
             return
 
         dphi = np.array(event.jet40_dphi)
@@ -77,17 +68,6 @@ class mmht(object):
         sin_CappedDphi_over_f = np.array(event.jet40_sinCappedDphiOverPtOverMht)
         min_sin_CappedDphi_over_f = sin_CappedDphi_over_f.min()
         self.minSinCappedDphiOverPtOverMht[:] = [min_sin_CappedDphi_over_f.item()]
-
-        sin_cappedPulledDphi = np.array(event.jet40_sinCappedPulledDphi)
-        min_sin_cappedPulledDphi = sin_cappedPulledDphi.min()
-        self.minSinCappedPulledDphi[:] = [min_sin_cappedPulledDphi.item()]
-
-        mht_min_sin_cappedPulledDphi = mht*min_sin_cappedPulledDphi
-        self.mhtMinSinCappedPulledDphi[:] = [mht_min_sin_cappedPulledDphi.item()]
-
-        sin_CappedPulledDphi_over_f = np.array(event.jet40_sinCappedPulledDphiOverPtOverMht)
-        min_sin_CappedPulledDphi_over_f = sin_CappedPulledDphi_over_f.min()
-        self.minSinCappedPulledDphiOverPtOverMht[:] = [min_sin_CappedPulledDphi_over_f.item()]
 
         # sin_dphi = np.array(event.jet40_sinDphi)
         # min_sin_dphi = sin_dphi.min()
