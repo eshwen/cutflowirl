@@ -162,16 +162,16 @@ class mmht(object):
         min_minimized_mht = mht*min_minimized_mht_over_mht
         self.minMinimizedMht5p0[:] = [min_minimized_mht.item()]
 
-        # sin_dphi = np.array(event.jet40_sinDphi)
-        # min_sin_dphi = sin_dphi.min()
-        # self.minSinDphi[:] = [min_sin_dphi.item()]
-        # 
-        # mht_min_sin_dphi = mht*min_sin_dphi
-        # self.mhtMinSinDphi[:] = [mht_min_sin_dphi.item()]
-        # 
-        # sin_dphi_over_f = np.array(event.jet40_sinDphiOverPtOverMht)
-        # min_sin_dphi_over_f = sin_dphi_over_f.min()
-        # self.minSinDphiOverPtOverMht[:] = [min_sin_dphi_over_f.item()]
+        sin_dphi = np.array(event.jet40_sinDphi)
+        min_sin_dphi = sin_dphi.min()
+        self.minSinDphi[:] = [min_sin_dphi.item()]
+
+        mht_min_sin_dphi = mht*min_sin_dphi
+        self.mhtMinSinDphi[:] = [mht_min_sin_dphi.item()]
+
+        sin_dphi_over_f = np.array(event.jet40_sinDphiOverPtOverMht)
+        min_sin_dphi_over_f = sin_dphi_over_f.min()
+        self.minSinDphiOverPtOverMht[:] = [min_sin_dphi_over_f.item()]
 
 ##__________________________________________________________________||
 def calculate_minbDphi_in_original_way(pt, phi):
