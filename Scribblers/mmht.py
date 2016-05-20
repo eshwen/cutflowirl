@@ -8,16 +8,23 @@ class mmht(object):
         self.minbDphi = [ ]
         self.minDphi = [ ]
         self.maxDphi = [ ]
-        self.maxPtOverMht = [ ]
+        self.maxF = [ ]
         self.minSinDphi = [ ]
         self.mhtMinSinDphi = [ ]
-        self.minSinDphiOverPtOverMht = [ ]
+        self.minSinDphiOverF = [ ]
         self.minSinCappedDphi = [ ]
         self.mhtMinSinCappedDphi = [ ]
-        self.minSinCappedDphiOverPtOverMht = [ ]
-        self.mhtMinSinCappedDphiOverPtOverMht = [ ]
-        self.mhtMinSinCappedDphiOverMaxPtOverMht = [ ]
-        self.mhtMinSinCappedDphiLogMhtOverPt = [ ]
+
+        self.minSinCappedDphiOverF = [ ]
+        self.mhtMinSinCappedDphiOverF = [ ]
+
+        self.minSinCappedDphiOverFPlusCosCappedDphi = [ ]
+        self.mhtMinSinCappedDphiOverFPlusCosCappedDphi = [ ]
+
+        self.mhtMinSinCappedDphiOverMaxF = [ ]
+        self.mhtMinSinCappedDphiLogOneOverF = [ ]
+
+
         self.cosDphiForMinSinCappedDphi = [ ]
         self.ptOverMhtForMinSinCappedDphi = [ ]
         self.minMinimizedMht = [ ]
@@ -32,16 +39,21 @@ class mmht(object):
         event.minbDphi = self.minbDphi
         event.minDphi = self.minDphi
         event.maxDphi = self.maxDphi
-        event.maxPtOverMht = self.maxPtOverMht
+        event.maxF = self.maxF
         event.minSinDphi = self.minSinDphi
         event.mhtMinSinDphi = self.mhtMinSinDphi
-        event.minSinDphiOverPtOverMht = self.minSinDphiOverPtOverMht
+        event.minSinDphiOverF = self.minSinDphiOverF
         event.minSinCappedDphi = self.minSinCappedDphi
         event.mhtMinSinCappedDphi = self.mhtMinSinCappedDphi
-        event.minSinCappedDphiOverPtOverMht = self.minSinCappedDphiOverPtOverMht
-        event.mhtMinSinCappedDphiOverPtOverMht = self.mhtMinSinCappedDphiOverPtOverMht
-        event.mhtMinSinCappedDphiOverMaxPtOverMht = self.mhtMinSinCappedDphiOverMaxPtOverMht
-        event.mhtMinSinCappedDphiLogMhtOverPt = self.mhtMinSinCappedDphiLogMhtOverPt
+
+        event.minSinCappedDphiOverF = self.minSinCappedDphiOverF
+        event.mhtMinSinCappedDphiOverF = self.mhtMinSinCappedDphiOverF
+
+        event.minSinCappedDphiOverFPlusCosCappedDphi = self.minSinCappedDphiOverFPlusCosCappedDphi
+        event.mhtMinSinCappedDphiOverFPlusCosCappedDphi = self.mhtMinSinCappedDphiOverFPlusCosCappedDphi
+
+        event.mhtMinSinCappedDphiOverMaxF = self.mhtMinSinCappedDphiOverMaxF
+        event.mhtMinSinCappedDphiLogOneOverF = self.mhtMinSinCappedDphiLogOneOverF
         event.cosDphiForMinSinCappedDphi = self.cosDphiForMinSinCappedDphi
         event.ptOverMhtForMinSinCappedDphi = self.ptOverMhtForMinSinCappedDphi
         event.minMinimizedMht = self.minMinimizedMht
@@ -56,16 +68,21 @@ class mmht(object):
             self.minbDphi[:] = [-1]
             self.minDphi[:] = [-1]
             self.maxDphi[:] = [-1]
-            self.maxPtOverMht[:] = [ ]
+            self.maxF[:] = [ ]
             self.minSinDphi[:] = [ ]
             self.mhtMinSinDphi[:] = [ ]
-            self.minSinDphiOverPtOverMht[:] = [ ]
+            self.minSinDphiOverF[:] = [ ]
             self.minSinCappedDphi[:] = [ ]
             self.mhtMinSinCappedDphi[:] = [ ]
-            self.minSinCappedDphiOverPtOverMht[:] = [ ]
-            self.mhtMinSinCappedDphiOverPtOverMht[:] = [ ]
-            self.mhtMinSinCappedDphiOverMaxPtOverMht[:] = [ ]
-            self.mhtMinSinCappedDphiLogMhtOverPt[:] = [ ]
+
+            self.minSinCappedDphiOverF[:] = [ ]
+            self.mhtMinSinCappedDphiOverF[:] = [ ]
+
+            self.minSinCappedDphiOverFPlusCosCappedDphi[:] = [ ]
+            self.mhtMinSinCappedDphiOverFPlusCosCappedDphi[:] = [ ]
+
+            self.mhtMinSinCappedDphiOverMaxF[:] = [ ]
+            self.mhtMinSinCappedDphiLogOneOverF[:] = [ ]
             self.cosDphiForMinSinCappedDphi[:] = [ ]
             self.ptOverMhtForMinSinCappedDphi[:] = [ ]
             self.minMinimizedMht[:] = [ ]
@@ -81,7 +98,7 @@ class mmht(object):
         self.maxDphi[:] = [dphi.max().item()]
 
         f = np.array(event.jet40_ptOverMht)
-        self.maxPtOverMht[:] = [f.max().item()]
+        self.maxF[:] = [f.max().item()]
 
         cos_dphi = np.array(event.jet40_cosDphi)
         self.minbDphi[:] = [calculate_minbDphi_with_f(f, cos_dphi).item()]
@@ -103,19 +120,26 @@ class mmht(object):
 
         min_sin_cappedDphi_over_maxF = min_sin_cappedDphi/f.max()
         mht_min_sin_cappedDphi_over_maxF = mht*min_sin_cappedDphi_over_maxF
-        self.mhtMinSinCappedDphiOverMaxPtOverMht[:] = [mht_min_sin_cappedDphi_over_maxF.item()]
+        self.mhtMinSinCappedDphiOverMaxF[:] = [mht_min_sin_cappedDphi_over_maxF.item()]
 
-        sin_CappedDphi_over_f = np.array(event.jet40_sinCappedDphiOverPtOverMht)
+        sin_CappedDphi_over_f = np.array(event.jet40_sinCappedDphiOverF)
         min_sin_CappedDphi_over_f = sin_CappedDphi_over_f.min()
-        self.minSinCappedDphiOverPtOverMht[:] = [min_sin_CappedDphi_over_f.item()]
+        self.minSinCappedDphiOverF[:] = [min_sin_CappedDphi_over_f.item()]
 
         mht_min_sin_CappedDphi_over_f = mht*min_sin_CappedDphi_over_f
-        self.mhtMinSinCappedDphiOverPtOverMht[:] = [mht_min_sin_CappedDphi_over_f.item()]
+        self.mhtMinSinCappedDphiOverF[:] = [mht_min_sin_CappedDphi_over_f.item()]
 
-        sin_CappedDphi_minus_log_f = np.array(event.jet40_sinCappedDphiLogMhtOverPt)
+        sin_cappedDphi_over_f_plus_cos_cappedDphi = np.array(event.jet40_sinCappedDphiOverFPlusCosCappedDphi)
+        min_sin_cappedDphi_over_f_plus_cos_cappedDphi = sin_cappedDphi_over_f_plus_cos_cappedDphi.min()
+        self.minSinCappedDphiOverFPlusCosCappedDphi[:] = [min_sin_cappedDphi_over_f_plus_cos_cappedDphi.item()]
+
+        mht_min_sin_cappedDphi_over_f_plus_cos_cappedDphi = mht*min_sin_cappedDphi_over_f_plus_cos_cappedDphi
+        self.mhtMinSinCappedDphiOverFPlusCosCappedDphi[:] = [mht_min_sin_cappedDphi_over_f_plus_cos_cappedDphi.item()]
+
+        sin_CappedDphi_minus_log_f = np.array(event.jet40_sinCappedDphiLogOneOverF)
         min_sin_CappedDphi_minus_log_f = sin_CappedDphi_minus_log_f.min()
         mht_min_sin_CappedDphi_minus_log_f = mht*min_sin_CappedDphi_minus_log_f
-        self.mhtMinSinCappedDphiLogMhtOverPt[:] = [mht_min_sin_CappedDphi_minus_log_f.item()]
+        self.mhtMinSinCappedDphiLogOneOverF[:] = [mht_min_sin_CappedDphi_minus_log_f.item()]
 
         r = 1.0
         cos_cappedDphi = np.array(event.jet40_cosCappedDphi)
@@ -169,9 +193,9 @@ class mmht(object):
         mht_min_sin_dphi = mht*min_sin_dphi
         self.mhtMinSinDphi[:] = [mht_min_sin_dphi.item()]
 
-        sin_dphi_over_f = np.array(event.jet40_sinDphiOverPtOverMht)
+        sin_dphi_over_f = np.array(event.jet40_sinDphiOverF)
         min_sin_dphi_over_f = sin_dphi_over_f.min()
-        self.minSinDphiOverPtOverMht[:] = [min_sin_dphi_over_f.item()]
+        self.minSinDphiOverF[:] = [min_sin_dphi_over_f.item()]
 
 ##__________________________________________________________________||
 def calculate_minbDphi_in_original_way(pt, phi):

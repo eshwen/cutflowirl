@@ -4,37 +4,54 @@ import numpy as np
 ##__________________________________________________________________||
 class jet40pTOverMhtCosDPhi(object):
     def begin(self, event):
+        self.mht = [ ]
+
         self.pt = [ ]
         self.phi = [ ]
         self.ptOverMht = [ ]
-        self.cosDphi = [ ]
-        self.sinDphi = [ ]
+
         self.dphi = [ ]
         self.cappedDphi = [ ]
-        self.sinDphiOverPtOverMht = [ ]
-        self.mht = [ ]
+
+        self.sinDphi = [ ]
+        self.cosDphi = [ ]
+
         self.sinCappedDphi = [ ]
-        self.sinCappedDphiOverPtOverMht = [ ]
-        self.sinCappedDphiLogMhtOverPt = [ ]
         self.cosCappedDphi = [ ]
+
+        self.sinDphiOverF = [ ]
+        self.sinCappedDphiOverF = [ ]
+
+        ## self.sinDphiOverFPlusCosDphi = [ ]
+        self.sinCappedDphiOverFPlusCosCappedDphi = [ ]
+
+        self.sinCappedDphiLogOneOverF = [ ]
 
         self._attach_to_event(event)
 
     def _attach_to_event(self, event):
+        event.mht_jet40 = self.mht
+
         event.jet40_pt = self.pt
         event.jet40_phi = self.phi
         event.jet40_ptOverMht = self.ptOverMht
-        event.jet40_cosDphi = self.cosDphi
-        event.jet40_sinDphi = self.sinDphi
+
         event.jet40_dphi = self.dphi
         event.jet40_cappedDphi = self.cappedDphi
-        event.jet40_sinDphiOverPtOverMht = self.sinDphiOverPtOverMht
-        event.jet40_sinCappedDphiLogMhtOverPt = self.sinCappedDphiLogMhtOverPt
 
-        event.mht_jet40 = self.mht
+        event.jet40_sinDphi = self.sinDphi
+        event.jet40_cosDphi = self.cosDphi
+
         event.jet40_sinCappedDphi = self.sinCappedDphi
-        event.jet40_sinCappedDphiOverPtOverMht = self.sinCappedDphiOverPtOverMht
         event.jet40_cosCappedDphi = self.cosCappedDphi
+
+        event.jet40_sinDphiOverF = self.sinDphiOverF
+        event.jet40_sinCappedDphiOverF = self.sinCappedDphiOverF
+
+        ## event.jet40_sinDphiOverFPlusCosDphi = self.sinDphiOverFPlusCosDphi
+        event.jet40_sinCappedDphiOverFPlusCosCappedDphi = self.sinCappedDphiOverFPlusCosCappedDphi
+
+        event.jet40_sinCappedDphiLogOneOverF = self.sinCappedDphiLogOneOverF
 
     def event(self, event):
         self._attach_to_event(event)
@@ -48,11 +65,11 @@ class jet40pTOverMhtCosDPhi(object):
             self.sinDphi[:] = [ ]
             self.dphi[:] = [ ]
             self.cappedDphi[:] = [ ]
-            self.sinDphiOverPtOverMht[:] = [ ]
+            self.sinDphiOverF[:] = [ ]
             self.mht[:] = [ ]
             self.sinCappedDphi[:] = [ ]
-            self.sinCappedDphiOverPtOverMht[:] = [ ]
-            self.sinCappedDphiLogMhtOverPt[:] = [ ]
+            self.sinCappedDphiOverF[:] = [ ]
+            self.sinCappedDphiLogOneOverF[:] = [ ]
             self.cosCappedDphi[:] = [ ]
             return
 
@@ -95,13 +112,16 @@ class jet40pTOverMhtCosDPhi(object):
         self.ptOverMht[:] = [e.item() for e in f]
 
         sin_dphi_over_f = sin_dphi/f
-        self.sinDphiOverPtOverMht[:] = [e.item() for e in sin_dphi_over_f]
+        self.sinDphiOverF[:] = [e.item() for e in sin_dphi_over_f]
 
         sin_cappedDphi_over_f = sin_cappedDphi/f
-        self.sinCappedDphiOverPtOverMht[:] = [e.item() for e in sin_cappedDphi_over_f]
+        self.sinCappedDphiOverF[:] = [e.item() for e in sin_cappedDphi_over_f]
+
+        sin_cappedDphi_over_f_plus_cos_cappedDphi = sin_cappedDphi/(f + cos_cappedDphi)
+        self.sinCappedDphiOverFPlusCosCappedDphi[:] = [e.item() for e in sin_cappedDphi_over_f_plus_cos_cappedDphi]
 
         logf = np.log(f)
         sin_cappedDphi_minus_log_f = sin_cappedDphi*(-logf)
-        self.sinCappedDphiLogMhtOverPt[:] = [e.item() for e in sin_cappedDphi_minus_log_f]
+        self.sinCappedDphiLogOneOverF[:] = [e.item() for e in sin_cappedDphi_minus_log_f]
 
 ##__________________________________________________________________||
