@@ -2,16 +2,16 @@
 from Scribblers.Alias import Alias
 from Scribblers.PrimaryDataset import PrimaryDataset
 from Scribblers.inCertifiedLumiSections import inCertifiedLumiSections
-from Scribblers.cutflow import cutflow
+from Scribblers.cutflowId import cutflowId
 from Scribblers.metNoX import metNoX
 from Scribblers.WeightFromTbl import WeightFromTbl
 from Scribblers.componentName import componentName
 from Scribblers.GenProcess import GenProcess
 from Scribblers.njetnbjetbin import njetnbjetbin
 from Scribblers.htbin import htbin
-from Scribblers.bintype import bintype
-from Scribblers.bintypeJECUp import bintypeJECUp
-from Scribblers.bintypeJECDown import bintypeJECDown
+from Scribblers.bintypeId import bintypeId
+from Scribblers.bintypeIdJECUp import bintypeIdJECUp
+from Scribblers.bintypeIdJECDown import bintypeIdJECDown
 from Scribblers.metNoXNoHF import metNoXNoHF
 from Scribblers.MhtOverMet import MhtOverMet
 from Scribblers.MhtOverMetNoHF import MhtOverMetNoHF
@@ -50,14 +50,16 @@ def buildScribblerPathForTreeProduction(datamc, pd, gen_process, json = None, me
     if datamc == 'data' and json is not None:
         ret.append(inCertifiedLumiSections(json))
 
-    ret.append(cutflow())
+    ret.append(cutflowId())
+
+    ret.append(bintypeId())
+    ret.append(bintypeIdJECUp())
+    ret.append(bintypeIdJECDown())
+
     ret.append(metNoX())
 
     ret.append(njetnbjetbin())
     ret.append(htbin())
-    ret.append(bintype())
-    ret.append(bintypeJECUp())
-    ret.append(bintypeJECDown())
     ret.append(MhtOverMet())
     ret.append(MhtOverMetNoX())
 
