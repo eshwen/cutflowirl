@@ -22,6 +22,28 @@ htbin_alphaT_veryLoose_JECvar = dict(
     )
 )
 
+htbin_alphaTPt_loose_JECvar = dict(
+    Any = (dict(All = ('htbin_200_JECvar', ('alphaTPt_JECvar', dict(v = 0.60)))),
+           dict(All = ('htbin_250_JECvar', ('alphaTPt_JECvar', dict(v = 0.55)))),
+           dict(All = ('htbin_300_JECvar', ('alphaTPt_JECvar', dict(v = 0.50)))),
+           dict(All = ('htbin_350_JECvar', ('alphaTPt_JECvar', dict(v = 0.50)))),
+           dict(All = ('htbin_400_JECvar', ('alphaTPt_JECvar', dict(v = 0.50)))),
+           dict(All = ('htbin_600_JECvar', ('alphaTPt_JECvar', dict(v = 0.50)))),
+           dict(All = ('htbin_800_JECvar', ))
+    )
+)
+
+htbin_alphaTPt_veryLoose_JECvar = dict(
+    Any = (dict(All = ('htbin_200_JECvar', ('alphaTPt_JECvar', dict(v = 0.50)))),
+           dict(All = ('htbin_250_JECvar', ('alphaTPt_JECvar', dict(v = 0.50)))),
+           dict(All = ('htbin_300_JECvar', ('alphaTPt_JECvar', dict(v = 0.50)))),
+           dict(All = ('htbin_350_JECvar', ('alphaTPt_JECvar', dict(v = 0.50)))),
+           dict(All = ('htbin_400_JECvar', ('alphaTPt_JECvar', dict(v = 0.50)))),
+           dict(All = ('htbin_600_JECvar', ('alphaTPt_JECvar', dict(v = 0.50)))),
+           dict(All = ('htbin_800_JECvar', ))
+    )
+)
+
 ##__________________________________________________________________||
 event_selection_path_cfg_tree_production = dict(All = (
     'nJet100_JECvar',
@@ -50,7 +72,9 @@ event_selection_path_cfg_tree_production = dict(All = (
                             'ht_JECvar',
                             dict(Any = ('bintype_monojet_JECvar',
                                         dict(All =('bintype_asymjet_JECvar', htbin_alphaT_loose_JECvar)),
+                                        dict(All =('bintype_asymjet_JECvar', htbin_alphaTPt_loose_JECvar)),
                                         dict(All =('bintype_symjet_JECvar', htbin_alphaT_loose_JECvar)),
+                                        dict(All =('bintype_symjet_JECvar', htbin_alphaTPt_loose_JECvar)),
                                         dict(All =('bintype_highht_JECvar', 'mht_JECvar')),
                             )))),
                 'cutflow_SingleMu',
@@ -60,7 +84,9 @@ event_selection_path_cfg_tree_production = dict(All = (
                 dict(All = ('cutflow_SinglePhoton',
                             dict(Any = ('bintype_monojet_JECvar',
                                         dict(All =('bintype_asymjet_JECvar', htbin_alphaT_veryLoose_JECvar)),
+                                        dict(All =('bintype_asymjet_JECvar', htbin_alphaTPt_veryLoose_JECvar)),
                                         dict(All =('bintype_symjet_JECvar', htbin_alphaT_veryLoose_JECvar)),
+                                        dict(All =('bintype_symjet_JECvar', htbin_alphaTPt_veryLoose_JECvar)),
                                         dict(All =('bintype_highht_JECvar', 'mht_JECvar')),
                             )))),
                 dict(name = 'BaselineMu', All = ("ev : ev.nMuonsVeto[0] >= 1", "ev : ev.nPhotonsVeto[0] == 0")),

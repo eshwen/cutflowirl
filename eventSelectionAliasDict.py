@@ -16,6 +16,8 @@ eventSelectionAliasDict = {
     'mht_JECvar': "ev : 130 <= max(ev.mht40_pt[0], ev.mht40JECUp_pt[0], ev.mht40JECDown_pt[0])",
     'alphaT': "ev : {v} <= ev.alphaT[0]",
     'alphaT_JECvar': "ev : {v} <= max(ev.alphaT[0], ev.alphaTJECUp[0], ev.alphaTJECDown[0])",
+    'alphaTPt': "ev : {v} <= ev.alphaTPt[0]",
+    'alphaTPt_JECvar': "ev : {v} <= max(ev.alphaTPt[0], ev.alphaTPtJECUp[0], ev.alphaTPtJECDown[0])",
     'biasedDPhi': "ev : 0.5 <= ev.biasedDPhi[0]",
     'biasedDPhi20': "ev : ev.biasedDPhi20[0] == -1 or 0.5 <= ev.biasedDPhi20[0]",
     'MhtOverMetNoX': "ev : ev.MhtOverMetNoX[0] < 1.25",
