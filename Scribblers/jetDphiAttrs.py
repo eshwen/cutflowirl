@@ -13,23 +13,41 @@ class jetDphiAttrs(object):
 
         self.pt = [ ]
         self.phi = [ ]
-        self.ptOverMht = [ ]
+        self.f = [ ]
 
         self.dphi = [ ]
-        self.cappedDphi = [ ]
+        self.dphiHat = [ ]
 
         self.sinDphi = [ ]
         self.cosDphi = [ ]
 
-        self.sinCappedDphi = [ ]
-        self.cosCappedDphi = [ ]
+        self.sinDphiHat = [ ]
+        self.cosDphiHat = [ ]
 
-        self.sinDphiOverF = [ ]
-        self.sinCappedDphiOverF = [ ]
+        self.tanOmega = [ ]
+        self.omega = [ ]
 
-        self.sinCappedDphiOverFPlusCosCappedDphi = [ ]
+        self.tanOmegaHat = [ ]
+        self.omegaHat = [ ]
 
-        self.sinCappedDphiLogOneOverF = [ ]
+        self.tanbDphiHat = [ ]
+
+        self.bDphi = [ ]
+        self.sinbDphi = [ ]
+        self.cosbDphi = [ ]
+
+        self.g = [ ]
+        self.sinDphiTilde = [ ]
+
+        self.tanOmegaTilde = [ ]
+        self.omegaTilde = [ ]
+
+        self.k = [ ]
+
+        self.tanChi = [ ]
+        self.chi = [ ]
+
+        self.h = [ ]
 
         self._attach_to_event(event)
 
@@ -39,23 +57,42 @@ class jetDphiAttrs(object):
         setattr(event, '{}_pt'.format(self.outJetPrefix), self.pt)
 
         setattr(event, '{}_phi'.format(self.outJetPrefix), self.phi)
-        setattr(event, '{}_ptOverMht'.format(self.outJetPrefix), self.ptOverMht)
+        setattr(event, '{}_f'.format(self.outJetPrefix), self.f)
 
-        setattr(event, '{}_dphi'.format(self.outJetPrefix), self.dphi) 
-        setattr(event, '{}_cappedDphi'.format(self.outJetPrefix), self.cappedDphi) 
+        setattr(event, '{}_dphi'.format(self.outJetPrefix), self.dphi)
+        setattr(event, '{}_dphiHat'.format(self.outJetPrefix), self.dphiHat)
 
-        setattr(event, '{}_sinDphi'.format(self.outJetPrefix), self.sinDphi) 
-        setattr(event, '{}_cosDphi'.format(self.outJetPrefix), self.cosDphi) 
+        setattr(event, '{}_sinDphi'.format(self.outJetPrefix), self.sinDphi)
+        setattr(event, '{}_cosDphi'.format(self.outJetPrefix), self.cosDphi)
 
-        setattr(event, '{}_sinCappedDphi'.format(self.outJetPrefix), self.sinCappedDphi) 
-        setattr(event, '{}_cosCappedDphi'.format(self.outJetPrefix), self.cosCappedDphi) 
+        setattr(event, '{}_sinDphiHat'.format(self.outJetPrefix), self.sinDphiHat)
+        setattr(event, '{}_cosDphiHat'.format(self.outJetPrefix), self.cosDphiHat)
 
-        setattr(event, '{}_sinDphiOverF'.format(self.outJetPrefix), self.sinDphiOverF)
-        setattr(event, '{}_sinCappedDphiOverF'.format(self.outJetPrefix), self.sinCappedDphiOverF) 
+        setattr(event, '{}_tanOmega'.format(self.outJetPrefix), self.tanOmega)
+        setattr(event, '{}_omega'.format(self.outJetPrefix), self.omega)
 
-        setattr(event, '{}_sinCappedDphiOverFPlusCosCappedDphi'.format(self.outJetPrefix), self.sinCappedDphiOverFPlusCosCappedDphi) 
+        setattr(event, '{}_tanOmegaHat'.format(self.outJetPrefix), self.tanOmegaHat)
+        setattr(event, '{}_omegaHat'.format(self.outJetPrefix), self.omegaHat)
 
-        setattr(event, '{}_sinCappedDphiLogOneOverF'.format(self.outJetPrefix), self.sinCappedDphiLogOneOverF) 
+        setattr(event, '{}_tanbDphiHat'.format(self.outJetPrefix), self.tanbDphiHat)
+
+        setattr(event, '{}_bDphi'.format(self.outJetPrefix), self.bDphi)
+        setattr(event, '{}_sinbDphi'.format(self.outJetPrefix), self.sinbDphi)
+        setattr(event, '{}_cosbDphi'.format(self.outJetPrefix), self.cosbDphi)
+
+        setattr(event, '{}_g'.format(self.outJetPrefix), self.g)
+
+        setattr(event, '{}_sinDphiTilde'.format(self.outJetPrefix), self.sinDphiTilde)
+
+        setattr(event, '{}_tanOmegaTilde'.format(self.outJetPrefix), self.tanOmegaTilde)
+        setattr(event, '{}_omegaTilde'.format(self.outJetPrefix), self.omegaTilde)
+
+        setattr(event, '{}_k'.format(self.outJetPrefix), self.k)
+
+        setattr(event, '{}_tanChi'.format(self.outJetPrefix), self.tanChi)
+        setattr(event, '{}_chi'.format(self.outJetPrefix), self.chi)
+
+        setattr(event, '{}_h'.format(self.outJetPrefix), self.h)
 
     def event(self, event):
         self._attach_to_event(event)
@@ -67,19 +104,32 @@ class jetDphiAttrs(object):
             idxs = [i for i in idxs if event_jet_pt[i] >= self.minJetPt]
 
         if not idxs:
+            self.mht[:] = [ ]
             self.pt[:] = [ ]
             self.phi[:] = [ ]
-            self.ptOverMht[:] = [ ]
-            self.cosDphi[:] = [ ]
-            self.sinDphi[:] = [ ]
+            self.f[:] = [ ]
             self.dphi[:] = [ ]
-            self.cappedDphi[:] = [ ]
-            self.sinDphiOverF[:] = [ ]
-            self.mht[:] = [ ]
-            self.sinCappedDphi[:] = [ ]
-            self.sinCappedDphiOverF[:] = [ ]
-            self.sinCappedDphiLogOneOverF[:] = [ ]
-            self.cosCappedDphi[:] = [ ]
+            self.dphiHat[:] = [ ]
+            self.sinDphi[:] = [ ]
+            self.cosDphi[:] = [ ]
+            self.sinDphiHat[:] = [ ]
+            self.cosDphiHat[:] = [ ]
+            self.tanOmega[:] = [ ]
+            self.omega[:] = [ ]
+            self.tanOmegaHat[:] = [ ]
+            self.omegaHat[:] = [ ]
+            self.tanbDphiHat[:] = [ ]
+            self.bDphi[:] = [ ]
+            self.sinbDphi[:] = [ ]
+            self.cosbDphi[:] = [ ]
+            self.g[:] = [ ]
+            self.sinDphiTilde[:] = [ ]
+            self.tanOmegaTilde[:] = [ ]
+            self.omegaTilde[:] = [ ]
+            self.k[:] = [ ]
+            self.tanChi[:] = [ ]
+            self.chi[:] = [ ]
+            self.h[:] = [ ]
             return
 
         self.pt[:] = [event_jet_pt[i] for i in idxs]
@@ -101,38 +151,79 @@ class jetDphiAttrs(object):
         self.mht[:] = [mht.item()]
 
         # the list of cos(Dphi), for each jet
-        cos_dphi = (mhtx*px + mhty*py)/(mht*pt)
-        self.cosDphi[:] = [e.item() for e in cos_dphi]
+        cosDphi = (mhtx*px + mhty*py)/(mht*pt)
+        cosDphi = np.minimum(cosDphi, 1.0)
+        cosDphi = np.maximum(cosDphi, -1.0)
+        self.cosDphi[:] = cosDphi
 
-        dphi = np.arccos(cos_dphi)
-        self.dphi[:] = [e.item() for e in dphi]
+        dphi = np.arccos(cosDphi)
+        self.dphi[:] = dphi
 
-        cappedDphi = np.minimum(dphi, np.pi/2.0)
-        self.cappedDphi[:] = [e.item() for e in cappedDphi]
+        dphiHat = np.minimum(dphi, np.pi/2.0)
+        self.dphiHat[:] = dphiHat
 
-        sin_dphi = np.sin(dphi)
-        self.sinDphi[:] = [e.item() for e in sin_dphi]
+        sinDphi = np.sin(dphi)
+        self.sinDphi[:] = sinDphi
 
-        sin_cappedDphi = np.sin(cappedDphi)
-        self.sinCappedDphi[:] = [e.item() for e in sin_cappedDphi]
+        sinDphiHat = np.sin(dphiHat)
+        self.sinDphiHat[:] = sinDphiHat
 
-        cos_cappedDphi = np.cos(cappedDphi)
-        self.cosCappedDphi[:] = [e.item() for e in cos_cappedDphi]
+        cosDphiHat = np.cos(dphiHat)
+        self.cosDphiHat[:] = cosDphiHat
 
         f = pt/mht
-        self.ptOverMht[:] = [e.item() for e in f]
+        self.f[:] = f
 
-        sin_dphi_over_f = sin_dphi/f
-        self.sinDphiOverF[:] = [e.item() for e in sin_dphi_over_f]
+        tanOmega = sinDphi/f
+        self.tanOmega[:] = tanOmega
 
-        sin_cappedDphi_over_f = sin_cappedDphi/f
-        self.sinCappedDphiOverF[:] = [e.item() for e in sin_cappedDphi_over_f]
+        omega = np.arctan2(sinDphi, f)
+        self.omega[:] = omega
 
-        sin_cappedDphi_over_f_plus_cos_cappedDphi = sin_cappedDphi/(f + cos_cappedDphi)
-        self.sinCappedDphiOverFPlusCosCappedDphi[:] = [e.item() for e in sin_cappedDphi_over_f_plus_cos_cappedDphi]
+        tanOmegaHat = sinDphiHat/f
+        self.tanOmegaHat[:] = tanOmegaHat
 
-        logf = np.log(f)
-        sin_cappedDphi_minus_log_f = sin_cappedDphi*(-logf)
-        self.sinCappedDphiLogOneOverF[:] = [e.item() for e in sin_cappedDphi_minus_log_f]
+        omegaHat = np.arctan2(sinDphiHat, f)
+        self.omegaHat[:] = omegaHat
+
+        tanbDphiHat = sinDphiHat/(f + cosDphiHat)
+        self.tanbDphiHat[:] = tanbDphiHat
+
+        cosbDphi = (f + cosDphi)/np.sqrt(1 + f**2 + 2*f*cosDphi)
+        cosbDphi = np.minimum(cosbDphi, 1.0)
+        cosbDphi = np.maximum(cosbDphi, -1.0)
+        self.cosbDphi[:] = cosbDphi
+
+        bDphi = np.arccos(cosbDphi)
+        self.bDphi[:] = bDphi
+
+        sinbDphi = np.sin(bDphi)
+        self.sinbDphi[:] = sinbDphi
+
+        g = np.maximum(cosDphi, -f)
+        self.g[:] = g
+
+        sinDphiTilde = np.sqrt(1 + g**2 - 2*g*cosDphi)
+        # should be the same as np.where(f + cosDphi >= 0, sinDphi, sinDphi/sinbDphi)
+        self.sinDphiTilde[:] = sinDphiTilde
+
+        tanOmegaTilde = sinDphiTilde/f
+        self.tanOmegaTilde[:] = tanOmegaTilde
+
+        omegaTilde = np.arctan2(sinDphiTilde, f)
+        self.omegaTilde[:] = omegaTilde
+
+        k = np.minimum(f, f + g)
+        self.k[:] = k
+
+        tanChi = sinDphiTilde/k
+        tanChi = np.minimum(tanChi, 30) # set the maximum 30
+        self.tanChi[:] = tanChi
+
+        chi = np.arctan2(sinDphiTilde, k)
+        self.chi[:] = chi
+
+        h = np.where(sinDphiTilde == sinDphiTilde.min(), f + g, f)
+        self.h[:] = h
 
 ##__________________________________________________________________||
