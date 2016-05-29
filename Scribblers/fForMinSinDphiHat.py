@@ -13,11 +13,12 @@ class fForMinSinDphiHat(object):
     def event(self, event):
         self._attach_to_event(event)
 
-        sinDphiHat = np.array(event.jet40_sinDphiHat)
-        if sinDphiHat.size == 0:
+        dphiHat = np.array(event.jet40_dphiHat)
+        if dphiHat.size == 0:
             self.fForMinSinDphiHat[:] = [ ]
             return
 
+        sinDphiHat = np.sin(dphiHat)
         minSinDphiHat = sinDphiHat.min()
 
         f = np.array(event.jet40_f)
