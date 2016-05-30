@@ -10,64 +10,40 @@ class jetDphiAttrs(object):
 
     def begin(self, event):
         self.mht = [ ]
-
         self.pt = [ ]
         self.phi = [ ]
-        self.f = [ ]
-        self.arccotF = [ ]
-
         self.dphi = [ ]
         self.dphiHat = [ ]
-
-        self.omega = [ ]
-
-        self.omegaHat = [ ]
-
-        self.bDphi = [ ]
-
-        self.g = [ ]
         self.dphiTilde = [ ]
-
+        self.bDphi = [ ]
+        self.omega = [ ]
+        self.omegaHat = [ ]
         self.omegaTilde = [ ]
-
-        self.k = [ ]
-
         self.chi = [ ]
-
+        self.f = [ ]
+        self.g = [ ]
+        self.k = [ ]
         self.h = [ ]
-
+        self.arccotF = [ ]
         self._attach_to_event(event)
 
     def _attach_to_event(self, event):
         setattr(event, 'mht_{}'.format(self.outJetPrefix), self.mht)
-
         setattr(event, '{}_pt'.format(self.outJetPrefix), self.pt)
-
         setattr(event, '{}_phi'.format(self.outJetPrefix), self.phi)
-        setattr(event, '{}_f'.format(self.outJetPrefix), self.f)
-        setattr(event, '{}_arccotF'.format(self.outJetPrefix), self.arccotF)
-
         setattr(event, '{}_dphi'.format(self.outJetPrefix), self.dphi)
         setattr(event, '{}_dphiHat'.format(self.outJetPrefix), self.dphiHat)
-
-        setattr(event, '{}_omega'.format(self.outJetPrefix), self.omega)
-
-        setattr(event, '{}_omegaHat'.format(self.outJetPrefix), self.omegaHat)
-
-
-        setattr(event, '{}_bDphi'.format(self.outJetPrefix), self.bDphi)
-
-        setattr(event, '{}_g'.format(self.outJetPrefix), self.g)
-
         setattr(event, '{}_dphiTilde'.format(self.outJetPrefix), self.dphiTilde)
-
+        setattr(event, '{}_bDphi'.format(self.outJetPrefix), self.bDphi)
+        setattr(event, '{}_omega'.format(self.outJetPrefix), self.omega)
+        setattr(event, '{}_omegaHat'.format(self.outJetPrefix), self.omegaHat)
         setattr(event, '{}_omegaTilde'.format(self.outJetPrefix), self.omegaTilde)
-
-        setattr(event, '{}_k'.format(self.outJetPrefix), self.k)
-
         setattr(event, '{}_chi'.format(self.outJetPrefix), self.chi)
-
+        setattr(event, '{}_f'.format(self.outJetPrefix), self.f)
+        setattr(event, '{}_g'.format(self.outJetPrefix), self.g)
+        setattr(event, '{}_k'.format(self.outJetPrefix), self.k)
         setattr(event, '{}_h'.format(self.outJetPrefix), self.h)
+        setattr(event, '{}_arccotF'.format(self.outJetPrefix), self.arccotF)
 
     def event(self, event):
         self._attach_to_event(event)
@@ -82,21 +58,22 @@ class jetDphiAttrs(object):
             self.mht[:] = [ ]
             self.pt[:] = [ ]
             self.phi[:] = [ ]
-            self.f[:] = [ ]
-            self.arccotF[:] = [ ]
             self.dphi[:] = [ ]
             self.dphiHat[:] = [ ]
+            self.dphiTilde[:] = [ ]
+            self.bDphi[:] = [ ]
             self.omega[:] = [ ]
             self.omegaHat[:] = [ ]
-            self.bDphi[:] = [ ]
-            self.g[:] = [ ]
-            self.dphiTilde[:] = [ ]
             self.omegaTilde[:] = [ ]
-            self.k[:] = [ ]
             self.chi[:] = [ ]
+            self.f[:] = [ ]
+            self.g[:] = [ ]
+            self.k[:] = [ ]
             self.h[:] = [ ]
+            self.arccotF[:] = [ ]
             return
 
+        # jet pT, phi, px, py
         self.pt[:] = [event_jet_pt[i] for i in idxs]
 
         event_jet_phi = getattr(event, '{}_phi'.format(self.inJetPrefix))
@@ -112,9 +89,9 @@ class jetDphiAttrs(object):
         mhtx = -np.sum(px)
         mhty = -np.sum(py)
         mht = np.sqrt(mhtx**2 + mhty**2)
-
         self.mht[:] = [mht.item()]
 
+        # Dphi
         cosDphi = (mhtx*px + mhty*py)/(mht*pt)
         cosDphi = np.minimum(cosDphi, 1.0)
         cosDphi = np.maximum(cosDphi, -1.0)
@@ -122,27 +99,31 @@ class jetDphiAttrs(object):
         dphi = np.arccos(cosDphi)
         self.dphi[:] = dphi
 
+        sinDphi = np.sin(dphi)
+
+        # Dphi hat
         dphiHat = np.minimum(dphi, np.pi/2.0)
         self.dphiHat[:] = dphiHat
 
-        sinDphi = np.sin(dphi)
-
         sinDphiHat = np.sin(dphiHat)
-
         cosDphiHat = np.cos(dphiHat)
 
+        # f
         f = pt/mht
         self.f[:] = f
 
         arccotF = np.arctan2(1, f)
         self.arccotF[:] = arccotF
 
+        # omega
         omega = np.arctan2(sinDphi, f)
         self.omega[:] = omega
 
+        # omega hat
         omegaHat = np.arctan2(sinDphiHat, f)
         self.omegaHat[:] = omegaHat
 
+        # bDphi
         cosbDphi = (f + cosDphi)/np.sqrt(1 + f**2 + 2*f*cosDphi)
         cosbDphi = np.minimum(cosbDphi, 1.0)
         cosbDphi = np.maximum(cosbDphi, -1.0)
@@ -151,24 +132,31 @@ class jetDphiAttrs(object):
         self.bDphi[:] = bDphi
 
         sinbDphi = np.sin(bDphi)
+
+        # g
         g = np.maximum(cosDphi, -f)
         self.g[:] = g
 
+        # Dphi tilde
         sinDphiTilde = np.sqrt(1 + g**2 - 2*g*cosDphi)
         # should be the same as np.where(f + cosDphi >= 0, sinDphi, sinDphi/sinbDphi)
 
         dphiTilde = np.arcsin(sinDphiTilde)
         self.dphiTilde[:] = dphiTilde
 
+        # omega tilde
         omegaTilde = np.arctan2(sinDphiTilde, f)
         self.omegaTilde[:] = omegaTilde
 
+        # k
         k = np.minimum(f, f + g)
         self.k[:] = k
 
+        # chi
         chi = np.arctan2(sinDphiTilde, k)
         self.chi[:] = chi
 
+        # h
         h = np.where(sinDphiTilde == sinDphiTilde.min(), f + g, f)
         self.h[:] = h
 
