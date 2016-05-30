@@ -10,7 +10,6 @@ class multiply(object):
 
     def begin(self, event):
         self.out = [ ]
-
         self._attach_to_event(event)
 
     def _attach_to_event(self, event):
