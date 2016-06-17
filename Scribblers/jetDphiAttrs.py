@@ -123,8 +123,12 @@ class jetDphiAttrs(object):
         omegaHat = np.arctan2(sinDphiHat, f)
         self.omegaHat[:] = omegaHat
 
+
         # bDphi
-        cosbDphi = (f + cosDphi)/np.sqrt(1 + f**2 + 2*f*cosDphi)
+        sqfc = np.sqrt(1 + f**2 + 2*f*cosDphi)
+        cosbDphi = (f + cosDphi)/np.where(sqfc == 0, 1, sqfc) ## cosbDphi is 0 when sqfc == 0
+                                                              ## np.where is used to avoid dividing by 0
+
         cosbDphi = np.minimum(cosbDphi, 1.0)
         cosbDphi = np.maximum(cosbDphi, -1.0)
 
