@@ -22,6 +22,8 @@ from Scribblers.nElectronsIsolated import nElectronsIsolated
 from Scribblers.nElectronsBarrel import nElectronsBarrel
 from Scribblers.nPhotons200 import nPhotons200
 from Scribblers.inEventList import inEventList
+from Scribblers.jetDphiAttrs import jetDphiAttrs
+from Scribblers.minimum import minimum
 
 ##__________________________________________________________________||
 def buildScribblerPathForTreeProduction(datamc, pd, gen_process, json = None, metnohf = False):
@@ -55,6 +57,15 @@ def buildScribblerPathForTreeProduction(datamc, pd, gen_process, json = None, me
     ret.append(bintypeId())
     ret.append(bintypeIdJECUp())
     ret.append(bintypeIdJECDown())
+
+    ret.append(jetDphiAttrs(inJetPrefix = 'jet', outJetPrefix = 'jet40', minJetPt = 40))
+    ret.append(minimum(srcName = 'jet40_chi', outName = 'minChi', default_value = -1))
+
+    ret.append(jetDphiAttrs(inJetPrefix = 'jetJECUp', outJetPrefix = 'jetJECUp40', minJetPt = 40))
+    ret.append(minimum(srcName = 'jetJECUp40_chi', outName = 'minChiJECUp', default_value = -1))
+
+    ret.append(jetDphiAttrs(inJetPrefix = 'jetJECDown', outJetPrefix = 'jetJECDown40', minJetPt = 40))
+    ret.append(minimum(srcName = 'jetJECDown40_chi', outName = 'minChiJECDown', default_value = -1))
 
     ret.append(metNoX())
 
