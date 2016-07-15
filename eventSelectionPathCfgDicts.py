@@ -65,6 +65,7 @@ event_selection_path_cfg_tree_production = dict(All = (
                                                 'cutflow_DoubleEle',
                                     )))),
                         dict(All = ('PD_SinglePhoton', 'cutflow_SinglePhoton')),
+                        dict(All = ('PD_DoubleEG', 'cutflow_SinglePhoton')),
             )),
         )),
     )),
