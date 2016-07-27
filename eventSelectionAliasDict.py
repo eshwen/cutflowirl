@@ -71,6 +71,7 @@ eventSelectionAliasDict = {
     'PD_SingleElectron': "ev : ev.PrimaryDataset[0] == 'SingleElectron'",
     'PD_SingleMuon': "ev : ev.PrimaryDataset[0] == 'SingleMuon'",
     'PD_SinglePhoton': "ev : ev.PrimaryDataset[0] == 'SinglePhoton'",
+    'PD_DoubleEG': "ev : ev.PrimaryDataset[0] == 'DoubleEG'",
     'HLT_PFMET90_PFMHT90_IDTight': "ev : ev.HLT_PFMET90_PFMHT90_IDTight[0]",
     'HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight': "ev : ev.HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight[0]",
     'HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight': "ev : ev.HLT_PFMETNoMu120_JetIdCleaned_PFMHTNoMu120_IDTight[0]",
