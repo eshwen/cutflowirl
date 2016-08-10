@@ -162,16 +162,20 @@ htbin_alphaT = dict(
 
 ##__________________________________________________________________||
 met_filters = dict(
-    All = ("ev : ev.Flag_goodVertices[0] == 1",
-           "ev : ev.Flag_CSCTightHaloFilter[0] ==1",
-           "ev : ev.Flag_eeBadScFilter[0] ==1",
-           "ev : ev.Flag_HBHENoiseFilter[0] == 1",
-        ))
+    All = (
+        "ev : ev.Flag_HBHENoiseFilter[0] == 1",
+        "ev : ev.Flag_HBHENoiseIsoFilter[0] == 1",
+        "ev : ev.Flag_EcalDeadCellTriggerPrimitiveFilter[0] == 1",
+        "ev : ev.Flag_goodVertices[0] == 1",
+        "ev : ev.Flag_eeBadScFilter[0] == 1",
+        "ev : ev.Flag_globalTightHalo2016Filter[0] == 1",
+        )
+)
 
 met_filters_data_only = dict(
-    All = ("ev : ev.Flag_HBHENoiseIsoFilter[0] == 1",
-           'NotInBadEventList',
-        ))
+    All = (
+        'NotInBadEventList',
+    ))
 
 ##__________________________________________________________________||
 unique_promptPhoton_phaseSpace_in_QCD_and_GJets = dict(Any = (
@@ -183,7 +187,7 @@ unique_promptPhoton_phaseSpace_in_QCD_and_GJets = dict(Any = (
 ##__________________________________________________________________||
 unique_TTJets_phaseSpace = dict(Any = (
     dict(All = (
-        'ev : ev.componentName[0] == "TTJets_LO_25ns"',
+        'ev : ev.componentName[0] == "TTJets_madgraphMLM"',
         'ev : ev.lheHTnoT[0] < 600',
         'ev : ev.nLheElectrons[0] == 0',
         'ev : ev.nLheMuons[0] == 0',
@@ -191,36 +195,36 @@ unique_TTJets_phaseSpace = dict(Any = (
     )),
     dict(All = (
         dict(Any = (
-            'ev : ev.componentName[0] == "TTJets_LO_DiLept_25ns"',
-            'ev : ev.componentName[0] == "TTJets_LO_DiLept_ext1_25ns"',
-            'ev : ev.componentName[0] == "TTJets_LO_SingleLeptFromT_25ns"',
-            'ev : ev.componentName[0] == "TTJets_LO_SingleLeptFromT_ext1_25ns"',
-            'ev : ev.componentName[0] == "TTJets_LO_SingleLeptFromTbar_25ns"',
-            'ev : ev.componentName[0] == "TTJets_LO_SingleLeptFromTbar_ext1_25ns"',
+            'ev : ev.componentName[0] == "TTJets_DiLept_madgraphMLM"',
+            'ev : ev.componentName[0] == "TTJets_SingleLeptFromT_madgraphMLM"',
+            'ev : ev.componentName[0] == "TTJets_SingleLeptFromTbar_madgraphMLM"',
+            'ev : ev.componentName[0] == "TTJets_DiLept_madgraphMLM_ext1"',
+            'ev : ev.componentName[0] == "TTJets_SingleLeptFromT_madgraphMLM_ext1"',
+            'ev : ev.componentName[0] == "TTJets_SingleLeptFromTbar_madgraphMLM_ext1"',
         )),
         'ev : ev.lheHTnoT[0] < 600',
     )),
     dict(All = (
         dict(Any = (
-            'ev : ev.componentName[0] == "TTJets_LO_HT600to800_25ns"',
-            'ev : ev.componentName[0] == "TTJets_LO_HT800to1200_25ns"',
-            'ev : ev.componentName[0] == "TTJets_LO_HT1200to2500_25ns"',
-            'ev : ev.componentName[0] == "TTJets_LO_HT2500toInf_25ns"',
+            'ev : ev.componentName[0] == "TTJets_HT600to800_madgraphMLM"',
+            'ev : ev.componentName[0] == "TTJets_HT800to1200_madgraphMLM"',
+            'ev : ev.componentName[0] == "TTJets_HT1200to2500_madgraphMLM"',
+            'ev : ev.componentName[0] == "TTJets_HT2500toInf_madgraphMLM"',
         )),
         'ev : ev.lheHTnoT[0] >= 600',
     )),
     dict(Not = dict(Any = (
-        'ev : ev.componentName[0] == "TTJets_LO_25ns"',
-        'ev : ev.componentName[0] == "TTJets_LO_DiLept_25ns"',
-        'ev : ev.componentName[0] == "TTJets_LO_DiLept_ext1_25ns"',
-        'ev : ev.componentName[0] == "TTJets_LO_SingleLeptFromT_25ns"',
-        'ev : ev.componentName[0] == "TTJets_LO_SingleLeptFromT_ext1_25ns"',
-        'ev : ev.componentName[0] == "TTJets_LO_SingleLeptFromTbar_25ns"',
-        'ev : ev.componentName[0] == "TTJets_LO_SingleLeptFromTbar_ext1_25ns"',
-        'ev : ev.componentName[0] == "TTJets_LO_HT600to800_25ns"',
-        'ev : ev.componentName[0] == "TTJets_LO_HT800to1200_25ns"',
-        'ev : ev.componentName[0] == "TTJets_LO_HT1200to2500_25ns"',
-        'ev : ev.componentName[0] == "TTJets_LO_HT2500toInf_25ns"',
+        'ev : ev.componentName[0] == "TTJets_madgraphMLM"',
+            'ev : ev.componentName[0] == "TTJets_DiLept_madgraphMLM"',
+            'ev : ev.componentName[0] == "TTJets_SingleLeptFromT_madgraphMLM"',
+            'ev : ev.componentName[0] == "TTJets_SingleLeptFromTbar_madgraphMLM"',
+            'ev : ev.componentName[0] == "TTJets_DiLept_madgraphMLM_ext1"',
+            'ev : ev.componentName[0] == "TTJets_SingleLeptFromT_madgraphMLM_ext1"',
+            'ev : ev.componentName[0] == "TTJets_SingleLeptFromTbar_madgraphMLM_ext1"',
+            'ev : ev.componentName[0] == "TTJets_HT600to800_madgraphMLM"',
+            'ev : ev.componentName[0] == "TTJets_HT800to1200_madgraphMLM"',
+            'ev : ev.componentName[0] == "TTJets_HT1200to2500_madgraphMLM"',
+            'ev : ev.componentName[0] == "TTJets_HT2500toInf_madgraphMLM"',
         ))),
     ))
 
