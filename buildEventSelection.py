@@ -17,11 +17,11 @@ def buildEventSelection(**kargs):
 
     if 'aliasDict' not in kargs: kargs['aliasDict'] = eventSelectionAliasDict
 
-    return FactoryDispatcher(
-        AllClass = EventSelectionAll,
-        AnyClass = EventSelectionAny,
-        NotClass = EventSelectionNot,
-        LambdaStrClass = LambdaStr,
-        **kargs)
+    if 'AllClass' not in kargs: kargs['AllClass'] = EventSelectionAll
+    if 'AnyClass' not in kargs: kargs['AnyClass'] = EventSelectionAny
+    if 'NotClass' not in kargs: kargs['NotClass'] = EventSelectionNot
+    if 'LambdaStrClass' not in kargs: kargs['LambdaStrClass'] = LambdaStr
+
+    return FactoryDispatcher(**kargs)
 
 ##__________________________________________________________________||
