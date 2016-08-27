@@ -1,5 +1,5 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from ...EventSelectionModules.EventSelectionAll import EventSelectionAll
+from ...EventSelectionModules.EventSelectionAllCount import EventSelectionAllCount
 import unittest
 
 ##__________________________________________________________________||
@@ -22,16 +22,22 @@ class MockEventSelection(object):
         self.isEndCalled = True
 
 ##__________________________________________________________________||
-class Test_EventSelectionAll(unittest.TestCase):
+class Test_EventSelectionAllCount(unittest.TestCase):
 
     def test_empty(self):
-        obj = EventSelectionAll()
+        obj = EventSelectionAllCount()
+
+        event = MockEvent()
+        obj.begin(event)
 
         event = MockEvent()
         self.assertTrue(obj(event))
 
+        count = obj.results()
+        self.assertEqual([ ], count._results)
+
     def test_standard(self):
-        obj = EventSelectionAll()
+        obj = EventSelectionAllCount()
         selection1 = MockEventSelection()
         selection2 = MockEventSelection()
 
@@ -50,27 +56,36 @@ class Test_EventSelectionAll(unittest.TestCase):
         self.assertTrue(selection2.isBeginCalled)
 
         event = MockEvent()
-        selection1.ret = True
-        selection2.ret = True
+        selection1.ret = True   # 1/1
+        selection2.ret = True   # 1/1
         self.assertTrue(obj(event))
 
         event = MockEvent()
-        selection1.ret = True
-        selection2.ret = False
+        selection1.ret = True   # 2/2
+        selection2.ret = False  # 1/2
         self.assertFalse(obj(event))
 
         event = MockEvent()
-        selection1.ret = False
-        selection2.ret = True
+        selection1.ret = False  # 2/3
+        selection2.ret = True   # 1/2
         self.assertFalse(obj.event(event))
 
         event = MockEvent()
-        selection1.ret = False
-        selection2.ret = False
+        selection1.ret = False  # 2/4
+        selection2.ret = False  # 1/2
         self.assertFalse(obj.event(event))
 
         obj.end()
         self.assertTrue(selection1.isEndCalled)
         self.assertTrue(selection2.isEndCalled)
+
+        count = obj.results()
+        self.assertEqual(
+            [
+                [0, 2, 4],
+                [1, 1, 2],
+            ],
+            count._results
+        )
 
 ##__________________________________________________________________||
