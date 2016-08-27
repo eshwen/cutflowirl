@@ -24,6 +24,8 @@ from Scribblers.nPhotons200 import nPhotons200
 from Scribblers.inEventList import inEventList
 from Scribblers.jetDphiAttrs import jetDphiAttrs
 from Scribblers.minimum import minimum
+from Scribblers.maximum import maximum
+from Scribblers.xi import xi
 
 ##__________________________________________________________________||
 def buildScribblerPathForTreeProduction(datamc, pd, gen_process, json = None, metnohf = False):
@@ -59,7 +61,18 @@ def buildScribblerPathForTreeProduction(datamc, pd, gen_process, json = None, me
     ret.append(bintypeIdJECDown())
 
     ret.append(jetDphiAttrs(inJetPrefix = 'jet', outJetPrefix = 'jet40', minJetPt = 40))
+    ret.append(minimum(srcName = 'jet40_dphi', outName = 'minDphi', default_value = -1))
+    ret.append(minimum(srcName = 'jet40_bDphi', outName = 'minbDphi', default_value = -1))
+    ret.append(minimum(srcName = 'jet40_dphiTilde', outName = 'minDphiTilde', default_value = -1))
+    ret.append(minimum(srcName = 'jet40_omega', outName = 'minOmega', default_value = -1))
+    ret.append(minimum(srcName = 'jet40_omegaHat', outName = 'minOmegaHat', default_value = -1))
+    ret.append(minimum(srcName = 'jet40_omegaTilde', outName = 'minOmegaTilde', default_value = -1))
     ret.append(minimum(srcName = 'jet40_chi', outName = 'minChi', default_value = -1))
+    ret.append(minimum(srcName = 'jet40_arccotF', outName = 'minArccotF', default_value = -1))
+    ret.append(maximum(srcName = 'jet40_dphi', outName = 'maxDphi', default_value = -1))
+    ret.append(maximum(srcName = 'jet40_f', outName = 'maxF', default_value = -1))
+    ret.append(maximum(srcName = 'jet40_h', outName = 'maxH', default_value = -1))
+    ret.append(xi(srcMinDphiTilde = 'minDphiTilde', srcMaxH = 'maxH', outName = 'xi'))
 
     ret.append(jetDphiAttrs(inJetPrefix = 'jetJECUp', outJetPrefix = 'jetJECUp40', minJetPt = 40))
     ret.append(minimum(srcName = 'jetJECUp40_chi', outName = 'minChiJECUp', default_value = -1))
