@@ -1,8 +1,15 @@
+import copy
 
 ##__________________________________________________________________||
 class Count(object):
     def __init__(self):
         self._results = [ ]
+
+    def copy(self):
+        return copy.deepcopy(self)
+
+    def insert(self, i, other):
+        self._results[(i + 1):(i + 1)] = other._results
 
     def begin(self, n):
         self._results[:] = [[i] + [0]*2 for i in range(n)]

@@ -5,6 +5,68 @@ import unittest
 ##__________________________________________________________________||
 class Test_Count(unittest.TestCase):
 
+    def test_copy(self):
+        obj = Count()
+        obj._results[:] = [[0, 2, 3]]
+        obj1 = obj.copy()
+        self.assertIsNot(obj, obj1)
+        self.assertIsNot(obj._results, obj1._results)
+        self.assertEqual([[0, 2, 3]], obj1._results)
+
+    def test_insert(self):
+        obj = Count()
+        obj._results[:] = [
+            [0, 6, 8],
+            [1, 3, 6],
+            [2, 1, 3],
+        ]
+
+        obj1 = Count()
+        obj1._results[:] = [
+            [0, 4, 6],
+            [1, 3, 4],
+        ]
+
+        obj.insert(1, obj1)
+
+        self.assertEqual(
+            [
+                [0, 6, 8],
+                [1, 3, 6],
+                [0, 4, 6],
+                [1, 3, 4],
+                [2, 1, 3],
+            ],
+            obj._results
+        )
+
+    def test_insert_at_end(self):
+        obj = Count()
+        obj._results[:] = [
+            [0, 6, 8],
+            [1, 3, 6],
+            [2, 1, 3],
+        ]
+
+        obj1 = Count()
+        obj1._results[:] = [
+            [0, 2, 3],
+            [1, 1, 2],
+        ]
+
+        obj.insert(2, obj1)
+
+        self.assertEqual(
+            [
+                [0, 6, 8],
+                [1, 3, 6],
+                [2, 1, 3],
+                [0, 2, 3],
+                [1, 1, 2],
+            ],
+            obj._results
+        )
+
     def test_empty(self):
         obj = Count()
         obj.begin(n = 0)
