@@ -1,3 +1,5 @@
+import itertools
+
 from .Count import Count
 
 ##__________________________________________________________________||
@@ -38,6 +40,13 @@ class EventSelectionAllCount(object):
             if hasattr(s, 'end'): s.end()
 
     def results(self):
-        return self.count
+        ret = self.count.copy()
+
+        # reversed enumerate
+        for i, s in itertools.izip(reversed(xrange(len(self.selections))), reversed(self.selections)):
+            if hasattr(s, 'results'):
+                ret.insert(i, s.results())
+
+        return ret
 
 ##__________________________________________________________________||
