@@ -1,6 +1,8 @@
 # Tai Sakuma <tai.sakuma@cern.ch>
-from ...EventSelectionModules.EventSelectionAllCount import Count
 import unittest
+import copy
+
+from ...EventSelectionModules.EventSelectionAllCount import Count
 
 ##__________________________________________________________________||
 class Test_Count(unittest.TestCase):
@@ -135,20 +137,22 @@ class Test_Count(unittest.TestCase):
 class TestCount_operator(unittest.TestCase):
 
     def setUp(self):
-        self.obj1 = Count()
-        self.obj2 = Count()
 
-        self.obj1._results  = [
+        self.obj1_results_org = [
             [0, 2, 2],
             [1, 1, 2],
             [2, 0, 1],
             ]
+        self.obj1 = Count()
+        self.obj1._results = copy.deepcopy(self.obj1_results_org)
 
-        self.obj2._results  = [
+        self.obj2_results_org = [
             [0, 3, 5],
             [1, 2, 4],
             [2, 1, 2],
         ]
+        self.obj2 = Count()
+        self.obj2._results = copy.deepcopy(self.obj2_results_org)
 
         self.expected = [
             [0, 5, 7],
@@ -157,16 +161,29 @@ class TestCount_operator(unittest.TestCase):
             ]
 
     def test_add(self):
+
         obj3 = self.obj1 + self.obj2
         self.assertEqual(self.expected, obj3._results)
         self.assertIsNot(self.obj1._results, obj3._results)
         self.assertIsNot(self.obj2._results, obj3._results)
+
+        self.assertIsNot(self.obj1_results_org, self.obj1._results)
+        self.assertEqual(self.obj1_results_org, self.obj1._results)
+
+        self.assertIsNot(self.obj2_results_org, self.obj2._results)
+        self.assertEqual(self.obj2_results_org, self.obj2._results)
 
     def test_radd(self):
         obj3 = sum([self.obj1, self.obj2]) # 0 + obj1 is executed
         self.assertEqual(self.expected, obj3._results)
         self.assertIsNot(self.obj1._results, obj3._results)
         self.assertIsNot(self.obj2._results, obj3._results)
+
+        self.assertIsNot(self.obj1_results_org, self.obj1._results)
+        self.assertEqual(self.obj1_results_org, self.obj1._results)
+
+        self.assertIsNot(self.obj2_results_org, self.obj2._results)
+        self.assertEqual(self.obj2_results_org, self.obj2._results)
 
     def test_iadd(self):
         obj1 = self.obj1
@@ -175,5 +192,30 @@ class TestCount_operator(unittest.TestCase):
         self.assertIs(self.obj1, obj1)
         self.assertEqual(self.expected, self.obj1._results)
 
+        self.assertIsNot(self.obj1_results_org, self.obj1._results)
+
+        self.assertIsNot(self.obj2_results_org, self.obj2._results)
+        self.assertEqual(self.obj2_results_org, self.obj2._results)
+
+    @unittest.skip("skip because of logging. assertLogs can be used here for Python 3.4")
+    def test_add_incompatible_different_length(self):
+        obj2 = Count()
+        obj2._results  = [
+            [0, 3, 5],
+            [1, 2, 4],
+        ]
+        obj3 = self.obj1 + obj2
+        self.assertEqual(self.obj1._results, obj3._results)
+
+    @unittest.skip("skip because of logging. assertLogs can be used here for Python 3.4")
+    def test_add_incompatible_different_first_values(self):
+        obj2 = Count()
+        obj2._results  = [
+            [0, 3, 5],
+            [1, 2, 4],
+            [3, 1, 2],
+        ]
+        obj3 = self.obj1 + obj2
+        self.assertEqual(self.obj1._results, obj3._results)
 
 ##__________________________________________________________________||
