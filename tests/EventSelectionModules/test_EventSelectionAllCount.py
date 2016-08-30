@@ -7,7 +7,8 @@ class MockEvent(object): pass
 
 ##__________________________________________________________________||
 class MockEventSelection(object):
-    def __init__(self):
+    def __init__(self, name = None):
+        self.name = name
         self.is_begin_called = False
         self.is_end_called = False
         self.ret = True
@@ -38,52 +39,52 @@ class Test_EventSelectionAllCount(unittest.TestCase):
 
     def test_standard(self):
         obj = EventSelectionAllCount()
-        selection1 = MockEventSelection()
-        selection2 = MockEventSelection()
+        sel1 = MockEventSelection(name = 'sel1')
+        sel2 = MockEventSelection()
 
-        obj.add(selection1)
-        obj.add(selection2)
+        obj.add(sel1)
+        obj.add(sel2)
 
-        self.assertFalse(selection1.is_begin_called)
-        self.assertFalse(selection2.is_begin_called)
+        self.assertFalse(sel1.is_begin_called)
+        self.assertFalse(sel2.is_begin_called)
 
-        self.assertFalse(selection1.is_end_called)
-        self.assertFalse(selection2.is_end_called)
+        self.assertFalse(sel1.is_end_called)
+        self.assertFalse(sel2.is_end_called)
 
         event = MockEvent()
         obj.begin(event)
-        self.assertTrue(selection1.is_begin_called)
-        self.assertTrue(selection2.is_begin_called)
+        self.assertTrue(sel1.is_begin_called)
+        self.assertTrue(sel2.is_begin_called)
 
         event = MockEvent()
-        selection1.ret = True   # 1/1
-        selection2.ret = True   # 1/1
+        sel1.ret = True   # 1/1
+        sel2.ret = True   # 1/1
         self.assertTrue(obj(event))
 
         event = MockEvent()
-        selection1.ret = True   # 2/2
-        selection2.ret = False  # 1/2
+        sel1.ret = True   # 2/2
+        sel2.ret = False  # 1/2
         self.assertFalse(obj(event))
 
         event = MockEvent()
-        selection1.ret = False  # 2/3
-        selection2.ret = True   # 1/2
+        sel1.ret = False  # 2/3
+        sel2.ret = True   # 1/2
         self.assertFalse(obj.event(event))
 
         event = MockEvent()
-        selection1.ret = False  # 2/4
-        selection2.ret = False  # 1/2
+        sel1.ret = False  # 2/4
+        sel2.ret = False  # 1/2
         self.assertFalse(obj.event(event))
 
         obj.end()
-        self.assertTrue(selection1.is_end_called)
-        self.assertTrue(selection2.is_end_called)
+        self.assertTrue(sel1.is_end_called)
+        self.assertTrue(sel2.is_end_called)
 
         count = obj.results()
         self.assertEqual(
             [
-                [0, 2, 4],
-                [1, 1, 2],
+                ['MockEventSelection', 'sel1', 2, 4],
+                ['MockEventSelection',     '', 1, 2],
             ],
             count._results
         )
@@ -98,13 +99,13 @@ class Test_EventSelectionAllCount(unittest.TestCase):
         #
 
         obj = EventSelectionAllCount()
-        obj1 = EventSelectionAllCount()
-        obj2 = EventSelectionAllCount()
-        sel3 = MockEventSelection()
-        sel11 = MockEventSelection()
-        sel12 = MockEventSelection()
-        sel21 = MockEventSelection()
-        sel22 = MockEventSelection()
+        obj1 = EventSelectionAllCount('all1')
+        obj2 = EventSelectionAllCount('all2')
+        sel3 = MockEventSelection('sel3')
+        sel11 = MockEventSelection('sel11')
+        sel12 = MockEventSelection('sel12')
+        sel21 = MockEventSelection('sel21')
+        sel22 = MockEventSelection('sel22')
         obj.add(obj1)
         obj.add(obj2)
         obj.add(sel3)
@@ -151,13 +152,13 @@ class Test_EventSelectionAllCount(unittest.TestCase):
         count = obj.results()
         self.assertEqual(
             [
-                [0, 1, 1],
-                [0, 1, 1],
-                [1, 1, 1],
-                [1, 1, 1],
-                [0, 1, 1],
-                [1, 1, 1],
-                [2, 1, 1],
+                ['EventSelectionAllCount', 'all1',  1, 1],
+                ['MockEventSelection',     'sel11', 1, 1],
+                ['MockEventSelection',     'sel12', 1, 1],
+                ['EventSelectionAllCount', 'all2',  1, 1],
+                ['MockEventSelection',     'sel21', 1, 1],
+                ['MockEventSelection',     'sel22', 1, 1],
+                ['MockEventSelection',     'sel3',  1, 1],
             ],
             count._results
         )

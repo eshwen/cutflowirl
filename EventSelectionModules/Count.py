@@ -1,6 +1,11 @@
 import copy
 
 ##__________________________________________________________________||
+N_KEYS = 2
+IDX_PASS = 2
+IDX_TOTAL = 3
+
+##__________________________________________________________________||
 class Count(object):
     def __init__(self):
         self._results = [ ]
@@ -8,16 +13,20 @@ class Count(object):
     def copy(self):
         return copy.deepcopy(self)
 
-    def insert(self, i, other):
-        self._results[(i + 1):(i + 1)] = other._results
-
-    def begin(self, n):
-        self._results[:] = [[i] + [0]*2 for i in range(n)]
+    def add(self, selection):
+        class_name = selection.__class__.__name__
+        selection_name = selection.name if hasattr(selection, 'name') and selection.name is not None else ''
+        pass_ = 0
+        total = 0
+        self._results.append([class_name, selection_name, pass_, total])
 
     def count(self, pass_):
         for r, p in zip(self._results, pass_):
-            r[2] += 1 # total
-            if p: r[1] += 1 # pass
+            r[IDX_TOTAL] += 1 # total
+            if p: r[IDX_PASS] += 1 # pass
+
+    def insert(self, i, other):
+        self._results[(i + 1):(i + 1)] = other._results
 
     def __add__(self, other):
         ret = self.copy()
@@ -41,13 +50,13 @@ class Count(object):
             logging.warning('cannot add because res1 and res2 don\'t have the same length: res1 = {}, res2 = {}'.format(res1, res2))
             return
 
-        if not all([(r1[:1] == r2[:1]) for r1, r2 in zip(res1, res2)]):
+        if not all([(r1[:N_KEYS] == r2[:N_KEYS]) for r1, r2 in zip(res1, res2)]):
             import logging
             logging.warning('cannot add because res1 and res2 don\'t have the same key columns: res1 = {}, res2 = {}'.format(res1, res2))
             return
 
         for r1, r2 in zip(res1, res2):
-            r1[1] += r2[1]
-            r1[2] += r2[2]
+            r1[IDX_PASS] += r2[IDX_PASS]
+            r1[IDX_TOTAL] += r2[IDX_TOTAL]
 
 ##__________________________________________________________________||

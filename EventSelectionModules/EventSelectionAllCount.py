@@ -15,11 +15,11 @@ class EventSelectionAllCount(object):
 
     def add(self, selection):
         self.selections.append(selection)
+        self.count.add(selection)
 
     def begin(self, event):
         for s in self.selections:
             if hasattr(s, 'begin'): s.begin(event)
-        self.count.begin(len(self.selections))
 
     def event(self, event):
         ret = True
