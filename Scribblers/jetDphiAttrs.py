@@ -157,9 +157,10 @@ class jetDphiAttrs(object):
         self.k[:] = k
 
         # chi
-        chi = np.where(sinDphiTilde == k == 0,         ## np.arctan2(0, 0) returns 0
-                       np.pi/2,                        ## but chi should be pi/2
-                       np.arctan2(sinDphiTilde, k))    ## when both sinDphiTilde and k are 0
+        both_zero = np.where(sinDphiTilde == 0, np.where(k == 0, True, False), False)
+        chi = np.where(both_zero,                    ## np.arctan2(0, 0) returns 0
+                       np.pi/2,                      ## but chi should be pi/2
+                       np.arctan2(sinDphiTilde, k))  ## when both sinDphiTilde and k are 0
         self.chi[:] = chi
 
         # h
