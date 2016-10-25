@@ -89,10 +89,10 @@ class jetDphiAttrs(object):
         mhtx = -np.sum(px)
         mhty = -np.sum(py)
         mht = np.sqrt(mhtx**2 + mhty**2)
-        if pt.size == 1: mht = pt  ## this makes mht and pt precisely the same
-                                   ## for the monojet events and prevent k from
-                                   ## slightly deviating from zero, which, in turn,
-                                   ## makes chi pi/2 for the monojet events
+        if pt.size == 1: mht = pt[0] ## this makes mht and pt precisely the same
+                                     ## for the monojet events and prevent k from
+                                     ## slightly deviating from zero, which, in turn,
+                                     ## makes chi pi/2 for the monojet events
         self.mht[:] = [mht.item()]
 
         # f
