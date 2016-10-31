@@ -55,7 +55,7 @@ class jetDphiAttrs(object):
             idxs = [i for i in idxs if event_jet_pt[i] >= self.minJetPt]
 
         if not idxs:
-            self.mht[:] = [ ]
+            self.mht[:] = [0.0]
             self.pt[:] = [ ]
             self.phi[:] = [ ]
             self.dphi[:] = [ ]
