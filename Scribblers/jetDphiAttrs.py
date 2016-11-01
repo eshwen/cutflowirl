@@ -89,7 +89,18 @@ class jetDphiAttrs(object):
         mhtx = -np.sum(px)
         mhty = -np.sum(py)
         mht = np.sqrt(mhtx**2 + mhty**2)
+        if pt.size == 1: mht = pt[0] ## this makes mht and pt precisely the same
+                                     ## for the monojet events and prevent k from
+                                     ## slightly deviating from zero, which, in turn,
+                                     ## makes chi pi/2 for the monojet events
         self.mht[:] = [mht.item()]
+
+        # f
+        f = pt/mht
+        self.f[:] = f
+
+        arccotF = np.arctan2(1, f)
+        self.arccotF[:] = arccotF
 
         # Dphi
         cosDphi = (mhtx*px + mhty*py)/(mht*pt)
@@ -107,13 +118,6 @@ class jetDphiAttrs(object):
 
         sinDphiHat = np.sin(dphiHat)
         cosDphiHat = np.cos(dphiHat)
-
-        # f
-        f = pt/mht
-        self.f[:] = f
-
-        arccotF = np.arctan2(1, f)
-        self.arccotF[:] = arccotF
 
         # omega
         omega = np.arctan2(sinDphi, f)
@@ -157,7 +161,10 @@ class jetDphiAttrs(object):
         self.k[:] = k
 
         # chi
-        chi = np.arctan2(sinDphiTilde, k)
+        both_zero = np.where(sinDphiTilde == 0, np.where(k == 0, True, False), False)
+        chi = np.where(both_zero,                    ## np.arctan2(0, 0) returns 0
+                       np.pi/2,                      ## but chi should be pi/2
+                       np.arctan2(sinDphiTilde, k))  ## when both sinDphiTilde and k are 0
         self.chi[:] = chi
 
         # h
