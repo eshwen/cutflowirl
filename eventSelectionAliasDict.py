@@ -19,6 +19,7 @@ eventSelectionAliasDict = {
     'alphaTPt': "ev : {v} <= ev.alphaTPt[0]",
     'alphaTPt_JECvar': "ev : {v} <= max(ev.alphaTPt[0], ev.alphaTPtJECUp[0], ev.alphaTPtJECDown[0])",
     'biasedDPhi': "ev : 0.5 <= ev.biasedDPhi[0]",
+    'biasedDPhi_JECvar': "ev : {v} <= max(ev.biasedDPhi[0], ev.biasedDPhiJECUp[0], ev.biasedDPhiJECDown[0])",
     'biasedDPhi20': "ev : ev.biasedDPhi20[0] == -1 or 0.5 <= ev.biasedDPhi20[0]",
     'MhtOverMetNoX': "ev : ev.MhtOverMetNoX[0] < 1.25",
     'MhtOverMetNoXNoHF': "ev : ev.MhtOverMetNoXNoHF[0] < 1.25",
