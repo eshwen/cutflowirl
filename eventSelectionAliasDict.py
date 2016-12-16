@@ -14,6 +14,7 @@ eventSelectionAliasDict = {
     'ht_JECvar': "ev : ev.ht40JECUp[0] >= 200",
     'mht': "ev : 130 <= ev.mht40_pt[0]",
     'mht_JECvar': "ev : 130 <= max(ev.mht40_pt[0], ev.mht40JECUp_pt[0], ev.mht40JECDown_pt[0])",
+    'mht_loose_JECvar': "ev : 100 <= max(ev.mht40_pt[0], ev.mht40JECUp_pt[0], ev.mht40JECDown_pt[0])",
     'alphaT': "ev : {v} <= ev.alphaT[0]",
     'alphaT_JECvar': "ev : {v} <= max(ev.alphaT[0], ev.alphaTJECUp[0], ev.alphaTJECDown[0])",
     'alphaTPt': "ev : {v} <= ev.alphaTPt[0]",
