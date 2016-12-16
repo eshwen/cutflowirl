@@ -77,7 +77,7 @@ event_selection_path_cfg_tree_production = dict(All = (
         dict(All = (
             'cutflow_Signal',
             'ht_JECvar',
-            'mht_loose_JECvar'
+            'mht_loose_JECvar',
             dict(Any = (
                 'bintype_monojet_JECvar',
                 'bintype_asymjet_JECvar',
