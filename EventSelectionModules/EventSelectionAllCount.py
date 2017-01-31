@@ -9,9 +9,16 @@ class EventSelectionAllCount(object):
     """
 
     def __init__(self, name = None):
-        if name is not None: self.name = name
+        self.name = name if name is not None else 'All'
         self.selections = [ ]
         self.count = Count()
+
+    def __repr__(self):
+        return '{}(name = {!r}, selections = {!r})'.format(
+            self.__class__.__name__,
+            self.name,
+            self.selections
+        )
 
     def add(self, selection):
         self.selections.append(selection)
