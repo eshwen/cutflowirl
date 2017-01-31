@@ -7,8 +7,15 @@ class EventSelectionNot(object):
     """
 
     def __init__(self, selection, name = None):
-        if name is not None: self.name = name
+        self.name = name if name is not None else 'Not'
         self.selection = selection
+
+    def __repr__(self):
+        return '{}(name = {!r}, selection = {!r})'.format(
+            self.__class__.__name__,
+            self.name,
+            self.selection
+        )
 
     def begin(self, event):
         if hasattr(self.selection, 'begin'): self.selection.begin(event)

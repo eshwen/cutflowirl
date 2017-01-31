@@ -16,6 +16,13 @@ class LambdaStr(object):
         self.name = name if name is not None else lambda_str
         self.lambda_str = lambda_str
 
+    def __repr__(self):
+        return '{}(name = {!r}, lambda_str = {!r})'.format(
+            self.__class__.__name__,
+            self.name,
+            self.lambda_str
+        )
+
     def begin(self, event):
         self.func = eval('lambda ' + self.lambda_str)
 
