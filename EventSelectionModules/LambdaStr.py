@@ -13,7 +13,7 @@ class LambdaStr(object):
 
     """
     def __init__(self, lambda_str, name = None):
-        if name is not None: self.name = name
+        self.name = name if name is not None else lambda_str
         self.lambda_str = lambda_str
 
     def begin(self, event):
