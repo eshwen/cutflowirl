@@ -14,35 +14,35 @@ class Test_Count(unittest.TestCase):
 
     def test_copy(self):
         obj = Count()
-        obj._results[:] = [['class', 'name', 2, 3]]
+        obj._results[:] = [[1, 'class', 'name', 2, 3]]
         obj1 = obj.copy()
         self.assertIsNot(obj, obj1)
         self.assertIsNot(obj._results, obj1._results)
-        self.assertEqual([['class', 'name', 2, 3]], obj1._results)
+        self.assertEqual([[1, 'class', 'name', 2, 3]], obj1._results)
 
     def test_insert(self):
         obj = Count()
         obj._results[:] = [
-            ['class1', 'name1', 6, 8],
-            ['class1', 'name2', 3, 6],
-            ['class2', 'name3', 1, 3],
+            [1, 'class1', 'name1', 6, 8],
+            [1, 'class1', 'name2', 3, 6],
+            [1, 'class2', 'name3', 1, 3],
         ]
 
         obj1 = Count()
         obj1._results[:] = [
-            ['class2', 'name4', 4, 6],
-            ['class3', 'name5', 3, 4],
+            [2, 'class2', 'name4', 4, 6],
+            [2, 'class3', 'name5', 3, 4],
         ]
 
         obj.insert(1, obj1)
 
         self.assertEqual(
             [
-                ['class1', 'name1', 6, 8],
-                ['class1', 'name2', 3, 6],
-                ['class2', 'name4', 4, 6],
-                ['class3', 'name5', 3, 4],
-                ['class2', 'name3', 1, 3],
+                [1, 'class1', 'name1', 6, 8],
+                [1, 'class1', 'name2', 3, 6],
+                [2, 'class2', 'name4', 4, 6],
+                [2, 'class3', 'name5', 3, 4],
+                [1, 'class2', 'name3', 1, 3],
             ],
             obj._results
         )
@@ -50,26 +50,26 @@ class Test_Count(unittest.TestCase):
     def test_insert_at_end(self):
         obj = Count()
         obj._results[:] = [
-            ['class1', 'name1', 6, 8],
-            ['class1', 'name2', 3, 6],
-            ['class2', 'name3', 1, 3],
+            [1, 'class1', 'name1', 6, 8],
+            [1, 'class1', 'name2', 3, 6],
+            [1, 'class2', 'name3', 1, 3],
         ]
 
         obj1 = Count()
         obj1._results[:] = [
-            ['class2', 'name4', 2, 3],
-            ['class3', 'name5', 1, 2],
+            [2, 'class2', 'name4', 2, 3],
+            [2, 'class3', 'name5', 1, 2],
         ]
 
         obj.insert(2, obj1)
 
         self.assertEqual(
             [
-                ['class1', 'name1', 6, 8],
-                ['class1', 'name2', 3, 6],
-                ['class2', 'name3', 1, 3],
-                ['class2', 'name4', 2, 3],
-                ['class3', 'name5', 1, 2],
+                [1, 'class1', 'name1', 6, 8],
+                [1, 'class1', 'name2', 3, 6],
+                [1, 'class2', 'name3', 1, 3],
+                [2, 'class2', 'name4', 2, 3],
+                [2, 'class3', 'name5', 1, 2],
             ],
             obj._results
         )
@@ -85,7 +85,7 @@ class Test_Count(unittest.TestCase):
 
         self.assertEqual(
             [
-                ['MockEventSelection', 'sel1', 0, 0],
+                [1, 'MockEventSelection', 'sel1', 0, 0],
             ],
             obj._results
         )
@@ -93,7 +93,7 @@ class Test_Count(unittest.TestCase):
         obj.count(pass_ = [True])
         self.assertEqual(
             [
-                ['MockEventSelection', 'sel1', 1, 1],
+                [1, 'MockEventSelection', 'sel1', 1, 1],
             ],
             obj._results
         )
@@ -101,7 +101,7 @@ class Test_Count(unittest.TestCase):
         obj.count(pass_ = [False])
         self.assertEqual(
             [
-                ['MockEventSelection', 'sel1', 1, 2],
+                [1, 'MockEventSelection', 'sel1', 1, 2],
             ],
             obj._results
         )
@@ -117,9 +117,9 @@ class Test_Count(unittest.TestCase):
 
         self.assertEqual(
             [
-                ['MockEventSelection', 'sel1', 0, 0],
-                ['MockEventSelection', 'sel2', 0, 0],
-                ['MockEventSelection',     '', 0, 0],
+                [1, 'MockEventSelection', 'sel1', 0, 0],
+                [1, 'MockEventSelection', 'sel2', 0, 0],
+                [1, 'MockEventSelection',     '', 0, 0],
             ],
             obj._results
         )
@@ -127,9 +127,9 @@ class Test_Count(unittest.TestCase):
         obj.count(pass_ = [True, False])
         self.assertEqual(
             [
-                ['MockEventSelection', 'sel1', 1, 1],
-                ['MockEventSelection', 'sel2', 0, 1],
-                ['MockEventSelection',     '', 0, 0],
+                [1, 'MockEventSelection', 'sel1', 1, 1],
+                [1, 'MockEventSelection', 'sel2', 0, 1],
+                [1, 'MockEventSelection',     '', 0, 0],
             ],
             obj._results
         )
@@ -137,9 +137,9 @@ class Test_Count(unittest.TestCase):
         obj.count(pass_ = [True, True, False])
         self.assertEqual(
             [
-                ['MockEventSelection', 'sel1', 2, 2],
-                ['MockEventSelection', 'sel2', 1, 2],
-                ['MockEventSelection',     '', 0, 1],
+                [1, 'MockEventSelection', 'sel1', 2, 2],
+                [1, 'MockEventSelection', 'sel2', 1, 2],
+                [1, 'MockEventSelection',     '', 0, 1],
             ],
             obj._results
         )
@@ -149,25 +149,25 @@ class TestCount_operator(unittest.TestCase):
     def setUp(self):
 
         self.obj1_results_org = [
-            ['class1', 'name1', 2, 2],
-            ['class1', 'name2', 1, 2],
-            ['class2', 'name3', 0, 1],
+            [1, 'class1', 'name1', 2, 2],
+            [1, 'class1', 'name2', 1, 2],
+            [1, 'class2', 'name3', 0, 1],
             ]
         self.obj1 = Count()
         self.obj1._results = copy.deepcopy(self.obj1_results_org)
 
         self.obj2_results_org = [
-            ['class1', 'name1', 3, 5],
-            ['class1', 'name2', 2, 4],
-            ['class2', 'name3', 1, 2],
+            [1, 'class1', 'name1', 3, 5],
+            [1, 'class1', 'name2', 2, 4],
+            [1, 'class2', 'name3', 1, 2],
         ]
         self.obj2 = Count()
         self.obj2._results = copy.deepcopy(self.obj2_results_org)
 
         self.expected = [
-            ['class1', 'name1', 5, 7],
-            ['class1', 'name2', 3, 6],
-            ['class2', 'name3', 1, 3],
+            [1, 'class1', 'name1', 5, 7],
+            [1, 'class1', 'name2', 3, 6],
+            [1, 'class2', 'name3', 1, 3],
             ]
 
     def test_add(self):
@@ -211,8 +211,8 @@ class TestCount_operator(unittest.TestCase):
     def test_add_incompatible_different_length(self):
         obj2 = Count()
         obj2._results  = [
-            ['class1', 'name1', 3, 5],
-            ['class1', 'name2', 2, 4],
+            [1, 'class1', 'name1', 3, 5],
+            [1, 'class1', 'name2', 2, 4],
         ]
         obj3 = self.obj1 + obj2
         self.assertEqual(self.obj1._results, obj3._results)
@@ -221,9 +221,9 @@ class TestCount_operator(unittest.TestCase):
     def test_add_incompatible_different_first_values(self):
         obj2 = Count()
         obj2._results  = [
-            ['class1', 'name1', 3, 5],
-            ['class1', 'name2', 2, 4],
-            ['class2', 'name4', 1, 2],
+            [1, 'class1', 'name1', 3, 5],
+            [1, 'class1', 'name2', 2, 4],
+            [1, 'class2', 'name4', 1, 2],
         ]
         obj3 = self.obj1 + obj2
         self.assertEqual(self.obj1._results, obj3._results)

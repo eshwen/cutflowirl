@@ -1,9 +1,9 @@
 import copy
 
 ##__________________________________________________________________||
-N_KEYS = 2
-IDX_PASS = 2
-IDX_TOTAL = 3
+N_KEYS = 3
+IDX_PASS = 3
+IDX_TOTAL = 4
 
 ##__________________________________________________________________||
 class Count(object):
@@ -19,9 +19,10 @@ class Count(object):
     def add(self, selection):
         class_name = selection.__class__.__name__
         selection_name = selection.name if hasattr(selection, 'name') and selection.name is not None else ''
+        depth = 1
         pass_ = 0
         total = 0
-        self._results.append([class_name, selection_name, pass_, total])
+        self._results.append([depth, class_name, selection_name, pass_, total])
 
     def count(self, pass_):
         for r, p in zip(self._results, pass_):
