@@ -2,6 +2,7 @@ import copy
 
 ##__________________________________________________________________||
 N_KEYS = 3
+IDX_DEPTH = 0
 IDX_PASS = 3
 IDX_TOTAL = 4
 
@@ -28,6 +29,10 @@ class Count(object):
         for r, p in zip(self._results, pass_):
             r[IDX_TOTAL] += 1 # total
             if p: r[IDX_PASS] += 1 # pass
+
+    def increment_depth(self, by = 1):
+        for r in self._results:
+            r[IDX_DEPTH] += by
 
     def insert(self, i, other):
         self._results[(i + 1):(i + 1)] = other._results

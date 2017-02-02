@@ -20,6 +20,25 @@ class Test_Count(unittest.TestCase):
         self.assertIsNot(obj._results, obj1._results)
         self.assertEqual([[1, 'class', 'name', 2, 3]], obj1._results)
 
+    def test_increment_depth(self):
+        obj = Count()
+        obj._results[:] = [
+            [1, 'class1', 'name1', 6, 8],
+            [1, 'class1', 'name2', 3, 6],
+            [1, 'class2', 'name3', 1, 3],
+        ]
+
+        obj.increment_depth(by = 1)
+
+        self.assertEqual(
+            [
+            [2, 'class1', 'name1', 6, 8],
+            [2, 'class1', 'name2', 3, 6],
+            [2, 'class2', 'name3', 1, 3],
+            ],
+            obj._results
+        )
+
     def test_insert(self):
         obj = Count()
         obj._results[:] = [
