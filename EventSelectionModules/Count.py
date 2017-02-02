@@ -10,6 +10,9 @@ class Count(object):
     def __init__(self):
         self._results = [ ]
 
+    def __repr__(self):
+        return '{}({!r})'.format(self.__class__.__name__, self._results)
+
     def copy(self):
         return copy.deepcopy(self)
 
@@ -27,6 +30,9 @@ class Count(object):
 
     def insert(self, i, other):
         self._results[(i + 1):(i + 1)] = other._results
+
+    def results(self):
+        return self._results
 
     def __add__(self, other):
         ret = self.copy()
