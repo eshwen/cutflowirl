@@ -52,16 +52,17 @@ class EventSelectionAllCount(object):
         for s in self.selections:
             if hasattr(s, 'end'): s.end()
 
-    def results(self, depth = 1):
+    def results(self, increment = False):
 
-        ret = copy.deepcopy(self.count._results)
-
-        ret = [[depth]+ e for e in ret]
+        ret = self.count.copy()
 
         # reversed enumerate
         for i, s in itertools.izip(reversed(xrange(len(self.selections))), reversed(self.selections)):
             if hasattr(s, 'results'):
-                ret[(i + 1):(i + 1)] = s.results(depth = depth + 1)
+                ret.insert(i, s.results(increment = True))
+
+        if increment:
+            ret.increment_depth(by = 1)
 
         return ret
 

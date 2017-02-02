@@ -35,7 +35,7 @@ class Test_EventSelectionAllCount(unittest.TestCase):
         self.assertTrue(obj(event))
 
         count = obj.results()
-        self.assertEqual([ ], count)
+        self.assertEqual([ ], count._results)
 
     def test_standard(self):
         obj = EventSelectionAllCount()
@@ -86,7 +86,7 @@ class Test_EventSelectionAllCount(unittest.TestCase):
                 [1, 'MockEventSelection', 'sel1', 2, 4],
                 [1, 'MockEventSelection',     '', 1, 2],
             ],
-            count
+            count._results
         )
 
     def test_nested(self):
@@ -160,7 +160,7 @@ class Test_EventSelectionAllCount(unittest.TestCase):
                 [2, 'MockEventSelection',     'sel22', 1, 1],
                 [1, 'MockEventSelection',     'sel3',  1, 1],
             ],
-            count
+            count._results
         )
 
 ##__________________________________________________________________||
