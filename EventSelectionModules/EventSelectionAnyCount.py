@@ -10,7 +10,7 @@ class EventSelectionAnyCount(object):
     """
 
     def __init__(self, name = None):
-        self.name = name if name is not None else 'All'
+        self.name = name if name is not None else 'Any'
         self.selections = [ ]
         self.count = Count()
 
