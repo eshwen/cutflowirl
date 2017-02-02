@@ -15,10 +15,11 @@ class EventSelectionAllCount(object):
         self.count = Count()
 
     def __repr__(self):
-        return '{}(name = {!r}, selections = {!r})'.format(
+        return '{}(name = {!r}, selections = {!r}), count = {!r}'.format(
             self.__class__.__name__,
             self.name,
-            self.selections
+            self.selections,
+            self.count
         )
 
     def copy_from(self, src):
