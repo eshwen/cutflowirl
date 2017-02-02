@@ -35,7 +35,7 @@ class Test_EventSelectionAllCount(unittest.TestCase):
         self.assertTrue(obj(event))
 
         count = obj.results()
-        self.assertEqual([ ], count._results)
+        self.assertEqual([ ], count)
 
     def test_standard(self):
         obj = EventSelectionAllCount()
@@ -83,10 +83,10 @@ class Test_EventSelectionAllCount(unittest.TestCase):
         count = obj.results()
         self.assertEqual(
             [
-                ['MockEventSelection', 'sel1', 2, 4],
-                ['MockEventSelection',     '', 1, 2],
+                [1, 'MockEventSelection', 'sel1', 2, 4],
+                [1, 'MockEventSelection',     '', 1, 2],
             ],
-            count._results
+            count
         )
 
     def test_nested(self):
@@ -139,7 +139,7 @@ class Test_EventSelectionAllCount(unittest.TestCase):
         sel12.ret = True   # 1/1
         sel21.ret = True   # 1/1
         sel22.ret = True   # 1/1
-        sel3.ret = True   # 1/1
+        sel3.ret = True    # 1/1
         self.assertTrue(obj(event))
 
         obj.end()
@@ -152,15 +152,15 @@ class Test_EventSelectionAllCount(unittest.TestCase):
         count = obj.results()
         self.assertEqual(
             [
-                ['EventSelectionAllCount', 'all1',  1, 1],
-                ['MockEventSelection',     'sel11', 1, 1],
-                ['MockEventSelection',     'sel12', 1, 1],
-                ['EventSelectionAllCount', 'all2',  1, 1],
-                ['MockEventSelection',     'sel21', 1, 1],
-                ['MockEventSelection',     'sel22', 1, 1],
-                ['MockEventSelection',     'sel3',  1, 1],
+                [1, 'EventSelectionAllCount', 'all1',  1, 1],
+                [2, 'MockEventSelection',     'sel11', 1, 1],
+                [2, 'MockEventSelection',     'sel12', 1, 1],
+                [1, 'EventSelectionAllCount', 'all2',  1, 1],
+                [2, 'MockEventSelection',     'sel21', 1, 1],
+                [2, 'MockEventSelection',     'sel22', 1, 1],
+                [1, 'MockEventSelection',     'sel3',  1, 1],
             ],
-            count._results
+            count
         )
 
 ##__________________________________________________________________||
