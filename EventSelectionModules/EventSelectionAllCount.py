@@ -1,4 +1,5 @@
 import itertools
+import copy
 
 from .Count import Count
 
@@ -19,6 +20,10 @@ class EventSelectionAllCount(object):
             self.name,
             self.selections
         )
+
+    def copy_from(self, src):
+        src = copy.deepcopy(src)
+        self.count = src.count
 
     def add(self, selection):
         self.selections.append(selection)
