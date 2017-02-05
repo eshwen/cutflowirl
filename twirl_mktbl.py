@@ -13,7 +13,7 @@ import AlphaTwirl
 import FrameworkHeppy
 
 ##__________________________________________________________________||
-default_heppydir = '/Users/sakuma/work/cms/c150130_RA1_data/80X/MC/20161021_B03/ROC_MC_SM'
+default_heppydir = '/hdfs/SUSY/RA1/80X/MC/20161021_B04/ROC_MC_SMS/'
 
 ##__________________________________________________________________||
 parser = argparse.ArgumentParser()
@@ -66,12 +66,20 @@ def main():
     #
     scribblers = [ ]
 
+    from scribblers.SMSMass import SMSMass
+    scribblers_SMS = [
+        SMSMass(),
+    ]
+
+    scribblers.extend(scribblers_SMS)
+
     reader_collector_pairs.extend([(r, AlphaTwirl.Loop.NullCollector()) for r in scribblers])
 
     #
     # configure event selections
     #
     path_cfg = dict(All = (
+        dict(All = ('ev : ev.smsmass1[0] == 1300', 'ev : ev.smsmass2[0] == 1050')),
         'ev : ev.nJet40[0] >= 3',
         'ht40',
         'nJet100',
@@ -123,7 +131,7 @@ def main():
         quiet = args.quiet,
         parallel_mode = args.parallel_mode,
         process = args.processes,
-        user_modules = ('atlogic', 'table_configs'),
+        user_modules = ('atlogic', 'scribblers'),
         max_events_per_dataset = args.nevents,
         max_events_per_process = args.max_events_per_process,
         profile = args.profile,
