@@ -4,14 +4,12 @@ import os, sys
 import argparse
 import logging
 
+##__________________________________________________________________||
+alphatwirl_path = os.path.join(os.path.dirname(__file__), 'AlphaTwirl')
+sys.path.insert(1, alphatwirl_path)
 import AlphaTwirl
 
 ##__________________________________________________________________||
-sys.path.insert(1, os.path.dirname(os.path.dirname(__file__)))
-
-##__________________________________________________________________||
-utilspy_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'utilspy')
-sys.path.insert(1, utilspy_path)
 import FrameworkHeppy
 
 ##__________________________________________________________________||
