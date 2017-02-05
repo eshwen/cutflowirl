@@ -22,7 +22,6 @@ parser.add_argument("--data", action = "store_const", dest = 'datamc', const = '
 parser.add_argument('--parallel-mode', default = 'multiprocessing', choices = ['multiprocessing', 'subprocess', 'htcondor'], help = "mode for concurrency")
 parser.add_argument('--profile', action = "store_true", help = "run profile")
 parser.add_argument('--profile-out-path', default = None, help = "path to write the result of profile")
-parser.add_argument('--add-susy-masspoints', action = 'store_true', default = False, help = 'add tables for SUSY mass points')
 
 parser.add_argument('-o', '--outDir', default = os.path.join('tbl', 'out'))
 parser.add_argument('-n', '--nevents', default = -1, type = int, help = 'maximum number of events to process for each component')
