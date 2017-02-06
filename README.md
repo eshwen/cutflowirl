@@ -50,3 +50,8 @@ A cutflow table is created at `tbl/out/tbl_cutflow.txt`
 ```bash
 cat tbl/out/tbl_cutflow.txt
 ```
+
+Remove a temporary dir if you don't need:
+```bash
+rm -rf _ccsp_temp/
+```
