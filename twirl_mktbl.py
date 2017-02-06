@@ -87,8 +87,6 @@ def main():
         dict(Not = 'ht40'),
     ))
 
-    ## import pprint
-    ## pprint.pprint(path_cfg)
     from atlogic.EventSelectionModules.EventSelectionAllCount import EventSelectionAllCount
     from atlogic.EventSelectionModules.EventSelectionAnyCount import EventSelectionAnyCount
     from atlogic.EventSelectionModules.EventSelectionNotCount import EventSelectionNotCount
@@ -106,7 +104,7 @@ def main():
     if args.force or not os.path.exists(eventselection_path):
         AlphaTwirl.mkdir_p(os.path.dirname(eventselection_path))
         with open(eventselection_path, 'w') as f:
-            pprint(path_cfg, stream = f)
+            pprint.pprint(path_cfg, stream = f)
 
     tbl_cutflow_path = os.path.join(args.outDir, 'tbl_cutflow.txt')
 
