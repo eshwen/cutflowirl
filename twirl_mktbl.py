@@ -3,6 +3,7 @@
 import os, sys
 import argparse
 import logging
+import pprint
 
 ##__________________________________________________________________||
 alphatwirl_path = os.path.join(os.path.dirname(__file__), 'AlphaTwirl')
@@ -104,9 +105,8 @@ def main():
     eventselection_path = os.path.join(args.outDir, 'eventselection.txt')
     if args.force or not os.path.exists(eventselection_path):
         AlphaTwirl.mkdir_p(os.path.dirname(eventselection_path))
-        f = open(eventselection_path, 'w')
-        f.write(event_selection_str(eventSelection))
-        f.close()
+        with open(eventselection_path, 'w') as f:
+            pprint(path_cfg, stream = f)
 
     tbl_cutflow_path = os.path.join(args.outDir, 'tbl_cutflow.txt')
 
