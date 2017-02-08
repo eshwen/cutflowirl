@@ -64,7 +64,12 @@ def main():
     #
     # configure scribblers
     #
-    scribblers = [ ]
+    from atlogic.Scribblers.htbin import htbin
+    from atlogic.Scribblers.MhtOverMet import MhtOverMet
+    scribblers = [
+        htbin(),
+        MhtOverMet()
+       ]
 
     from scribblers.SMSMass import SMSMass
     scribblers_SMS = [
@@ -80,11 +85,31 @@ def main():
     #
     path_cfg = dict(All = (
         dict(All = ('ev : ev.smsmass1[0] == 1300', 'ev : ev.smsmass2[0] == 1050')),
-        'ev : ev.nJet40[0] >= 3',
-        'ht40',
+        # triggerSkimmer???                                                                                                                      
+        # filterSkimmer??? <- normally stored in eventSelectionPathCfgDicts.py. BUT NEED TO KNOW EXACT VALUES FOR 2015 ANALYSIS
+        # Start jet cleaning
+        'ev : ev.nJet40[0] > 1',
+        "ev : ev.nJet40Fwd[0] == 0",
+        "ev : ev.nJet40failedId[0] == 0",
+        "ev : -2.5 < ev.jet_eta[0] < 2.5",
+        'ev : ev.jet_chHEF[0] >= 0.1',
+        # Jet cleaning complete
+        'cutflow_Signal', # Because we're dealing with signal region
+        'isoTrackVeto',
         'nJet100',
-        dict(Any = ('ht40', 'nJet100')),
-        dict(Not = 'ht40'),
+        'ht40',
+        'mht',
+        'ev : ev.MhtOverMet[0] < 1.25',
+        dict(Any = (dict(All = ('htbin_200', ('alphaT', dict(v = 0.65)))),
+                    dict(All = ('htbin_250', ('alphaT', dict(v = 0.60)))),
+                    dict(All = ('htbin_300', ('alphaT', dict(v = 0.55)))),
+                    dict(All = ('htbin_350', ('alphaT', dict(v = 0.53)))),
+                    dict(All = ('htbin_400', ('alphaT', dict(v = 0.52)))),
+                    dict(All = ('htbin_600', ('alphaT', dict(v = 0.52)))),
+                    dict(All = ('htbin_800', ))
+                    )
+             ), # AlphaT cut 
+        'biasedDPhi',
     ))
 
     from atlogic.EventSelectionModules.EventSelectionAllCount import EventSelectionAllCount
