@@ -83,15 +83,12 @@ def main():
     #
     # configure event selections
     #
-    path_cfg = dict(All = (
-        dict(All = ('ev : ev.smsmass1[0] == 1300', 'ev : ev.smsmass2[0] == 1050')),
-        # triggerSkimmer???                                                                                                                      
-        # filterSkimmer??? <- normally stored in eventSelectionPathCfgDicts.py. BUT NEED TO KNOW EXACT VALUES FOR 2015 ANALYSIS
-        'ev : ev.nJet40[0] >= 1',
+    std_cutflow = dict(All = (
+        'ev : ev.nJet40[0] >= 2', # If monojet, will need to change alphaT and biasedDPhi cuts to incorporate monojet
         "ev : ev.nJet40Fwd[0] == 0",
         "ev : ev.nJet40failedId[0] == 0",
+        'ev : ev.jet_chHEF[0] >= 0.1', # Consider combining this with previous cut
         "ev : -2.5 < ev.jet_eta[0] < 2.5",
-        'ev : ev.jet_chHEF[0] >= 0.1',
         'cutflow_Signal', # Because we're dealing with signal region
         'isoTrackVeto',
         'nJet100',
@@ -110,6 +107,12 @@ def main():
         'biasedDPhi',
     ))
 
+    path_cfg = dict(Any = (
+        dict(All = ('ev : ev.smsmass1[0] == 1300', 'ev : ev.smsmass2[0] == 1050', std_cutflow)),
+        dict(All = ('ev : ev.smsmass1[0] == 1800', 'ev : ev.smsmass2[0] == 500', std_cutflow)),
+        # Can add more samples here in the same vein as above
+    ))
+    
     from atlogic.EventSelectionModules.EventSelectionAllCount import EventSelectionAllCount
     from atlogic.EventSelectionModules.EventSelectionAnyCount import EventSelectionAnyCount
     from atlogic.EventSelectionModules.EventSelectionNotCount import EventSelectionNotCount
