@@ -108,9 +108,9 @@ def main():
     ))
 
     path_cfg = dict(Any = (
-        dict(All = ('ev : ev.smsmass1[0] == 1300', 'ev : ev.smsmass2[0] == 1050', std_cutflow)),
-        dict(All = ('ev : ev.smsmass1[0] == 1800', 'ev : ev.smsmass2[0] == 500', std_cutflow)),
-        # Can add more samples here in the same vein as above
+        dict(All = ('ev : ev.smsmass1[0] == 1300', 'ev : ev.smsmass2[0] == 100', std_cutflow)),
+        dict(All = ('ev : ev.smsmass1[0] == 800', 'ev : ev.smsmass2[0] == 400', std_cutflow)),
+        # Can add more samples here in the same vein as above. Current values are for T1tttt
     ))
     
     from atlogic.EventSelectionModules.EventSelectionAllCount import EventSelectionAllCount
