@@ -24,6 +24,12 @@ class MockEventSelection(object):
 ##__________________________________________________________________||
 class Test_EventSelectionAll(unittest.TestCase):
 
+    def test_empty(self):
+        obj = EventSelectionAll()
+
+        event = MockEvent()
+        self.assertTrue(obj(event))
+
     def test_standard(self):
         obj = EventSelectionAll()
         selection1 = MockEventSelection()
