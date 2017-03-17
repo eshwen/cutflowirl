@@ -7,7 +7,7 @@ import ROOT
 
 import AlphaTwirl
 import AlphaTwirl.HeppyResult as HeppyResult
-HeppyResult.componentHasTheseFiles[:] = ['roctree']
+HeppyResult.componentHasTheseFiles[:] = ['treeProducerSusyAlphaT']
 
 ROOT.gROOT.SetBatch(1)
 
@@ -63,7 +63,7 @@ class FrameworkHeppy(object):
 
     def run(self, components,
             reader_collector_pairs,
-            analyzerName = 'roctree',
+            analyzerName = 'treeProducerSusyAlphaT',
             fileName = 'tree.root',
             treeName = 'tree'
     ):
