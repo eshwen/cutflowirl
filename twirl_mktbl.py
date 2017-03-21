@@ -97,7 +97,7 @@ def main():
                     dict(All = ('htbin_350', ('alphaT', dict(v = 0.53)))),
                     dict(All = ('htbin_400', ('alphaT', dict(v = 0.52)))),
                     dict(All = ('htbin_600', ('alphaT', dict(v = 0.52)))),
-                    dict(All = ('htbin_800', ))
+                    dict(All = ('htbin_800',))
                     )
              ), # AlphaT cut  
         "ev : ev.MhtOverMet[0] < 1.25",
@@ -112,13 +112,14 @@ def main():
         dict(Any = ( dict(All = ("ev : ev.nJet100[0] >= 2", "ev : ev.nJet40[0] >= 5",) ), #>=5
                      dict(All = ("ev : ev.nJet100[0] >= 2", "ev : ev.nJet40[0] == 4",) ), #4
                      dict(All = ("ev : ev.nJet100[0] == 1", "ev : ev.nJet40[0] >= 5",) ), #>=5a 
-                     dict(All = ("ev : ev.nJet100[0] >= 2", "ev : ev.nJet40[0] == 3",) ), #4 
+                     dict(All = ("ev : ev.nJet100[0] == 1", "ev : ev.nJet40[0] == 4",) ), #4a 
                      ))
         ))
 
     path_cfg = dict(Any = (
-        # dict(All = ('ev : ev.GenSusyMGluino[0] == 1300', 'ev : ev.GenSusyMNeutralino[0] == 100', std_cutflow)),
-        dict(All = ('ev : ev.GenSusyMSquark[0] == 400', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
+        # dict(All = ('ev : ev.GenSusyMGluino[0] == 750', 'ev : ev.GenSusyMNeutralino[0] == 600', std_cutflow)),
+        dict(All = ('ev : ev.GenSusyMStop[0] == 300', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
+        # dict(All = ('ev : ev.GenSusyMSquark[0] == 400', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
         # Can add more samples here in the same vein as above. Current values are for T1tttt
     ))
     
