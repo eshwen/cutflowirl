@@ -77,7 +77,7 @@ class jetDphiAttrs(object):
         self.pt[:] = [event_jet_pt[i] for i in idxs]
 
         event_jet_phi = getattr(event, '{}_phi'.format(self.inJetPrefix))
-        self.phi[:] = [event.jet_phi[i] for i in idxs]
+        self.phi[:] = [event_jet_phi[i] for i in idxs]
 
         pt = np.array(self.pt)
         phi = np.array(self.phi)
