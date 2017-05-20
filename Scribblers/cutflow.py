@@ -2,6 +2,9 @@
 
 ##__________________________________________________________________||
 class cutflow(object):
+    def __repr__(self):
+        return '{}()'.format(self.__class__.__name__)
+
     def begin(self, event):
         self.addr_cutflow = [ ]
         event.cutflow = self.addr_cutflow
