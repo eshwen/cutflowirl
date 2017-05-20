@@ -9,6 +9,18 @@ class minimum(object):
         self.default_empty = default_empty
         self.default_value = default_value
 
+    def __repr__(self):
+        name_value_pairs = (
+            ('srcName', self.srcName),
+            ('outName', self.outName),
+            ('default_empty', self.default_empty),
+            ('default_value', self.default_value),
+        )
+        return '{}({})'.format(
+            self.__class__.__name__,
+            ', '.join(['{} = {!r}'.format(n, v) for n, v in name_value_pairs]),
+        )
+
     def begin(self, event):
         self.out = [ ]
         self._attach_to_event(event)

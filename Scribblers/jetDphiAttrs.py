@@ -8,6 +8,17 @@ class jetDphiAttrs(object):
         self.outJetPrefix = outJetPrefix
         self.minJetPt = minJetPt
 
+    def __repr__(self):
+        name_value_pairs = (
+            ('inJetPrefix', self.inJetPrefix),
+            ('outJetPrefix', self.outJetPrefix),
+            ('minJetPt', self.minJetPt),
+        )
+        return '{}({})'.format(
+            self.__class__.__name__,
+            ', '.join(['{} = {!r}'.format(n, v) for n, v in name_value_pairs]),
+        )
+
     def begin(self, event):
         self.mht = [ ]
         self.pt = [ ]

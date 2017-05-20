@@ -7,6 +7,16 @@ class sin(object):
         self.srcName = srcName
         self.outName = outName
 
+    def __repr__(self):
+        name_value_pairs = (
+            ('srcName', self.srcName),
+            ('outName', self.outName),
+        )
+        return '{}({})'.format(
+            self.__class__.__name__,
+            ', '.join(['{} = {!r}'.format(n, v) for n, v in name_value_pairs]),
+        )
+
     def begin(self, event):
         self.out = [ ]
         self._attach_to_event(event)
