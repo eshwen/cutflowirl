@@ -84,13 +84,18 @@ def main():
     # configure event selections
     #
     std_cutflow = dict(All = (
-        # ADD TRIGGER SELECTION(S) HERE
-        "ev : ev.nJet40[0] >= 2", # If monojet, will need to change alphaT and biasedDPhi cuts to incorporate monojet
+        dict(All = ("ev : ev.nElectronsVeto[0] == 0",
+                    "ev : ev.nMuonsVeto[0] == 0",
+                    )), # Lepton vetoes 
+        "ev : ev.nIsoTracksVeto[0] <= 0",
+        "ev : ev.nPhotonsVeto[0] == 0",
+        "ev : ev.nJet40Fwd[0] == 0",
+        "ev : ev.nJet40[0] >= 2",
         "ev : ev.jet_pt[0] > 100",
         "ev : -2.5 < ev.jet_eta[0] < 2.5",
-        "ev : 0.1 < ev.jet_chHEF[0] < 0.95",  # Question mark regarding upper limit on jet_chHEF
+        "ev : ev.ht40[0] > 200",
         "ev : ev.mht40_pt[0] > 130",
-        "ev : ev.biasedDPhi[0] > 0.5",
+        "ev : ev.MhtOverMet[0] < 1.25",
         dict(Any = (dict(All = ('htbin_200', ('alphaT', dict(v = 0.65)))),
                     dict(All = ('htbin_250', ('alphaT', dict(v = 0.60)))),
                     dict(All = ('htbin_300', ('alphaT', dict(v = 0.55)))),
@@ -99,22 +104,15 @@ def main():
                     dict(All = ('htbin_600', ('alphaT', dict(v = 0.52)))),
                     dict(All = ('htbin_800',))
                     )
-             ), # AlphaT cut  
-        "ev : ev.MhtOverMet[0] < 1.25",
-        "ev : ev.nJet40Fwd[0] == 0",
-        "ev : ev.nPhotonsVeto[0] == 0",
-        dict(All = ("ev : ev.nElectronsVeto[0] == 0",
-                    "ev : ev.nMuonsVeto[0] == 0",
-                    )), # Lepton vetoes
-        "ev : ev.nIsoTracksVeto[0] <= 0",
-        #------------------------------------------------
-        # Sample-specific cuts (most sensitive n_jet categories)
+             ), # HT-dependent AlphaT cuts
+        "ev : ev.biasedDPhi[0] > 0.5",
         dict(Any = ( dict(All = ("ev : ev.nJet100[0] >= 2", "ev : ev.nJet40[0] >= 5",) ), #>=5
-                     dict(All = ("ev : ev.nJet100[0] >= 2", "ev : ev.nJet40[0] == 4",) ), #4
-                     dict(All = ("ev : ev.nJet100[0] == 1", "ev : ev.nJet40[0] >= 5",) ), #>=5a 
+                     dict(All = ("ev : ev.nJet100[0] >= 2", "ev : ev.nJet40[0] == 4",) ), #4 
+                     dict(All = ("ev : ev.nJet100[0] == 1", "ev : ev.nJet40[0] >= 5",) ), #>=5a
                      dict(All = ("ev : ev.nJet100[0] == 1", "ev : ev.nJet40[0] == 4",) ), #4a 
-                     ))
+                     )), # Most sensitive n_jet categories (sample-specific)
         ))
+
 
     path_cfg = dict(Any = (
         # dict(All = ('ev : ev.GenSusyMGluino[0] == 750', 'ev : ev.GenSusyMNeutralino[0] == 600', std_cutflow)),
