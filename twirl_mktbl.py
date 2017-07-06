@@ -116,7 +116,8 @@ def main():
 
     path_cfg = dict(Any = (
         # dict(All = ('ev : ev.GenSusyMGluino[0] == 750', 'ev : ev.GenSusyMNeutralino[0] == 600', std_cutflow)),
-        dict(All = ('ev : ev.GenSusyMStop[0] == 300', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
+        # dict(All = ('ev : ev.GenSusyMStop[0] == 300', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
+        dict(All = ('ev : ev.GenSusyMSbottom[0] == 1000', 'ev : ev.GenSusyMNeutralino[0] == 300', std_cutflow)),
         # dict(All = ('ev : ev.GenSusyMSquark[0] == 400', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
         # Can add more samples here in the same vein as above. Current values are for T1tttt
     ))
