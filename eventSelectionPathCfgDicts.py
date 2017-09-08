@@ -44,6 +44,10 @@ htbin_alphaTPt_veryLoose_JECvar = dict(
     )
 )
 
+biasedDPhi_loose_JECvar = dict(
+    All = (('biasedDPhi_JECvar', dict(v = 0.50)),),
+)
+
 ##__________________________________________________________________||
 event_selection_path_cfg_tree_production = dict(All = (
     'nJet100_JECvar',
@@ -69,21 +73,38 @@ event_selection_path_cfg_tree_production = dict(All = (
             )),
         )),
     )),
-    dict(Any = (dict(All = ('cutflow_Signal',
-                            'ht_JECvar',
-                            dict(Any = ('bintype_monojet_JECvar',
-                                        dict(All =('bintype_asymjet_JECvar', htbin_alphaT_loose_JECvar)),
-                                        dict(All =('bintype_asymjet_JECvar', htbin_alphaTPt_loose_JECvar)),
-                                        dict(All =('bintype_symjet_JECvar', htbin_alphaT_loose_JECvar)),
-                                        dict(All =('bintype_symjet_JECvar', htbin_alphaTPt_loose_JECvar)),
-                                        dict(All =('bintype_highht_JECvar', 'mht_JECvar')),
-                            )))),
-                'cutflow_SingleMu',
-                'cutflow_DoubleMu',
-                'cutflow_SingleEle',
-                'cutflow_DoubleEle',
-                'cutflow_SinglePhoton',
-                dict(name = 'BaselineMu', All = ("ev : ev.nMuonsVeto[0] >= 1", "ev : ev.nPhotonsVeto[0] == 0")),
+    dict(Any = (
+        dict(All = (
+            'cutflow_Signal',
+            'ht_JECvar',
+            'mht_loose_JECvar',
+            dict(Any = (
+                'bintype_monojet_JECvar',
+                'bintype_asymjet_JECvar',
+                'bintype_symjet_JECvar',
+                'bintype_highht_JECvar',
+            )),
+            dict(Any = (
+                'bintype_monojet_JECvar',
+                biasedDPhi_loose_JECvar,
+                dict(All = (
+                    dict(Not = biasedDPhi_loose_JECvar),
+                    dict(Any = (
+                        dict(All = ('bintype_asymjet_JECvar', htbin_alphaT_veryLoose_JECvar)),
+                        dict(All = ('bintype_asymjet_JECvar', htbin_alphaTPt_veryLoose_JECvar)),
+                        dict(All = ('bintype_symjet_JECvar', htbin_alphaT_veryLoose_JECvar)),
+                        dict(All = ('bintype_symjet_JECvar', htbin_alphaTPt_veryLoose_JECvar)),
+                        dict(All = ('bintype_highht_JECvar',)),
+                    )),
+                )),
+            )),
+        )),
+        'cutflow_SingleMu',
+        'cutflow_DoubleMu',
+        'cutflow_SingleEle',
+        'cutflow_DoubleEle',
+        'cutflow_SinglePhoton',
+        dict(name = 'BaselineMu', All = ("ev : ev.nMuonsVeto[0] >= 1", "ev : ev.nPhotonsVeto[0] == 0")),
     )),
 ))
 
