@@ -14,7 +14,7 @@ import AlphaTwirl
 import FrameworkHeppy
 
 ##__________________________________________________________________||
-default_heppydir = '/hdfs/SUSY/RA1/74X/MC/20170306_S01/20170306_AtLogic_MC_SUSY_SMS_25ns'
+default_heppydir = '/vols/cms/RA1/80X/MC/LongLived/20170904_Split/AtLogic_MC_LL'
 
 ##__________________________________________________________________||
 parser = argparse.ArgumentParser()
@@ -89,12 +89,11 @@ def main():
                     )), # Lepton vetoes 
         "ev : ev.nIsoTracksVeto[0] <= 0",
         "ev : ev.nPhotonsVeto[0] == 0",
-        "ev : ev.nJet40Fwd[0] == 0",
         "ev : ev.nJet40[0] >= 2",
         "ev : ev.jet_pt[0] > 100",
-        "ev : -2.5 < ev.jet_eta[0] < 2.5",
         "ev : ev.ht40[0] > 200",
-        "ev : ev.mht40_pt[0] > 130",
+        "ev : ev.mht40_pt[0] > 200",
+        "ev : ev.nJet40Fwd[0] == 0",
         "ev : ev.MhtOverMet[0] < 1.25",
         dict(Any = (dict(All = ('htbin_200', ('alphaT', dict(v = 0.65)))),
                     dict(All = ('htbin_250', ('alphaT', dict(v = 0.60)))),
@@ -102,22 +101,23 @@ def main():
                     dict(All = ('htbin_350', ('alphaT', dict(v = 0.53)))),
                     dict(All = ('htbin_400', ('alphaT', dict(v = 0.52)))),
                     dict(All = ('htbin_600', ('alphaT', dict(v = 0.52)))),
-                    dict(All = ('htbin_800',))
+                    dict(All = ('htbin_900',))
                     )
              ), # HT-dependent AlphaT cuts
         "ev : ev.biasedDPhi[0] > 0.5",
-        dict(Any = ( dict(All = ("ev : ev.nJet100[0] >= 2", "ev : ev.nJet40[0] >= 5",) ), #>=5
-                     dict(All = ("ev : ev.nJet100[0] >= 2", "ev : ev.nJet40[0] == 4",) ), #4 
-                     dict(All = ("ev : ev.nJet100[0] == 1", "ev : ev.nJet40[0] >= 5",) ), #>=5a
-                     dict(All = ("ev : ev.nJet100[0] == 1", "ev : ev.nJet40[0] == 4",) ), #4a 
-                     )), # Most sensitive n_jet categories (sample-specific)
+        #dict(Any = ( dict(All = ("ev : ev.nJet100[0] >= 2", "ev : ev.nJet40[0] >= 5",) ), #>=5
+        #             dict(All = ("ev : ev.nJet100[0] >= 2", "ev : ev.nJet40[0] == 4",) ), #4 
+        #             dict(All = ("ev : ev.nJet100[0] == 1", "ev : ev.nJet40[0] >= 5",) ), #>=5a
+        #             dict(All = ("ev : ev.nJet100[0] == 1", "ev : ev.nJet40[0] == 4",) ), #4a 
+        #             )), # Most sensitive n_jet categories (sample-specific)
+        # RE-ADD CATEGORIES WHEN SHANE HAS GIVEN THEM TO ME
         ))
 
 
     path_cfg = dict(Any = (
-        # dict(All = ('ev : ev.GenSusyMGluino[0] == 750', 'ev : ev.GenSusyMNeutralino[0] == 600', std_cutflow)),
+        dict(All = ('ev : ev.GenSusyMGluino[0] == 1800', 'ev : ev.GenSusyMNeutralino[0] == 200', std_cutflow)),
         # dict(All = ('ev : ev.GenSusyMStop[0] == 300', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
-        dict(All = ('ev : ev.GenSusyMSbottom[0] == 1000', 'ev : ev.GenSusyMNeutralino[0] == 300', std_cutflow)),
+        # dict(All = ('ev : ev.GenSusyMSbottom[0] == 1000', 'ev : ev.GenSusyMNeutralino[0] == 300', std_cutflow)),
         # dict(All = ('ev : ev.GenSusyMSquark[0] == 400', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
         # Can add more samples here in the same vein as above. Current values are for T1tttt
     ))
