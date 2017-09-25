@@ -58,6 +58,7 @@ eventSelectionAliasDict = {
     'htbin_400': "ev : ev.htbin[0] == 400",
     'htbin_600': "ev : ev.htbin[0] == 600",
     'htbin_800': "ev : ev.htbin[0] == 800",
+    'htbin_900': "ev : ev.htbin[0] == 900",
     'htbin_200_JECvar': "ev : 200 <= ev.ht40JECUp[0] and ev.ht40JECDown[0] < 250",
     'htbin_250_JECvar': "ev : 250 <= ev.ht40JECUp[0] and ev.ht40JECDown[0] < 300",
     'htbin_300_JECvar': "ev : 300 <= ev.ht40JECUp[0] and ev.ht40JECDown[0] < 350",
