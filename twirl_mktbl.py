@@ -105,10 +105,10 @@ def main():
                     )
              ), # HT-dependent AlphaT cuts
         "ev : ev.biasedDPhi[0] > 0.5",
-        dict(Any = ( dict(All = ( dict(Any = ("ev : ev.nBJet40[0] == 0", "ev : ev.nBJet40[0] == 1")),
-                                  dict(Any = ("ev : ev.nJet100[0] == 2", "ev : ev.nJet100[0] == 3")), )), #eq01b_eq23j
-             )),
-        )) # Most sensitive simplified njet, nb category
+        dict(All = ( dict(Any = ("ev : ev.nBJet40[0] == 0", "ev : ev.nBJet40[0] == 1")),
+                     dict(Any = ("ev : ev.nJet100[0] == 2", "ev : ev.nJet100[0] == 3")), #eq01b_eq23j
+             )), # Most sensitive simplified njet, nb category
+        ))
 
 
     path_cfg = dict(Any = (
