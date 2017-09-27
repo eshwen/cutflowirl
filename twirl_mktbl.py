@@ -14,7 +14,7 @@ import AlphaTwirl
 import FrameworkHeppy
 
 ##__________________________________________________________________||
-default_heppydir = '/vols/cms/RA1/80X/MC/LongLived/20170904_Split/AtLogic_MC_LL'
+default_heppydir = '/vols/cms/RA1/80X/MC/LongLived/20170904/AtLogic_MC_LL'
 
 ##__________________________________________________________________||
 parser = argparse.ArgumentParser()
@@ -105,17 +105,15 @@ def main():
                     )
              ), # HT-dependent AlphaT cuts
         "ev : ev.biasedDPhi[0] > 0.5",
-        #dict(Any = ( dict(All = ("ev : ev.nJet100[0] >= 2", "ev : ev.nJet40[0] >= 5",) ), #>=5
-        #             dict(All = ("ev : ev.nJet100[0] >= 2", "ev : ev.nJet40[0] == 4",) ), #4 
-        #             dict(All = ("ev : ev.nJet100[0] == 1", "ev : ev.nJet40[0] >= 5",) ), #>=5a
-        #             dict(All = ("ev : ev.nJet100[0] == 1", "ev : ev.nJet40[0] == 4",) ), #4a 
-        #             )), # Most sensitive n_jet categories (sample-specific)
-        # RE-ADD CATEGORIES WHEN SHANE HAS GIVEN THEM TO ME
-        ))
+        dict(Any = ( dict(All = ( dict(Any = ("ev : ev.nBJet40[0] == 0", "ev : ev.nBJet40[0] == 1")),
+                                  dict(Any = ("ev : ev.nJet100[0] == 2", "ev : ev.nJet100[0] == 3")), )), #eq01b_eq23j
+             )),
+        )) # Most sensitive simplified njet, nb category
 
 
     path_cfg = dict(Any = (
-        dict(All = ('ev : ev.GenSusyMGluino[0] == 1800', 'ev : ev.GenSusyMNeutralino[0] == 200', std_cutflow)),
+        # std_cutflow,
+        dict(All = ('ev : ev.GenSusyMGluino[0] == 1000', 'ev : ev.GenSusyMNeutralino[0] == 900', std_cutflow)),
         # dict(All = ('ev : ev.GenSusyMStop[0] == 300', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
         # dict(All = ('ev : ev.GenSusyMSbottom[0] == 1000', 'ev : ev.GenSusyMNeutralino[0] == 300', std_cutflow)),
         # dict(All = ('ev : ev.GenSusyMSquark[0] == 400', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
