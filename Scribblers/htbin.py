@@ -4,7 +4,7 @@ from ..Binning import Binning
 ##__________________________________________________________________||
 class htbin(object):
     def __init__(self):
-        self.htbinning = Binning(boundaries = (200, 250, 300, 350, 400, 600, 800))
+        self.htbinning = Binning(boundaries = (200, 250, 300, 350, 400, 600, 800, 900))
 
     def begin(self, event):
         self.vals = [ ]
