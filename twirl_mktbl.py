@@ -14,7 +14,8 @@ import AlphaTwirl
 import FrameworkHeppy
 
 ##__________________________________________________________________||
-default_heppydir = '/vols/cms/RA1/80X/MC/LongLived/20170904/AtLogic_MC_LL'
+#default_heppydir = '/vols/cms/RA1/80X/MC/LongLived/20170904/AtLogic_MC_LL'
+default_heppydir = "/home/hep/ebhal/Reweighted_trees/SkimTreeProduction/Signal/SkimOutput/Signal_MC"
 
 ##__________________________________________________________________||
 parser = argparse.ArgumentParser()
@@ -35,6 +36,7 @@ parser.add_argument('-i', '--heppydir', default = default_heppydir, help = 'Hepp
 parser.add_argument('-p', '--processes', default = None, type = int, help = 'number of processes to run in parallel')
 parser.add_argument('-q', '--quiet', default = False, action = 'store_true', help = 'quiet mode')
 parser.add_argument('-c', '--components', default = None, nargs = '*', help = 'the list of components')
+parser.add_argument('-w', '--weights', default = False, action = 'store_true', help = 'use event weights')
 
 args = parser.parse_args()
 
@@ -105,24 +107,30 @@ def main():
                     )
              ), # HT-dependent AlphaT cuts
         "ev : ev.biasedDPhi[0] > 0.5",
-        dict(All = ( dict(Any = ("ev : ev.nBJet40[0] == 0", "ev : ev.nBJet40[0] == 1")),
-                     dict(Any = ("ev : ev.nJet100[0] == 2", "ev : ev.nJet100[0] == 3")), #eq01b_eq23j
-             )), # Most sensitive simplified njet, nb category
+        #dict(All = ("ev : ev.nJet100[0] <= 2", "ev : ev.nBJet40[0] <= 1")), # Most sensitive simplified njet, nb category
+        
         ))
 
 
     path_cfg = dict(Any = (
         # std_cutflow,
-        dict(All = ('ev : ev.GenSusyMGluino[0] == 1000', 'ev : ev.GenSusyMNeutralino[0] == 900', std_cutflow)),
+        dict(All = ('ev : ev.GenSusyMGluino[0] == 1800', 'ev : ev.GenSusyMNeutralino[0] == 200', std_cutflow)),
         # dict(All = ('ev : ev.GenSusyMStop[0] == 300', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
         # dict(All = ('ev : ev.GenSusyMSbottom[0] == 1000', 'ev : ev.GenSusyMNeutralino[0] == 300', std_cutflow)),
         # dict(All = ('ev : ev.GenSusyMSquark[0] == 400', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
         # Can add more samples here in the same vein as above. Current values are for T1tttt
     ))
     
-    from atlogic.EventSelectionModules.EventSelectionAllCount import EventSelectionAllCount
-    from atlogic.EventSelectionModules.EventSelectionAnyCount import EventSelectionAnyCount
-    from atlogic.EventSelectionModules.EventSelectionNotCount import EventSelectionNotCount
+    if args.weights == True:
+        # Use event selection classes that store weights
+        from atlogic.EventSelectionModules.WeightedEventSelectionAllCount import EventSelectionAllCount
+        from atlogic.EventSelectionModules.WeightedEventSelectionAnyCount import EventSelectionAnyCount
+        from atlogic.EventSelectionModules.WeightedEventSelectionNotCount import EventSelectionNotCount
+
+    else:
+        from atlogic.EventSelectionModules.EventSelectionAllCount import EventSelectionAllCount
+        from atlogic.EventSelectionModules.EventSelectionAnyCount import EventSelectionAnyCount
+        from atlogic.EventSelectionModules.EventSelectionNotCount import EventSelectionNotCount
 
     from atlogic.buildEventSelection import buildEventSelection
     eventSelection = buildEventSelection(
