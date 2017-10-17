@@ -15,7 +15,7 @@ class jetNewID(object):
     def event(self, event):
         event.jetNewID = self.vals
         for jet in range(0, len(event.jet_newId)):
-            if event.jet_newId[jet] <= 0:
+            if event.jet_newId[jet] <= 0 and event.jet_pt[jet] > 40:
                 self.vals[:] = [0]
                 return
         self.vals[:] = [1]
