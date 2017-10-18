@@ -14,9 +14,10 @@ import AlphaTwirl
 import FrameworkHeppy
 
 ##__________________________________________________________________||
-#default_heppydir = '/vols/cms/RA1/80X/MC/LongLived/20170904/AtLogic_MC_LL'
-default_heppydir = "/home/hep/ebhal/Reweighted_trees/SkimTreeProduction/Signal/SkimOutput/Signal_MC"
-
+#default_heppydir = "/home/hep/ebhal/Reweighted_trees/SkimOutput/Signal_MC/"
+#default_heppydir = "/vols/cms/RA1/80X/MC/LongLived/20170904/AtLogic_MC_LL/"
+default_heppydir = "/home/hep/ebhal/NEW_LLP_TEST/SkimOutput/Signal_MC/"
+#default_heppydir = "/vols/cms/RA1/80X/MC/LongLived/20171012/AtLogic_MC_LL/"
 ##__________________________________________________________________||
 parser = argparse.ArgumentParser()
 parser.add_argument("--mc", action = "store_const", dest = 'datamc', const = 'mc', default = 'mc', help = "for processing MC")
@@ -28,7 +29,7 @@ parser.add_argument('--profile-out-path', default = None, help = "path to write 
 parser.add_argument('-o', '--outDir', default = os.path.join('tbl', 'out'))
 parser.add_argument('-n', '--nevents', default = -1, type = int, help = 'maximum number of events to process for each component')
 parser.add_argument('--max-events-per-process', default = -1, type = int, help = 'maximum number of events per process')
-parser.add_argument('--force', action = 'store_true', default = False, dest='force', help = 'recreate all 0output files')
+parser.add_argument('--force', action = 'store_true', default = False, dest='force', help = 'recreate all output files')
 
 parser.add_argument('--logging-level', default = 'WARN', choices = ['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'], help = "level for logging")
 
@@ -68,9 +69,11 @@ def main():
     #
     from atlogic.Scribblers.htbin import htbin
     from atlogic.Scribblers.MhtOverMet import MhtOverMet
+    from atlogic.Scribblers.jetNewID import jetNewID
     scribblers = [
         htbin(),
-        MhtOverMet()
+        MhtOverMet(),
+        jetNewID()
        ]
 
     from scribblers.SMSMass import SMSMass
@@ -91,7 +94,9 @@ def main():
                     )), # Lepton vetoes 
         "ev : ev.nIsoTracksVeto[0] <= 0",
         "ev : ev.nPhotonsVeto[0] == 0",
+        "ev : ev.jetNewID[0] != 0", # Odd jet veto
         "ev : ev.nJet40[0] >= 2",
+        "ev : 0.1 < ev.jet_chHEF[0] < 0.95",
         "ev : ev.jet_pt[0] > 100",
         "ev : ev.ht40[0] > 200",
         "ev : ev.mht40_pt[0] > 200",
@@ -107,18 +112,19 @@ def main():
                     )
              ), # HT-dependent AlphaT cuts
         "ev : ev.biasedDPhi[0] > 0.5",
-        #dict(All = ("ev : ev.nJet100[0] <= 2", "ev : ev.nBJet40[0] <= 1")), # Most sensitive simplified njet, nb category
-        
+        # dict(All = ("ev : ev.nJet100[0] == 1", "ev : ev.nJet40[0] <= 2", "ev : ev.nBJet40[0] <= 1")), # Most sensitive simplified njet, nb category
+        dict(Any = ("ev : ev.HLT_PFHT800[0] == 1",
+                    "ev : ev.HLT_PFHT900[0] == 1",
+                    "ev : ev.HLT_PFMETNoMu90_PFMHTNoMu90_IDTight[0] == 1",
+                    "ev : ev.HLT_PFMETNoMu120_PFMHTNoMu120_IDTight[0] == 1")), # HLTs
         ))
 
-
     path_cfg = dict(Any = (
-        # std_cutflow,
-        dict(All = ('ev : ev.GenSusyMGluino[0] == 1800', 'ev : ev.GenSusyMNeutralino[0] == 200', std_cutflow)),
+        std_cutflow,
+        # dict(All = ('ev : ev.GenSusyMGluino[0] == 1000', 'ev : ev.GenSusyMNeutralino[0] == 200', std_cutflow)),
         # dict(All = ('ev : ev.GenSusyMStop[0] == 300', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
         # dict(All = ('ev : ev.GenSusyMSbottom[0] == 1000', 'ev : ev.GenSusyMNeutralino[0] == 300', std_cutflow)),
         # dict(All = ('ev : ev.GenSusyMSquark[0] == 400', 'ev : ev.GenSusyMNeutralino[0] == 250', std_cutflow)),
-        # Can add more samples here in the same vein as above. Current values are for T1tttt
     ))
     
     if args.weights == True:
