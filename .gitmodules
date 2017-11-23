@@ -4,3 +4,6 @@
 [submodule "AlphaTwirl"]
 	path = AlphaTwirl
 	url = git@github.com:TaiSakuma/AlphaTwirl.git
+[submodule "alphat-logic"]
+	path = alphat-logic
+	url = git@github.com:eshwen/alphat-logic.git
