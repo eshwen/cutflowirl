@@ -14,10 +14,9 @@ import AlphaTwirl
 import FrameworkHeppy
 
 ##__________________________________________________________________||
-#default_heppydir = "/home/hep/ebhal/Reweighted_trees/SkimOutput/Signal_MC/"
-#default_heppydir = "/vols/cms/RA1/80X/MC/LongLived/20170904/AtLogic_MC_LL/"
-default_heppydir = "/home/hep/ebhal/NEW_LLP_TEST/SkimOutput/Signal_MC/"
-#default_heppydir = "/vols/cms/RA1/80X/MC/LongLived/20171012/AtLogic_MC_LL/"
+#default_heppydir = "/home/hep/ebhal/Reweighted_Vanilla_SUSY_trees/SkimOutput/Signal_MC/"
+default_heppydir = "/home/hep/ebhal/Reweighted_T2tt-4bd_benchmarks/"
+
 ##__________________________________________________________________||
 parser = argparse.ArgumentParser()
 parser.add_argument("--mc", action = "store_const", dest = 'datamc', const = 'mc', default = 'mc', help = "for processing MC")
