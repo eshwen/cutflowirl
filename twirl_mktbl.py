@@ -15,7 +15,7 @@ import FrameworkHeppy
 
 ##__________________________________________________________________||
 #default_heppydir = "/home/hep/ebhal/Reweighted_Vanilla_SUSY_trees/SkimOutput/Signal_MC/"
-default_heppydir = "/home/hep/ebhal/Reweighted_T2tt-4bd_benchmarks/"
+default_heppydir = "/home/hep/ebhal/Reweighted_Vanilla_SUSY_benchmarks/SkimOutput/Signal_MC/"
 
 ##__________________________________________________________________||
 parser = argparse.ArgumentParser()
